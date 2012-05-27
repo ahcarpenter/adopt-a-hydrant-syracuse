@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_flash_from_params
   before_filter :set_locale
+  reset
 
 protected
 
@@ -20,7 +21,6 @@ protected
   end
 
   def set_locale
-    # reset_session
     available_languages = Dir.glob(Rails.root + "config/locales/??.yml").map do |file|
       File.basename(file, ".yml")
     end
