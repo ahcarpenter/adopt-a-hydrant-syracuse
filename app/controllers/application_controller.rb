@@ -20,6 +20,7 @@ protected
   end
 
   def set_locale
+    # Spreader.seed('app/assets/xml/hydrants.xml', 'Thing', 'lat', 'lng')
     available_languages = Dir.glob(Rails.root + "config/locales/??.yml").map do |file|
       File.basename(file, ".yml")
     end
