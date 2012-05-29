@@ -85,7 +85,7 @@ de:
       title: "Mayor"
   titles:
     adopt: "Übernehmen diesem %{thing}"
-    adopted: "{thing_name} wurde verabschiedet"
+    adopted: "%{thing_name} wurde verabschiedet"
     byline: "von %{name}"
     conflict: "Vielen Dank für die Annahme dieser %{thing} fruher!"
     edit_profile: "Ihr Profil bearbeiten"
