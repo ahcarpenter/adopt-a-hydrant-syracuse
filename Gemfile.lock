@@ -55,7 +55,8 @@ GEM
       activerecord (>= 3.0.0)
     geokit (1.6.5)
       multi_json
-    haml (3.2.0.alpha.10)
+    haml (3.2.0.alpha.13)
+      tilt
     hike (1.2.1)
     hpricot (0.8.6)
     http_accept_language (1.0.2)
