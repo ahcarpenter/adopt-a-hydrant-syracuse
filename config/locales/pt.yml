@@ -1,6 +1,4 @@
-# Please maintain alphabetical order
-
-pl:
+pt:
   buttons:
     abandon: "Abandon this %{thing}"
     adopt: "Adopt!"
