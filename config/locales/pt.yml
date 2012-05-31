@@ -1,3 +1,5 @@
+# Please maintain alphabetical order
+
 pt:
   buttons:
     abandon: "Abandon this %{thing}"
