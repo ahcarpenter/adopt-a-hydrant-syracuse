@@ -14,13 +14,13 @@
       %label{:for => "user_name", :id => "user_name_label"}
         = t("labels.name")
         %small
-          = t("captions.public")
+          = image_tag "lock2.png", :class => "lock", :alt => t("captions.public"), :title => t("captions.public")
       = f.text_field "name"
     .control-group
       %label{:for => "user_organization", :id => "user_organization_label"}
         = t("labels.organization")
         %small
-          = t("captions.public")
+          = image_tag "lock2.png", :class => "lock", :alt => t("captions.public"), :title => t("captions.public")
       = f.text_field "organization"
     .control-group
       %label{:for => "user_voice_number", :id => "user_voice_number_label"}
