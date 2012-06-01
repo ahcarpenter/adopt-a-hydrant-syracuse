@@ -1,4 +1,3 @@
-# https://github.com/plataformatec/devise/wiki/How-To:-Change-the-default-sign_in-and-sign_out-routes
 AdoptAThing::Application.routes.draw do
   devise_for :users, :controllers => {
     :passwords => 'passwords',

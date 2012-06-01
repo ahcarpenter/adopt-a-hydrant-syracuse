@@ -33,10 +33,4 @@ group :test do
   gem 'sqlite3'
   gem 'webmock'
   gem 'rake'
-  # gem 'cucumber-rails', :require => false
-  # gem 'database_cleaner'
-  # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  # gem 'guard-livereload'
-  # gem 'guard-webrick'
-  # gem 'guard-puma'
 end

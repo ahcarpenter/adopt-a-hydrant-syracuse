@@ -4,7 +4,7 @@
       %label{:for => "user_email", :id => "user_email_label"}
         = t("labels.email")
         %small
-          = image_tag "lock1.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
+          = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
       = f.email_field "email", :value => params[:user] ? params[:user][:email] : nil
     .control-group.radio
       = f.label "new" , radio_button_tag("user", "new", true).html_safe + t("labels.user_new")
@@ -26,7 +26,7 @@
       %label{:for => "user_voice_number", :id => "user_voice_number_label"}
         = t("labels.voice_number")
         %small
-          = image_tag "lock1.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
+          = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
       = f.telephone_field "voice_number", :placeholder => t("defaults.voice_number")
     .control-group
       %label{:for => "user_sms_number", :id => "user_sms_number_label"}

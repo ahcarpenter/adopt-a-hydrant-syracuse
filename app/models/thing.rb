@@ -1,7 +1,6 @@
 class Thing < ActiveRecord::Base
   include Geokit::Geocoders
   require 'libxml'
-  #validates_uniqueness_of :city_id, :allow_nil => true
   validates_presence_of :lat, :lng
   belongs_to :user
   has_many :reminders
@@ -75,5 +74,4 @@ class Thing < ActiveRecord::Base
     nodes.close
     return snow_amounts
   end
-  
 end
