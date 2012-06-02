@@ -64,7 +64,7 @@ class Thing < ActiveRecord::Base
 
     while nodes.read
       unless nodes.node_type == LibXML::XML::Reader::TYPE_END_ELEMENT
-        if nodes.name == "value"
+        if nodes.name == 'value'
           nodes.read
           snow_amounts.push nodes.value
         end

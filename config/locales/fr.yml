@@ -3,91 +3,91 @@
 
 fr:
   buttons:
-    abandon: "Abandonner cette bouche"
-    adopt: "Adopter!"
-    back: "Retour"
-    change_password: "Changer mon mot de passe"
-    close: "Fermer"
-    edit_profile: "Modifier le profil"
-    email_password: "Envoyez-moi mon mot de passe"
-    find: "Trouver %{thing}"
-    send_reminder: "Envoyer un rappel à la pelle"
-    sign_in: "Connexion"
-    sign_out: "Inscription sur"
+    abandon: 'Abandonner cette bouche'
+    adopt: 'Adopter!'
+    back: 'Retour'
+    change_password: 'Changer mon mot de passe'
+    close: 'Fermer'
+    edit_profile: 'Modifier le profil'
+    email_password: 'Envoyez-moi mon mot de passe'
+    find: 'Trouver %{thing}'
+    send_reminder: 'Envoyer un rappel à la pelle'
+    sign_in: 'Connexion'
+    sign_out: 'Inscription sur'
     sign_up: "S'inscrire"
-    update: "Mise à jour"
+    update: 'Mise à jour'
   captions:
-    optional: "(optionnelle)"
-    private: "(privé)"
-    public: "(visible pour les autres)"
-    required: "(nécessaire)"
+    optional: '(optionnelle)'
+    private: '(privé)'
+    public: '(visible pour les autres)'
+    required: '(nécessaire)'
   defaults:
-    address: "Adresse"
-    address_1: "233 E. Washington St."
-    address_2: ""
-    city: "Syracuse"
-    city_state: "Syracuse, New York"
-    neighborhood: "Downtown"
-    sms_number: "315-555-5555"
-    state: "NY"
+    address: 'Adresse'
+    address_1: '233 E. Washington St.'
+    address_2: ''
+    city: 'Syracuse'
+    city_state: 'Syracuse, New York'
+    neighborhood: 'Downtown'
+    sms_number: '315-555-5555'
+    state: 'NY'
     thing: "bouche d'incendie"
     this_thing: "Cette %{thing}"
     tagline: "La responsabilité Réclamation pour pelleter une bouche d'incendie le feu après qu'il neige."
     tos: "En vous inscrivant, vous acceptez les %{tos}."
-    voice_number: "315-555-5555"
-    zip: "13202"
+    voice_number: '315-555-5555'
+    zip: '13202'
   errors:
-    password: "Vous devez vous identifier ou vous inscrire avant de continuer."
+    password: 'Vous devez vous identifier ou vous inscrire avant de continuer.'
     not_found: "Impossible de trouver %{thing}."
   labels:
-    address: "Adresse, Quartier"
-    address_1: "Adresse ligne 1"
-    address_2: "Adresse ligne 2"
-    city: "Ville"
-    city_state: "Ville"
-    email: "Adresse e-mail"
-    name: "Nom"
+    address: 'Adresse, Quartier'
+    address_1: 'Adresse ligne 1'
+    address_2: 'Adresse ligne 2'
+    city: 'Ville'
+    city_state: 'Ville'
+    email: 'Adresse e-mail'
+    name: 'Nom'
     name_thing: "Donnez cette %{thing} d'un nom"
-    organization: "Organisation"
-    password: "Mot de passe"
-    password_choose: "Choisissez un mot de passe"
-    password_current: "Mot de passe actuel"
-    password_new: "Nouveau mot de passe"
-    remember_me: "Rester connecté"
-    sms_number: "Numéro de téléphone portable"
-    state: "Etat"
+    organization: 'Organisation'
+    password: 'Mot de passe'
+    password_choose: 'Choisissez un mot de passe'
+    password_current: 'Mot de passe actuel'
+    password_new: 'Nouveau mot de passe'
+    remember_me: 'Rester connecté'
+    sms_number: 'Numéro de téléphone portable'
+    state: 'Etat'
     user_existing: "J'ai déjà signé"
     user_new: "Je n'ai pas encore inscrits"
-    voice_number: "Le numéro de téléphone Accueil"
-    zip: "Code postal"
+    voice_number: 'Le numéro de téléphone Accueil'
+    zip: 'Code postal'
   links:
-    feedback: "Envoyer des commentaires"
-    forgot_password: "Mot de passe oublié?"
+    feedback: 'Envoyer des commentaires'
+    forgot_password: 'Mot de passe oublié?'
     remembered_password: "Jamais l'esprit. J'ai rappelé mon mot de passe."
   notices:
-    abandoned: "Bouche abandonné!"
-    adopted: "Bouche adopté!"
-    password_reset: "Les instructions de réinitialisation de mot de passe envoyé! Vérifiez votre adresse email."
-    reminder_sent: "Rappel envoyé!"
-    signed_in: "Signé en!"
-    signed_out: "Signé à."
-    signed_up: "Merci pour votre inscription!"
-    stolen: "Bouche volé!"
+    abandoned: 'Bouche abandonné!'
+    adopted: 'Bouche adopté!'
+    password_reset: 'Les instructions de réinitialisation de mot de passe envoyé! Vérifiez votre adresse email.'
+    reminder_sent: 'Rappel envoyé!'
+    signed_in: 'Signé en!'
+    signed_out: 'Signé à.'
+    signed_up: 'Merci pour votre inscription!'
+    stolen: 'Bouche volé!'
   questions:
-    abandon: "Etes-vous sûr de vouloir abandonner cette bouche?"
+    abandon: 'Etes-vous sûr de vouloir abandonner cette bouche?'
   sponsors:
-    built: "Construit à Boston & Lexington"
+    built: 'Construit à Boston & Lexington'
     cfa: "Code pour l'Amérique"
-    city: "Ville de Boston"
+    city: 'Ville de Boston'
     mayor:
-      name: "Thomas M. Menino"
-      title: "Mayor"
+      name: 'Thomas M. Menino'
+      title: 'Mayor'
   titles:
     adopt: "Adoptez cette %{thing}"
     adopted: "%{thing_name} a été adoptée"
     byline: "par %{name}"
     conflict: "Merci pour l'adoption de cette %{thing} plus tôt!"
-    edit_profile: "Modifiez votre profil"
+    edit_profile: 'Modifiez votre profil'
     main: "Adopt-a-%{thing}"
     ofline: "de %{organization}"
     sign_in: "Connectez-vous à adopter cette %{thing}"

@@ -2,93 +2,93 @@
 
 es:
   buttons:
-    abandon: "Abandona esta boca"
-    adopt: "Adoptar!"
-    back: "De nuevo"
-    change_password: "Cambiar mi contraseña"
-    close: "Cerca"
-    edit_profile: "Editar perfil"
-    email_password: "Correo electrónico mi contraseña"
+    abandon: 'Abandona esta boca'
+    adopt: 'Adoptar!'
+    back: 'De nuevo'
+    change_password: 'Cambiar mi contraseña'
+    close: 'Cerca'
+    edit_profile: 'Editar perfil'
+    email_password: 'Correo electrónico mi contraseña'
     find: "Encontrar %{thing}"
-    send_reminder: "Enviar aviso a pala"
-    sign_in: "Ingresar"
-    sign_out: "Salir"
-    sign_up: "Regístrate"
-    update: "Actualización"
+    send_reminder: 'Enviar aviso a pala'
+    sign_in: 'Ingresar'
+    sign_out: 'Salir'
+    sign_up: 'Regístrate'
+    update: 'Actualización'
   captions:
-    optional: "(opcional)"
-    private: "(privado)"
-    public: "(visible para los demás)"
-    required: "(necesario)"
+    optional: '(opcional)'
+    private: '(privado)'
+    public: '(visible para los demás)'
+    required: '(necesario)'
   defaults:
-    address: "dirección"
-    address_1: "233 E. Washington St."
-    address_2: ""
-    city: "Syracuse"
-    city_state: "Syracuse, New York"
-    neighborhood: "Downtown"
-    sms_number: "315-555-5555"
-    state: "NY"
-    thing: "boca de incendio"
+    address: 'dirección'
+    address_1: '233 E. Washington St.'
+    address_2: ''
+    city: 'Syracuse'
+    city_state: 'Syracuse, New York'
+    neighborhood: 'Downtown'
+    sms_number: '315-555-5555'
+    state: 'NY'
+    thing: 'boca de incendio'
     this_thing: "Esta %{thing}"
-    tagline: "Reclamar la responsabilidad para palear un hidrante de incendios después de que las nieves."
+    tagline: 'Reclamar la responsabilidad para palear un hidrante de incendios después de que las nieves.'
     tos: "Al registrarse, usted está de acuerdo con los %{tos}."
-    voice_number: "315-555-5555"
-    zip: "13202"
+    voice_number: '315-555-5555'
+    zip: '13202'
   errors:
-    password: "Es necesario iniciar sesión o registrarse antes de continuar."
+    password: 'Es necesario iniciar sesión o registrarse antes de continuar.'
     not_found: "No se pudo encontrar %{thing}."
   labels:
-    address: "Dirección, Barrio"
-    address_1: "Dirección línea 1"
-    address_2: "Dirección línea 2"
-    city: "Ciudad"
-    city_state: "Ciudad"
-    email: "Dirección de correo electrónico"
-    name: "Nombre"
-    name_thing: "Dar a esta toma de agua un nombre"
-    organization: "Organización"
-    password: "Contraseña"
-    password_choose: "Elija una contraseña"
-    password_current: "Contraseña actual"
-    password_new: "Una nueva contraseña"
-    remember_me: "Mantener el"
-    sms_number: "Número de teléfono móvil"
-    state: "Estado"
-    user_existing: "Ya he firmado"
-    user_new: "No se ha inscrito"
-    voice_number: "Número de teléfono"
-    zip: "Código postal"
+    address: 'Dirección, Barrio'
+    address_1: 'Dirección línea 1'
+    address_2: 'Dirección línea 2'
+    city: 'Ciudad'
+    city_state: 'Ciudad'
+    email: 'Dirección de correo electrónico'
+    name: 'Nombre'
+    name_thing: 'Dar a esta toma de agua un nombre'
+    organization: 'Organización'
+    password: 'Contraseña'
+    password_choose: 'Elija una contraseña'
+    password_current: 'Contraseña actual'
+    password_new: 'Una nueva contraseña'
+    remember_me: 'Mantener el'
+    sms_number: 'Número de teléfono móvil'
+    state: 'Estado'
+    user_existing: 'Ya he firmado'
+    user_new: 'No se ha inscrito'
+    voice_number: 'Número de teléfono'
+    zip: 'Código postal'
   links:
-    feedback: "Envíenos sus comentarios"
-    forgot_password: "¿Olvidaste tu contraseña?"
-    remembered_password: "No importa. Me acordé de mi contraseña."
+    feedback: 'Envíenos sus comentarios'
+    forgot_password: '¿Olvidaste tu contraseña?'
+    remembered_password: 'No importa. Me acordé de mi contraseña.'
   notices:
-    abandoned: "toma de agua abandonada!"
-    adopted: "Hidrante adoptado!"
-    password_reset: "Las instrucciones de restablecimiento de contraseña enviado! Revise su correo electrónico."
-    reminder_sent: "Recordatorio enviado!"
-    signed_in: "Sesión!"
-    signed_out: "La sesión."
-    signed_up: "¡Gracias por registrarte!"
-    stolen: "Boca robado!"
+    abandoned: 'Toma de agua abandonada!'
+    adopted: 'Hidrante adoptado!'
+    password_reset: 'Las instrucciones de restablecimiento de contraseña enviado! Revise su correo electrónico.'
+    reminder_sent: 'Recordatorio enviado!'
+    signed_in: 'Sesión!'
+    signed_out: 'La sesión.'
+    signed_up: '¡Gracias por registrarte!'
+    stolen: 'Boca robado!'
   questions:
-    abandon: "¿Está seguro que desea abandonar esta boca?"
+    abandon: '¿Está seguro que desea abandonar esta boca?'
   sponsors:
-    built: "Construido en Boston & Lexington"
-    cfa: "Código de los Estados Unidos"
-    city: "Ciudad de Boston"
+    built: 'Construido en Boston & Lexington'
+    cfa: 'Código de los Estados Unidos'
+    city: 'Ciudad de Boston'
     mayor:
-      name: "Thomas M. Menino"
-      title: "Mayor"
+      name: 'Thomas M. Menino'
+      title: 'Mayor'
   titles:
     adopt: "Adoptar esta %{thing}"
     adopted: "%{thing_name} ha sido adoptada."
     byline: "por %{name}"
     conflict: "Gracias por la adopción de esta %{thing} antes!"
-    edit_profile: "Edita tu perfil"
+    edit_profile: 'Edita tu perfil'
     main: "Adopt-a-%{thing}"
     ofline: "de %{organization}"
     sign_in: "Iniciar sesión para adoptar esta %{thing}"
     thank_you: "Gracias por la adopción de esta %{thing}!"
-    tos: "Términos de Servicio"
+    tos: 'Términos de Servicio'

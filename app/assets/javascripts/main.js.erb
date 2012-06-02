@@ -95,16 +95,16 @@ $(function() {
       url: '/things.json',
       data: {
         'utf8': '✓',
-        'authenticity_token': $('#address_form input[name="authenticity_token"]').val(),
+        'authenticity_token': $("#address_form input[name='authenticity_token']").val(),
         'lat': lat,
         'lng': lng,
-        'limit': $('#address_form input[name="limit"]').val()
+        'limit': $("#address_form input[name='limit']").val()
       },
       error: function(jqXHR) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
       },
       success: function(data) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
         if(data.errors) {
           $('#address').parent().addClass('error');
           $('#address').focus();
@@ -144,9 +144,9 @@ $(function() {
   }
   $('#address_form').live('submit', function() {
     var submitButton = $("#address_form input[type='submit']");
-    $(submitButton).attr("disabled", true);
+    $(submitButton).attr('disabled', true);
     if($('#address').val() === '') {
-      $(submitButton).attr("disabled", false);
+      $(submitButton).attr('disabled', false);
       $('#address').parent().addClass('error');
       $('#address').focus();
     } else {
@@ -155,17 +155,17 @@ $(function() {
         url: '/address.json',
         data: {
           'utf8': '✓',
-          'authenticity_token': $('#address_form input[name="authenticity_token"]').val(),
+          'authenticity_token': $("#address_form input[name='authenticity_token']").val(),
           'city_state': $('#city_state').val(),
           'address': $('#address').val()
         },
         error: function(jqXHR) {
-          $(submitButton).attr("disabled", false);
+          $(submitButton).attr('disabled', false);
           $('#address').parent().addClass('error');
           $('#address').focus();
         },
         success: function(data) {
-          $(submitButton).attr("disabled", false);
+          $(submitButton).attr('disabled', false);
           if(data.errors) {
             $('#address').parent().addClass('error');
             $('#address').focus();
@@ -182,14 +182,14 @@ $(function() {
   });
   // Focus on the first non-empty text input or password field
   function setComboFormFocus() {
-    $('#combo-form input[type="email"], #combo-form input[type="text"]:visible, #combo-form input[type="password"]:visible, #combo-form input[type="submit"]:visible, #combo-form input[type="tel"]:visible, #combo-form button:visible').each(function(index) {
-      if($(this).val() === "" || $(this).attr('type') === 'submit' || this.tagName.toLowerCase() === 'button') {
+    $("#combo-form input[type='email'], #combo-form input[type='text']:visible, #combo-form input[type='password']:visible, #combo-form input[type='submit']:visible, #combo-form input[type='tel']:visible, #combo-form button:visible").each(function(index) {
+      if($(this).val() === '' || $(this).attr('type') === 'submit' || this.tagName.toLowerCase() === 'button') {
         $(this).focus();
         return false;
       }
     });
   }
-  $('#combo-form input[type="radio"]').live('click', function() {
+  $("#combo-form input[type='radio']").live('click', function() {
     var radioInput = $(this);
     if('new' === radioInput.val()) {
       $('#combo-form').data('state', 'user_sign_up');
@@ -222,7 +222,7 @@ $(function() {
   });
   $('#combo-form').live('submit', function() {
     var submitButton = $("#combo-form input[type='submit']");
-    $(submitButton).attr("disabled", true);
+    $(submitButton).attr('disabled', true);
     var errors = []
     if(!/[\w\.%\+]+@[\w]+\.+[\w]{2,}/.test($('#user_email').val())) {
       errors.push($('#user_email'));
@@ -244,7 +244,7 @@ $(function() {
         $('#user_password_confirmation').parent().removeClass('error');
       }
       if(errors.length > 0) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
         errors[0].focus();
       } else {
         $.ajax({
@@ -252,7 +252,7 @@ $(function() {
           url: '/users.json',
           data: {
             'utf8': '✓',
-            'authenticity_token': $('#combo-form input[name="authenticity_token"]').val(),
+            'authenticity_token': $("#combo-form input[name='authenticity_token']").val(),
             'user': {
               'email': $('#user_email').val(),
               'name': $('#user_name').val(),
@@ -265,7 +265,7 @@ $(function() {
           },
           error: function(jqXHR) {
             var data = $.parseJSON(jqXHR.responseText);
-            $(submitButton).attr("disabled", false);
+            $(submitButton).attr('disabled', false);
             if(data.errors.email) {
               errors.push($('#user_email'));
               $('#user_email').parent().addClass('error');
@@ -316,7 +316,7 @@ $(function() {
         $('#user_password').parent().removeClass('error');
       }
       if(errors.length > 0) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
         errors[0].focus();
       } else {
         $.ajax({
@@ -324,7 +324,7 @@ $(function() {
           url: '/users/sign_in.json',
           data: {
             'utf8': '✓',
-            'authenticity_token': $('#combo-form input[name="authenticity_token"]').val(),
+            'authenticity_token': $("#combo-form input[name='authenticity_token']").val(),
             'user': {
               'email': $('#user_email').val(),
               'password': $('#user_password').val(),
@@ -332,7 +332,7 @@ $(function() {
             }
           },
           error: function(jqXHR) {
-            $(submitButton).attr("disabled", false);
+            $(submitButton).attr('disabled', false);
             $('#user_password').parent().addClass('error');
             $('#user_password').focus();
           },
@@ -354,7 +354,7 @@ $(function() {
       }
     } else if($(this).data('state') === 'user_forgot_password') {
       if(errors.length > 0) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
         errors[0].focus();
       } else {
         $.ajax({
@@ -362,18 +362,18 @@ $(function() {
           url: '/users/password.json',
           data: {
             'utf8': '✓',
-            'authenticity_token': $('#combo-form input[name="authenticity_token"]').val(),
+            'authenticity_token': $("#combo-form input[name='authenticity_token']").val(),
             'user': {
               'email': $('#user_email').val()
             }
           },
           error: function(jqXHR) {
-            $(submitButton).attr("disabled", false);
+            $(submitButton).attr('disabled', false);
             $('#user_email').parent().addClass('error');
             $('#user_email').focus();
           },
           success: function() {
-            $(submitButton).attr("disabled", false);
+            $(submitButton).attr('disabled', false);
             $('#user_remembered_password_link').click();
             $('#user_password').focus();
           }
@@ -384,7 +384,7 @@ $(function() {
   });
   $('#adoption_form').live('submit', function() {
     var submitButton = $("#adoption_form input[type='submit']");
-    $(submitButton).attr("disabled", true);
+    $(submitButton).attr('disabled', true);
     $.ajax({
       type: 'POST',
       url: '/things.json',
@@ -399,7 +399,7 @@ $(function() {
         }
       },
       error: function(jqXHR) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
       },
       success: function(data) {
         $.ajax({
@@ -422,7 +422,7 @@ $(function() {
   });
   $('#abandon_form').live('submit', function() {
       var submitButton = $("#abandon_form input[type='submit']");
-      $(submitButton).attr("disabled", true);
+      $(submitButton).attr('disabled', true);
       $.ajax({
         type: 'POST',
         url: '/things.json',
@@ -437,7 +437,7 @@ $(function() {
           }
         },
         error: function(jqXHR) {
-          $(submitButton).attr("disabled", false);
+          $(submitButton).attr('disabled', false);
         },
         success: function(data) {
           $.ajax({
@@ -475,7 +475,7 @@ $(function() {
   });
   $('#edit_form').live('submit', function() {
     var submitButton = $("#edit_form input[type='submit']");
-    $(submitButton).attr("disabled", true);
+    $(submitButton).attr('disabled', true);
     var errors = []
     if(!/[\w\.%\+\]+@[\w\]+\.+[\w]{2,}/.test($('#user_email').val())) {
       errors.push($('#user_email'));
@@ -508,7 +508,7 @@ $(function() {
       $('#user_current_password').parent().removeClass('error');
     }
     if(errors.length > 0) {
-      $(submitButton).attr("disabled", false);
+      $(submitButton).attr('disabled', false);
       errors[0].focus();
     } else {
       $.ajax({
@@ -538,7 +538,7 @@ $(function() {
         },
         error: function(jqXHR) {
           var data = $.parseJSON(jqXHR.responseText);
-          $(submitButton).attr("disabled", false);
+          $(submitButton).attr('disabled', false);
           if(data.errors.email) {
             errors.push($('#user_email'));
             $('#user_email').parent().addClass('error');
@@ -624,12 +624,12 @@ $(function() {
   });
   $('#sign_in_form').live('submit', function() {
     var submitButton = $("#sign_in_form input[type='submit']");
-    $(submitButton).attr("disabled", true);
+    $(submitButton).attr('disabled', true);
     $.ajax({
       type: 'GET',
       url: '/users/sign_in',
       error: function(jqXHR) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
       },
       success: function(data) {
 		stateChange();
@@ -655,7 +655,7 @@ $(function() {
   });
   $('#reminder_form').live('submit', function() {
     var submitButton = $("#reminder_form input[type='submit']");
-    $(submitButton).attr("disabled", true);
+    $(submitButton).attr('disabled', true);
     $.ajax({
       type: 'POST',
       url: '/reminders.json',
@@ -669,7 +669,7 @@ $(function() {
         }
       },
       error: function(jqXHR) {
-        $(submitButton).attr("disabled", false);
+        $(submitButton).attr('disabled', false);
       },
       success: function(data) {
         $.ajax({

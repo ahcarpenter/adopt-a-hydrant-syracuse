@@ -1,16 +1,16 @@
 class UsersController < Devise::RegistrationsController
   def edit
-    render("sidebar/edit_profile", :layout => "sidebar")
+    render('sidebar/edit_profile', :layout => 'sidebar')
   end
 
   def update
     if resource.update_with_password(params[resource_name])
       sign_in(resource_name, resource, :bypass => true)
-      flash[:notice] = "Profile updated!"
-      redirect_to(:controller => "sidebar", :action => "search")
+      flash[:notice] = 'Profile updated!'
+      redirect_to(:controller => 'sidebar', :action => 'search')
     else
       clean_up_passwords(resource)
-      render(:json => {"errors" => resource.errors}, :status => 500)
+      render(:json => {'errors' => resource.errors}, :status => 500)
     end
   end
 
@@ -21,7 +21,7 @@ class UsersController < Devise::RegistrationsController
       render(:json => resource)
     else
       clean_up_passwords(resource)
-      render(:json => {"errors" => resource.errors}, :status => 500)
+      render(:json => {'errors' => resource.errors}, :status => 500)
     end
   end
 end

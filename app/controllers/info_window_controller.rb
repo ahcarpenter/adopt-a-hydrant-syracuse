@@ -9,16 +9,16 @@ class InfoWindowController < ApplicationController
         if session[:conflict] == true
           render('users/conflict')
         else
-          render("users/thank_you")
+          render('users/thank_you')
         end
       else
-        render("users/profile")
+        render('users/profile')
       end
     else
       if user_signed_in?
-        render("things/adopt")
+        render('things/adopt')
       else
-        render("users/sign_in")
+        render('users/sign_in')
       end
     end
   end
