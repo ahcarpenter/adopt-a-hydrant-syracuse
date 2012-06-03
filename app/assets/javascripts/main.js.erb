@@ -33,6 +33,26 @@ $(function() {
     origin,
     anchor
   );
+  var green1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green1.png' %>',
+    size,
+    origin,
+    anchor
+  );
+  var red1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red1.png' %>',
+    size,
+    origin,
+    anchor
+  );
+  var green2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green2.png' %>',
+    size,
+    origin,
+    anchor
+  );
+  var red2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red2.png' %>',
+    size,
+    origin,
+    anchor
+  );
   var markerShadowImage = new google.maps.MarkerImage('<%= image_path 'markers/shadow.png' %>',
     new google.maps.Size(46.0, 37.0),
     origin,
@@ -48,13 +68,21 @@ $(function() {
 	  var image = greenMarkerImage;
 	} else if(color === 'red') {
 	  var image = redMarkerImage;
+	} else if(color === 'green1') {
+	  var image = green1MarkerImage;
+	} else if(color === 'red1') {
+	  var image = red1MarkerImage;
+	} else if(color === 'green2') {
+	  var image = green2MarkerImage;
+	} else if(color === 'red2') {
+	  var image = red2MarkerImage;
 	}
 	var marker = new google.maps.Marker({
 	  animation: google.maps.Animation.DROP,
 	  icon: image,
 	  map: map,
 	  position: point,
-	  shadow: markerShadowImage
+	  shadow: markerShadowImage,
 	});
 	google.maps.event.addListener(marker, 'click', function() {
 	  if(activeInfoWindow) {
@@ -78,8 +106,8 @@ $(function() {
 	    success: function(data) {
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
 	      if(infoWindow === activeInfoWindow) {
-	        infoWindow.setContent(data);
-	        infoWindow.open(map, marker);
+			infoWindow.setContent(data);
+			infoWindow.open(map, marker);
 	        isWindowOpen = true;
 	      }
 	    }
@@ -119,10 +147,23 @@ $(function() {
               return true;
             }
             setTimeout(function() {
+			  thing_snow_cover = thing.snow_cover
               if(thing.user_id) {
-                addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green');
+				if(thing_snow_cover > 6){
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1');
+				} else if(thing_snow_cover <= 6 && thing_snow_cover > 0){
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2');	
+				} else{
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green');	
+				}
               } else {
-                addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red');
+				if(thing_snow_cover > 6){
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1');
+				} else if(thing_snow_cover <= 6 && thing_snow_cover > 0){
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2');	
+				} else{
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red');	
+				}
               }
             }, i * 100);
           });
