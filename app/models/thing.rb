@@ -58,20 +58,4 @@ class Thing < ActiveRecord::Base
   def adopted?
     !user_id.nil?
   end
-  
-  def get_snow_amounts(nodes)
-    snow_amounts = Array.new
-
-    while nodes.read
-      unless nodes.node_type == LibXML::XML::Reader::TYPE_END_ELEMENT
-        if nodes.name == 'value'
-          nodes.read
-          snow_amounts.push nodes.value
-        end
-      end
-    end
-    
-    nodes.close
-    return snow_amounts
-  end
 end
