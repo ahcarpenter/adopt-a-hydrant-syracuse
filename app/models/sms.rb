@@ -12,7 +12,7 @@ class SMS
       @@account.sms.messages.create(:from => '+18599030353', :to => user.sms_number, :body => user.name + ', ' + thing.name + ' might be surrounded by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.')
     else
       requested_extra_difference = requested-extra
-      @@account.sms.messages.create(:from => '+18599030353', :to => user.sms_number, :body => user.name + ', ' + thing.name.truncate(thing_name_length-requested_extra_difference) + ' might be surrouned by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.') if (requested > extra) && (thing_name_length > requested_extra_difference)
+      @@account.sms.messages.create(:from => '+18599030353', :to => user.sms_number, :body => user.name + ', ' + thing.name.truncate(thing_name_length-requested_extra_difference) + ' might be surrounded by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.') if (requested > extra) && (thing_name_length > requested_extra_difference)
     end
   end
 end
