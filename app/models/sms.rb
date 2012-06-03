@@ -4,15 +4,15 @@ class SMS
   @@client = Twilio::REST::Client.new(@@account_sid, @@auth_token)
   @@account = @@client.account
 
-  def send_notification(user, thing)
-    extra = (101-(thing.snow_cover.to_s.length+thing.full_address.length))
+  def self.send_notification(user, thing)
+    extra = (110-(thing.snow_cover.to_s.length+thing.full_address.length))
     thing_name_length = thing.name.length
     requested = user.name.length+thing_name_length
     if requested < extra
-      @@account.sms.messages.create(:from => '+18599030353', :to => user.sms_number, :body => user.name + ', look out for ' + thing.name + '! Forecasted snowfall: ' + thing.snow_cover.to_s + ' inches. Location: ' + thing.full_address + '.')
+      @@account.sms.messages.create(:from => '+18599030353', :to => user.sms_number, :body => user.name + ', ' + thing.name + ' might be surrounded by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.')
     else
       requested_extra_difference = requested-extra
-      @@account.sms.messages.create(:from => '+18599030353', :to => user.sms_number, :body => user.name + ', look out for ' + thing.name.truncate(thing_name_length-requested_extra_difference) + ' ! Forecasted snowfall: ' + thing.snow_cover.to_s + ' inches. Location: ' + thing.full_address + '.') if (requested > extra) && (thing_name_length > requested_extra_difference)
+      @@account.sms.messages.create(:from => '+18599030353', :to => user.sms_number, :body => user.name + ', ' + thing.name.truncate(thing_name_length-requested_extra_difference) + ' might be surrouned by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.') if (requested > extra) && (thing_name_length > requested_extra_difference)
     end
   end
 end
