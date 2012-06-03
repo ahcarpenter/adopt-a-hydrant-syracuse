@@ -5,7 +5,7 @@ class SMS
   @@account = @@client.account
 
   def send_notification(user, thing)
-    extra = (101-(greatest_amount_of_snowfall_forecasted.to_s.length+thing.full_address.length))
+    extra = (101-(thing.snow_cover.to_s.length+thing.full_address.length))
     thing_name_length = thing.name.length
     requested = user.name.length+thing_name_length
     if requested < extra
