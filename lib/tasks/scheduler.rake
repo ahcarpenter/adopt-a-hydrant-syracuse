@@ -12,18 +12,20 @@ task :update_feed => :environment do
     
     Thing.where('user_id IS NOT NULL').find_each do |thing|
       snow_amounts = @thing.get_snow_amounts(LibXML::XML::Reader.string(Net::HTTP.get(URI('http://graphical.weather.gov/xml/sample_products/browser_interface/ndfdXMLclient.php?lat=' + thing.lat.to_s + '&lon=' + thing.lng.to_s + '&product=time-series&begin=' + DateTime.now.utc.new_offset(0).to_s + '&end=' + DateTime.now.utc.new_offset(0).to_s + '&snow=snow'))))
+      largest_amount = 0
       snow_amounts.each do |amount|
-        if amount.to_i > 0.00
-          @user = User.find(thing.user_id)
-          extra = (101-(amount.length+thing.full_address.length))
-          thing_name_length = thing.name.length
-          requested = @user.name.length + thing_name_length
-          if requested < extra
-            @account.sms.messages.create(:from => '+18599030353', :to => @user.sms_number, :body => @user.name + ', look out for ' + thing.name + '! Forecasted snowfall: ' + amount + ' inches. Location: ' + thing.full_address + '.')
-          else
-            requested_extra_difference = requested-extra
-            @account.sms.messages.create(:from => '+18599030353', :to => @user.sms_number, :body => @user.name + ', look out for ' + thing.name.truncate(thing_name_length-requested_extra_difference) + ' ! Forecasted snowfall: ' + amount + ' inches. Location: ' + thing.full_address + '.') if (requested > extra) && (thing_name_length > requested_extra_difference)
-          end
+        largest_amount = amount.to_i if amount.to_i > largest_amount
+      end
+      if largest_amount.to_i > 0.00
+        @user = User.find(thing.user_id)
+        extra = (101-(largest_amount.length+thing.full_address.length))
+        thing_name_length = thing.name.length
+        requested = @user.name.length + thing_name_length
+        if requested < extra
+          @account.sms.messages.create(:from => '+18599030353', :to => @user.sms_number, :body => @user.name + ', look out for ' + thing.name + '! Forecasted snowfall: ' + largest_amount + ' inches. Location: ' + thing.full_address + '.')
+        else
+          requested_extra_difference = requested-extra
+          @account.sms.messages.create(:from => '+18599030353', :to => @user.sms_number, :body => @user.name + ', look out for ' + thing.name.truncate(thing_name_length-requested_extra_difference) + ' ! Forecasted snowfall: ' + largest_amount + ' inches. Location: ' + thing.full_address + '.') if (requested > extra) && (thing_name_length > requested_extra_difference)
         end
       end
     end
