@@ -40,8 +40,8 @@ en:
     not_found: "Could not find %{thing}."
   labels:
     address: 'Address'
-    address_1: 'Address Line 1'
-    address_2: 'Address Line 2'
+    address_1: 'Address line 1'
+    address_2: 'Address line 2'
     city: 'City'
     city_state: 'City'
     email: 'Email address'
@@ -58,7 +58,7 @@ en:
     user_existing: "I've already signed up"
     user_new: "I haven't signed up yet"
     voice_number: 'Home phone number'
-    zip: 'ZIP'
+    zip: 'ZIP code'
   links:
     feedback: 'Send feedback'
     forgot_password: 'Forgot your password?'
