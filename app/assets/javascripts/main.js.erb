@@ -16,8 +16,6 @@ $(function() {
     panControl: false,
     rotateControl: false,
     scaleControl: false,
-	// true,
-	// scaleControlOptions: {position: google.maps.ControlPosition.LEFT_BOTTOM},
     scrollwheel: false,
     streetViewControl: true,
     zoom: 15,
@@ -83,12 +81,7 @@ $(function() {
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
 	      if(infoWindow === activeInfoWindow) {
 			infoWindow.setContent(data);
-			if(map.getStreetView().getVisible()){
-			  infoWindow.open(map.getStreetView(), marker);
-			}
-			else{
-			  infoWindow.open(map, marker);
-			}
+			openInfoWindow(infoWindow, map, marker);
 	        isWindowOpen = true;
 	      }
 	    }
@@ -162,10 +155,14 @@ $(function() {
 		activeMarker = addMarker(activeThingId, new google.maps.LatLng(activeMarker.getPosition().lat(), activeMarker.getPosition().lng()), color);
 	}
 	activeInfoWindow.close();
-	if(!map.getStreetView().getVisible()){
-	  activeInfoWindow.open(map, activeMarker);
-	} else{
-	  activeInfoWindow.open(map.getStreetView(), activeMarker);	
+	openInfoWindow(activeInfoWindow, map, activeMarker);
+  }
+  function openInfoWindow(infoWindow, map, marker){
+	if(map.getStreetView().getVisible()){
+	  infoWindow.open(map.getStreetView(), marker);
+	}
+	else{
+	  infoWindow.open(map, marker);
 	}
   }
   $('#address_form').live('submit', function() {
