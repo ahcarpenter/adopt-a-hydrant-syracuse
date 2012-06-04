@@ -1,6 +1,6 @@
 class Weather
   
-  def self.get_snow_cover(lat, lng)
+  def get_snow_cover(lat, lng)
     nodes = LibXML::XML::Reader.string(Net::HTTP.get(URI('http://graphical.weather.gov/xml/sample_products/browser_interface/ndfdXMLclient.php?lat=' + lat.to_s + '&lon=' + lng.to_s + '&product=time-series&begin=' + DateTime.now.utc.new_offset(0).to_s + '&end=' + DateTime.now.utc.new_offset(0).to_s + '&snow=snow')))
     snow_amounts = Array.new
 

@@ -158,6 +158,7 @@ $(function() {
 	openInfoWindow(activeInfoWindow, map, activeMarker);
   }
   function openInfoWindow(infoWindow, map, marker){
+	// alert(marker.getIcon()['scaledSize']);
 	if(map.getStreetView().getVisible()){
 	  infoWindow.open(map.getStreetView(), marker);
 	}
