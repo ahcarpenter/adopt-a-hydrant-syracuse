@@ -39,7 +39,7 @@ cn:
     password: '您需要登錄或註冊，然後再繼續。'
     not_found: '找不到消防栓。'
   labels:
-    address: '地址，鄰里'
+    address: '地址'
     address_1: '地址行1'
     address_2: '地址行2'
     city: '城市'

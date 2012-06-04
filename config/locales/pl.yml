@@ -39,7 +39,7 @@ pl:
     password: 'Musisz się zalogować lub zarejestrować się przed kontynuowaniem.'
     not_found: "Nie można znaleźć %{thing}."
   labels:
-    address: 'Adres, Neighborhood'
+    address: 'Adres'
     address_1: 'Wiersz adresu 1'
     address_2: 'Wiersz adresu 2'
     city: 'Miasto'

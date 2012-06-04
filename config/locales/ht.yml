@@ -39,7 +39,7 @@ ht:
     password: 'Ou bezwen siyen an oswa si ou siyen kanpe devan kontinye.'
     not_found: "Pa t 'kapab jwenn %{thing}."
   labels:
-    address: 'Adrès yo, katye kote'
+    address: 'Adrès yo'
     address_1: 'Liy Adrès 1'
     address_2: 'Liy Adrès 2'
     city: 'Vil'

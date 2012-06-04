@@ -39,7 +39,7 @@ it:
     password: "È necessario effettuare l'accesso o registrati prima di continuare."
     not_found: "Impossibile trovare %{thing}."
   labels:
-    address: 'Indirizzo, Quartiere'
+    address: 'Indirizzo'
     address_1: 'Indirizzo 1'
     address_2: 'Indirizzo Linea 2'
     city: 'Città'

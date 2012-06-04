@@ -40,7 +40,7 @@ fr:
     password: 'Vous devez vous identifier ou vous inscrire avant de continuer.'
     not_found: "Impossible de trouver %{thing}."
   labels:
-    address: 'Adresse, Quartier'
+    address: 'Adresse'
     address_1: 'Adresse ligne 1'
     address_2: 'Adresse ligne 2'
     city: 'Ville'

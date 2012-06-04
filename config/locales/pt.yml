@@ -39,7 +39,7 @@ pt:
     password: 'Você precisa fazer login ou inscreva-se antes de continuar.'
     not_found: "Não foi possível encontrar %{thing}."
   labels:
-    address: 'Endereço, Bairro'
+    address: 'Endereço'
     address_1: 'Endereço linha 1'
     address_2: 'Endereço linha 2'
     city: 'Cidade'

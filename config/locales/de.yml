@@ -41,7 +41,7 @@ de:
     password: 'Sie müssen sich einloggen oder registrieren, bevor Sie fortfahren.'
     not_found: "Konnte nicht gefunden werden %{thing}."
   labels:
-    address: 'Adresse, Stadtviertel'
+    address: 'Adresse'
     address_1: 'Adresszeile 1'
     address_2: 'Adresszeile 2'
     city: 'Stadt'
