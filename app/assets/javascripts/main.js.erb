@@ -190,9 +190,13 @@ $(function() {
             $('#address').focus();
           } else {
             $('#address').parent().removeClass('error');
-            addMarkersAround(data[0], data[1]);
-            map.setCenter(new google.maps.LatLng(data[0], data[1]));
-            map.setZoom(19);
+			addMarkersAround(data[0], data[1]);
+			if(!map.getStreetView()){
+	            map.setCenter(new google.maps.LatLng(data[0], data[1]));
+	            map.setZoom(19);	
+			} else{
+				map.getStreetView().setPosition(new google.maps.LatLng(data[0], data[1]));
+			}
           }
         }
       });
