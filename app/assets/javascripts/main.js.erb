@@ -191,7 +191,7 @@ $(function() {
           } else {
             $('#address').parent().removeClass('error');
 			addMarkersAround(data[0], data[1]);
-			if(!map.getStreetView()){
+			if(!map.getStreetView().getVisible()){
 	            map.setCenter(new google.maps.LatLng(data[0], data[1]));
 	            map.setZoom(19);	
 			} else{
