@@ -16,6 +16,8 @@ $(function() {
     panControl: false,
     rotateControl: false,
     scaleControl: false,
+	// true,
+	// scaleControlOptions: {position: google.maps.ControlPosition.LEFT_BOTTOM},
     scrollwheel: false,
     streetViewControl: true,
     zoom: 15,
@@ -160,7 +162,12 @@ $(function() {
 		activeMarker = addMarker(activeThingId, new google.maps.LatLng(activeMarker.getPosition().lat(), activeMarker.getPosition().lng()), color);
 	}
 	activeInfoWindow.close();
-	activeInfoWindow.open(map, activeMarker);
+	if(!map.getStreetView().getVisible()){
+	  activeInfoWindow.open(map, activeMarker);
+	} else{
+	  activeInfoWindow.open(map.getStreetView(), activeMarker);	
+	}
+	
   }
   $('#address_form').live('submit', function() {
     var submitButton = $("#address_form input[type='submit']");
