@@ -107,7 +107,12 @@ $(function() {
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
 	      if(infoWindow === activeInfoWindow) {
 			infoWindow.setContent(data);
-			infoWindow.open(map, marker);
+			if(map.getStreetView().getVisible()){
+			  infoWindow.open(map.getStreetView(), marker);
+			}
+			else{
+			  infoWindow.open(map, marker);
+			}
 	        isWindowOpen = true;
 	      }
 	    }
