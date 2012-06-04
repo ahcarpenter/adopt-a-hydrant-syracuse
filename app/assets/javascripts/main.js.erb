@@ -2,6 +2,7 @@
 // http://stackoverflow.com/questions/351495/dynamically-creating-keys-in-javascript-associative-array
 // http://www.w3schools.com/jsref/jsref_undefined.asp
 // http://blog.mridey.com/2010/05/events-markers-infowindows-and-overlays.html
+// https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning
 $(function() {
   var center = new google.maps.LatLng(43.048122, -76.147424);
   var mapOptions = {
@@ -14,11 +15,12 @@ $(function() {
     minZoom: 15,
     panControl: false,
     rotateControl: false,
-    scaleControl: false,
+    scaleControl: true,
+	scaleControlOptions: {position: google.maps.ControlPosition.LEFT_BOTTOM},
     scrollwheel: false,
     streetViewControl: true,
     zoom: 15,
-    zoomControl: true
+    zoomControl: true,
   };
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   var size = new google.maps.Size(27.0, 37.0);
