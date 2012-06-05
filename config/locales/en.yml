@@ -54,6 +54,7 @@ en:
     password_new: 'New password'
     remember_me: 'Stay signed in'
     sms_number: 'Mobile phone number'
+    sms_notifications: 'Enable SMS notifications'
     state: 'State'
     user_existing: "I've already signed up"
     user_new: "I haven't signed up yet"
@@ -86,7 +87,7 @@ en:
     adopted: "%{thing_name} has been adopted"
     byline: "by %{name}"
     conflict: "Thank you for adopting this %{thing} earlier!"
-    edit_profile: 'Edit your Profile'
+    edit_profile: 'Edit your profile'
     main: "Adopt-a-%{thing}"
     ofline: "of %{organization}"
     sign_in: "Sign in to adopt this %{thing}"
