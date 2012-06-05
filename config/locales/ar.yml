@@ -1,0 +1,95 @@
+# Please maintain alphabetical order
+
+ar:
+  buttons:
+    abandon: "التخلي عن هذا %{thing}"
+    adopt: 'اعتماد!'
+    back: 'ظهر'
+    change_password: 'تغيير كلمة السر'
+    close: 'أغلق'
+    edit_profile: 'تعديل الملف الشخصي'
+    email_password: 'البريد الالكتروني لي كلمة السر'
+    find: "البحث %{thing}"
+    send_reminder: 'إرسال تذكير للمجرفة'
+    sign_in: 'توقيع في'
+    sign_out: 'تسجيل الخروج'
+    sign_up: 'التوقيع'
+    update: 'تحديث'
+  captions:
+    optional: '(اختياري)'
+    private: '(خاص)'
+    public: '(يراه الآخرون)'
+    required: '((مطلوب)'
+  defaults:
+    address: 'عنوان'
+    address_1: '233 E. Washington St.'
+    address_2: ''
+    city: 'Syracuse'
+    city_state: 'Syracuse, New York'
+    neighborhood: 'Downtown'
+    sms_number: '315-555-5555'
+    state: 'NY'
+    thing: 'صنبور'
+    this_thing: "هذا %{thing}"
+    tagline: 'تعلن مسؤوليتها عن التجريف الخروج الى صنبور مياه الاطفاء بعد تساقط الثلوج.'
+    tos: "من خلال التوقيع، فإنك توافق على %{tos}."
+    voice_number: '315-555-5555'
+    zip: '13202'
+  errors:
+    password: 'تحتاج لتسجيل الدخول أو الاشتراك قبل المتابعة.'
+    not_found: "لا يمكن العثور %{thing}."
+  labels:
+    address: 'عنوان'
+    address_1: 'سطر العنوان 1'
+    address_2: 'سطر العنوان 2'
+    city: 'مدينة'
+    city_state: 'مدينة'
+    email: 'عنوان البريد الإلكتروني'
+    name: 'اسم'
+    name_thing: "تعطي هذه %{thing} اسم"
+    organization: 'منظمة'
+    password: 'كلمة السر'
+    password_choose: 'اختيار كلمة مرور'
+    password_current: 'كلمة السر الحالية'
+    password_new: 'كلمة مرور جديدة'
+    remember_me: 'البقاء وقعت في'
+    sms_number: 'رقم الهاتف الجوال'
+    sms_notifications: 'تمكين إعلامات SMS'
+    state: 'دولة'
+    user_existing: 'لقد وقعت بالفعل'
+    user_new: "أنا لم توقع حتى الآن."
+    voice_number: 'رقم هاتف المنزل'
+    zip: 'الرمز البريدي'
+  links:
+    feedback: 'أرسل تعليقا'
+    forgot_password: 'نسيت كلمة المرور؟'
+    remembered_password: 'ناهيك. تذكرت كلمة السر الخاصة بي.'
+  notices:
+    abandoned: 'تخلى صنبور!'
+    adopted: 'اعتمد صنبور!'
+    password_reset: 'إرسال إرشادات إعادة تعيين كلمة السر! التحقق من بريدك الالكتروني.'
+    reminder_sent: 'أرسلت تذكير!'
+    signed_in: 'وقعت في!'
+    signed_out: 'وقعت خارج.'
+    signed_up: 'شكرا للتوقيع!'
+    stolen: 'صنبور سرقت!'
+  questions:
+    abandon: 'هل أنت متأكد أنك تريد أن تتخلى عن هذا صنبور؟'
+  sponsors:
+    built: 'بنيت في بوسطن ويكسينغتون'
+    cfa: 'رمز لأمريكا'
+    city: 'مدينة بوسطن'
+    mayor:
+      name: 'Thomas M. Menino'
+      title: 'Mayor'
+  titles:
+    adopt: "تعتمد هذه %{thing}"
+    adopted: "%{thing_name} وقد اعتمدت"
+    byline: "من قبل %{name}"
+    conflict: "أشكركم على اعتماد هذه %{thing} في وقت سابق!"
+    edit_profile: 'تعديل ملفك الشخصي'
+    main: "Adopt-a-%{thing}"
+    ofline: "من %{organization}"
+    sign_in: "تسجيل الدخول إلى تبني هذا %{thing}"
+    thank_you: "أشكركم على اعتماد هذه %{thing}!"
+    tos: 'شروط الخدمة'
