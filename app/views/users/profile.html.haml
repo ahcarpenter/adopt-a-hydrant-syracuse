@@ -1,5 +1,5 @@
 %h2	
-  = t('titles.adopted', :thing_name => session[:thing].name ? session[:thing].name.titleize : t('defaults.this_thing', :thing => t('defaults.thing')))	
+  = t('titles.adopted', :thing_name => session[:thing].name ? session[:thing].name: t('defaults.this_thing', :thing => t('defaults.thing')))	
   %br
   = t('titles.byline', :name => session[:thing].user.name)
   %br
