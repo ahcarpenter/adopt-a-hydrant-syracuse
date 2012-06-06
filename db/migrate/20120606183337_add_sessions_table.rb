@@ -2,7 +2,7 @@
 # http://stackoverflow.com/questions/874634/create-an-activerecord-database-table-with-no-id-column
 class AddSessionsTable < ActiveRecord::Migration
   def change
-    create_table :sessions do |t|
+    create_table :sessions, :id => false do |t|
       t.string :session_id, :null => false, :primary_key => true
       t.text :data
       t.timestamps
