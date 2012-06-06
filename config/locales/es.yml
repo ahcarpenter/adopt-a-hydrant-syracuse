@@ -83,7 +83,7 @@ es:
       title: 'Mayor'
   titles:
     adopt: "Adoptar esta %{thing}"
-    adopted: "%{thing_name} ha sido adoptada."
+    adopted: "%{thing_name} ha sido adoptada"
     byline: "por %{name}"
     conflict: "Gracias por la adopción de esta %{thing} antes!"
     edit_profile: 'Edita tu perfil'
