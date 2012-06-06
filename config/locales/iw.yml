@@ -1,0 +1,95 @@
+# Please maintain alphabetical order
+
+iw:
+  buttons:
+    abandon: "לנטוש את %{thing}"
+    adopt: 'אמץ!'
+    back: 'בחזרה'
+    change_password: 'לשנות את הסיסמה שלי'
+    close: 'לסגור'
+    edit_profile: 'עריכת פרופיל'
+    email_password: 'שלח לי את הסיסמה שלי'
+    find: "למצוא %{thing}"
+    send_reminder: 'שלח תזכורת חפירה'
+    sign_in: 'הירשם'
+    sign_out: 'יציאה'
+    sign_up: 'הרשם'
+    update: 'לעדכן'
+  captions:
+    optional: ')לא חובה)'
+    private: ')פרטי)'
+    public: ')נראה לאחרים)'
+    required: ')חובה)'
+  defaults:
+    address: 'כתובת'
+    address_1: '233 E. Washington St.'
+    address_2: ''
+    city: 'Syracuse'
+    city_state: 'Syracuse, New York'
+    neighborhood: 'Downtown'
+    sms_number: '315-555-5555'
+    state: 'NY'
+    thing: 'זרנוק'
+    this_thing: "זה %{thing}"
+    tagline: 'תביעה אחריות גורף את ברז כיבוי אחרי יורד שלג.'
+    tos: "על ידי הרשמה, אתה מסכים %{tos}."
+    voice_number: '315-555-5555'
+    zip: '13202'
+  errors:
+    password: 'אתה צריך להיכנס או להירשם כדי להמשיך.'
+    not_found: "לא הצלחתי למצוא %{thing}."
+  labels:
+    address: 'כתובת'
+    address_1: 'שורת כתובת 1'
+    address_2: 'שורת כתובת 2'
+    city: 'עיר'
+    city_state: 'עיר'
+    email: 'כתובת דוא"ל'
+    name: 'שם'
+    name_thing: "תן %{thing} שם"
+    organization: 'ארגון'
+    password: 'סיסמה'
+    password_choose: 'בחר סיסמה'
+    password_current: 'הסיסמה הנוכחית'
+    password_new: 'סיסמה חדשה'
+    remember_me: 'הישאר מחובר'
+    sms_number: 'מספר הטלפון הנייד'
+    sms_notifications: 'SMS אפשר הודעות'
+    state: 'מדינה'
+    user_existing: "חתמתי כבר"
+    user_new: "אני לא נרשמת עדיין"
+    voice_number: 'טלפון בבית'
+    zip: 'מיקוד'
+  links:
+    feedback: 'שלח משוב'
+    forgot_password: 'שכחת את הסיסמה?'
+    remembered_password: 'לא חשוב. זכרתי את הסיסמה שלי.'
+  notices:
+    abandoned: 'ברז נטוש!'
+    adopted: 'ברז אומץ!'
+    password_reset: 'איפוס סיסמה הוראות נשלח! בדוק את תיבת הדוא"ל שלך.'
+    reminder_sent: 'תזכורת שנשלח!'
+    signed_in: 'נחתם!'
+    signed_out: 'על החתום החוצה.'
+    signed_up: 'תודה על שנרשמת י'
+    stolen: 'ברז נגנב!'
+  questions:
+    abandon: 'האם אתה בטוח שאתה רוצה לנטוש את ברז?'
+  sponsors:
+    built: 'נבנה בבוסטון & לקסינגטון'
+    cfa: 'קוד אמריקה'
+    city: 'העיר בוסטון'
+    mayor:
+      name: 'Thomas M. Menino'
+      title: 'Mayor'
+  titles:
+    adopt: "לאמץ את %{thing}"
+    adopted: "%{thing_name} אומצה"
+    byline: "על ידי %{name}"
+    conflict: "תודה על אימוץ %{thing} מוקדם יותר!"
+    edit_profile: 'ערוך את הפרופיל שלך'
+    main: "Adopt-a-%{thing}"
+    ofline: "של %{organization}"
+    sign_in: "היכנס כדי לאמץ את %{thing}"
+    thank_you: "תודה על אימוץ %{thing}!"
+    tos: 'תנאי שימוש'
