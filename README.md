@@ -8,8 +8,10 @@ Claim responsibility for shoveling out a fire hydrant after it snows. Available 
 [travis]: http://travis-ci.org/ahcarpenter/adopt-a-hydrant
 [gemnasium]: https://gemnasium.com/ahcarpenter/adopt-a-hydrant
 
-## <a name="screenshots"></a>Screenshot
-![Adopt-a-Hydrant](https://github.com/codeforamerica/adopt-a-hydrant/raw/master/screenshot.png "Adopt-a-Hydrant")
+## <a name="screenshots"></a>Screenshots
+![Adopt-a-Hydrant](https://github.com/codeforamerica/adopt-a-hydrant/raw/master/screenshot1.png "Adopt-a-Hydrant Syracuse")
+![Adopt-a-Hydrant](https://github.com/codeforamerica/adopt-a-hydrant/raw/master/screenshot2.png "Adopt-a-Hydrant Syracuse")
+![Adopt-a-Hydrant](https://github.com/codeforamerica/adopt-a-hydrant/raw/master/screenshot3.png "Adopt-a-Hydrant Syracuse")
 
 ## <a name="demo"></a>Demo
 You can see a running version of the application at
