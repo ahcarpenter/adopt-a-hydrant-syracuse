@@ -1,4 +1,25 @@
 //http://railscasts.com/episodes/268-sass-basics?view=comments
+@font-face{
+  font-family: MyriadPro-Semibold;
+  src: url('MyriadPro-Semibold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: MyriadPro-Regular;
+  src: url('MyriadPro-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: BigCaslon;
+  src: url('BigCaslon.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   height: 100%;
 }
@@ -14,9 +35,10 @@ h1, h2 {
 }
 
 h2 {
+  font-family: MyriadPro-Regular;
   font-size: 22px;
-  line-height: 30px;
-  margin: 10px 0;
+  line-height: 25px;
+  margin: 12px 0px;
 }
 
 form {
@@ -24,14 +46,17 @@ form {
 }
 
 label {
+  font-family: MyriadPro-Regular;
   text-align: left;
 }
 
 input {
+  font-family: MyriadPro-Regular;
   width: 200px;
 }
 
 input[type="radio"], input[type="checkbox"] {
+  font-family: MyriadPro-Regular;
   display: inline;
   width: auto;
   margin-right: 10px;
@@ -46,6 +71,7 @@ input#user_existing {
 }
 
 form select, button.btn, input[type="submit"].btn {
+  font-family: MyriadPro-Regular;
   width: 210px;
 }
 
@@ -60,6 +86,7 @@ form input.search-query {
 }
 
 a.btn {
+  font-family: MyriadPro-Regular;
   width: 188px;
 }
 
@@ -98,6 +125,7 @@ a.btn {
   text-align: center;
 	
   p {
+    font-family: MyriadPro-Regular;
 	padding: 12px;
 	margin: 0px;
   }
@@ -116,6 +144,7 @@ a.btn {
   }
 
   p#tagline {
+    font-family: MyriadPro-Regular;
     color: #ffffff;
     background-color: #c43c35;
     background-repeat: repeat-x;
@@ -184,8 +213,14 @@ a.btn {
 
 #tos {
   text-align: left;
+  font-family: BigCaslon;
+  
+  h2{
+    font-family: BigCaslon;
+  }
 
   p {
+    font-family: BigCaslon;
     padding: 0;
     margin-bottom: 10px;
   }
@@ -208,4 +243,8 @@ img.lock {
   width: 7px;
   opacity: 0.8;
   filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+p{
+  font-family: MyriadPro-Regular;
 }
