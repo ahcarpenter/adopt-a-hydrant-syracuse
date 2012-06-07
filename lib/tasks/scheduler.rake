@@ -23,7 +23,7 @@ task :update => :environment do
   }
   
   threads.each {|thread| thread.join}
-  # 
+  
   # if Thing.where('user_id IS NOT NULL').any?
   #   Thing.where('user_id IS NOT NULL').find_each do |thing|
   #     @user = User.find(thing.user_id) if thing.snow_cover > 0.00
