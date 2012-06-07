@@ -14,6 +14,7 @@ gem 'validates_formatting_of'
 gem 'immigrant'
 gem 'twilio-ruby'
 gem 'libxml-ruby'
+gem 'newrelic_rpm'
 
 platforms :ruby_18 do
   gem 'fastercsv'
