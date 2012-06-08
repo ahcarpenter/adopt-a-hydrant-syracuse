@@ -1,6 +1,6 @@
 development: &DEVELOPMENT
   adapter: postgresql
-  database: adopt_a_thing_development
+  database: adopt_a_thing_production
   host: localhost
   password: Drewby!23
   username: postgres
