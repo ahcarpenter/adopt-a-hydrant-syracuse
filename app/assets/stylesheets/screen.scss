@@ -1,21 +1,21 @@
 //http://railscasts.com/episodes/268-sass-basics?view=comments
 //http://stackoverflow.com/questions/10441563/asset-pipeline-and-font-face-on-railsrails-3-2-3
 @font-face{
-  font-family: "MyriadPro-Semibold";
+  font-family: MyriadPro-Semibold;
   src: url('MyriadPro-Semibold.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face{
-  font-family: "MyriadPro-Regular";
+  font-family: MyriadPro-Regular;
   src: url('MyriadPro-Regular.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face{
-  font-family: "BigCaslon";
+  font-family: BigCaslon;
   src: url('BigCaslon.ttf');
   font-weight: normal;
   font-style: normal;
