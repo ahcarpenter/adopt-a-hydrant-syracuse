@@ -1,5 +1,6 @@
 //http://railscasts.com/episodes/268-sass-basics?view=comments
 //http://stackoverflow.com/questions/10441563/asset-pipeline-and-font-face-on-railsrails-3-2-3
+//http://stackoverflow.com/questions/5874122/is-it-possible-to-detect-firefox-users-in-pure-css
 @font-face{
   font-family: MyriadPro-Semibold;
   src: url('MyriadPro-Semibold.otf');
@@ -40,6 +41,15 @@ h2 {
   font-size: 22px;
   line-height: 25px;
   margin: 12px 0px;
+}
+
+@-moz-document url-prefix() {
+    h2 { 
+	  font-family: MyriadPro-Regular;
+	  font-size: 22px;
+	  line-height: 25px;
+	  margin: 12px 0px; 
+	}
 }
 
 form {
