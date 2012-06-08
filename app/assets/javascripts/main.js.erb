@@ -433,7 +433,10 @@ $(function() {
           type: 'GET',
           url: '/info_window',
           data: {
-            'thing_id': activeThingId
+            'thing_id': activeThingId,
+			'flash': {
+				'notice': 'notices.adopted'
+			}
           },
           success: function(data) {
 			stateChange('green');
@@ -468,7 +471,10 @@ $(function() {
             type: 'GET',
             url: '/info_window',
             data: {
-              'thing_id': activeThingId
+              'thing_id': activeThingId,
+			  'flash': {
+				'notice': 'notices.adopted'
+			  }
             },
             success: function(data) {
 				stateChange('red');
