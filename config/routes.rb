@@ -9,7 +9,7 @@ AdoptAThing::Application.routes.draw do
   get 'info_window' => 'info_window#index', :as => 'info_window'
   get 'sitemap' => 'sitemaps#index', :as => 'sitemap'
 
-  scope "sidebar", :controller => :sidebar do
+  scope 'sidebar', :controller => :sidebar do
     get :search, :as => 'search'
     get :combo_form, :as => 'combo_form'
     get :edit_profile , :as => 'edit_profile'
