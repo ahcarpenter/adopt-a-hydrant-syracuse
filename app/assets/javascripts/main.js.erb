@@ -56,14 +56,14 @@ $(function() {
 	  icon: image,
 	  map: map,
 	  position: point,
-	  shadow: markerShadowImage,
+	  shadow: markerShadowImage
 	});
 	google.maps.event.addListener(marker, 'click', function() {
 	  if(activeInfoWindow) {
 	    activeInfoWindow.close();
 	  }
 	  var infoWindow = new google.maps.InfoWindow({
-	    maxWidth: 210
+	  	    maxWidth: 210
 	  });
 	  google.maps.event.addListener(infoWindow, 'closeclick', function() {
 	    isWindowOpen = false;
