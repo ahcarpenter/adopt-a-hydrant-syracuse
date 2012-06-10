@@ -53,6 +53,7 @@ ar:
     password_current: 'كلمة السر الحالية'
     password_new: 'كلمة مرور جديدة'
     remember_me: 'البقاء وقعت في'
+    required: 'مطلوب'
     sms_number: 'رقم الهاتف الجوال'
     sms_notifications: 'تمكين إعلامات SMS'
     state: 'دولة'

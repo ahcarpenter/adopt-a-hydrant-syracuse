@@ -53,6 +53,7 @@ gr:
     password_current: 'Τρέχουσα κωδικό πρόσβασης'
     password_new: 'Νέος κωδικός'
     remember_me: 'Παραμένω συνδεδεμένος'
+    required: 'Απαιτείται'
     sms_number: 'Αριθμός κινητού τηλεφώνου'
     state: 'πολιτεία'
     user_existing: 'Έχω ήδη εγγραφεί'

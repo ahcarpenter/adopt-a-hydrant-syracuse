@@ -55,6 +55,7 @@ de:
     password_current: 'Aktuelles Passwort'
     password_new: 'Neues Passwort'
     remember_me: 'Eingeloggt bleiben'
+    required: 'Erforderlich'
     sms_number: 'Handy-Nummer'
     state: 'Zustand'
     user_existing: 'Ich habe schon unterschrieben'

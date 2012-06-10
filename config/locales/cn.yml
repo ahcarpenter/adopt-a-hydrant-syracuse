@@ -53,6 +53,7 @@ cn:
     password_current: '當前密碼'
     password_new: '新密碼'
     remember_me: '保持登錄'
+    required: '需要'
     sms_number: '手機號碼'
     state: '州'
     user_existing: '我已經簽署了'

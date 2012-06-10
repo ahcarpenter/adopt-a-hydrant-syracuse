@@ -6,6 +6,9 @@
         %small
           = image_tag 'lock.png', :class => 'lock', :alt => t('captions.private'), :title => t('captions.private')
       = f.email_field 'email', :value => params[:user] ? params[:user][:email] : nil
+      %label{:id => 'required'}
+        #required_text 
+          = @required
     .control-group.radio
       = f.label 'new', radio_button_tag('user', 'new', true).html_safe + t('labels.user_new')
       = f.label 'existing', radio_button_tag('user', 'existing').html_safe + t('labels.user_existing')
@@ -40,6 +43,8 @@
         %small
           = image_tag 'lock.png', :class => 'lock', :alt => t('captions.private'), :title => t('captions.private')
       = f.password_field 'password_confirmation'
+      %label{:id => 'required'}
+        = = @required
     .form-actions
       = f.submit t('buttons.sign_up'), :class => 'btn btn-primary'
     %p

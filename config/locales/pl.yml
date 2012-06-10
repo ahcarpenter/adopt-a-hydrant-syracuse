@@ -53,6 +53,7 @@ pl:
     password_current: 'Bieżące hasło'
     password_new: 'Nowe hasło'
     remember_me: 'Pozostań zalogowany'
+    required: 'Wymagany'
     sms_number: 'Numer telefonu komórkowego'
     state: 'Stan'
     user_existing: 'Ja już podpisały'

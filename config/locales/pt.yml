@@ -53,6 +53,7 @@ pt:
     password_current: 'Senha atual'
     password_new: 'Nova senha'
     remember_me: 'Fique assinado em'
+    required: 'Necessário'
     sms_number: 'Número de telemóvel'
     state: 'Estado'
     user_existing: 'Eu já se inscreveram'

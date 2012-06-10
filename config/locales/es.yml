@@ -53,6 +53,7 @@ es:
     password_current: 'Contraseña actual'
     password_new: 'Una nueva contraseña'
     remember_me: 'Mantener el'
+    required: 'Necesario'
     sms_number: 'Número de teléfono móvil'
     state: 'Estado'
     user_existing: 'Ya he firmado'

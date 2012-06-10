@@ -53,6 +53,7 @@ ht:
     password_current: 'Aktyèl modpas'
     password_new: 'Nouvo modpas'
     remember_me: 'Rete siyen an'
+    required: 'Obligatwa'
     sms_number: 'Telefòn mobil nimewo'
     state: 'Eta'
     user_existing: 'Mwen te deja siyen moute'

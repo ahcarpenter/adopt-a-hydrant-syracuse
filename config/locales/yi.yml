@@ -53,6 +53,7 @@ yi:
     password_current: 'קראַנט פּאַראָל'
     password_new: 'נייַ פּאַראָל'
     remember_me: 'בלייַבן געחתמעט אין'
+    required: 'פארלאנגט'
     sms_number: 'מאָביל טעלעפאָן נומער'
     state: 'פעסטשטעלן'
     user_existing: "איך'ווע שוין געחתמעט אַרויף"

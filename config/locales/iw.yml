@@ -53,6 +53,7 @@ iw:
     password_current: 'הסיסמה הנוכחית'
     password_new: 'סיסמה חדשה'
     remember_me: 'הישאר מחובר'
+    required: 'דרוש'
     sms_number: 'מספר הטלפון הנייד'
     sms_notifications: 'SMS אפשר הודעות'
     state: 'מדינה'

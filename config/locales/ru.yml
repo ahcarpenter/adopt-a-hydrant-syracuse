@@ -53,6 +53,7 @@ ru:
     password_current: 'Текущий пароль'
     password_new: 'Новый пароль'
     remember_me: 'УЕФА'
+    required: 'требуется'
     sms_number: 'Номер мобильного телефона'
     state: 'состояние'
     user_existing: 'Я уже подписал'
