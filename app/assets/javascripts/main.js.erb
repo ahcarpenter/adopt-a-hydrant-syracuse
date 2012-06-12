@@ -154,9 +154,8 @@ $(function() {
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur (map) {
-	map = new google.maps.Map(document.getElementById("map"), mapOptions);
-	alert(map.getBounds());
-    populate(map);
+	alert(document.getElementById("map").getBounds());
+    populate(document.getElementById("map"));
   }
   function stateChange(color){
 	if(color != undefined){
