@@ -37,6 +37,12 @@ $(function() {
   var isWindowOpen = false;
   var thingIds = [];
   var removed = false;
+  window.addEventListener('shake', shakeEventDidOccur, false);
+
+	//function to call when shake occurs
+	function shakeEventDidOccur () {
+			alert('Hello');
+	}
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage;
