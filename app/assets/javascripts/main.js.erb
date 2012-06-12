@@ -146,18 +146,13 @@ $(function() {
       }
     });
   }
-  function populate(){
-	var center = map.getCenter();
-    addMarkersAround(center.lat(), center.lng());	
-  }
   google.maps.event.addListener(map, 'dragend', function() {
-    populate(map);
+    var center = map.getCenter();
+    addMarkersAround(center.lat(), center.lng());
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur () {
-    $(".reset").bind("click", function() {
-	  $("input[type=text], textarea").val("");
-	});
+    $("input[type=text], textarea").val("");
   }
   function stateChange(color){
 	if(color != undefined){
