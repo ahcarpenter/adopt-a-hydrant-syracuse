@@ -155,7 +155,9 @@ $(function() {
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur () {
-    populate(map);
+    $(".reset").bind("click", function() {
+	  $("input[type=text], textarea").val("");
+	});
   }
   function stateChange(color){
 	if(color != undefined){
