@@ -152,8 +152,9 @@ $(function() {
   google.maps.event.addListener(map, 'dragend', function() {
     populate(map);
   });
-  window.addEventListener('shake', shakeEventDidOccur(new google.maps.Map(document.getElementById("map")), mapOptions)), false);
+  window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur (map) {
+	map = new google.maps.Map(document.getElementById("map"), mapOptions);
 	alert(map.getBounds());
     populate(map);
   }
