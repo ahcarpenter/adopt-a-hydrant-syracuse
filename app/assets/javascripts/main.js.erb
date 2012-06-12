@@ -222,8 +222,10 @@ $(function() {
       $('#combo-form').data('state', 'user_sign_up');
       $('#user_forgot_password_fields').slideUp();
       $('#user_sign_in_fields').slideUp();
-	  $('#required').append("<div id='required_text'>" + required_text +"</div>");
-	  removed = false;
+	  if(removed){
+	    $('#required').append("<div id='required_text'>" + required_text +"</div>");
+		removed = false;
+	  }
       $('#user_sign_up_fields').slideDown(function() {
         setComboFormFocus();
       });
