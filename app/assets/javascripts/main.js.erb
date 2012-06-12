@@ -37,12 +37,6 @@ $(function() {
   var isWindowOpen = false;
   var thingIds = [];
   var removed = false;
-  window.addEventListener('shake', shakeEventDidOccur, false);
-
-	//function to call when shake occurs
-	function shakeEventDidOccur () {
-			alert('Hello');
-	}
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage;
@@ -151,10 +145,17 @@ $(function() {
       }
     });
   }
+  function populate(map){
+	var center = map.getCenter();
+    addMarkersAround(center.lat(), center.lng());	
+  }
   google.maps.event.addListener(map, 'dragend', function() {
-    var center = map.getCenter();
-    addMarkersAround(center.lat(), center.lng());
+    populate(map);
   });
+  window.addEventListener('shake', shakeEventDidOccur, false);
+  function shakeEventDidOccur (map) {
+    populate(map);
+  }
   function stateChange(color){
 	if(color != undefined){
 		activeMarker.setMap();
