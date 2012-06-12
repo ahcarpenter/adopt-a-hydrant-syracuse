@@ -2,6 +2,7 @@
 // http://stackoverflow.com/questions/351495/dynamically-creating-keys-in-javascript-associative-array
 // http://www.w3schools.com/jsref/jsref_undefined.asp
 // http://blog.mridey.com/2010/05/events-markers-infowindows-and-overlays.html
+// https://github.com/alexgibson/shake.js
 $(function() {
   var center = new google.maps.LatLng(43.048122, -76.147424);
   var mapOptions = {
@@ -145,7 +146,7 @@ $(function() {
       }
     });
   }
-  function populate(map){
+  function populate(){
 	var center = map.getCenter();
     addMarkersAround(center.lat(), center.lng());	
   }
@@ -154,7 +155,6 @@ $(function() {
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur () {
-	alert(map.getBounds());
     populate(map);
   }
   function stateChange(color){
