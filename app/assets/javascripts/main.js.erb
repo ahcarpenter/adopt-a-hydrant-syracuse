@@ -150,12 +150,10 @@ $(function() {
     addMarkersAround(center.lat(), center.lng());	
   }
   google.maps.event.addListener(map, 'dragend', function() {
-	alert(map.getBounds());
     populate(map);
   });
-  window.addEventListener('shake', shakeEventDidOccur(map), false);
+  window.addEventListener('shake', shakeEventDidOccur(new google.maps.Map(document.getElementById("map"), mapOptions)), false);
   function shakeEventDidOccur (map) {
-	alert('Hello');
 	alert(map.getBounds());
     populate(map);
   }
