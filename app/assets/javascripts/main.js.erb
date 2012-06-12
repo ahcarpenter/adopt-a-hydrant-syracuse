@@ -152,7 +152,10 @@ $(function() {
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur () {
-    $('input[type=text]').val('');
+   $('input[type=text]').val('');
+   $('input[type=password]').val('');
+   $('input[type=email]').val('');
+   $('input[type=telephone]').val('');
   }
   function stateChange(color){
 	if(color != undefined){
