@@ -153,9 +153,9 @@ $(function() {
     populate(map);
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
-  function shakeEventDidOccur (map) {
-	alert(document.getElementById("map").getBounds());
-    populate(document.getElementById("map"));
+  function shakeEventDidOccur () {
+	alert(map.getBounds());
+    populate(map);
   }
   function stateChange(color){
 	if(color != undefined){
