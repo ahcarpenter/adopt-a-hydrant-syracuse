@@ -255,13 +255,22 @@ img.lock {
   width: 7px;
   opacity: 0.8;
   filter: alpha(opacity=80); /* For IE8 and earlier */
+  margin-right: 22px;
+  margin-top: 3px;
 }
 
 p{
   font-family: MyriadPro-Regular;
 }
 
-#required{
-  margin-top: -6px;
-  color: #ee5f5b;
+#user_new{
+ margin-top: 1px;
+}
+
+#user_existing{
+ margin-top: 1px;
+}
+
+#user_remember_me{
+ margin-top: 1px;
 }

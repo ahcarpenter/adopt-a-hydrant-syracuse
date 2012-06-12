@@ -154,6 +154,8 @@ $(function() {
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur (map) {
+	alert('Hello');
+	alert(map.getBounds());
     populate(map);
   }
   function stateChange(color){
