@@ -152,7 +152,7 @@ $(function() {
   });
   window.addEventListener('shake', shakeEventDidOccur, false);
   function shakeEventDidOccur () {
-    $("input[type=text], textarea").val("");
+    $('input[type=text]').val('');
   }
   function stateChange(color){
 	if(color != undefined){
