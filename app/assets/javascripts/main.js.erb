@@ -272,27 +272,33 @@ $(function() {
   function checkStrength(element){
 	var strength = 0;
 
-    if ($(element).val().length > 5) strength += 1
-    if ($(element).val().match(/([a-z].*[A-Z])|([A-Z].*[a-z])/))  strength += 1
-    if ($(element).val().match(/([a-zA-Z])/) && $(element).val().match(/([0-9])/))  strength += 1
-    if ($(element).val().match(/([!,%,&,@,#,$,^,*,?,_,~])/))  strength += 1
-    if ($(element).val().match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,",%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+	if ($(element).val().length < 6 || $(element).val().length > 20){ 
+		valid = false
+	} else {
+		valid = true
+	}
     
+	if(valid){
+	  strength += 1
+	  if ($(element).val().match(/([a-z].*[A-Z])|([A-Z].*[a-z])/))  strength += 1
+      if ($(element).val().match(/([a-zA-Z])/) && $(element).val().match(/([0-9])/))  strength += 1
+      if ($(element).val().match(/([!,%,&,@,#,$,^,*,?,_,~])/))  strength += 1
+      if ($(element).val().match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,",%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+	}
+	
     if (strength == 1) {
-	  $(element).css('color', '#feff84')
-    } else if (strength == 2) {
       $(element).css('color', 'yellow')
-    } else if (strength == 3) {
+    } else if (strength == 2) {
 	  $(element).css('color', '#7fff7c')
-	} else if (strength == 4) {
+	} else if (strength == 3) {
 	  $(element).css('color', 'green')
-	} else if (strength == 5) {
+	} else if (strength == 4) {
       $(element).css('color', '#038700')
     } else {
 	  $(element).css('color', 'red')
     }
   }
-  $('#user_password_confirmation').keyup(function(event){
+  $('#user_password_confirmation').keypress(function(event){
     $('#user_password_confirmation').html(checkStrength('#user_password_confirmation'))
   });
   $('#combo-form').live('submit', function() {
