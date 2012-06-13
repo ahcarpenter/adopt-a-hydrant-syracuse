@@ -18,10 +18,7 @@ de:
     sign_up: 'Registrieren'
     update: 'Aktualisierung'
   captions:
-    optional: '(fakultativ)'
     private: '(privat)'
-    public: '(für andere sichtbar)'
-    required: '(erforderlich)'
   defaults:
     address: 'Adresse'
     address_1: '233 E. Washington St.'

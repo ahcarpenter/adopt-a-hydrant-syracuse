@@ -16,10 +16,7 @@ ht:
     sign_up: 'Enskri w'
     update: 'Mete ajou'
   captions:
-    optional: '(fakiltatif)'
     private: '(prive)'
-    public: '(vizib ak lòt moun)'
-    required: '(obligatwa)'
   defaults:
     address: 'adrès'
     address_1: '233 E. Washington St.'

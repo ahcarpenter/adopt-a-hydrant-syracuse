@@ -16,10 +16,7 @@ iw:
     sign_up: 'הרשם'
     update: 'לעדכן'
   captions:
-    optional: ')לא חובה)'
     private: ')פרטי)'
-    public: ')נראה לאחרים)'
-    required: ')חובה)'
   defaults:
     address: 'כתובת'
     address_1: '233 E. Washington St.'

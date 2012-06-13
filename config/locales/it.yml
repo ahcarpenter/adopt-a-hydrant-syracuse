@@ -16,10 +16,7 @@ it:
     sign_up: 'Iscriviti'
     update: 'Aggiornare'
   captions:
-    optional: '(optional)'
     private: '(privato)'
-    public: '(visibile agli altri)'
-    required: '(obbligatorio)'
   defaults:
     address: 'indirizzo'
     address_1: '233 E. Washington St.'

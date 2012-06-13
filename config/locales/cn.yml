@@ -16,10 +16,7 @@ cn:
     sign_up: '報名'
     update: '更新'
   captions:
-    optional: '（可選）'
     private: '（私人）'
-    public: '（可見給別人）'
-    required: '（需要）'
   defaults:
     address: '地址'
     address_1: '233 E. Washington St.'

@@ -16,10 +16,7 @@ ru:
     sign_up: 'Зарегистрироваться'
     update: 'обновление'
   captions:
-    optional: '(опционально)'
     private: '(частное)'
-    public: '(виден другим пользователям)'
-    required: '(обязательно)'
   defaults:
     address: 'адрес'
     address_1: '233 E. Washington St.'

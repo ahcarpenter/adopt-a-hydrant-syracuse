@@ -16,10 +16,7 @@ ar:
     sign_up: 'التوقيع'
     update: 'تحديث'
   captions:
-    optional: '(اختياري)'
     private: '(خاص)'
-    public: '(يراه الآخرون)'
-    required: '((مطلوب)'
   defaults:
     address: 'عنوان'
     address_1: '233 E. Washington St.'

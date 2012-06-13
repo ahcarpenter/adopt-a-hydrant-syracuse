@@ -16,10 +16,7 @@ kr:
     sign_up: '가입하기'
     update: '업데이트'
   captions:
-    optional: '(선택 사항)'
     private: '(개인)'
-    public: '(다른 사용자에게 표시)'
-    required: '(필수)'
   defaults:
     address: '주소'
     address_1: '233 E. Washington St.'

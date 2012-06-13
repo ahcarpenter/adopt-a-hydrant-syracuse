@@ -16,10 +16,7 @@ gr:
     sign_up: 'Εγγραφή'
     update: 'Ενημέρωση'
   captions:
-    optional: '(προαιρετικά)'
     private: '(ιδιωτική)'
-    public: '(ορατή σε άλλους)'
-    required: '(απαιτούμενο)'
   defaults:
     address: 'διεύθυνση'
     address_1: '233 E. Washington St.'

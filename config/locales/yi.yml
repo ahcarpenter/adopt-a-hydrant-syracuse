@@ -16,10 +16,7 @@ yi:
     sign_up: 'צייכן אַרויף'
     update: 'דערהייַנטיקן'
   captions:
-    optional: ')אַפּשאַנאַל)'
     private: ')פּריוואַט)'
-    public: ')קענטיק צו אנדערע)'
-    required: ')פארלאנגט)'
   defaults:
     address: 'אַדרעס'
     address_1: '233 E. Washington St.'
