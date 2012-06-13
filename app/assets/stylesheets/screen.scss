@@ -292,13 +292,30 @@ p{
 }
 
 #user_email_label{
-  margin-top: 8px;
+  margin-top: 14px;
 }
 
 .alert{
   margin-top: -10px;
+  margin-bottom: 1px;
 }
 
 .radio{
   margin-top: 18px;
+}
+
+#city_state_label{
+  margin-top: 8px;
+}
+
+#address{
+  margin-bottom: 0px;
+}
+
+#sign_out_link{
+  margin-bottom: 8px;
+}
+
+#save{
+  margin-bottom: -2px;
 }
