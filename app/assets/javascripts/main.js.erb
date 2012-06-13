@@ -40,8 +40,6 @@ $(function() {
   var activeInfoWindow;
   var isWindowOpen = false;
   var thingIds = [];
-  var removed = false;
-  var prev_gamma = 0;
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage;
@@ -235,9 +233,8 @@ $(function() {
       $('#combo-form').data('state', 'user_sign_up');
       $('#user_forgot_password_fields').slideUp();
       $('#user_sign_in_fields').slideUp();
-	  if(removed){
+	  if($('#required_text').text() == ''){
 	    $('#required').append("<div id='required_text'>" + required_text +"</div>");
-		removed = false;
 	  }
       $('#user_sign_up_fields').slideDown(function() {
         setComboFormFocus();
@@ -247,10 +244,9 @@ $(function() {
       $('#user_sign_in_fields').slideDown(function() {
         $('#combo-form').data('state', 'user_sign_in');
         setComboFormFocus();
-		if(!removed){
+		if($('#required_text').text() != ''){
 			required_text = $('#required_text').text()
 			$('#required_text').remove();
-			removed = true;
 		}
         $('#user_forgot_password_link').click(function() {
           $('#combo-form').data('state', 'user_forgot_password');
