@@ -161,7 +161,10 @@ $(function() {
   }
   window.ondeviceorientation = function(event){
 	gamma = Math.round(event.gamma);
+	difference_gamma = gamma - prev_gamma;
 	if(gamma-prev_gamma > 150){alert('Hello')}
+	$('#difference_gamma_text').remove();
+	$('#gamma').append("<div id='difference_gamma_text'>" + difference_gamma +"</div>");
 	prev_gamma = gamma;
   }
   function stateChange(color){
