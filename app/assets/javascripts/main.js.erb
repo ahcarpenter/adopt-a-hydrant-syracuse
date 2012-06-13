@@ -38,6 +38,7 @@ $(function() {
   var isWindowOpen = false;
   var thingIds = [];
   var removed = false;
+  var g_dom = $('.g');
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage;
@@ -157,6 +158,14 @@ $(function() {
    $('input[type=email]').val('');
    $('input[type=tel]').val('');
    $('input[type=search]').val('');
+  }
+  window.ondeviceorientation = function(event){
+  	var g = Math.round(event.gamma*1/1);
+    if(g >= 0) {
+	  g = '+' = g;
+	  alert('Hello');
+	}
+	g_dom.text(g);
   }
   function stateChange(color){
 	if(color != undefined){
