@@ -1,9 +1,5 @@
 = form_for :user, :html => {:id => 'combo-form', :class => 'form-vertical'} do |f|
   %fieldset#common_fields
-    %label{:id => 'gamma'}
-      #diff_gamma_text
-      #max_diff_gamma_text
-      #avg_diff_gamma_text
     .control-group
       %label{:for => 'user_email', :id => 'user_email_label'}
         = t('labels.email')
