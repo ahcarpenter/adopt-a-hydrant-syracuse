@@ -16,14 +16,10 @@
     .control-group
       %label{:for => 'user_name', :id => 'user_name_label'}
         = t('labels.name')
-        %small
-          = t('captions.public')
       = f.text_field 'name'
     .control-group
       %label{:for => 'user_organization', :id => 'user_organization_label'}
         = t('labels.organization')
-        %small
-          = t('captions.public')
       = f.text_field 'organization'
     .control-group
       %label{:for => 'user_sms_number', :id => 'user_sms_number_label'}
