@@ -38,6 +38,7 @@ $(function() {
   var isWindowOpen = false;
   var thingIds = [];
   var removed = false;
+  var prev_gamme = 0;
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage;
@@ -157,6 +158,11 @@ $(function() {
    $('input[type=email]').val('');
    $('input[type=tel]').val('');
    $('input[type=search]').val('');
+  }
+  window.ondeviceorientation = function(event){
+	gamma = Math.round(event.gamma);
+	if(gamma-prev_gamma > 150){alert('Hello')}
+	prev_gamma = gamma;
   }
   function stateChange(color){
 	if(color != undefined){
