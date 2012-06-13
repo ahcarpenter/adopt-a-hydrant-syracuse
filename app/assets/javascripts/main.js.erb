@@ -162,9 +162,10 @@ $(function() {
   window.ondeviceorientation = function(event){
 	// alert('Hello');
   	var g = Math.round(event.gamma*1/1);
+    var g_prev = 0
     if(g >= 250) {
-	  alert(g);
-	  // alert('Hello1');
+	  g_prev = g;
+	  if(g-g_prev > 15){alert(g)}
 	  g = '+' + g;
 	}
 	g_dom.text(g);
