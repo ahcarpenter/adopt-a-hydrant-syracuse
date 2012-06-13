@@ -52,10 +52,9 @@ yi:
     password_choose: 'קלייַבן אַ פּאַראָל'
     password_current: 'קראַנט פּאַראָל'
     password_new: 'נייַ פּאַראָל'
-    remember_me: 'בלייַבן געחתמעט אין'
+    remember_me: 'געדענק מיך'
     required: 'פארלאנגט'
-    sms_number: 'SMS notification endpoint'
-    sms_notifications: 'Notification try if snowfall forecasted'
+    sms_number: 'מאָביל טעלעפאָן נומער'
     state: 'פעסטשטעלן'
     user_existing: "איך'ווע שוין געחתמעט אַרויף"
     user_new: 'איך האָבן נישט געחתמעט אַרויף נאָך'

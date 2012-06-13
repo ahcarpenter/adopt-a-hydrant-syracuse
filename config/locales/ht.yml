@@ -52,10 +52,9 @@ ht:
     password_choose: 'Chwazi yon modpas.'
     password_current: 'Aktyèl modpas'
     password_new: 'Nouvo modpas'
-    remember_me: 'Rete siyen an'
+    remember_me: "Toujou chonje m '"
     required: 'Obligatwa'
-    sms_number: 'SMS notification endpoint'
-    sms_notifications: 'Notification try if snowfall forecasted'
+    sms_number: 'Telefòn mobil nimewo'
     state: 'Eta'
     user_existing: 'Mwen te deja siyen moute'
     user_new: 'Mwen pa te siyen moute ankò'

@@ -54,7 +54,7 @@ en:
     password_new: 'New password'
     remember_me: 'Remember me'
     required: 'Required'
-    sms_number: 'SMS notification endpoint'
+    sms_number: 'Mobile phone number'
     sms_notifications: 'Notify me if snowfall forecasted'
     state: 'State'
     user_existing: "I've already signed up"

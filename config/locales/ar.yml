@@ -52,10 +52,9 @@ ar:
     password_choose: 'اختيار كلمة مرور'
     password_current: 'كلمة السر الحالية'
     password_new: 'كلمة مرور جديدة'
-    remember_me: 'البقاء وقعت في'
+    remember_me: 'تذكرني'
     required: 'مطلوب'
-    sms_number: 'SMS notification endpoint'
-    sms_notifications: 'Notification try if snowfall forecasted'
+    sms_number: 'رقم الهاتف الجوال'
     state: 'دولة'
     user_existing: 'لقد وقعت بالفعل'
     user_new: "أنا لم توقع حتى الآن."

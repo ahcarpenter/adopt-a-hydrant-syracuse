@@ -52,10 +52,9 @@ iw:
     password_choose: 'בחר סיסמה'
     password_current: 'הסיסמה הנוכחית'
     password_new: 'סיסמה חדשה'
-    remember_me: 'הישאר מחובר'
+    remember_me: 'זכור אותי'
     required: 'דרוש'
-    sms_number: 'SMS notification endpoint'
-    sms_notifications: 'Notification try if snowfall forecasted'
+    sms_number: 'מספר הטלפון הנייד'
     state: 'מדינה'
     user_existing: "חתמתי כבר"
     user_new: "אני לא נרשמת עדיין"

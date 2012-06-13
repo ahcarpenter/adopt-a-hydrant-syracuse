@@ -53,10 +53,9 @@ fr:
     password_choose: 'Choisissez un mot de passe'
     password_current: 'Mot de passe actuel'
     password_new: 'Nouveau mot de passe'
-    remember_me: 'Rester connecté'
+    remember_me: 'Se souvenir de moi'
     required: 'Requis'
-    sms_number: 'SMS notification endpoint'
-    sms_notifications: 'Notification try if snowfall forecasted'
+    sms_number: 'Le numéro de téléphone mobile'
     state: 'Etat'
     user_existing: "J'ai déjà signé"
     user_new: "Je n'ai pas encore inscrits"
