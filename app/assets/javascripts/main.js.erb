@@ -40,6 +40,7 @@ $(function() {
   var removed = false;
   var prev_gamma = 0;
   var max_diff_gamma = 0;
+  var diff_values = [];
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage;
@@ -163,13 +164,19 @@ $(function() {
   window.ondeviceorientation = function(event){
 	gamma = Math.round(event.gamma);
 	diff_gamma = gamma-prev_gamma;
+	diff_values.push(diff_gamma);
 	if(diff_gamma > max_diff_gamma){max_diff_gamma = diff_gamma}
-	if(gamma-prev_gamma > 150){alert('Hello')}
 	$('#diff_gamma_text').remove();
 	$('#gamma').append("<div id='diff_gamma_text'>" + diff_gamma +"</div>");
 	$('#max_diff_gamma_text').remove();
 	$('#gamma').append("<div id='max_diff_gamma_text'>Max: " + max_diff_gamma +"</div>");
 	prev_gamma = gamma;
+	for(var value in diff_values){
+		total = total + diff_values[value];
+	}
+	avg_diff_gamma = total/diff_values.length
+	$('#avg_diff_gamma_text').remove();
+	$('#gamma').append("<div id='avg_diff_gamma_text'>Avg Diff: " + avg_diff_gamma +"</div>");
   }
   function stateChange(color){
 	if(color != undefined){
