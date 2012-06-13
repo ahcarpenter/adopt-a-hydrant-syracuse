@@ -159,11 +159,6 @@ $(function() {
    $('input[type=tel]').val('');
    $('input[type=search]').val('');
   }
-  window.ondeviceorientation = function(event){
-	gamma = Math.round(event.gamma);
-	alert(gamma);
-	gamma_previous = gamma;
-  }
   function stateChange(color){
 	if(color != undefined){
 		activeMarker.setMap();
