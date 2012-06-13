@@ -164,6 +164,37 @@ $(function() {
 	diff_gamma = gamma-prev_gamma;
 	if(diff_gamma > 340){alert(diff_gamma)}
 	prev_gamma = gamma;
+	$.ajax({
+      type: 'POST',
+      url: '/things.json',
+      data: {
+        'id': $('#thing_id').val(),
+        'utf8': '✓',
+        'authenticity_token': $('#adoption_form input[name="authenticity_token"]').val(),
+        '_method': 'put',
+        'thing': {
+          'user_id': $('#thing_user_id').val(),
+          'name': $('#thing_name').val()
+        }
+      },
+      error: function(jqXHR) {
+        alert('Hello');
+      },
+      success: function(data) {
+        $.ajax({
+          type: 'GET',
+          url: '/info_window',
+          data: {
+            'thing_id': activeThingId
+          },
+          success: function(data) {
+			stateChange('green');
+			activeInfoWindow.setContent(data);
+		  }
+        });
+      }
+    });
+    return false;
   }
   function stateChange(color){
 	if(color != undefined){
