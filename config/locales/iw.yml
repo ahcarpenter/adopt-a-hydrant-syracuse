@@ -11,8 +11,8 @@ iw:
     email_password: 'שלח לי את הסיסמה שלי'
     find: "למצוא %{thing}"
     send_reminder: 'שלח תזכורת חפירה'
-    sign_in: 'הירשם'
-    sign_out: 'יציאה'
+    sign_in: 'התחבר'
+    sign_out: 'התנתק'
     sign_up: 'הרשם'
     update: 'לעדכן'
   captions:
@@ -36,7 +36,7 @@ iw:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'אתה צריך להיכנס או להירשם כדי להמשיך.'
+    password: 'אתה צריך להתחבר או להירשם לפני שתמשי.'
     not_found: "לא הצלחתי למצוא %{thing}."
   labels:
     address: 'כתובת'
@@ -54,8 +54,8 @@ iw:
     password_new: 'סיסמה חדשה'
     remember_me: 'הישאר מחובר'
     required: 'דרוש'
-    sms_number: 'מספר הטלפון הנייד'
-    sms_notifications: 'SMS אפשר הודעות'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'מדינה'
     user_existing: "חתמתי כבר"
     user_new: "אני לא נרשמת עדיין"
@@ -70,8 +70,8 @@ iw:
     adopted: 'ברז אומץ!'
     password_reset: 'איפוס סיסמה הוראות נשלח! בדוק את תיבת הדוא"ל שלך.'
     reminder_sent: 'תזכורת שנשלח!'
-    signed_in: 'נחתם!'
-    signed_out: 'על החתום החוצה.'
+    signed_in: 'מחובר!'
+    signed_out: 'הרשאות משתמש.'
     signed_up: 'תודה על שנרשמת י'
     stolen: 'ברז נגנב!'
   questions:
@@ -91,6 +91,6 @@ iw:
     edit_profile: 'ערוך את הפרופיל שלך'
     main: "Adopt-a-%{thing}"
     ofline: "של %{organization}"
-    sign_in: "היכנס כדי לאמץ את %{thing}"
+    sign_in: "היכנסו, על מנת לאמץ את %{thing}"
     thank_you: "תודה על אימוץ %{thing}!"
     tos: 'תנאי שימוש'

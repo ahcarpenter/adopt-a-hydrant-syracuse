@@ -13,8 +13,8 @@ de:
     email_password: 'Bitte schicken Sie mir mein Passwort'
     find: 'Finden Sie Hydranten'
     send_reminder: 'Send Erinnerung zu schaufeln'
-    sign_in: 'Anmelden'
-    sign_out: 'Austragen'
+    sign_in: 'Einloggen'
+    sign_out: 'Ausloggen'
     sign_up: 'Registrieren'
     update: 'Aktualisierung'
   captions:
@@ -56,7 +56,8 @@ de:
     password_new: 'Neues Passwort'
     remember_me: 'Eingeloggt bleiben'
     required: 'Erforderlich'
-    sms_number: 'Handy-Nummer'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'Zustand'
     user_existing: 'Ich habe schon unterschrieben'
     user_new: 'Ich habe noch nicht registriert'
@@ -71,7 +72,7 @@ de:
     adopted: 'Hydrant übernommen!'
     password_reset: 'Password Reset Anleitung geschickt! Überprüfen Sie Ihre E-Mail.'
     reminder_sent: 'Reminder versendet!'
-    signed_in: 'Unterzeichnet in!'
+    signed_in: 'Angemeldet!'
     signed_out: 'Abgemeldet.'
     signed_up: 'Vielen Dank für Ihre Anmeldung!'
     stolen: 'Hydrant gestohlen!'
@@ -92,6 +93,6 @@ de:
     edit_profile: 'Ihr Profil bearbeiten'
     main: "Adopt-a-%{thing}"
     ofline: "der %{organization}"
-    sign_in: "Melden Sie sich in dieser %{thing} übernehmen"
+    sign_in: "Melden Sie sich an, um diesen %{thing} übernehmen"
     thank_you: "Vielen Dank für die Annahme dieser %{thing}!"
     tos: 'Nutzungsbedingungen'

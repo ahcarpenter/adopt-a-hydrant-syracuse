@@ -36,7 +36,7 @@ it:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: "È necessario effettuare l'accesso o registrati prima di continuare."
+    password: "Devi effettuare il login o registrati prima di continuare."
     not_found: "Impossibile trovare %{thing}."
   labels:
     address: 'Indirizzo'
@@ -54,7 +54,8 @@ it:
     password_new: 'Nuova password'
     remember_me: 'Resta firmato a'
     required: 'Richiesto'
-    sms_number: 'Numero di telefono cellulare'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'Stato'
     user_existing: 'Ho già firmato'
     user_new: 'Non ho ancora registrato'
@@ -69,8 +70,8 @@ it:
     adopted: 'Idrante adottato!'
     password_reset: 'Istruzioni per reimpostare la password ricevuta! Controlla la tua email.'
     reminder_sent: 'Promemoria inviato!'
-    signed_in: 'Firmato in!'
-    signed_out: 'Firmato fuori.'
+    signed_in: 'Accesso effettuato!'
+    signed_out: 'Disconnesso.'
     signed_up: 'Grazie per registrarti!'
     stolen: 'Idrante rubato!'
   questions:
@@ -90,6 +91,6 @@ it:
     edit_profile: 'Modifica il tuo profilo'
     main: "Adopt-a-%{thing}"
     ofline: "di %{organization}"
-    sign_in: "Accedi per adottare questo %{thing}"
+    sign_in: "Accedere a adottare questo %{thing}"
     thank_you: "Grazie di aver adottato questo %{thing}!"
     tos: 'Termini di Servizio'

@@ -36,7 +36,7 @@ pt:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'Você precisa fazer login ou inscreva-se antes de continuar.'
+    password: 'Você precisa fazer o login ou registre-se antes de continuar.'
     not_found: "Não foi possível encontrar %{thing}."
   labels:
     address: 'Endereço'
@@ -54,7 +54,8 @@ pt:
     password_new: 'Nova senha'
     remember_me: 'Fique assinado em'
     required: 'Necessário'
-    sms_number: 'Número de telemóvel'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'Estado'
     user_existing: 'Eu já se inscreveram'
     user_new: 'Eu não se inscreveram ainda'
@@ -69,8 +70,8 @@ pt:
     adopted: 'Hidrante adotada!'
     password_reset: 'Instruções de redefinição de senha enviada! Verifique se o seu e-mail.'
     reminder_sent: 'Lembrete enviado!'
-    signed_in: 'Assinado em!'
-    signed_out: 'Assinado para fora.'
+    signed_in: 'Logado!'
+    signed_out: 'Desconectado.'
     signed_up: 'Obrigado por se inscrever!'
     stolen: 'Hidrante roubado!'
   questions:

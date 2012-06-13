@@ -54,7 +54,8 @@ cn:
     password_new: '新密碼'
     remember_me: '保持登錄'
     required: '需要'
-    sms_number: '手機號碼'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: '州'
     user_existing: '我已經簽署了'
     user_new: '我還沒有簽署，但'
@@ -69,8 +70,8 @@ cn:
     adopted: '消防栓通過了！'
     password_reset: '密碼的復位指令發出！檢查您的電子郵件。'
     reminder_sent: '提醒發送！'
-    signed_in: '簽名！'
-    signed_out: '簽署了。'
+    signed_in: '登錄！'
+    signed_out: '註銷。'
     signed_up: '感謝您註冊！'
     stolen: '消防栓被盜！'
   questions:
@@ -90,6 +91,6 @@ cn:
     edit_profile: '編輯個人資料'
     main: 'Adopt-a-消防栓'
     ofline: "的 %{organization}"
-    sign_in: '在採用這個消防栓'
+    sign_in: '登錄到採用這種消防栓'
     thank_you: '感謝您採用這種消防栓！'
     tos: '服務條款'

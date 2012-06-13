@@ -54,7 +54,8 @@ gr:
     password_new: 'Νέος κωδικός'
     remember_me: 'Παραμένω συνδεδεμένος'
     required: 'Απαιτείται'
-    sms_number: 'Αριθμός κινητού τηλεφώνου'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'πολιτεία'
     user_existing: 'Έχω ήδη εγγραφεί'
     user_new: 'Δεν έχω υπογράψει ακόμα'
@@ -69,8 +70,8 @@ gr:
     adopted: 'Υδροληψίας υιοθέτησε!'
     password_reset: 'Οδηγίες επαναφοράς κωδικού πρόσβασης εστάλη! Ελέγξτε το email σας.'
     reminder_sent: 'Υπενθύμιση εστάλη!'
-    signed_in: 'Υπεγράφη στην!'
-    signed_out: 'Υπεγράφη έξω.'
+    signed_in: 'Συνδέθηκε!'
+    signed_out: 'Καταγράφηκε έξω.'
     signed_up: 'Ευχαριστούμε για την εγγραφή!'
     stolen: 'Υδροληψίας κλαπεί!'
   questions:
@@ -90,6 +91,6 @@ gr:
     edit_profile: 'Επεξεργασία του προφίλ σας'
     main: "Adopt-a-%{thing}"
     ofline: "του %{organization}"
-    sign_in: "Συνδεθείτε για να εγκρίνει την παρούσα %{thing}"
+    sign_in: "Συνδεθείτε, για να υιοθετήσουν αυτό %{thing}"
     thank_you: "Σας ευχαριστούμε για την έγκριση αυτής %{thing}!"
     tos: 'Όροι Χρήσης'

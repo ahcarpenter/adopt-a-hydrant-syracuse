@@ -5,16 +5,16 @@ en:
     abandon: "Abandon this %{thing}"
     adopt: 'Adopt!'
     back: 'Back'
-    change_password: 'Change my password'
+    change_password: 'Change password'
     close: 'Close'
     edit_profile: 'Edit profile'
     email_password: 'Email me my password'
     find: "Find %{thing}"
     send_reminder: 'Send reminder to shovel'
-    sign_in: 'Sign in'
-    sign_out: 'Sign out'
+    sign_in: 'Log in'
+    sign_out: 'Log out'
     sign_up: 'Sign up'
-    update: 'Update'
+    update: 'Save'
   captions:
     optional: '(optional)'
     private: '(private)'
@@ -36,7 +36,7 @@ en:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'You need to sign in or sign up before continuing.'
+    password: 'You need to log in or sign up before continuing.'
     not_found: "Could not find %{thing}."
   labels:
     address: 'Address'
@@ -46,15 +46,15 @@ en:
     city_state: 'City'
     email: 'Email address'
     name: 'Name'
-    name_thing: "Give this %{thing} a name"
+    name_thing: "Name this %{thing}"
     organization: 'Organization'
     password: 'Password'
     password_choose: 'Choose a password'
     password_current: 'Current password'
     password_new: 'New password'
-    remember_me: 'Stay signed in'
+    remember_me: 'Remember me'
     required: 'Required'
-    sms_number: 'Mobile phone number'
+    sms_number: 'SMS notification endpoint'
     sms_notifications: 'Notify me if snowfall forecasted'
     state: 'State'
     user_existing: "I've already signed up"
@@ -63,15 +63,15 @@ en:
     zip: 'ZIP code'
   links:
     feedback: 'Send feedback'
-    forgot_password: 'Forgot your password?'
+    forgot_password: 'Forgot password?'
     remembered_password: 'Never mind. I remembered my password.'
   notices:
     abandoned: 'Hydrant abandoned!'
     adopted: 'Hydrant adopted!'
     password_reset: 'Password reset instructions sent! Check your email.'
     reminder_sent: 'Reminder sent!'
-    signed_in: 'Signed in!'
-    signed_out: 'Signed out.'
+    signed_in: 'Logged in!'
+    signed_out: 'Logged out.'
     signed_up: 'Thanks for signing up!'
     stolen: 'Hydrant stolen!'
   questions:
@@ -91,6 +91,6 @@ en:
     edit_profile: 'Edit your profile'
     main: "Adopt-a-%{thing}"
     ofline: "of %{organization}"
-    sign_in: "Sign in to adopt this %{thing}"
+    sign_in: "Log in to adopt this %{thing}"
     thank_you: "Thank you for adopting this %{thing}!"
     tos: 'Terms of Service'

@@ -11,7 +11,7 @@ ar:
     email_password: 'البريد الالكتروني لي كلمة السر'
     find: "البحث %{thing}"
     send_reminder: 'إرسال تذكير للمجرفة'
-    sign_in: 'توقيع في'
+    sign_in: 'تسجيل الدخول'
     sign_out: 'تسجيل الخروج'
     sign_up: 'التوقيع'
     update: 'تحديث'
@@ -36,7 +36,7 @@ ar:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'تحتاج لتسجيل الدخول أو الاشتراك قبل المتابعة.'
+    password: 'تحتاج لتسجيل الدخول أو الاشتراك قبل الشروع في الاستمرار.'
     not_found: "لا يمكن العثور %{thing}."
   labels:
     address: 'عنوان'
@@ -54,8 +54,8 @@ ar:
     password_new: 'كلمة مرور جديدة'
     remember_me: 'البقاء وقعت في'
     required: 'مطلوب'
-    sms_number: 'رقم الهاتف الجوال'
-    sms_notifications: 'تمكين إعلامات SMS'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'دولة'
     user_existing: 'لقد وقعت بالفعل'
     user_new: "أنا لم توقع حتى الآن."
@@ -70,8 +70,8 @@ ar:
     adopted: 'اعتمد صنبور!'
     password_reset: 'إرسال إرشادات إعادة تعيين كلمة السر! التحقق من بريدك الالكتروني.'
     reminder_sent: 'أرسلت تذكير!'
-    signed_in: 'وقعت في!'
-    signed_out: 'وقعت خارج.'
+    signed_in: 'في تسجيل!'
+    signed_out: 'تسجيل الخروج.'
     signed_up: 'شكرا للتوقيع!'
     stolen: 'صنبور سرقت!'
   questions:

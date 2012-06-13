@@ -11,8 +11,8 @@ es:
     email_password: 'Correo electrónico mi contraseña'
     find: "Encontrar %{thing}"
     send_reminder: 'Enviar aviso a pala'
-    sign_in: 'Ingresar'
-    sign_out: 'Salir'
+    sign_in: 'Acceder'
+    sign_out: 'Finalizar la sesión'
     sign_up: 'Regístrate'
     update: 'Actualización'
   captions:
@@ -36,7 +36,7 @@ es:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'Es necesario iniciar sesión o registrarse antes de continuar.'
+    password: 'Tienes que iniciar sesión o registrarse antes de continuar.'
     not_found: "No se pudo encontrar %{thing}."
   labels:
     address: 'Dirección'
@@ -54,7 +54,8 @@ es:
     password_new: 'Una nueva contraseña'
     remember_me: 'Mantener el'
     required: 'Necesario'
-    sms_number: 'Número de teléfono móvil'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'Estado'
     user_existing: 'Ya he firmado'
     user_new: 'No se ha inscrito'
@@ -69,8 +70,8 @@ es:
     adopted: 'Hidrante adoptado!'
     password_reset: 'Las instrucciones de restablecimiento de contraseña enviado! Revise su correo electrónico.'
     reminder_sent: 'Recordatorio enviado!'
-    signed_in: 'Sesión!'
-    signed_out: 'La sesión.'
+    signed_in: 'Conectado!'
+    signed_out: 'Sesión.'
     signed_up: '¡Gracias por registrarte!'
     stolen: 'Boca robado!'
   questions:
@@ -90,6 +91,6 @@ es:
     edit_profile: 'Edita tu perfil'
     main: "Adopt-a-%{thing}"
     ofline: "de %{organization}"
-    sign_in: "Iniciar sesión para adoptar esta %{thing}"
+    sign_in: "Acceda a esta adopción %{thing}"
     thank_you: "Gracias por la adopción de esta %{thing}!"
     tos: 'Términos de Servicio'

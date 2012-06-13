@@ -54,7 +54,8 @@ kr:
     password_new: '새로운 비밀 번호'
     remember_me: '비스'
     required: '필수'
-    sms_number: '휴대폰 번호'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: '상태'
     user_existing: '이미 가입한'
     user_new: '이미 아직 가입'
@@ -70,7 +71,7 @@ kr:
     password_reset: '비밀 번호 재설정 지침을 보냈습니다! 이메일을 확인합니다.'
     reminder_sent: '알림을 보냈습니다!'
     signed_in: '로그인!'
-    signed_out: '밖으로 서명했다.'
+    signed_out: '로그아웃하였습니다.'
     signed_up: '가입해 주셔서 감사합니다!'
     stolen: '급수전이 도난!'
   questions:
@@ -90,6 +91,6 @@ kr:
     edit_profile: '프로필을 편집'
     main: "Adopt-a-%{thing}"
     ofline: "중 %{organization}"
-    sign_in: '이 급수전을 채택하려면 로그인하십시오'
+    sign_in: '이 급수전을 채택 로그인'
     thank_you: '이 급수전을 채택 주셔서 감사합니다!'
     tos: '서비스 약관'

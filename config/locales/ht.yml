@@ -11,8 +11,8 @@ ht:
     email_password: "Voye yon imèl ba m 'modpas mwen"
     find: "Jwenn %{thing}"
     send_reminder: 'Voye rapèl pèl'
-    sign_in: 'Siyen nan'
-    sign_out: 'Siyen soti'
+    sign_in: 'Log in'
+    sign_out: 'Log soti'
     sign_up: 'Enskri w'
     update: 'Mete ajou'
   captions:
@@ -36,7 +36,7 @@ ht:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'Ou bezwen siyen an oswa si ou siyen kanpe devan kontinye.'
+    password: 'Ou bezwen Pou ouvri sesyon nan oswa si ou siyen kanpe devan kontinye.'
     not_found: "Pa t 'kapab jwenn %{thing}."
   labels:
     address: 'Adrès yo'
@@ -54,7 +54,8 @@ ht:
     password_new: 'Nouvo modpas'
     remember_me: 'Rete siyen an'
     required: 'Obligatwa'
-    sms_number: 'Telefòn mobil nimewo'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'Eta'
     user_existing: 'Mwen te deja siyen moute'
     user_new: 'Mwen pa te siyen moute ankò'
@@ -69,8 +70,8 @@ ht:
     adopted: 'Tiyo adopte!'
     password_reset: 'Enstriksyon Reset modpas voye! Tcheke imel ou.'
     reminder_sent: 'Rapèl voye!'
-    signed_in: 'Siyen an!'
-    signed_out: 'Siyen deyò.'
+    signed_in: 'Logged in!'
+    signed_out: 'Logged deyò.'
     signed_up: 'Mèsi pou siyen moute!'
     stolen: 'Tiyo yo vòlè!'
   questions:
@@ -90,6 +91,6 @@ ht:
     edit_profile: 'Edit pwofil ou'
     main: "Adopt-a-%{thing}"
     ofline: "nan %{organization}"
-    sign_in: "Siyen nan adopte sa a %{thing}"
+    sign_in: "Log in adopte sa a %{thing}"
     thank_you: "Mèsi pou adopte sa a %{thing}!"
     tos: 'Tèm de Sèvis'

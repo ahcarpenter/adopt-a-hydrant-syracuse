@@ -12,7 +12,7 @@ pl:
     find: "Znajdź %{thing}"
     send_reminder: 'Wyślij przypomnienie do łopaty'
     sign_in: 'Zaloguj się'
-    sign_out: 'Zarejestruj się'
+    sign_out: 'Wyloguj się'
     sign_up: 'Zapisać się'
     update: 'Aktualizacja'
   captions:
@@ -54,7 +54,8 @@ pl:
     password_new: 'Nowe hasło'
     remember_me: 'Pozostań zalogowany'
     required: 'Wymagany'
-    sms_number: 'Numer telefonu komórkowego'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'Stan'
     user_existing: 'Ja już podpisały'
     user_new: 'Nie masz jeszcze konta'
@@ -69,7 +70,7 @@ pl:
     adopted: 'Hydrant przyjęty!'
     password_reset: 'Instrukcje resetowania hasła została wysłana! Sprawdź pocztę.'
     reminder_sent: 'Przypomnienie wysłane!'
-    signed_in: 'Podpisano w!'
+    signed_in: 'Zalogowany!'
     signed_out: 'Wylogowany.'
     signed_up: 'Dzięki za podpisanie up!'
     stolen: 'Hydrant skradziony!'
@@ -90,6 +91,6 @@ pl:
     edit_profile: 'Edytuj swój Profil'
     main: "Adopt-a-%{thing}"
     ofline: "z %{organization}"
-    sign_in: "Zaloguj się, aby przyjąć tę %{thing}"
+    sign_in: "Zaloguj się, by przyjąć ten %{thing}"
     thank_you: "Dziękujemy za przyjęcie tego %{thing}!"
     tos: 'Warunki korzystania z usług'

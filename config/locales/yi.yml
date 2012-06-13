@@ -11,8 +11,8 @@ yi:
     email_password: 'בליצפּאָסט מיר מיין פּאַראָל'
     find: "געפינען %{thing}"
     send_reminder: 'שיקן דערמאָנונג צו רידל'
-    sign_in: 'צייכן אין'
-    sign_out: 'צייכן אויס'
+    sign_in: 'קלאָץ אין'
+    sign_out: 'קלאָץ אויס'
     sign_up: 'צייכן אַרויף'
     update: 'דערהייַנטיקן'
   captions:
@@ -36,7 +36,7 @@ yi:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'איר דאַרפֿן צו צייכן אין אָדער צייכן אַרויף איידער קאַנטיניוינג.'
+    password: 'איר דאַרפֿן צו קלאָץ אין אָדער צייכן אַרויף איידער קאַנטיניוינג.'
     not_found: "קען ניט געפינען %{thing}."
   labels:
     address: 'אַדרעס'
@@ -54,7 +54,8 @@ yi:
     password_new: 'נייַ פּאַראָל'
     remember_me: 'בלייַבן געחתמעט אין'
     required: 'פארלאנגט'
-    sms_number: 'מאָביל טעלעפאָן נומער'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'פעסטשטעלן'
     user_existing: "איך'ווע שוין געחתמעט אַרויף"
     user_new: 'איך האָבן נישט געחתמעט אַרויף נאָך'
@@ -69,8 +70,8 @@ yi:
     adopted: 'הידראַנט אנגענומען!'
     password_reset: 'שפּריכוואָרט באַשטעטיק ינסטראַקשאַנז געשיקט! קוק דיין בליצפּאָסט.'
     reminder_sent: 'דערמאָנונג געשיקט!'
-    signed_in: 'געחתמעט אין!'
-    signed_out: 'געחתמעט אויס!'
+    signed_in: 'לאָגד אין!'
+    signed_out: 'לאָגד אויס!'
     signed_up: 'דאַנק פֿאַר סיינינג אַרויף!'
     stolen: 'הידראַנט סטאָלען!'
   questions:
@@ -90,6 +91,6 @@ yi:
     edit_profile: 'רעדאַגירן דיין פּראָופייל'
     main: "Adopt-a-%{thing}"
     ofline: "פון %{organization}"
-    sign_in: "צייכן אין צו אַדאַפּט דעם %{thing}"
+    sign_in: "קלאָץ אין צו אַדאַפּט דעם %{thing}"
     thank_you: "דאנק פֿאַר אננעמען דעם %{thing}!"
     tos: 'תּנאָים פון סערוויס'

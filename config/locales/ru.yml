@@ -12,7 +12,7 @@ ru:
     find: "Найти %{thing}"
     send_reminder: 'Отправить напоминание лопатой'
     sign_in: 'Войти'
-    sign_out: 'Выйти'
+    sign_out: 'Выход'
     sign_up: 'Зарегистрироваться'
     update: 'обновление'
   captions:
@@ -36,7 +36,7 @@ ru:
     voice_number: '315-555-5555'
     zip: '13202'
   errors:
-    password: 'Вы должны войти или зарегистрироваться, прежде чем продолжить.'
+    password: 'Вы должны войти в систему или зарегистрироваться, прежде чем продолжить.'
     not_found: "Не удалось найти %{thing}."
   labels:
     address: 'Адрес'
@@ -54,7 +54,8 @@ ru:
     password_new: 'Новый пароль'
     remember_me: 'УЕФА'
     required: 'требуется'
-    sms_number: 'Номер мобильного телефона'
+    sms_number: 'SMS notification endpoint'
+    sms_notifications: 'Notification try if snowfall forecasted'
     state: 'состояние'
     user_existing: 'Я уже подписал'
     user_new: 'Я не подписал еще'
@@ -69,8 +70,8 @@ ru:
     adopted: 'Гидрант приняты!'
     password_reset: 'Инструкции Сброс пароля отправлен! Проверьте электронную почту.'
     reminder_sent: 'Напоминание отправлено!'
-    signed_in: 'Подписано в!'
-    signed_out: 'Вышел.'
+    signed_in: 'Вход в систему!'
+    signed_out: 'Выход из системы.'
     signed_up: 'Спасибо за регистрацию!'
     stolen: 'Гидрант украл!'
   questions:
@@ -90,6 +91,6 @@ ru:
     edit_profile: 'Изменить профиль'
     main: "Adopt-a-%{thing}"
     ofline: "из %{organization}"
-    sign_in: "Войдите в принятии этого %{thing}"
+    sign_in: "Войти принять это %{thing}"
     thank_you: "Благодарим Вас за принятие этого %{thing}!"
     tos: 'Условия предоставления услуг'
