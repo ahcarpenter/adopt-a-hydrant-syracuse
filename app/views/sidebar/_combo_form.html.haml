@@ -29,7 +29,7 @@
       = f.telephone_field 'sms_number', :placeholder => t('defaults.sms_number')
     .control-group
       %label{:for => 'user_password_confirmation', :id => 'user_password_confirmation_label'}
-        = t('labels.password_choose')
+        = t('labels.password')
         %small
           = image_tag 'lock.png', :class => 'lock', :alt => t('captions.private'), :title => t('captions.private')
       = f.password_field 'password_confirmation'

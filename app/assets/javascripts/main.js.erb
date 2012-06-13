@@ -302,7 +302,6 @@ $(function() {
               'email': $('#user_email').val(),
               'name': $('#user_name').val(),
               'organization': $('#user_organization').val(),
-              'voice_number': $('#user_voice_number').val(),
               'sms_number': $('#user_sms_number').val(),
               'password': $('#user_password_confirmation').val(),
               'password_confirmation': $('#user_password_confirmation').val()
@@ -322,10 +321,6 @@ $(function() {
             if(data.errors.organization) {
               errors.push($('#user_organization'));
               $('#user_organization').parent().addClass('error');
-            }
-            if(data.errors.voice_number) {
-              errors.push($('#user_voice_number'));
-              $('#user_voice_number').parent().addClass('error');
             }
             if(data.errors.sms_number) {
               errors.push($('#user_sms_number'));
@@ -563,7 +558,6 @@ $(function() {
             'email': $('#user_email').val(),
             'name': $('#user_name').val(),
             'organization': $('#user_organization').val(),
-            'voice_number': $('#user_voice_number').val(),
             'sms_number': $('#user_sms_number').val(),
             'address_1': $('#user_address_1').val(),
             'address_2': $('#user_address_2').val(),
@@ -589,10 +583,6 @@ $(function() {
           if(data.errors.organization) {
             errors.push($('#user_organization'));
             $('#user_organization').parent().addClass('error');
-          }
-          if(data.errors.voice_number) {
-            errors.push($('#user_voice_number'));
-            $('#user_voice_number').parent().addClass('error');
           }
           if(data.errors.sms_number) {
             errors.push($('#user_sms_number'));
