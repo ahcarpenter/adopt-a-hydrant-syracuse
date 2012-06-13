@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606183337) do
+ActiveRecord::Schema.define(:version => 20120613000304) do
 
   create_table 'rails_admin_histories', :force => true do |t|
     t.string   'message'
@@ -51,14 +51,14 @@ ActiveRecord::Schema.define(:version => 20120606183337) do
   add_index 'sessions', ['updated_at'], :name => 'index_sessions_on_updated_at'
 
   create_table 'things', :force => true do |t|
-    t.datetime 'created_at',                                                    :null => false
-    t.datetime 'updated_at',                                                    :null => false
+    t.datetime 'created_at',                                                           :null => false
+    t.datetime 'updated_at',                                                           :null => false
     t.string   'name'
-    t.decimal  'lat',          :precision => 18, :scale => 14,                  :null => false
-    t.decimal  'lng',          :precision => 18, :scale => 14,                  :null => false
+    t.decimal  'lat',               :precision => 18, :scale => 14,                    :null => false
+    t.decimal  'lng',               :precision => 18, :scale => 14,                    :null => false
     t.integer  'user_id'
-    t.decimal  'snow_cover',   :precision => 5,  :scale => 2,  :default => 0.0
-    t.integer  'lock_version',                                 :default => 0,   :null => false
+    t.decimal  'snow_cover',        :precision => 5,  :scale => 2,  :default => 0.0
+    t.integer  'lock_version',                                      :default => 0,     :null => false
   end
 
   create_table 'users', :force => true do |t|
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20120606183337) do
     t.string   'name',                                                     :null => false
     t.string   'organization'
     t.string   'email',                                                    :null => false
-    t.string   'voice_number'
     t.string   'sms_number'
     t.boolean  'admin',                                 :default => false
     t.string   'encrypted_password',     :limit => 128, :default => '',    :null => false
