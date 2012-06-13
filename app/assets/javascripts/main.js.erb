@@ -266,6 +266,30 @@ $(function() {
       });
     }
   });
+  function checkStrength(element){
+	var strength = 0;
+
+    if ($(element).val().length > 0) strength += 1
+    if ($(element).val().match(/([a-z].*[A-Z])|([A-Z].*[a-z])/))  strength += 1
+    if ($(element).val().match(/([a-zA-Z])/) && $(element).val().match(/([0-9])/))  strength += 1
+    if ($(element).val().match(/([!,%,&,@,#,$,^,*,?,_,~])/))  strength += 1
+    if ($(element).val().match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,",%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+
+    if (strength == 1) {
+	  $(element).css('color', 'blue')
+    } else if (strength == 2) {
+      $(element).css('color', 'green')
+    } else if (strength == 3) {
+	  $(element).css('color', 'yellow')
+	} else if (strength == 4) {
+	  $(element).css('color', 'red')
+	} else if (strength == 5) {
+      $(element).css('color', '#f9f9f9')
+    }
+  }
+  $('#user_password_confirmation').keyup(function(event){
+    $('#user_password_confirmation').html(checkStrength('#user_password_confirmation'))
+  });
   $('#combo-form').live('submit', function() {
     var submitButton = $("#combo-form input[type='submit']");
     $(submitButton).attr('disabled', true);
@@ -535,11 +559,11 @@ $(function() {
     } else {
       $('#user_zip').parent().removeClass('error');
     }
-    if($('#user_password').val() && ($('#user_password').val().length < 6 || $('#user_password').val().length > 20)) {
-      errors.push($('#user_password'));
-      $('#user_password').parent().addClass('error');
+    if($('#user_new_password').val() && ($('#user_new_password').val().length < 6 || $('#user_new_password').val().length > 20)) {
+      errors.push($('#user_new_password'));
+      $('#user_new_password').parent().addClass('error');
     } else {
-      $('#user_password').parent().removeClass('error');
+      $('#user_new_password').parent().removeClass('error');
     }
     if($('#user_current_password').val().length < 6 || $('#user_current_password').val().length > 20) {
       errors.push($('#user_current_password'));
@@ -571,8 +595,8 @@ $(function() {
             'city': $('#user_city').val(),
             'state': $('#user_state').val(),
             'zip': $('#user_zip').val(),
-            'password': $('#user_password').val(),
-            'password_confirmation': $('#user_password').val(),
+            'password': $('#user_new_password').val(),
+            'password_confirmation': $('#user_new_password').val(),
             'current_password': $('#user_current_password').val()
           }
         },
@@ -620,8 +644,8 @@ $(function() {
             $('#user_zip').parent().addClass('error');
           }
           if(data.errors.password) {
-            errors.push($('#user_password'));
-            $('#user_password').parent().addClass('error');
+            errors.push($('#user_new_password'));
+            $('#user_new_password').parent().addClass('error');
           }
           if(data.errors.current_password) {
             errors.push($('#user_current_password'));

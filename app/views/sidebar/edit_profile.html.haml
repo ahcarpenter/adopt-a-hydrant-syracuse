@@ -51,9 +51,9 @@
         = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
     = f.text_field "zip", :placeholder => t("defaults.zip")
   %fieldset.control-group
-    %label{:for => "user_password", :id => "user_password_label"}
+    %label{:for => "user_new_password", :id => "user_new_password_label"}
       = t("labels.password_new")
-    = f.password_field "password"
+    = f.password_field "new_password"
   %fieldset.control-group
     %label{:for => "user_current_password", :id => "user_current_password_label"}
       = t("labels.password_current")
