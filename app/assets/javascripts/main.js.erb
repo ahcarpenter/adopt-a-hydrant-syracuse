@@ -38,9 +38,8 @@ $(function() {
   var isWindowOpen = false;
   var thingIds = [];
   var removed = false;
-  var prev_gamme = 0;
+  var prev_gamma = 0;
   var max_diff_gamma = 0;
-  var difference_gamma = 0;
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage;
@@ -163,11 +162,11 @@ $(function() {
   }
   window.ondeviceorientation = function(event){
 	gamma = Math.round(event.gamma);
-	difference_gamma = gamma - prev_gamma;
-	if(difference_gamma > max_diff_gamma){max_diff_gamma = difference_gamma}
-	// if(gamma - prev_gamma > 150){alert('Hello')}
-	$('#difference_gamma_text').remove();
-	$('#gamma').append("<div id='difference_gamma_text'>" + difference_gamma +"</div>");
+	diff_gamma = gamma-prev_gamma;
+	if(diff_gamma > max_diff_gamma){max_diff_gamma = diff_gamma}
+	if(gamma-prev_gamma > 150){alert('Hello')}
+	$('#diff_gamma_text').remove();
+	$('#gamma').append("<div id='diff_gamma_text'>" + diff_gamma +"</div>");
 	$('#max_diff_gamma_text').remove();
 	$('#gamma').append("<div id='max_diff_gamma_text'>Max: " + max_diff_gamma +"</div>");
 	prev_gamma = gamma;
