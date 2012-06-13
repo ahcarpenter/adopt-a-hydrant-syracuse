@@ -160,10 +160,11 @@ $(function() {
    $('input[type=search]').val('');
   }
   window.ondeviceorientation = function(event){
-	alert('Hello');
+	// alert('Hello');
   	var g = Math.round(event.gamma*1/1);
-    if(g >= 50) {
-	  alert('Hello1');
+    if(g >= 1000) {
+	  alert('g');
+	  // alert('Hello1');
 	  g = '+' + g;
 	}
 	g_dom.text(g);
