@@ -7,7 +7,7 @@
 // http://api.jquery.com/keyup/
 // http://api.jquery.com/add/
 $(function() {
-  var center = new google.maps.LatLng(43.048122, -76.147424);
+  var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
     center: center,
     disableDoubleClickZoom: true,
@@ -23,36 +23,36 @@ $(function() {
     streetViewControl: true,
     zoom: 15,
     zoomControl: true,
-  };
-  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-  var size = new google.maps.Size(27.0, 37.0);
-  var origin = new google.maps.Point(0, 0);
-  var anchor = new google.maps.Point(13.0, 18.0);
-  var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>', size, origin, anchor);
-  var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>', size, origin, anchor);
-  var green1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green1.png' %>', size, origin, anchor);
-  var red1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red1.png' %>', size, origin, anchor);
-  var green2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green2.png' %>', size, origin, anchor);
-  var red2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red2.png' %>', size, origin, anchor);
-  var markerShadowImage = new google.maps.MarkerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0), origin, anchor);
-  var activeThingId;
-  var activeMarker;
-  var activeInfoWindow;
-  var isWindowOpen = false;
-  var thingIds = [];
+  }
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions)
+  var size = new google.maps.Size(27.0, 37.0)
+  var origin = new google.maps.Point(0, 0)
+  var anchor = new google.maps.Point(13.0, 18.0)
+  var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>', size, origin, anchor)
+  var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>', size, origin, anchor)
+  var green1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green1.png' %>', size, origin, anchor)
+  var red1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red1.png' %>', size, origin, anchor)
+  var green2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green2.png' %>', size, origin, anchor)
+  var red2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red2.png' %>', size, origin, anchor)
+  var markerShadowImage = new google.maps.MarkerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0), origin, anchor)
+  var activeThingId
+  var activeMarker
+  var activeInfoWindow
+  var isWindowOpen = false
+  var thingIds = []
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
-	  var image = greenMarkerImage;
+	  var image = greenMarkerImage
 	} else if(color === 'red') {
-	  var image = redMarkerImage;
+	  var image = redMarkerImage
 	} else if(color === 'green1') {
-	  var image = green1MarkerImage;
+	  var image = green1MarkerImage
 	} else if(color === 'red1') {
-	  var image = red1MarkerImage;
+	  var image = red1MarkerImage
 	} else if(color === 'green2') {
-	  var image = green2MarkerImage;
+	  var image = green2MarkerImage
 	} else if(color === 'red2') {
-	  var image = red2MarkerImage;
+	  var image = red2MarkerImage
 	}
 	var marker = new google.maps.Marker({
 	  animation: google.maps.Animation.DROP,
@@ -60,20 +60,20 @@ $(function() {
 	  map: map,
 	  position: point,
 	  shadow: markerShadowImage
-	});
+	})
 	google.maps.event.addListener(marker, 'click', function() {
 	  if(activeInfoWindow) {
-	    activeInfoWindow.close();
+	    activeInfoWindow.close()
 	  }
 	  var infoWindow = new google.maps.InfoWindow({
 	  	    maxWidth: 210
-	  });
+	  })
 	  google.maps.event.addListener(infoWindow, 'closeclick', function() {
-	    isWindowOpen = false;
-	  });
-	  activeInfoWindow = infoWindow;
-	  activeThingId = thingId;
-	  activeMarker = marker;
+	    isWindowOpen = false
+	  })
+	  activeInfoWindow = infoWindow
+	  activeThingId = thingId
+	  activeMarker = marker
 	  $.ajax({
 	    type: 'GET',
 	    url: '/info_window',
@@ -83,18 +83,18 @@ $(function() {
 	    success: function(data) {
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
 	      if(infoWindow === activeInfoWindow) {
-			infoWindow.setContent(data);
-			openInfoWindow(infoWindow, map, marker);
-	        isWindowOpen = true;
+			infoWindow.setContent(data)
+			openInfoWindow(infoWindow, map, marker)
+	        isWindowOpen = true
 	      }
 	    }
-	  });
-	});
-	thingIds.push(thingId);
-	return marker;
+	  })
+	})
+	thingIds.push(thingId)
+	return marker
   }
   function addMarkersAround(lat, lng) {
-	var submitButton = $("#address_form input[type='submit']");
+	var submitButton = $("#address_form input[type='submit']")
     $.ajax({
       type: 'GET',
       url: '/things.json',
@@ -106,83 +106,83 @@ $(function() {
         'limit': $("#address_form input[name='limit']").val()
       },
       error: function(jqXHR) {
-        $(submitButton).attr('disabled', false);
+        $(submitButton).attr('disabled', false)
       },
       success: function(data) {
-        $(submitButton).attr('disabled', false);
+        $(submitButton).attr('disabled', false)
         if(data.errors) {
-          $('#address').parent().addClass('error');
-          $('#address').focus();
+          $('#address').parent().addClass('error')
+          $('#address').focus()
         } else {
-          $('#address').parent().removeClass('error');
-          var i = -1;
+          $('#address').parent().removeClass('error')
+          var i = -1
           $(data).each(function(index, thing) {
             if($.inArray(thing.id, thingIds) === -1) {
-              i += 1;
+              i += 1
             } else {
               // continue
-              return true;
+              return true
             }
             setTimeout(function() {
 			  thing_snow_cover = thing.snow_cover
               if(thing.user_id) {
 				if(thing_snow_cover > 6){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1');
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1')
 				} else if(thing_snow_cover <= 6 && thing_snow_cover > 0){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2');	
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2')	
 				} else{
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green');	
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green')	
 				}
               } else {
 				if(thing_snow_cover > 6){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1');
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1')
 				} else if(thing_snow_cover <= 6 && thing_snow_cover > 0){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2');	
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2')	
 				} else{
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red');	
+				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')	
 				}
               }
-            }, i * 100);
-          });
+            }, i * 100)
+          })
         }
       }
-    });
+    })
   }
   google.maps.event.addListener(map, 'dragend', function() {
-    var center = map.getCenter();
-    addMarkersAround(center.lat(), center.lng());
-  });
-  window.addEventListener('shake', shakeEventDidOccur, false);
+    var center = map.getCenter()
+    addMarkersAround(center.lat(), center.lng())
+  })
+  window.addEventListener('shake', shakeEventDidOccur, false)
   function shakeEventDidOccur () {
-   $('input[type=text]').val('');
-   $('input[type=password]').val('');
-   $('input[type=email]').val('');
-   $('input[type=tel]').val('');
-   $('input[type=search]').val('');
+   $('input[type=text]').val('')
+   $('input[type=password]').val('')
+   $('input[type=email]').val('')
+   $('input[type=tel]').val('')
+   $('input[type=search]').val('')
   }
   function stateChange(color){
 	if(color != undefined){
-		activeMarker.setMap();
-		activeMarker = addMarker(activeThingId, new google.maps.LatLng(activeMarker.getPosition().lat(), activeMarker.getPosition().lng()), color);
+		activeMarker.setMap()
+		activeMarker = addMarker(activeThingId, new google.maps.LatLng(activeMarker.getPosition().lat(), activeMarker.getPosition().lng()), color)
 	}
-	activeInfoWindow.close();
-	openInfoWindow(activeInfoWindow, map, activeMarker);
+	activeInfoWindow.close()
+	openInfoWindow(activeInfoWindow, map, activeMarker)
   }
   function openInfoWindow(infoWindow, map, marker){
 	if(map.getStreetView().getVisible()){
-	  infoWindow.open(map.getStreetView(), marker);
+	  infoWindow.open(map.getStreetView(), marker)
 	}
 	else{
-	  infoWindow.open(map, marker);
+	  infoWindow.open(map, marker)
 	}
   }
   $('#address_form').live('submit', function() {
-    var submitButton = $("#address_form input[type='submit']");
-    $(submitButton).attr('disabled', true);
+    var submitButton = $("#address_form input[type='submit']")
+    $(submitButton).attr('disabled', true)
     if($('#address').val() === '') {
-      $(submitButton).attr('disabled', false);
-      $('#address').parent().addClass('error');
-      $('#address').focus();
+      $(submitButton).attr('disabled', false)
+      $('#address').parent().addClass('error')
+      $('#address').focus()
     } else {
       $.ajax({
         type: 'GET',
@@ -194,103 +194,103 @@ $(function() {
           'address': $('#address').val()
         },
         error: function(jqXHR) {
-          $(submitButton).attr('disabled', false);
-          $('#address').parent().addClass('error');
-          $('#address').focus();
+          $(submitButton).attr('disabled', false)
+          $('#address').parent().addClass('error')
+          $('#address').focus()
         },
         success: function(data) {
-          $(submitButton).attr('disabled', false);
+          $(submitButton).attr('disabled', false)
           if(data.errors) {
-            $('#address').parent().addClass('error');
-            $('#address').focus();
+            $('#address').parent().addClass('error')
+            $('#address').focus()
           } else {
-            $('#address').parent().removeClass('error');
-			addMarkersAround(data[0], data[1]);
+            $('#address').parent().removeClass('error')
+			addMarkersAround(data[0], data[1])
 			if(!map.getStreetView().getVisible()){
-	            map.setCenter(new google.maps.LatLng(data[0], data[1]));
-	            map.setZoom(19);	
+	            map.setCenter(new google.maps.LatLng(data[0], data[1]))
+	            map.setZoom(19)	
 			} else{
-				map.getStreetView().setPosition(new google.maps.LatLng(data[0], data[1]));
+				map.getStreetView().setPosition(new google.maps.LatLng(data[0], data[1]))
 			}
           }
         }
-      });
+      })
     }
-    return false;
-  });
+    return false
+  })
   // Focus on the first non-empty text input or password field
   function setComboFormFocus() {
     $("#combo-form input[type='email'], #combo-form input[type='text']:visible, #combo-form input[type='password']:visible, #combo-form input[type='submit']:visible, #combo-form input[type='tel']:visible, #combo-form button:visible").each(function(index) {
       if($(this).val() === '' || $(this).attr('type') === 'submit' || this.tagName.toLowerCase() === 'button') {
-        $(this).focus();
-        return false;
+        $(this).focus()
+        return false
       }
-    });
+    })
   }
   $("#combo-form input[type='radio']").live('click', function() {
-    var radioInput = $(this);
+    var radioInput = $(this)
     if('new' === radioInput.val()) {
-      $('#combo-form').data('state', 'user_sign_up');
-      $('#user_forgot_password_fields').slideUp();
-      $('#user_sign_in_fields').slideUp();
+      $('#combo-form').data('state', 'user_sign_up')
+      $('#user_forgot_password_fields').slideUp()
+      $('#user_sign_in_fields').slideUp()
 	  if($('#required_text').text() == ''){
-	    $('#required').append("<div id='required_text'>" + required_text +"</div>");
+	    $('#required').append("<div id='required_text'>" + required_text +"</div>")
 	  }
       $('#user_sign_up_fields').slideDown(function() {
-        setComboFormFocus();
-      });
+        setComboFormFocus()
+      })
     } else if('existing' === radioInput.val()) {
-      $('#user_sign_up_fields').slideUp();
+      $('#user_sign_up_fields').slideUp()
       $('#user_sign_in_fields').slideDown(function() {
-        $('#combo-form').data('state', 'user_sign_in');
-        setComboFormFocus();
+        $('#combo-form').data('state', 'user_sign_in')
+        setComboFormFocus()
 		if($('#required_text').text() != ''){
 			required_text = $('#required_text').text()
-			$('#required_text').remove();
+			$('#required_text').remove()
 		}
         $('#user_forgot_password_link').click(function() {
-          $('#combo-form').data('state', 'user_forgot_password');
-          $('#user_sign_in_fields').slideUp();
+          $('#combo-form').data('state', 'user_forgot_password')
+          $('#user_sign_in_fields').slideUp()
           $('#user_forgot_password_fields').slideDown(function() {
-            setComboFormFocus();
+            setComboFormFocus()
             $('#user_remembered_password_link').click(function() {
-              $('#combo-form').data('state', 'user_sign_in');
-              $('#user_forgot_password_fields').slideUp();
+              $('#combo-form').data('state', 'user_sign_in')
+              $('#user_forgot_password_fields').slideUp()
               $('#user_sign_in_fields').slideDown(function() {
-                setComboFormFocus();
-              });
-            });
-          });
-        });
-      });
+                setComboFormFocus()
+              })
+            })
+          })
+        })
+      })
     }
-  });
+  })
   $('#combo-form').live('submit', function() {
-    var submitButton = $("#combo-form input[type='submit']");
-    $(submitButton).attr('disabled', true);
+    var submitButton = $("#combo-form input[type='submit']")
+    $(submitButton).attr('disabled', true)
     var errors = []
     if(!/[\w\.%\+]+@[\w]+\.+[\w]{2,}/.test($('#user_email').val())) {
-      errors.push($('#user_email'));
-      $('#user_email').parent().addClass('error');
+      errors.push($('#user_email'))
+      $('#user_email').parent().addClass('error')
     } else {
-      $('#user_email').parent().removeClass('error');
+      $('#user_email').parent().removeClass('error')
     }
     if(!$(this).data('state') || $(this).data('state') === 'user_sign_up') {
       if($('#user_name').val() === '') {
-        errors.push($('#user_name'));
-        $('#user_name').parent().addClass('error');
+        errors.push($('#user_name'))
+        $('#user_name').parent().addClass('error')
       } else {
-        $('#user_name').parent().removeClass('error');
+        $('#user_name').parent().removeClass('error')
       }
       if($('#user_password_confirmation').val().length < 6 || $('#user_password_confirmation').val().length > 20) {
-        errors.push($('#user_password_confirmation'));
-        $('#user_password_confirmation').parent().addClass('error');
+        errors.push($('#user_password_confirmation'))
+        $('#user_password_confirmation').parent().addClass('error')
       } else {
-        $('#user_password_confirmation').parent().removeClass('error');
+        $('#user_password_confirmation').parent().removeClass('error')
       }
       if(errors.length > 0) {
-        $(submitButton).attr('disabled', false);
-        errors[0].focus();
+        $(submitButton).attr('disabled', false)
+        errors[0].focus()
       } else {
         $.ajax({
           type: 'POST',
@@ -308,29 +308,29 @@ $(function() {
             }
           },
           error: function(jqXHR) {
-            var data = $.parseJSON(jqXHR.responseText);
-            $(submitButton).attr('disabled', false);
+            var data = $.parseJSON(jqXHR.responseText)
+            $(submitButton).attr('disabled', false)
             if(data.errors.email) {
-              errors.push($('#user_email'));
-              $('#user_email').parent().addClass('error');
+              errors.push($('#user_email'))
+              $('#user_email').parent().addClass('error')
             }
             if(data.errors.name) {
-              errors.push($('#user_name'));
-              $('#user_name').parent().addClass('error');
+              errors.push($('#user_name'))
+              $('#user_name').parent().addClass('error')
             }
             if(data.errors.organization) {
-              errors.push($('#user_organization'));
-              $('#user_organization').parent().addClass('error');
+              errors.push($('#user_organization'))
+              $('#user_organization').parent().addClass('error')
             }
             if(data.errors.sms_number) {
-              errors.push($('#user_sms_number'));
-              $('#user_sms_number').parent().addClass('error');
+              errors.push($('#user_sms_number'))
+              $('#user_sms_number').parent().addClass('error')
             }
             if(data.errors.password) {
-              errors.push($('#user_password_confirmation'));
-              $('#user_password_confirmation').parent().addClass('error');
+              errors.push($('#user_password_confirmation'))
+              $('#user_password_confirmation').parent().addClass('error')
             }
-            errors[0].focus();
+            errors[0].focus()
           },
           success: function(data) {
             $.ajax({
@@ -342,22 +342,22 @@ $(function() {
                 }
               },
               success: function(data) {
-                $('#content').html(data);
+                $('#content').html(data)
               }
-            });
+            })
           }
-        });
+        })
       }
     } else if($(this).data('state') === 'user_sign_in') {
       if($('#user_password').val().length < 6 || $('#user_password').val().length > 20) {
-        errors.push($('#user_password'));
-        $('#user_password').parent().addClass('error');
+        errors.push($('#user_password'))
+        $('#user_password').parent().addClass('error')
       } else {
-        $('#user_password').parent().removeClass('error');
+        $('#user_password').parent().removeClass('error')
       }
       if(errors.length > 0) {
-        $(submitButton).attr('disabled', false);
-        errors[0].focus();
+        $(submitButton).attr('disabled', false)
+        errors[0].focus()
       } else {
         $.ajax({
           type: 'POST',
@@ -372,9 +372,9 @@ $(function() {
             }
           },
           error: function(jqXHR) {
-            $(submitButton).attr('disabled', false);
-            $('#user_password').parent().addClass('error');
-            $('#user_password').focus();
+            $(submitButton).attr('disabled', false)
+            $('#user_password').parent().addClass('error')
+            $('#user_password').focus()
           },
           success: function(data) {
             $.ajax({
@@ -386,16 +386,16 @@ $(function() {
                 }
               },
               success: function(data) {
-                $('#content').html(data);
+                $('#content').html(data)
               }
-            });
+            })
           }
-        });
+        })
       }
     } else if($(this).data('state') === 'user_forgot_password') {
       if(errors.length > 0) {
-        $(submitButton).attr('disabled', false);
-        errors[0].focus();
+        $(submitButton).attr('disabled', false)
+        errors[0].focus()
       } else {
         $.ajax({
           type: 'POST',
@@ -408,23 +408,23 @@ $(function() {
             }
           },
           error: function(jqXHR) {
-            $(submitButton).attr('disabled', false);
-            $('#user_email').parent().addClass('error');
-            $('#user_email').focus();
+            $(submitButton).attr('disabled', false)
+            $('#user_email').parent().addClass('error')
+            $('#user_email').focus()
           },
           success: function() {
-            $(submitButton).attr('disabled', false);
-            $('#user_remembered_password_link').click();
-            $('#user_password').focus();
+            $(submitButton).attr('disabled', false)
+            $('#user_remembered_password_link').click()
+            $('#user_password').focus()
           }
-        });
+        })
       }
     }
-    return false;
-  });
+    return false
+  })
   $('#adoption_form').live('submit', function() {
-    var submitButton = $("#adoption_form input[type='submit']");
-    $(submitButton).attr('disabled', true);
+    var submitButton = $("#adoption_form input[type='submit']")
+    $(submitButton).attr('disabled', true)
     $.ajax({
       type: 'POST',
       url: '/things.json',
@@ -439,7 +439,7 @@ $(function() {
         }
       },
       error: function(jqXHR) {
-        $(submitButton).attr('disabled', false);
+        $(submitButton).attr('disabled', false)
       },
       success: function(data) {
         $.ajax({
@@ -449,17 +449,17 @@ $(function() {
             'thing_id': activeThingId
           },
           success: function(data) {
-			stateChange('green');
-			activeInfoWindow.setContent(data);
+			stateChange('green')
+			activeInfoWindow.setContent(data)
 		  }
-        });
+        })
       }
-    });
-    return false;
-  });
+    })
+    return false
+  })
   $('#abandon_form').live('submit', function() {
-      var submitButton = $("#abandon_form input[type='submit']");
-      $(submitButton).attr('disabled', true);
+      var submitButton = $("#abandon_form input[type='submit']")
+      $(submitButton).attr('disabled', true)
       $.ajax({
         type: 'POST',
         url: '/things.json',
@@ -474,7 +474,7 @@ $(function() {
           }
         },
         error: function(jqXHR) {
-          $(submitButton).attr('disabled', false);
+          $(submitButton).attr('disabled', false)
         },
         success: function(data) {
           $.ajax({
@@ -484,66 +484,66 @@ $(function() {
               'thing_id': activeThingId
             },
             success: function(data) {
-				stateChange('red');
-				activeInfoWindow.setContent(data);
+				stateChange('red')
+				activeInfoWindow.setContent(data)
             }
-          });
+          })
         }
-      });
-    return false;
-  });
+      })
+    return false
+  })
   $('#edit_profile_link').live('click', function() {
-    var link = $(this);
-    $(link).addClass('disabled');
+    var link = $(this)
+    $(link).addClass('disabled')
     $.ajax({
       type: 'GET',
       url: '/users/edit',
       error: function(jqXHR) {
-        $(link).removeClass('disabled');
+        $(link).removeClass('disabled')
       },
       success: function(data) {
-        $('#content').html(data);
+        $('#content').html(data)
       }
-    });
-    return false;
-  });
+    })
+    return false
+  })
   $('#edit_form').live('submit', function() {
-    var submitButton = $("#edit_form input[type='submit']");
-    $(submitButton).attr('disabled', true);
+    var submitButton = $("#edit_form input[type='submit']")
+    $(submitButton).attr('disabled', true)
     var errors = []
     if(!/[\w\.%\+\]+@[\w\]+\.+[\w]{2,}/.test($('#user_email').val())) {
-      errors.push($('#user_email'));
-      $('#user_email').parent().addClass('error');
+      errors.push($('#user_email'))
+      $('#user_email').parent().addClass('error')
     } else {
-      $('#user_email').parent().removeClass('error');
+      $('#user_email').parent().removeClass('error')
     }
     if($('#user_name').val() === '') {
-      errors.push($('#user_name'));
-      $('#user_name').parent().addClass('error');
+      errors.push($('#user_name'))
+      $('#user_name').parent().addClass('error')
     } else {
-      $('#user_name').parent().removeClass('error');
+      $('#user_name').parent().removeClass('error')
     }
     if($('#user_zip').val() != '' && !/^\d{5}(-\d{4})?$/.test($('#user_zip').val())) {
-      errors.push($('#user_zip'));
-      $('#user_zip').parent().addClass('error');
+      errors.push($('#user_zip'))
+      $('#user_zip').parent().addClass('error')
     } else {
-      $('#user_zip').parent().removeClass('error');
+      $('#user_zip').parent().removeClass('error')
     }
     if($('#user_new_password').val() && ($('#user_new_password').val().length < 6 || $('#user_new_password').val().length > 20)) {
-      errors.push($('#user_new_password'));
-      $('#user_new_password').parent().addClass('error');
+      errors.push($('#user_new_password'))
+      $('#user_new_password').parent().addClass('error')
     } else {
-      $('#user_new_password').parent().removeClass('error');
+      $('#user_new_password').parent().removeClass('error')
     }
     if($('#user_current_password').val().length < 6 || $('#user_current_password').val().length > 20) {
-      errors.push($('#user_current_password'));
-      $('#user_current_password').parent().addClass('error');
+      errors.push($('#user_current_password'))
+      $('#user_current_password').parent().addClass('error')
     } else {
-      $('#user_current_password').parent().removeClass('error');
+      $('#user_current_password').parent().removeClass('error')
     }
     if(errors.length > 0) {
-      $(submitButton).attr('disabled', false);
-      errors[0].focus();
+      $(submitButton).attr('disabled', false)
+      errors[0].focus()
     } else {
       $.ajax({
         type: 'POST',
@@ -570,69 +570,69 @@ $(function() {
           }
         },
         error: function(jqXHR) {
-          var data = $.parseJSON(jqXHR.responseText);
-          $(submitButton).attr('disabled', false);
+          var data = $.parseJSON(jqXHR.responseText)
+          $(submitButton).attr('disabled', false)
           if(data.errors.email) {
-            errors.push($('#user_email'));
-            $('#user_email').parent().addClass('error');
+            errors.push($('#user_email'))
+            $('#user_email').parent().addClass('error')
           }
           if(data.errors.name) {
-            errors.push($('#user_name'));
-            $('#user_name').parent().addClass('error');
+            errors.push($('#user_name'))
+            $('#user_name').parent().addClass('error')
           }
           if(data.errors.organization) {
-            errors.push($('#user_organization'));
-            $('#user_organization').parent().addClass('error');
+            errors.push($('#user_organization'))
+            $('#user_organization').parent().addClass('error')
           }
           if(data.errors.sms_number) {
-            errors.push($('#user_sms_number'));
-            $('#user_sms_number').parent().addClass('error');
+            errors.push($('#user_sms_number'))
+            $('#user_sms_number').parent().addClass('error')
           }
           if(data.errors.address_1) {
-            errors.push($('#user_address_1'));
-            $('#user_address_1').parent().addClass('error');
+            errors.push($('#user_address_1'))
+            $('#user_address_1').parent().addClass('error')
           }
           if(data.errors.address_2) {
-            errors.push($('#user_address_2'));
-            $('#user_address_2').parent().addClass('error');
+            errors.push($('#user_address_2'))
+            $('#user_address_2').parent().addClass('error')
           }
           if(data.errors.city) {
-            errors.push($('#user_city'));
-            $('#user_city').parent().addClass('error');
+            errors.push($('#user_city'))
+            $('#user_city').parent().addClass('error')
           }
           if(data.errors.state) {
-            errors.push($('#user_state'));
-            $('#user_state').parent().addClass('error');
+            errors.push($('#user_state'))
+            $('#user_state').parent().addClass('error')
           }
           if(data.errors.zip) {
-            errors.push($('#user_zip'));
-            $('#user_zip').parent().addClass('error');
+            errors.push($('#user_zip'))
+            $('#user_zip').parent().addClass('error')
           }
           if(data.errors.password) {
-            errors.push($('#user_new_password'));
-            $('#user_new_password').parent().addClass('error');
+            errors.push($('#user_new_password'))
+            $('#user_new_password').parent().addClass('error')
           }
           if(data.errors.current_password) {
-            errors.push($('#user_current_password'));
-            $('#user_current_password').parent().addClass('error');
+            errors.push($('#user_current_password'))
+            $('#user_current_password').parent().addClass('error')
           }
-          errors[0].focus();
+          errors[0].focus()
         },
         success: function(data) {
-          $('#content').html(data);
+          $('#content').html(data)
         }
-      });
+      })
     }
-    return false;
-  });
+    return false
+  })
   $('#sign_out_link').live('click', function() {
-    var link = $(this);
-    $(link).addClass('disabled');
+    var link = $(this)
+    $(link).addClass('disabled')
     $.ajax({
       type: 'DELETE',
       url: '/users/sign_out.json',
       error: function(jqXHR) {
-        $(link).removeClass('disabled');
+        $(link).removeClass('disabled')
       },
       success: function(data) {
         $.ajax({
@@ -644,47 +644,47 @@ $(function() {
             }
           },
           success: function(data) {
-            $('#content').html(data);
+            $('#content').html(data)
           }
-        });
+        })
       }
-    });
-    return false;
-  });
+    })
+    return false
+  })
   $('#sign_in_form').live('submit', function() {
-    var submitButton = $("#sign_in_form input[type='submit']");
-    $(submitButton).attr('disabled', true);
+    var submitButton = $("#sign_in_form input[type='submit']")
+    $(submitButton).attr('disabled', true)
     $.ajax({
       type: 'GET',
       url: '/users/sign_in',
       error: function(jqXHR) {
-        $(submitButton).attr('disabled', false);
+        $(submitButton).attr('disabled', false)
       },
       success: function(data) {
-		stateChange();
-        activeInfoWindow.setContent(data);
+		stateChange()
+        activeInfoWindow.setContent(data)
       }
-    });
-    return false;
-  });
+    })
+    return false
+  })
   $('#back_link').live('click', function() {
-    var link = $(this);
-    $(link).addClass('disabled');
+    var link = $(this)
+    $(link).addClass('disabled')
     $.ajax({
       type: 'GET',
       url: '/sidebar/search',
       error: function(jqXHR) {
-        $(link).removeClass('disabled');
+        $(link).removeClass('disabled')
       },
       success: function(data) {
-        $('#content').html(data);
+        $('#content').html(data)
       }
-    });
-    return false;
-  });
+    })
+    return false
+  })
   $('#reminder_form').live('submit', function() {
-    var submitButton = $("#reminder_form input[type='submit']");
-    $(submitButton).attr('disabled', true);
+    var submitButton = $("#reminder_form input[type='submit']")
+    $(submitButton).attr('disabled', true)
     $.ajax({
       type: 'POST',
       url: '/reminders.json',
@@ -698,7 +698,7 @@ $(function() {
         }
       },
       error: function(jqXHR) {
-        $(submitButton).attr('disabled', false);
+        $(submitButton).attr('disabled', false)
       },
       success: function(data) {
         $.ajax({
@@ -711,13 +711,13 @@ $(function() {
             }
           },
           success: function(data) {
-			stateChange();
-            activeInfoWindow.setContent(data);
+			stateChange()
+            activeInfoWindow.setContent(data)
           }
-        });
+        })
       }
-    });
-    return false;
-  });
-  $('.alert-message').alert();
-});                                                                                                                                                                                                                                                                         
+    })
+    return false
+  })
+  $('.alert-message').alert()
+})                                                                                                                                                                                                                                                                         
