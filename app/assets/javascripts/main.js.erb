@@ -160,19 +160,12 @@ $(function() {
    $('input[type=search]').val('');
   }
   window.ondeviceorientation = function(event){
-	// alert('Hello');
-  	var g = Math.round(event.gamma*1/1);
-    var g_prev = 0
-    if(g >= 250) {
-	  alert(g_prev);
-	  alert(g-g_prev);
-	  g_prev = g;
-	  if(g-g_prev > 5){alert('Hello')}
-	  g = '+' + g;
-	  alert(g);
-	  
+	if (gamma-gamma_previous > 50){
+		alert('Hello');
 	}
-	g_dom.text(g);
+	gamma = Math.round(event.gamma);
+	alert(gamma);
+	gamma_previous = gamma;
   }
   function stateChange(color){
 	if(color != undefined){
