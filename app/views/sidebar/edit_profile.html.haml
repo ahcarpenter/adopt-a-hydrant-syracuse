@@ -9,21 +9,11 @@
   %fieldset.control-group
     %label{:for => "user_name", :id => "user_name_label"}
       = t("labels.name")
-      %small
-        = t("captions.public")
     = f.text_field "name"
   %fieldset.control-group
     %label{:for => "user_organization", :id => "user_organization_label"}
       = t("labels.organization")
-      %small
-        = t("captions.public")
     = f.text_field "organization"
-  %fieldset.control-group
-    %label{:for => "user_voice_number", :id => "user_voice_number_label"}
-      = t("labels.voice_number")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.telephone_field "voice_number", :placeholder => t("defaults.voice_number"), :value => number_to_phone(f.object.voice_number)
   %fieldset.control-group
     %label{:for => "user_sms_number", :id => "user_sms_number_label"}
       = t("labels.sms_number")
@@ -63,14 +53,10 @@
   %fieldset.control-group
     %label{:for => "user_password", :id => "user_password_label"}
       = t("labels.password_new")
-      %small
-        = t("captions.optional")
     = f.password_field "password"
   %fieldset.control-group
     %label{:for => "user_current_password", :id => "user_current_password_label"}
       = t("labels.password_current")
-      %small
-        = t("captions.required")
     = f.password_field "current_password"
   %fieldset.form-actions
     = f.submit t("buttons.update"), :class => "btn btn-primary"
