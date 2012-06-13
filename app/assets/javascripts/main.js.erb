@@ -165,8 +165,10 @@ $(function() {
     var g_prev = 0
     if(g >= 250) {
 	  g_prev = g;
-	  if(g-g_prev > 15){alert(g)}
+	  if(g-g_prev > 5){alert('Hello')}
 	  g = '+' + g;
+	  alert(g);
+	  alert(g_prev);
 	}
 	g_dom.text(g);
   }
