@@ -26,6 +26,12 @@ html {
   height: 100%;
 }
 
+  
+img{
+  margin-bottom: 6px;
+  margin-top: -6px;
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -138,8 +144,9 @@ a.btn {
 
   p {
     font-family: MyriadPro-Regular;
-	padding: 12px;
-	margin: 0px;
+	padding: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
   }
 
   input, select, option, button, form.search-form input, form.search-form select, form.search-form option, a.btn {
@@ -173,6 +180,9 @@ a.btn {
     padding: 10px 20px;
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 8px;
   }
 
   #logos {
@@ -184,14 +194,14 @@ a.btn {
 	  width: 100px;
 
 	  img {
-	    margin: 5px 0;
+	    margin-top: 10px;
 	  }
 	}
 
 	#col2 {
 	  float: left;
 	  margin-left: 12px;
-	  margin-top: 12px;
+	  margin-top: 28px;
 	  width: 100px;
 	}
   }
@@ -209,7 +219,7 @@ a.btn {
   }
 
   #feedback {
-    margin-top: 5px;
+    margin-top: 36px;
   }
 }
 
@@ -233,7 +243,6 @@ a.btn {
 
   p {
     font-family: BigCaslon;
-    padding: 0;
     margin-bottom: 10px;
   }
 }
@@ -275,8 +284,21 @@ p{
   margin-top: -4px;
   color: #ee5f5b;
   font-size: 12px;
+  margin-bottom: -6px;
 }
 
 #user_remember_me{
  margin-top: 1px;
+}
+
+#user_email_label{
+  margin-top: 8px;
+}
+
+.alert{
+  margin-top: -10px;
+}
+
+.radio{
+  margin-top: 18px;
 }
