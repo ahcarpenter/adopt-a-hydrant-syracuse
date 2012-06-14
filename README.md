@@ -11,7 +11,7 @@ Claim responsibility for shoveling out a fire hydrant after it snows. Available 
 ## <a name="screenshots"></a>Screenshots
 ![Adopt-a-Hydrant Syracuse](https://github.com/ahcarpenter/adopt-a-hydrant/raw/master/screenshot13.png "Adopt-a-Hydrant Syracuse")
 ![Adopt-a-Hydrant Syracuse](https://github.com/ahcarpenter/adopt-a-hydrant/raw/master/screenshot15.png "Adopt-a-Hydrant Syracuse")
-![Adopt-a-Hydrant Syracuse](https://github.com/ahcarpenter/adopt-a-hydrant/raw/master/screenshot16.png "Adopt-a-Hydrant Syracuse")
+![Adopt-a-Hydrant Syracuse](https://github.com/ahcarpenter/adopt-a-hydrant/raw/master/screenshot17.png "Adopt-a-Hydrant Syracuse")
 
 ## <a name="demo"></a>Demo
 You can see a running version of the application at
