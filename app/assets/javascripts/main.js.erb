@@ -6,6 +6,7 @@
 // http://gazpo.com/2012/04/password-strength/
 // http://api.jquery.com/keyup/
 // http://api.jquery.com/add/
+// http://api.jquery.com/jQuery.browser/
 $(function() {
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -40,6 +41,29 @@ $(function() {
   var activeInfoWindow
   var isWindowOpen = false
   var thingIds = []
+  var opera = false
+  function enableLegacySupport(){
+	$('#user_email_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
+	$('#user_password_confirmation_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
+	$('#user_password_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
+	$('#user_password').css('font-family', 'MyriadPro-Regular')
+	$('#user_password_confirmation').css('font-family', 'MyriadPro-Regular')
+  }
+  jQuery.each(jQuery.browser, function(i, val) {
+	if(i == 'opera'){
+	  opera = true
+	  enableLegacySupport()
+	}
+  })
+  function font(element){
+	$(element).focusout(function(event) {
+	  if($(element).val().length == 0){$(element).css('font-family', 'Drew')}
+	})
+	$(element).keydown(function(event) {
+      $(element).css('font-family', 'MyriadPro-Regular')
+	})
+  }
+  font('#user_email')
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage
@@ -503,6 +527,14 @@ $(function() {
       },
       success: function(data) {
         $('#content').html(data)
+        font('#user_email_edit')
+		if(opera){
+	      $('#user_email_edit_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
+		  $('#user_new_password_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
+		  $('#user_current_password_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
+		  $('#user_new_password').css('font-family', 'MyriadPro-Regular')
+		  $('#user_current_password').css('font-family', 'MyriadPro-Regular')
+		}
       }
     })
     return false
@@ -645,6 +677,8 @@ $(function() {
           },
           success: function(data) {
             $('#content').html(data)
+   			font('#user_email')
+ 			if(opera){enableLegacySupport()}
           }
         })
       }
@@ -719,5 +753,4 @@ $(function() {
     })
     return false
   })
-  $('.alert-message').alert()
 })                                                                                                                                                                                                                                                                         

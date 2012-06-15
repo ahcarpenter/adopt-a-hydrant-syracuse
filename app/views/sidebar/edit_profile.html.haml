@@ -1,68 +1,54 @@
-= form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "edit_form", :method => :put} do |f|
-  = f.hidden_field "id"
+= form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => 'edit_form', :method => :put} do |f|
+  = f.hidden_field 'id'
   %fieldset.control-group
-    %label{:for => "user_email", :id => "user_email_label"}
-      = t("labels.email")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.email_field "email"
+    %label{:for => 'user_email', :id => 'user_email_edit_label'}
+      = t('labels.email')
+    = f.email_field 'email', :placeholder => ' ', :id => 'user_email_edit'
   %fieldset.control-group
-    %label{:for => "user_name", :id => "user_name_label"}
-      = t("labels.name")
-    = f.text_field "name"
+    %label{:for => 'user_name', :id => 'user_name_label'}
+      = t('labels.name')
+    = f.text_field 'name'
   %fieldset.control-group
-    %label{:for => "user_organization", :id => "user_organization_label"}
-      = t("labels.organization")
-    = f.text_field "organization"
+    %label{:for => 'user_organization', :id => 'user_organization_label'}
+      = t('labels.organization')
+    = f.text_field 'organization'
   %fieldset.control-group
-    %label{:for => "user_sms_number", :id => "user_sms_number_label"}
-      = t("labels.sms_number")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.telephone_field "sms_number", :placeholder => t("defaults.sms_number"), :value => number_to_phone(f.object.sms_number)
+    %label{:for => 'user_sms_number', :id => 'user_sms_number_label'}
+      = t('labels.sms_number')
+    = f.telephone_field 'sms_number', :placeholder => t('defaults.sms_number'), :value => number_to_phone(f.object.sms_number)
   %fieldset.control-group
-    %label{:for => "user_address_1", :id => "user_address_1_label"}
-      = t("labels.address_1")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.text_field "address_1", :placeholder => t("defaults.address_1")
+    %label{:for => 'user_address_1', :id => 'user_address_1_label'}
+      = t('labels.address_1')
+    = f.text_field 'address_1', :placeholder => t('defaults.address_1')
   %fieldset.control-group
-    %label{:for => "user_address_2", :id => "user_address_2_label"}
-      = t("labels.address_2")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.text_field "address_2", :placeholder => t("defaults.address_2")
+    %label{:for => 'user_address_2', :id => 'user_address_2_label'}
+      = t('labels.address_2')
+    = f.text_field 'address_2'
   %fieldset.control-group
-    %label{:for => "user_city", :id => "user_city_label"}
-      = t("labels.city")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.text_field "city"
+    %label{:for => 'user_city', :id => 'user_city_label'}
+      = t('labels.city')
+    = f.text_field 'city'
   %fieldset.control-group
-    %label{:for => "user_state", :id => "user_state_label"}
-      = t("labels.state")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.select "state", us_states, :include_blank => true
+    %label{:for => 'user_state', :id => 'user_state_label'}
+      = t('labels.state')
+    = f.select 'state', us_states, :include_blank => true
   %fieldset.control-group
-    %label{:for => "user_zip", :id => "user_zip_label"}
-      = t("labels.zip")
-      %small
-        = image_tag "lock.png", :class => "lock", :alt => t("captions.private"), :title => t("captions.private")
-    = f.text_field "zip", :placeholder => t("defaults.zip")
+    %label{:for => 'user_zip', :id => 'user_zip_label'}
+      = t('labels.zip')
+    = f.text_field 'zip', :placeholder => t('defaults.zip')
   %fieldset.control-group
-    %label{:for => "user_new_password", :id => "user_new_password_label"}
-      = t("labels.password_new")
-    = f.password_field "new_password"
+    %label{:for => 'user_new_password', :id => 'user_new_password_label'}
+      = t('labels.password_new')
+    = f.password_field 'new_password', :placeholder => ' '
   %fieldset.control-group
-    %label{:for => "user_current_password", :id => "user_current_password_label"}
-      = t("labels.password_current")
-    = f.password_field "current_password"
+    %label{:for => 'user_current_password', :id => 'user_current_password_label'}
+      = t('labels.password_current')
+    = f.password_field 'current_password', :placeholder => ' '
   %fieldset.form-actions
     #save
-      = f.submit t("buttons.update"), :class => "btn btn-primary"
-      %a{:href => root_path, :id => "back_link", :class => "btn"}
-        = t("buttons.back")
+      = f.submit t('buttons.update'), :class => 'btn btn-primary'
+      %a{:href => root_path, :id => 'back_link', :class => 'btn'}
+        = t('buttons.back')
 :javascript
   $(function() {
     $('#user_email').focus();

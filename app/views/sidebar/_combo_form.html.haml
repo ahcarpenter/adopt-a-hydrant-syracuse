@@ -3,15 +3,15 @@
     .control-group
       %label{:for => 'user_email', :id => 'user_email_label'}
         = t('labels.email')
-        %small
-          = image_tag 'lock.png', :class => 'lock', :alt => t('captions.private'), :title => t('captions.private')
-      = f.email_field 'email', :value => params[:user] ? params[:user][:email] : nil
+      = f.email_field 'email', :value => params[:user] ? params[:user][:email] : nil, :placeholder => ' '
       %label{:id => 'required'}
         #required_text 
           = @required
     .control-group.radio
-      = f.label 'new', radio_button_tag('user', 'new', true).html_safe + t('labels.user_new')
-      = f.label 'existing', radio_button_tag('user', 'existing').html_safe + t('labels.user_existing')
+      #radio1
+        = f.label 'new', radio_button_tag('user', 'new', true).html_safe + t('labels.user_new')
+      #radio2
+        = f.label 'existing', radio_button_tag('user', 'existing').html_safe + t('labels.user_existing')
   %fieldset#user_sign_up_fields
     .control-group
       %label{:for => 'user_name', :id => 'user_name_label'}
@@ -24,15 +24,11 @@
     .control-group
       %label{:for => 'user_sms_number', :id => 'user_sms_number_label'}
         = t('labels.sms_number')
-        %small
-          = image_tag 'lock.png', :class => 'lock', :alt => t('captions.private'), :title => t('captions.private')
       = f.telephone_field 'sms_number', :placeholder => t('defaults.sms_number')
     .control-group
       %label{:for => 'user_password_confirmation', :id => 'user_password_confirmation_label'}
         = t('labels.password')
-        %small
-          = image_tag 'lock.png', :class => 'lock', :alt => t('captions.private'), :title => t('captions.private')
-      = f.password_field 'password_confirmation'
+      = f.password_field 'password_confirmation', :placeholder => ' '
       %label{:id => 'required'}
         = @required
     .form-actions
@@ -43,11 +39,10 @@
     .control-group
       %label{:for => 'user_password', :id => 'user_password_label'}
         = t('labels.password')
-        %small
-          = image_tag 'lock.png', :class => 'lock', :alt => t('captions.private'), :title => t('captions.private')
-      = f.password_field 'password'
+      = f.password_field 'password', :placeholder => ' '
     .control-group
-      = f.label 'remember_me', f.check_box('remember_me', :checked => true).html_safe + t('labels.remember_me')
+      %label{:for => 'check', :id => 'check'}
+        = f.label 'remember_me', f.check_box('remember_me', :checked => true).html_safe + t('labels.remember_me')
     .form-actions
       = f.submit t('buttons.sign_in'), :class => 'btn btn-primary'
     %p
