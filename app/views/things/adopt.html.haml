@@ -1,12 +1,16 @@
 -# http://railscasts.com/episodes/59-optimistic-locking
 %h2
   = t('titles.adopt', :thing => t('defaults.thing'))
-= form_for :thing, :url => things_path, :method => :put, :html => {:id => 'adoption_form'} do |f|
-  = f.hidden_field 'id'
+= form_for :thing, :url => '', :method => :put, :html => {:id => 'adoption_form'} do |f|
+  = f.hidden_field 'id', :value => session[:thing].id
   = f.hidden_field 'user_id', :value => current_user.id
-  = f.hidden_field 'lock_version'
+  = f.hidden_field 'lock_version', :value => session[:thing].lock_version
   %fieldset.control-group
     = f.label 'name', t('labels.name_thing', :thing => t('defaults.thing')), :id => 'thing_name_label'
     = f.text_field 'name'
+  %a{:id => 'sms_notifications', :class => 'btn disabled'}
+    #sms_notifications_text
+      SMS
   %fieldset.control-group
-    = f.submit t('buttons.adopt'), :class => 'btn primary'
+    %a{:id => 'adopt_button', :class => 'btn primary', :type => 'submit', :name => 'commit'}
+      = t('buttons.adopt')

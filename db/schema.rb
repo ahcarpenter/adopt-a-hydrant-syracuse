@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613000304) do
+ActiveRecord::Schema.define(:version => 20120616214925) do
 
   create_table 'rails_admin_histories', :force => true do |t|
     t.string   'message'
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20120613000304) do
     t.integer  'user_id'
     t.decimal  'snow_cover',        :precision => 5,  :scale => 2,  :default => 0.0
     t.integer  'lock_version',                                      :default => 0,     :null => false
+    t.boolean  'sms_notifications',                                 :default => false
   end
 
   create_table 'users', :force => true do |t|
@@ -93,4 +94,5 @@ ActiveRecord::Schema.define(:version => 20120613000304) do
   add_foreign_key 'reminders', 'users', :name => 'reminders_to_user_id_fk', :column => 'to_user_id'
 
   add_foreign_key 'things', 'users', :name => 'things_user_id_fk'
+
 end

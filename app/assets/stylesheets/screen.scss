@@ -113,6 +113,7 @@ form input.search-query {
 a.btn {
   font-family: MyriadPro-Regular;
   width: 188px;
+  align-text: center;
 }
 
 .table {
@@ -333,7 +334,7 @@ p{
 }
 
 #save{
-  margin-bottom: -2px;
+  margin-top: 0px;
 }
 
 #user_password_confirmation{
@@ -350,4 +351,44 @@ p{
 
 #user_current_password{
   font-family: Drew;
+  margin-bottom: 0px;
+}
+
+#sms_notifications{
+ margin-top: -46px;
+ margin-left: 178px;
+ text-align:right;
+ width: 10px;
+ height: 18px;
+ float:left;
+}
+
+#sms_notifications_text{
+ margin-top: 1px;
+ margin-left: -6px;
+}
+
+#thing_name{
+  width: 169px;
+  float: left;
+}
+
+#adopt_button{
+  margin-bottom: 0px;
+}
+
+#user_email_edit_label{
+  margin-top: 8px;
+}
+
+#back_link{
+  margin-bottom: 8px;
+}
+
+#login{
+  margin-top: 1px;
+}
+
+#signup{
+  margin-top: 1px;
 }

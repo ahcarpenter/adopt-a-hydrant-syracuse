@@ -41,6 +41,7 @@ $(function() {
   var activeInfoWindow
   var isWindowOpen = false
   var thingIds = []
+  sms_notifications = false
   var opera = false
   function enableLegacySupport(){
 	$('#user_email_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
@@ -107,6 +108,7 @@ $(function() {
 	    success: function(data) {
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
 	      if(infoWindow === activeInfoWindow) {
+		    sms_notifications = false
 			infoWindow.setContent(data)
 			openInfoWindow(infoWindow, map, marker)
 	        isWindowOpen = true
@@ -459,7 +461,8 @@ $(function() {
         '_method': 'put',
         'thing': {
           'user_id': $('#thing_user_id').val(),
-          'name': $('#thing_name').val()
+          'name': $('#thing_name').val(),
+		  'sms_notifications': sms_notifications
         }
       },
       error: function(jqXHR) {
@@ -479,6 +482,53 @@ $(function() {
         })
       }
     })
+    return false
+  })
+  $('#adopt_button').live('click', function() {
+    var submitButton = $("#adoption_form input[type='submit']")
+    $(submitButton).attr('disabled', true)
+    $.ajax({
+      type: 'POST',
+      url: '/things.json',
+      data: {
+        'id': $('#thing_id').val(),
+        'utf8': '✓',
+        'authenticity_token': $('#adoption_form input[name="authenticity_token"]').val(),
+        '_method': 'put',
+        'thing': {
+          'user_id': $('#thing_user_id').val(),
+          'name': $('#thing_name').val(),
+		  'sms_notifications': sms_notifications
+        }
+      },
+      error: function(jqXHR) {
+        $(submitButton).attr('disabled', false)
+      },
+      success: function(data) {
+        $.ajax({
+          type: 'GET',
+          url: '/info_window',
+          data: {
+            'thing_id': activeThingId
+          },
+          success: function(data) {
+			stateChange('green')
+			activeInfoWindow.setContent(data)
+		  }
+        })
+      }
+    })
+    return false
+  })
+  $('#sms_notifications').live('click', function() {
+    var link = $(this)
+    if(!sms_notifications){
+	  $(link).removeClass('disabled').addClass('btn btn-success')
+	  sms_notifications = true
+	}else{
+	  $(link).removeClass('btn btn-success').addClass('btn disabled')
+	  sms_notifications = false	
+	}
     return false
   })
   $('#abandon_form').live('submit', function() {
@@ -753,4 +803,4 @@ $(function() {
     })
     return false
   })
-})                                                                                                                                                                                                                                                                         
+})
