@@ -59,6 +59,7 @@ h2 {
 #h2_adopt{
  border-bottom: 1px solid #DDDDDD;
  margin-right: 3px;
+ margin-bottom: 16px;
 }
 
 @-moz-document url-prefix() {
@@ -360,7 +361,7 @@ p{
 }
 
 #sms_notifications{
- margin-top: -46px;
+ margin-top: -39px;
  margin-left: 178px;
  text-align:right;
  width: 10px;
@@ -376,6 +377,7 @@ p{
 #thing_name{
   width: 169px;
   float: left;
+  margin-bottom: 2px;
 }
 
 #adopt_button{
