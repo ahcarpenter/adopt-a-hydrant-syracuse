@@ -45,10 +45,10 @@
       = t('labels.password_current')
     = f.password_field 'current_password', :placeholder => ' '
   %fieldset.form-actions
+    = f.submit t('buttons.update'), :class => 'btn btn-primary'
     #save
-      = f.submit t('buttons.update'), :class => 'btn btn-primary'
-      %a{:href => root_path, :id => 'back_link', :class => 'btn'}
-        = t('buttons.back')
+    %a{:id => 'back_link', :class => 'btn', :href => '/'}
+      = t('buttons.back')
 :javascript
   $(function() {
     $('#user_email').focus();

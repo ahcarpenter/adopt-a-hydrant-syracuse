@@ -33,6 +33,7 @@
         = @required
     .form-actions
       = f.submit t('buttons.sign_up'), :class => 'btn btn-primary'
+      #signup
     %p
       = t('defaults.tos', :tos => link_to(t('titles.tos'), '#tos', :id => 'tos_link', :'data-toggle' => 'modal')).html_safe
   %fieldset#user_sign_in_fields{:style => 'display: none;'}
@@ -45,6 +46,7 @@
         = f.label 'remember_me', f.check_box('remember_me', :checked => true).html_safe + t('labels.remember_me')
     .form-actions
       = f.submit t('buttons.sign_in'), :class => 'btn btn-primary'
+      #login
     %p
       = link_to t('links.forgot_password'), '#', :id => 'user_forgot_password_link'
   %fieldset#user_forgot_password_fields{:style => 'display: none;'}

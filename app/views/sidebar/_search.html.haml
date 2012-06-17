@@ -7,10 +7,11 @@
     = label_tag 'address', t('labels.address'), :id => 'address_label'
     = search_field_tag 'address', params[:address], :placeholder => t('defaults.address_1'), :class => 'search-query'
   %fieldset.form-actions
-    = submit_tag t('buttons.find', :thing => t('defaults.thing').pluralize), :class => 'btn btn-primary'
-    %a{:href => edit_user_registration_path, :id => 'edit_profile_link', :class => 'btn'}
+    %a{:id => 'find', :class => 'btn btn-primary', :type => 'submit', :name => 'commit'}
+      = t('buttons.find', :thing => t('defaults.thing').pluralize)
+    %a{:id => 'edit_profile_link', :class => 'btn', :href => 'users/edit'}
       = t('buttons.edit_profile')
-    %a{:href => destroy_user_session_path, :id => 'sign_out_link', :class => 'btn btn-danger'}
+    %a{:id => 'sign_out_link', :class => 'btn btn-danger', :href => 'users/sign_out'}
       = t('buttons.sign_out')
 :javascript
   $(function() {

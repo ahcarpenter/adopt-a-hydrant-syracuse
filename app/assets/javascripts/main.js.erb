@@ -44,6 +44,13 @@ $(function() {
   sms_notifications = false
   var opera = false
   var webkit = false
+  $('#signup').append("<i class='icon-plus'></i>")
+  $('#login').append("<i class='icon-signin'></i>")
+  function search(){
+	$('#find').append("<i class='icon-search'></i>")
+	$('#edit_profile_link').append("<i class='icon-edit'></i>")
+	$('#sign_out_link').append("<i class='icon-signout'></i>")
+  }
   function enableLegacySupport(){
 	$('#user_email_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
 	$('#user_password_confirmation_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
@@ -60,7 +67,7 @@ $(function() {
 	if(i == 'opera'){
 	  opera = true
 	  enableLegacySupport()
-	}
+	} 
 	if(i == 'webkit'){
 	  webkit = true
 	  _webkit()
@@ -75,6 +82,7 @@ $(function() {
 	})
   }
   font('#user_email')
+  search()
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage
@@ -105,6 +113,9 @@ $(function() {
 	  })
 	  google.maps.event.addListener(infoWindow, 'closeclick', function() {
 	    isWindowOpen = false
+	  })
+	  google.maps.event.addListener(infoWindow, 'domready', function() {
+    	$('#sms_notifications').append("<i class='icon-bullhorn'></i>")
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
@@ -379,6 +390,7 @@ $(function() {
               },
               success: function(data) {
                 $('#content').html(data)
+                search()
 				if(webkit){_webkit()}
               }
             })
@@ -424,6 +436,7 @@ $(function() {
               },
               success: function(data) {
                 $('#content').html(data)
+				search()
 				if(webkit){_webkit()}
               }
             })
@@ -458,42 +471,6 @@ $(function() {
         })
       }
     }
-    return false
-  })
-  $('#adoption_form').live('submit', function() {
-    var submitButton = $("#adoption_form input[type='submit']")
-    $(submitButton).attr('disabled', true)
-    $.ajax({
-      type: 'POST',
-      url: '/things.json',
-      data: {
-        'id': $('#thing_id').val(),
-        'utf8': '✓',
-        'authenticity_token': $('#adoption_form input[name="authenticity_token"]').val(),
-        '_method': 'put',
-        'thing': {
-          'user_id': $('#thing_user_id').val(),
-          'name': $('#thing_name').val(),
-		  'sms_notifications': sms_notifications
-        }
-      },
-      error: function(jqXHR) {
-        $(submitButton).attr('disabled', false)
-      },
-      success: function(data) {
-        $.ajax({
-          type: 'GET',
-          url: '/info_window',
-          data: {
-            'thing_id': activeThingId
-          },
-          success: function(data) {
-			stateChange('green')
-			activeInfoWindow.setContent(data)
-		  }
-        })
-      }
-    })
     return false
   })
   $('#adopt_button').live('click', function() {
@@ -597,6 +574,8 @@ $(function() {
 		  $('#user_new_password').css('font-family', 'MyriadPro-Regular')
 		  $('#user_current_password').css('font-family', 'MyriadPro-Regular')
 		}
+		$('#save').append("<i class='icon-hdd'></i>")
+		$('#back_link').append("<i class='icon-arrow-left'></i>")
 		if(webkit){_webkit()}
       }
     })
@@ -715,7 +694,8 @@ $(function() {
         },
         success: function(data) {
           $('#content').html(data)
-		  if(webkit){_webkit()}
+          search()
+   		  if(webkit){_webkit()}
         }
       })
     }
@@ -742,6 +722,8 @@ $(function() {
           success: function(data) {
             $('#content').html(data)
    			font('#user_email')
+		    $('#login').append("<i class='icon-signin'></i>")
+			$('#signup').append("<i class='icon-plus'></i>")
  			if(opera){enableLegacySupport()}
 			if(webkit){_webkit()}
           }
@@ -777,6 +759,7 @@ $(function() {
       },
       success: function(data) {
         $('#content').html(data)
+        search()
 		if(webkit){_webkit()}
       }
     })

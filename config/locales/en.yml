@@ -55,7 +55,6 @@ en:
     remember_me: 'Remember me'
     required: 'Required'
     sms_number: 'Mobile phone number'
-    sms_notifications: 'Notify me if snowfall forecasted'
     state: 'State'
     user_existing: "I've already signed up"
     user_new: "I haven't signed up yet"

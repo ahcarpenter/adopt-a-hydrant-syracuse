@@ -8,7 +8,7 @@ gem 'devise'
 gem 'geokit'
 gem 'haml', '~> 3.2.0.alpha'
 gem 'http_accept_language'
-gem 'pg'
+gem 'pg', '0.14.0.pre.351'
 gem 'rails_admin'
 gem 'validates_formatting_of'
 gem 'immigrant'
@@ -22,6 +22,7 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'uglifier'
+  gem 'font-awesome-sass-rails'
 end
 
 group :production do
