@@ -13,12 +13,6 @@ Claim responsibility for shoveling out a fire hydrant after it snows. Available 
 ![Adopt-a-Hydrant Syracuse](https://github.com/ahcarpenter/adopt-a-hydrant/raw/master/screenshot20.png "Adopt-a-Hydrant Syracuse")
 ![Adopt-a-Hydrant Syracuse](https://github.com/ahcarpenter/adopt-a-hydrant/raw/master/screenshot23.png "Adopt-a-Hydrant Syracuse")
 
-## <a name="demo"></a>Demo
-You can see a running version of the application at
-[http://adopt-a-hydrant.herokuapp.com/][demo].
-
-[demo]: http://adopt-a-hydrant.herokuapp.com/
-
 ## <a name="installation"></a>Installation
 This application requires [Postgres](http://www.postgresql.org/) to be installed
 
