@@ -43,6 +43,7 @@ $(function() {
   var thingIds = []
   sms_notifications = false
   var opera = false
+  var webkit = false
   function enableLegacySupport(){
 	$('#user_email_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
 	$('#user_password_confirmation_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
@@ -50,10 +51,19 @@ $(function() {
 	$('#user_password').css('font-family', 'MyriadPro-Regular')
 	$('#user_password_confirmation').css('font-family', 'MyriadPro-Regular')
   }
+  function _webkit(){
+	$('#user_email_label').css('margin-top','14px')
+	$('#city_state_label').css('margin-top','14px')
+	$('#user_email_edit_label').css('margin-top','14px')
+  }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
 	  opera = true
 	  enableLegacySupport()
+	}
+	if(i == 'webkit'){
+	  webkit = true
+	  _webkit()
 	}
   })
   function font(element){
@@ -369,6 +379,7 @@ $(function() {
               },
               success: function(data) {
                 $('#content').html(data)
+				if(webkit){_webkit()}
               }
             })
           }
@@ -413,6 +424,7 @@ $(function() {
               },
               success: function(data) {
                 $('#content').html(data)
+				if(webkit){_webkit()}
               }
             })
           }
@@ -585,6 +597,7 @@ $(function() {
 		  $('#user_new_password').css('font-family', 'MyriadPro-Regular')
 		  $('#user_current_password').css('font-family', 'MyriadPro-Regular')
 		}
+		if(webkit){_webkit()}
       }
     })
     return false
@@ -702,6 +715,7 @@ $(function() {
         },
         success: function(data) {
           $('#content').html(data)
+		  if(webkit){_webkit()}
         }
       })
     }
@@ -729,6 +743,7 @@ $(function() {
             $('#content').html(data)
    			font('#user_email')
  			if(opera){enableLegacySupport()}
+			if(webkit){_webkit()}
           }
         })
       }
@@ -762,6 +777,7 @@ $(function() {
       },
       success: function(data) {
         $('#content').html(data)
+		if(webkit){_webkit()}
       }
     })
     return false
