@@ -56,6 +56,10 @@ h2 {
   margin: 12px 0px;
 }
 
+#h2_adopt{
+  border-bottom: 1px solid #DDDDDD;
+}
+
 @-moz-document url-prefix() {
     h2 { 
 	  font-family: MyriadPro-Regular;
@@ -363,9 +367,9 @@ p{
  float:left;
 }
 
-#sms_notifications_text{
- margin-top: 1px;
- margin-left: -6px;
+sms_notifications_text{
+  margin-top: 1px;
+  margin-left: -6px;
 }
 
 #thing_name{
