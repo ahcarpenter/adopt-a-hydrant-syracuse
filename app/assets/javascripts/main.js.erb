@@ -509,6 +509,42 @@ $(function() {
     })
     return false
   })
+  $('#adoption_form').live('submit', function() {
+    var submitButton = $("#adoption_form input[type='submit']")
+    $(submitButton).attr('disabled', true)
+    $.ajax({
+      type: 'POST',
+      url: '/things.json',
+      data: {
+        'id': $('#thing_id').val(),
+        'utf8': '✓',
+        'authenticity_token': $('#adoption_form input[name="authenticity_token"]').val(),
+        '_method': 'put',
+        'thing': {
+          'user_id': $('#thing_user_id').val(),
+          'name': $('#thing_name').val(),
+		  'sms_notifications': sms_notifications
+        }
+      },
+      error: function(jqXHR) {
+        $(submitButton).attr('disabled', false)
+      },
+      success: function(data) {
+        $.ajax({
+          type: 'GET',
+          url: '/info_window',
+          data: {
+            'thing_id': activeThingId
+          },
+          success: function(data) {
+			stateChange('green')
+			activeInfoWindow.setContent(data)
+		  }
+        })
+      }
+    })
+    return false
+  })
   $('#sms_notifications').live('click', function() {
     var link = $(this)
     if(!sms_notifications){
