@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616214925) do
+ActiveRecord::Schema.define(:version => 20120617234905) do
 
   create_table 'rails_admin_histories', :force => true do |t|
     t.string   'message'
@@ -51,15 +51,16 @@ ActiveRecord::Schema.define(:version => 20120616214925) do
   add_index 'sessions', ['updated_at'], :name => 'index_sessions_on_updated_at'
 
   create_table 'things', :force => true do |t|
-    t.datetime 'created_at',                                                           :null => false
-    t.datetime 'updated_at',                                                           :null => false
+    t.datetime 'created_at',                                                             :null => false
+    t.datetime 'updated_at',                                                             :null => false
     t.string   'name'
-    t.decimal  'lat',               :precision => 18, :scale => 14,                    :null => false
-    t.decimal  'lng',               :precision => 18, :scale => 14,                    :null => false
+    t.decimal  'lat',                 :precision => 18, :scale => 14,                    :null => false
+    t.decimal  'lng',                 :precision => 18, :scale => 14,                    :null => false
     t.integer  'user_id'
-    t.decimal  'snow_cover',        :precision => 5,  :scale => 2,  :default => 0.0
-    t.integer  'lock_version',                                      :default => 0,     :null => false
-    t.boolean  'sms_notifications',                                 :default => false
+    t.decimal  'snow_cover',          :precision => 5,  :scale => 2,  :default => 0.0
+    t.integer  'lock_version',                                        :default => 0,     :null => false
+    t.boolean  'sms_notifications',                                   :default => false
+    t.boolean  'email_notifications',                                 :default => false
   end
 
   create_table 'users', :force => true do |t|
@@ -85,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20120616214925) do
     t.string   'state'
     t.string   'zip'
     t.datetime 'reset_password_sent_at'
+    t.boolean  'call_notifications'
   end
 
   add_index 'users', ['email'], :name => 'index_users_on_email', :unique => true
