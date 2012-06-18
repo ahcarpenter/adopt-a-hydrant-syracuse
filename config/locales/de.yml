@@ -53,6 +53,8 @@ de:
     password_new: 'Neues Passwort'
     remember_me: 'Erinnere dich an mich'
     required: 'Erforderlich'
+    sms_notifications: 'Benachrichtigen Sie mich per SMS, wenn Schneefall wurde vorhergesagt.'
+    sms_notifications_title: 'SMS-Benachrichtigungen'
     sms_number: 'Handy-Nummer'
     state: 'Zustand'
     user_existing: 'Ich habe schon unterschrieben'

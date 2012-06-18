@@ -51,6 +51,8 @@ kr:
     password_new: '새로운 비밀 번호'
     remember_me: '내 계정 정보 기억'
     required: '필수'
+    sms_notifications: '적설이 예상되었을 경우 SMS를 통해 알림.'
+    sms_notifications_title: '알림'
     sms_number: '휴대폰 번호'
     state: '상태'
     user_existing: '이미 가입한'

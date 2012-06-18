@@ -51,6 +51,8 @@ pt:
     password_new: 'Nova senha'
     remember_me: 'Lembre-me'
     required: 'Necessário'
+    sms_notifications: 'Notifique-me via SMS se queda de neve tem sido previstos.'
+    sms_notifications_title: 'Notificações de SMS'
     sms_number: 'Número do celular'
     state: 'Estado'
     user_existing: 'Eu já se inscreveram'

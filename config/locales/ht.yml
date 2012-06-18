@@ -51,6 +51,8 @@ ht:
     password_new: 'Nouvo modpas'
     remember_me: "Toujou chonje m '"
     required: 'Obligatwa'
+    sms_notifications: "Notifye m 'via SMS si Lanèj ki Tonbe an te prévue."
+    sms_notifications_title: 'SMS notifikasyon'
     sms_number: 'Telefòn mobil nimewo'
     state: 'Eta'
     user_existing: 'Mwen te deja siyen moute'

@@ -42,6 +42,8 @@ $(function() {
   var isWindowOpen = false
   var thingIds = []
   sms_notifications = false
+  email_notifications = false
+  call_notifications = false
   var opera = false
   var webkit = false
   $('#signup').append("<i class='icon-plus'></i>")
@@ -116,6 +118,7 @@ $(function() {
 	  })
 	  google.maps.event.addListener(infoWindow, 'domready', function() {
     	$('#sms_notifications').append("<i class='icon-bullhorn'></i>")
+		$('#sms_notifications').popover()
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
@@ -473,8 +476,8 @@ $(function() {
     }
     return false
   })
-  $('#adopt_button').live('click', function() {
-    var submitButton = $("#adoption_form input[type='submit']")
+  function adopt(){
+	var submitButton = $("#adoption_form input[type='submit']")
     $(submitButton).attr('disabled', true)
     $.ajax({
       type: 'POST',
@@ -487,7 +490,9 @@ $(function() {
         'thing': {
           'user_id': $('#thing_user_id').val(),
           'name': $('#thing_name').val(),
-		  'sms_notifications': sms_notifications
+		  'sms_notifications': sms_notifications,
+		  'email_notifications': email_notifications,
+		  'call_notifications': call_notifications
         }
       },
       error: function(jqXHR) {
@@ -506,43 +511,14 @@ $(function() {
 		  }
         })
       }
-    })
+    })	
+  }
+  $('#adopt_button').live('click', function() {
+	adopt()
     return false
   })
   $('#adoption_form').live('submit', function() {
-    var submitButton = $("#adoption_form input[type='submit']")
-    $(submitButton).attr('disabled', true)
-    $.ajax({
-      type: 'POST',
-      url: '/things.json',
-      data: {
-        'id': $('#thing_id').val(),
-        'utf8': '✓',
-        'authenticity_token': $('#adoption_form input[name="authenticity_token"]').val(),
-        '_method': 'put',
-        'thing': {
-          'user_id': $('#thing_user_id').val(),
-          'name': $('#thing_name').val(),
-		  'sms_notifications': sms_notifications
-        }
-      },
-      error: function(jqXHR) {
-        $(submitButton).attr('disabled', false)
-      },
-      success: function(data) {
-        $.ajax({
-          type: 'GET',
-          url: '/info_window',
-          data: {
-            'thing_id': activeThingId
-          },
-          success: function(data) {
-			stateChange('green')
-			activeInfoWindow.setContent(data)
-		  }
-        })
-      }
-    })
+	adopt()
     return false
   })
   $('#sms_notifications').live('click', function() {
@@ -553,6 +529,28 @@ $(function() {
 	}else{
 	  $(link).removeClass('btn btn-success').addClass('btn disabled')
 	  sms_notifications = false	
+	}
+    return false
+  })
+  $('#email_notifications').live('click', function() {
+    var link = $(this)
+    if(!email_notifications){
+	  $(link).removeClass('disabled').addClass('btn btn-success')
+	  email_notifications = true
+	}else{
+	  $(link).removeClass('btn btn-success').addClass('btn disabled')
+	  email_notifications = false	
+	}
+    return false
+  })
+  $('#call_notifications').live('click', function() {
+    var link = $(this)
+    if(!call_notifications){
+	  $(link).removeClass('disabled').addClass('btn btn-success')
+	  call_notifications = true
+	}else{
+	  $(link).removeClass('btn btn-success').addClass('btn disabled')
+	  call_notifications = false	
 	}
     return false
   })

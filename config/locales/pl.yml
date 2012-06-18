@@ -51,6 +51,8 @@ pl:
     password_new: 'Nowe hasło'
     remember_me: 'Zapamiętaj mnie'
     required: 'Wymagany'
+    sms_notifications: 'Informuj mnie SMS-em czy opadów śniegu prognozowanych.'
+    sms_notifications_title: 'Powiadomienia SMS'
     sms_number: 'Numer telefonu komórkowego'
     state: 'Stan'
     user_existing: 'Ja już podpisały'

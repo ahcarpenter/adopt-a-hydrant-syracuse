@@ -51,6 +51,8 @@ iw:
     password_new: 'סיסמה חדשה'
     remember_me: 'זכור אותי'
     required: 'דרוש'
+    sms_notifications: 'תודיעו לי ב-SMS אם השלג כבר החזוי.'
+    sms_notifications_title: 'ה-SMS והודעות'
     sms_number: 'מספר הטלפון הנייד'
     state: 'מדינה'
     user_existing: "חתמתי כבר"

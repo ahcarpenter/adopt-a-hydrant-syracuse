@@ -51,6 +51,8 @@ ar:
     password_new: 'كلمة مرور جديدة'
     remember_me: 'تذكرني'
     required: 'مطلوب'
+    sms_notifications: 'يخطر لي عبر الرسائل القصيرة إذا كان قد تم توقع تساقط الثلوج.'
+    sms_notifications_title: 'إشعارات الرسائل القصيرة'
     sms_number: 'رقم الهاتف الجوال'
     state: 'دولة'
     user_existing: 'لقد وقعت بالفعل'

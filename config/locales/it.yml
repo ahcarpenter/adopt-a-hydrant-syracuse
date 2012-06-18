@@ -51,6 +51,8 @@ it:
     password_new: 'Nuova password'
     remember_me: 'Ricordati di me'
     required: 'Richiesto'
+    sms_notifications: 'Inviate via SMS, se nevicata è stato previsto.'
+    sms_notifications_title: 'SMS le notifiche'
     sms_number: 'Numero di telefono cellulare'
     state: 'Stato'
     user_existing: 'Ho già firmato'

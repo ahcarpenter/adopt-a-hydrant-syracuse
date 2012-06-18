@@ -51,6 +51,8 @@ gr:
     password_new: 'Νέος κωδικός'
     remember_me: 'Να με θυμάσαι'
     required: 'Απαιτείται'
+    sms_notifications: 'Ειδοποίηση μέσω SMS αν χιονόπτωσης έχει προβλεφθεί.'
+    sms_notifications_title: 'ειδοποιήσεις μέσω SMS'
     sms_number: 'Αριθμός κινητού τηλεφώνου'
     state: 'πολιτεία'
     user_existing: 'Έχω ήδη εγγραφεί'

@@ -9,7 +9,7 @@
   %fieldset.control-group
     = f.label 'name', t('labels.name_thing', :thing => t('defaults.thing')), :id => 'thing_name_label'
     = f.text_field 'name'
-  %a{:id => 'sms_notifications', :class => 'btn disabled'}
   %fieldset.control-group
+    %a{:id => 'sms_notifications', :class => 'btn disabled', 'data-content' => t('labels.sms_notifications'), 'data-title' => t('labels.sms_notifications_title')}
     %a{:id => 'adopt_button', :class => 'btn primary', :type => 'submit', :name => 'commit'}
       = t('buttons.adopt')

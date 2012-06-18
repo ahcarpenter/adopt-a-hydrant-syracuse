@@ -51,6 +51,8 @@ es:
     password_new: 'Una nueva contraseña'
     remember_me: 'Recuérdame'
     required: 'Necesario'
+    sms_notifications: 'Notificarme por SMS si las nevadas se ha previsto.'
+    sms_notifications_title: 'Notificaciones SMS'
     sms_number: 'Número de teléfono móvil'
     state: 'Estado'
     user_existing: 'Ya he firmado'

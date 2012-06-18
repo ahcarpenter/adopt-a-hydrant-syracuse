@@ -51,6 +51,8 @@ ru:
     password_new: 'Новый пароль'
     remember_me: 'Запомнить меня'
     required: 'требуется'
+    sms_notifications: 'Сообщите мне по SMS, если снегопад был прогнозируемым.'
+    sms_notifications_title: 'SMS-уведомления'
     sms_number: 'Номер мобильного телефона'
     state: 'состояние'
     user_existing: 'Я уже подписал'

@@ -51,6 +51,8 @@ cn:
     password_new: '新密碼'
     remember_me: '記住我'
     required: '需要'
+    sms_notifications: '通過，如果降雪已被預測的短信通知我。'
+    sms_notifications_title: 'SMS通知'
     sms_number: '手機號碼'
     state: '州'
     user_existing: '我已經簽署了'

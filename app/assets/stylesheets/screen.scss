@@ -379,17 +379,12 @@ i{
 }
 
 #thing_name{
-  width: 169px;
   float: left;
   margin-bottom: 2px;
 }
 
 #adopt_button{
   margin-bottom: 0px;
-}
-
-.icon-map-marker{
-  color: green;
 }
 
 #user_email_edit_label{
@@ -417,4 +412,12 @@ i{
 
 #signup{
   margin-top: 1px;
+}
+
+data-content{
+  font-family: MyriadPro-Regular;
+}
+
+data-title{
+  font-family: MyriadPro-Semibold;
 }
