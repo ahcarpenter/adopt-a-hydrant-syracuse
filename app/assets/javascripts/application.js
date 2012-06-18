@@ -11,7 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require_tree .
-//= require bootstrap.js
-//= require bootstrap-tooltip.js
-//= require bootstrap-popover.js
-//= require bootstrap-button.js
+//= require bootstrap
+//= require bootstrap-button
