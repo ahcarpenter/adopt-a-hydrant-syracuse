@@ -2,6 +2,7 @@
 # http://graphical.weather.gov/xml/rest.php
 # http://api.rubyonrails.org/classes/String.html#method-i-truncate
 # http://www.ruby-doc.org/docs/ProgrammingRuby/html/tut_threads.html
+# http://guides.rubyonrails.org/action_mailer_basics.html
 desc 'This task is called by the Heroku scheduler add-on'
 task :update => :environment do
   threads = []
@@ -28,6 +29,7 @@ task :update => :environment do
     Thing.where('user_id IS NOT NULL').find_each do |thing|
       @user = User.find(thing.user_id) if thing.snow_cover > 0.00
       SMS.send_notification(@user, thing) if !@user.nil? && thing.sms_notifications
+      ThingMailer.notify(thing).deliver if !@user.nil? && thing.email_notifications
     end
   end
 end

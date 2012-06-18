@@ -42,6 +42,7 @@ $(function() {
   var isWindowOpen = false
   var thingIds = []
   sms_notifications = false
+  email_notifications = false
   var opera = false
   var webkit = false
   $('#signup').append("<i class='icon-plus'></i>")
@@ -117,6 +118,7 @@ $(function() {
 	  google.maps.event.addListener(infoWindow, 'domready', function() {
     	$('#sms_notifications').append("<i class='icon-comment-alt'></i>")
 		$('#sms_notifications').popover()
+		$('#email_notifications').append("<i class='icon-envelope'></i>")
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
@@ -488,7 +490,8 @@ $(function() {
         'thing': {
           'user_id': $('#thing_user_id').val(),
           'name': $('#thing_name').val(),
-		  'sms_notifications': sms_notifications
+		  'sms_notifications': sms_notifications,
+		  'email_notifications': email_notifications
         }
       },
       error: function(jqXHR) {
@@ -525,6 +528,17 @@ $(function() {
 	}else{
 	  $(link).removeClass('btn btn-success').addClass('btn disabled')
 	  sms_notifications = false	
+	}
+    return false
+  })
+  $('#email_notifications').live('click', function() {
+    var link = $(this)
+    if(!email_notifications){
+	  $(link).removeClass('disabled').addClass('btn btn-success')
+	  email_notifications = true
+	}else{
+	  $(link).removeClass('btn btn-success').addClass('btn disabled')
+	  email_notifications = false	
 	}
     return false
   })

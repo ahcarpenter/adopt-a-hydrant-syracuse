@@ -378,8 +378,17 @@ i{
  float:left;
 }
 
+#email_notifications{
+  margin-top: -39px;
+  margin-left: 147px;
+  text-align:right;
+  width: 10px;
+  float:left;
+  margin-bottom: 10px;
+}
+
 #thing_name{
-  width: 169px;
+  width: 138px;
   float: left;
   margin-bottom: 2px;
 }
@@ -397,6 +406,11 @@ i{
 }
 
 .icon-comment-alt{
+  margin-left: -2px;
+  margin-right: 0px;
+}
+
+.icon-envelope{
   margin-left: -2px;
   margin-right: 0px;
 }

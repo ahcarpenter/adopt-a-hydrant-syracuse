@@ -11,4 +11,7 @@ class ThingMailer < ActionMailer::Base
       }
     )
   end
+  def notify(thing)
+    mail(:to => thing.user.email, :from => 'adoptahydrantsyracuse@gmail.com', :subject => thing.name, :body => thing.user.name + ', ' + thing.name + ' might be surrounded by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.')
+  end
 end
