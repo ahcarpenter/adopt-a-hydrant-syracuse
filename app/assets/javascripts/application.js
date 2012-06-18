@@ -14,3 +14,4 @@
 //= require bootstrap.js
 //= require bootstrap-tooltip.js
 //= require bootstrap-popover.js
+//= require bootstrap-button.js
