@@ -42,8 +42,6 @@ $(function() {
   var isWindowOpen = false
   var thingIds = []
   sms_notifications = false
-  email_notifications = false
-  call_notifications = false
   var opera = false
   var webkit = false
   $('#signup').append("<i class='icon-plus'></i>")
@@ -490,9 +488,7 @@ $(function() {
         'thing': {
           'user_id': $('#thing_user_id').val(),
           'name': $('#thing_name').val(),
-		  'sms_notifications': sms_notifications,
-		  'email_notifications': email_notifications,
-		  'call_notifications': call_notifications
+		  'sms_notifications': sms_notifications
         }
       },
       error: function(jqXHR) {
@@ -529,28 +525,6 @@ $(function() {
 	}else{
 	  $(link).removeClass('btn btn-success').addClass('btn disabled')
 	  sms_notifications = false	
-	}
-    return false
-  })
-  $('#email_notifications').live('click', function() {
-    var link = $(this)
-    if(!email_notifications){
-	  $(link).removeClass('disabled').addClass('btn btn-success')
-	  email_notifications = true
-	}else{
-	  $(link).removeClass('btn btn-success').addClass('btn disabled')
-	  email_notifications = false	
-	}
-    return false
-  })
-  $('#call_notifications').live('click', function() {
-    var link = $(this)
-    if(!call_notifications){
-	  $(link).removeClass('disabled').addClass('btn btn-success')
-	  call_notifications = true
-	}else{
-	  $(link).removeClass('btn btn-success').addClass('btn disabled')
-	  call_notifications = false	
 	}
     return false
   })
