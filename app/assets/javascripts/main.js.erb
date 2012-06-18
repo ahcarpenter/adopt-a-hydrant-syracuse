@@ -45,6 +45,7 @@ $(function() {
   email_notifications = false
   var opera = false
   var webkit = false
+  delay_options = {show: 1000, hide: 100}
   $('#signup').append("<i class='icon-plus'></i>")
   $('#login').append("<i class='icon-signin'></i>")
   function search(){
@@ -117,9 +118,10 @@ $(function() {
 	  })
 	  google.maps.event.addListener(infoWindow, 'domready', function() {
     	$('#sms_notifications').append("<i class='icon-comment-alt'></i>")
-		$('#sms_notifications').popover()
+		$('#sms_notifications').popover({placement: 'top', delay: delay_options})
 		$('#email_notifications').append("<i class='icon-envelope'></i>")
-		$('#email_notifications').popover()
+		$('#email_notifications').popover({placement: 'top', delay: delay_options})
+		
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
