@@ -288,6 +288,7 @@ $(function() {
       $('#user_sign_in_fields').slideUp()
 	  if($('#required_text').text() == ''){
 	    $('#required').append("<div id='required_text'>" + required_text +"</div>")
+	    $('#user_email').css('margin-bottom', '9px')
 	  }
       $('#user_sign_up_fields').slideDown(function() {
         setComboFormFocus()
@@ -300,6 +301,7 @@ $(function() {
 		if($('#required_text').text() != ''){
 			required_text = $('#required_text').text()
 			$('#required_text').remove()
+			$('#user_email').css('margin-bottom', '22px')
 		}
         $('#user_forgot_password_link').click(function() {
           $('#combo-form').data('state', 'user_forgot_password')
