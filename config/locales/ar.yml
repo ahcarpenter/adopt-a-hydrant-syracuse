@@ -42,6 +42,8 @@ ar:
     city: 'مدينة'
     city_state: 'مدينة'
     email: 'عنوان البريد الإلكتروني'
+    email_notifications: 'يخطر لي عبر البريد الإلكتروني إذا كان قد تم توقع تساقط الثلوج.'
+    email_notifications_title: 'البريد الإلكتروني إخطارات'
     name: 'اسم'
     name_thing: "تعطي هذه %{thing} اسم"
     organization: 'منظمة'

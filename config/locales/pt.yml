@@ -42,6 +42,8 @@ pt:
     city: 'Cidade'
     city_state: 'Cidade'
     email: 'Endereço de email'
+    email_notifications: 'Notifique-me via e-mail se queda de neve foi previsto.'
+    email_notifications_title: 'E-mail notificações'
     name: 'Nome'
     name_thing: "Dê este %{thing} um nome"
     organization: 'Organização'

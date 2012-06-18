@@ -43,6 +43,8 @@ it:
     city_state: 'Città'
     email: 'Indirizzo email'
     name: 'Nome'
+    email_notifications: 'Avvisami via email se nevicata è stata prevista.'
+    email_notifications_title: 'Notifiche via email'
     name_thing: "Dare a questo %{thing} un nome"
     organization: 'Organizzazione'
     password: 'Password'

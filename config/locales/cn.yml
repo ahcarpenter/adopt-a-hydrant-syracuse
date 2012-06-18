@@ -42,6 +42,8 @@ cn:
     city: '城市'
     city_state: '城市'
     email: '電郵地址'
+    email_notifications: '通過電子郵件通知我，如果降雪量已預測。'
+    email_notifications_title: '電子郵件通知'
     name: '名稱'
     name_thing: '給這個消防栓名稱'
     organization: '組織'

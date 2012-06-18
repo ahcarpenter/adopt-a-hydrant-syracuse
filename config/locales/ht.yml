@@ -42,6 +42,8 @@ ht:
     city: 'Vil'
     city_state: 'Vil'
     email: 'Adrès imel'
+    email_notifications: "Notifye m 'via imel si Lanèj ki Tonbe an te prévue."
+    email_notifications_title: 'Notifikasyon imel'
     name: 'Non'
     name_thing: "Bay sa a %{thing} yon non"
     organization: 'Òganizasyon'

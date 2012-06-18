@@ -42,6 +42,8 @@ es:
     city: 'Ciudad'
     city_state: 'Ciudad'
     email: 'Dirección de correo electrónico'
+    email_notifications: 'Notificarme por correo electrónico si las nevadas se ha previsto.'
+    email_notifications_title: 'Notificaciones por correo electrónico'
     name: 'Nombre'
     name_thing: 'Dar a esta toma de agua un nombre'
     organization: 'Organización'

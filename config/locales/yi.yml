@@ -42,6 +42,8 @@ yi:
     city: 'שטאָט'
     city_state: 'שטאָט'
     email: 'בליצפּאָסט אַדרעס'
+    email_notifications: 'געבנ צו וויסן מיר דורך email אויב שנייפאַל האט געווארן פאָרקאַסטיד.'
+    email_notifications_title: 'email נאָוטאַפאַקיישאַנז'
     name: 'נאָמען'
     name_thing: "געבן דעם %{thing} אַ נאָמען"
     organization: 'אָרגאַניזירונג'

@@ -42,6 +42,8 @@ ru:
     city: 'Сити'
     city_state: 'Сити'
     email: 'адрес электронной почты'
+    email_notifications: 'Сообщите мне по электронной почте, если снегопад был прогнозируемым.'
+    email_notifications_title: 'уведомления по электронной почте'
     name: 'имя'
     name_thing: "Дайте этому название %{thing}"
     organization: 'организация'

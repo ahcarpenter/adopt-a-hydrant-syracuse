@@ -42,6 +42,8 @@ iw:
     city: 'עיר'
     city_state: 'עיר'
     email: 'כתובת דוא"ל'
+    email_notifications: 'הודע לי באמצעות דוא"ל אם השלג כבר החזוי.'
+    email_notifications_title: 'הודעות דוא"ל'
     name: 'שם'
     name_thing: "תן %{thing} שם"
     organization: 'ארגון'

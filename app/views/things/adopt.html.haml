@@ -11,7 +11,7 @@
     = f.text_field 'name'
   %fieldset.control-group
     .btn-group
-      %a{:id => 'email_notifications', :class => 'btn disabled'}
-      %a{:id => 'sms_notifications', :class => 'btn disabled'}
+      %a{:id => 'email_notifications', :class => 'btn disabled', 'data-content' => t('labels.email_notifications'), 'data-title' => t('labels.email_notifications_title')}
+      %a{:id => 'sms_notifications', :class => 'btn disabled', 'data-content' => t('labels.sms_notifications'), 'data-title' => t('labels.sms_notifications_title')}
     %a{:id => 'adopt_button', :class => 'btn primary', :type => 'submit', :name => 'commit'}
       = t('buttons.adopt')

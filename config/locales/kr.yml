@@ -42,6 +42,8 @@ kr:
     city: '도시'
     city_state: '도시'
     email: '이메일 주소'
+    email_notifications: '적설이 예상되어있다면 이메일로 알려주세요.'
+    email_notifications_title: '이메일 알림'
     name: '이름'
     name_thing: '이 급수전에게 이름을 지정'
     organization: '조직'

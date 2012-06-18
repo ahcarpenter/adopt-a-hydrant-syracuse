@@ -45,6 +45,8 @@ en:
     city: 'City'
     city_state: 'City'
     email: 'Email address'
+    email_notifications: 'Notify me via email if snowfall has been forecasted.'
+    email_notifications_title: 'Email notifications'
     name: 'Name'
     name_thing: "Name this %{thing}"
     organization: 'Organization'

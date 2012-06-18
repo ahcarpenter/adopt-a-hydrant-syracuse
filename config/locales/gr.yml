@@ -42,6 +42,8 @@ gr:
     city: 'πόλη'
     city_state: 'πόλη'
     email: 'διεύθυνση ηλεκτρονικού ταχυδρομείου'
+    email_notifications: 'Ειδοποίηση μέσω email αν χιονόπτωσης έχει προβλεφθεί.'
+    email_notifications_title: 'Αποστολή κοινοποιήσεων'
     name: 'όνομα'
     name_thing: "Δώστε σε αυτό %{thing} ένα όνομα"
     organization: 'Oργάνωση'
