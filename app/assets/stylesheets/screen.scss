@@ -219,8 +219,16 @@ a.btn {
 	#col2 {
 	  float: left;
 	  margin-left: 12px;
-	  margin-top: 34px;
+	  margin-top: 24px;
 	  width: 100px;
+	  
+	  #noaa_img{
+	    margin-top: -15px;
+	  }
+	  
+	  #twilio_img{
+	    margin-top: 1px;
+	  }
 	}
   }
 
