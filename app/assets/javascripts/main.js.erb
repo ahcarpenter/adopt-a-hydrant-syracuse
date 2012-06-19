@@ -233,8 +233,8 @@ $(function() {
 	  infoWindow.open(map, marker)
 	}
   }
-  $('#address_form').live('submit', function() {
-    var submitButton = $("#address_form input[type='submit']")
+  function address(){
+	var submitButton = $("#address_form input[type='submit']")
     $(submitButton).attr('disabled', true)
     if($('#address').val() === '') {
       $(submitButton).attr('disabled', false)
@@ -273,6 +273,13 @@ $(function() {
         }
       })
     }
+  }
+  $('#address_form').live('submit', function() {
+	address()
+    return false
+  })
+  $('#address_form').live('click', function() {
+	address()
     return false
   })
   // Focus on the first non-empty text input or password field
