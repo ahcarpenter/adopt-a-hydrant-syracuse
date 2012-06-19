@@ -1,5 +1,3 @@
-/ http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/NOAA_logo.svg/200px-NOAA_logo.svg.png
-/ http://www.twilio.com/packages/company/img/logos_downloadable_logobrand.ai.zip
 .table
   .table-row
     .table-cell.sidebar
@@ -18,14 +16,9 @@
         #col1
           %a{:href => 'http://codeforamerica.org/'}
             = image_tag 'logos/cfa.png', :alt => t('sponsors.cfa'), :title => t('sponsors.cfa')
-          %br
+        #col2
           %a{:href => 'http://bostonbuilt.org/'}
             = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built')
-        #col2
-          %a{:href => 'http://www.noaa.gov/'}
-            = image_tag 'logos/noaa.png', :alt => 'NOAA', :title => 'NOAA', :id => 'noaa_img'
-          %a{:href => 'http://www.twilio.com/'}
-            = image_tag 'logos/twilio.png', :alt => 'twilio', :title => 'twilio', :id => 'twilio_img'
       #feedback
         %p
           %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
