@@ -27,7 +27,7 @@
   %fieldset.control-group
     %label{:for => 'user_city', :id => 'user_city_label'}
       = t('labels.city')
-    = f.text_field 'city'
+    = f.text_field 'city', :autocomplete => 'off'
   %fieldset.control-group
     %label{:for => 'user_state', :id => 'user_state_label'}
       = t('labels.state')

@@ -5,7 +5,7 @@
     = select_tag 'city_state', "<option value=\'#{t('defaults.city_state')}\' selected=\'selected\'>#{t('defaults.city_state')}</option>".html_safe
   %fieldset.control-group
     = label_tag 'address', t('labels.address'), :id => 'address_label'
-    = search_field_tag 'address', params[:address], :placeholder => t('defaults.address_1'), :class => 'search-query'
+    = search_field_tag 'address', params[:address], :placeholder => t('defaults.address_1'), :class => 'search-query', :autocomplete => 'off'
   %fieldset.form-actions
     %a{:id => 'find', :class => 'btn btn-primary', :type => 'submit', :name => 'commit'}
       = t('buttons.find', :thing => t('defaults.thing').pluralize)
