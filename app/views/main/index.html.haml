@@ -1,3 +1,4 @@
+/ http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/NOAA_logo.svg/200px-NOAA_logo.svg.png
 .table
   .table-row
     .table-cell.sidebar
@@ -20,13 +21,8 @@
           %a{:href => 'http://bostonbuilt.org/'}
             = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built')
         #col2
-          %a{:href => 'http://www.cityofboston.gov/'}
-            = image_tag 'logos/boston.png', :alt => t('sponsors.city'), :title => t('sponsors.city')
-          %p#mayor
-            %a{:href => 'http://www.cityofboston.gov/mayor/'}
-              = "#{t('sponsors.mayor.name')},"
-              %em
-                = t('sponsors.mayor.title')
+          %a{:href => 'http://www.noaa.gov/'}
+            = image_tag 'logos/noaa.png', :alt => 'NOAA', :title => 'NOAA'
       #feedback
         %p
           %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
