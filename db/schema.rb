@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(:version => 20120622043849) do
     t.decimal  'snow_cover',          :precision => 5,  :scale => 2,  :default => 0.0
     t.integer  'lock_version',                                        :default => 0,     :null => false
     t.boolean  'sms_notifications',                                   :default => false
-    t.boolean  'email_notifications',                                 :default => false
   end
 
   create_table 'users', :force => true do |t|
