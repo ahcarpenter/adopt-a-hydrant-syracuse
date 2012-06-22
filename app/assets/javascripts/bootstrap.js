@@ -1,3 +1,4 @@
+// https://github.com/twitter/bootstrap/pull/3854
 /* ===================================================
  * bootstrap-transition.js v2.0.2
  * http://twitter.github.com/bootstrap/javascript.html#transitions
@@ -38,9 +39,11 @@
           	transitionEnd = "webkitTransitionEnd"
           } else if ( $.browser.mozilla ) {
           	transitionEnd = "transitionend"
-          } else if ( $.browser.opera ) {
+          } else if ( $.browser.opera && parseInt($.browser.version) >= 12) {
+		    transitionEnd = "otransitionend"
+		  } else if ( $.browser.opera ) {
           	transitionEnd = "oTransitionEnd"
-          }
+          } 
           return transitionEnd
         }())
       }
