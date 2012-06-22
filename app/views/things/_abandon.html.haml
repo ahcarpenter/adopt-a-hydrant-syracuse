@@ -5,4 +5,5 @@
   = f.hidden_field 'name', :value => ''
   = f.hidden_field 'lock_version'
   %fieldset.control-group
-    = f.submit t('buttons.abandon', :thing => t('defaults.thing')), :class => 'btn btn-danger'
+    %a{:id => 'abandon_button', :class => 'btn btn-danger', :type => 'submit', :name => 'commit'}
+      = t('buttons.abandon', :thing => t('defaults.thing'))

@@ -1,7 +1,7 @@
 = form_tag '/address', :method => 'get', :id => 'address_form', :class => 'search-form' do
   = hidden_field_tag 'limit', params[:limit] || 10
   %fieldset.control-group
-    = label_tag 'city_state', t('labels.city_state'), :id => 'city_state_label'
+    = label_tag 'city_state', t('labels.city_state'), :id => 'city-state-label'
     = select_tag 'city_state', "<option value=\'#{t('defaults.city_state')}\' selected=\'selected\'>#{t('defaults.city_state')}</option>".html_safe
   %fieldset.control-group
     = label_tag 'address', t('labels.address'), :id => 'address_label'
@@ -11,8 +11,11 @@
       = t('buttons.find', :thing => t('defaults.thing').pluralize)
     %a{:id => 'edit_profile_link', :class => 'btn', :href => 'users/edit'}
       = t('buttons.edit_profile')
-    %a{:id => 'sign_out_link', :class => 'btn btn-danger', :href => 'users/sign_out'}
+    %a{:id => 'sign-out-link', :class => 'btn btn-danger', :href => 'users/sign_out'}
       = t('buttons.sign_out')
+  %p
+    = link_to 'Send referral', '', 'data-toggle' => 'modal', 'data-target' => '#referral'
+= render :partial => 'sidebar/referral'
 :javascript
   $(function() {
     $('#address').focus();

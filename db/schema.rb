@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617234905) do
+ActiveRecord::Schema.define(:version => 20120622043849) do
 
   create_table 'rails_admin_histories', :force => true do |t|
     t.string   'message'
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(:version => 20120617234905) do
   end
 
   add_index 'rails_admin_histories', ['item', 'table', 'month', 'year'], :name => 'index_rails_admin_histories'
+
+  create_table 'referees', :force => true do |t|
+    t.string   'endpoint'
+    t.datetime 'created_at', :null => false
+    t.datetime 'updated_at', :null => false
+  end
+
+  create_table 'referrals', :force => true do |t|
+    t.integer  'referee_id'
+    t.integer  'user_id'
+    t.datetime 'created_at',                :null => false
+    t.datetime 'updated_at',                :null => false
+    t.integer  'visits',     :default => 0
+  end
 
   create_table 'reminders', :force => true do |t|
     t.datetime 'created_at',                      :null => false
@@ -86,10 +100,12 @@ ActiveRecord::Schema.define(:version => 20120617234905) do
     t.string   'state'
     t.string   'zip'
     t.datetime 'reset_password_sent_at'
-    t.boolean  'call_notifications'
   end
 
   add_index 'users', ['email'], :name => 'index_users_on_email', :unique => true
+
+  add_foreign_key 'referrals', 'referees', :name => 'referrals_referee_id_fk'
+  add_foreign_key 'referrals', 'users', :name => 'referrals_user_id_fk'
 
   add_foreign_key 'reminders', 'things', :name => 'reminders_thing_id_fk'
   add_foreign_key 'reminders', 'users', :name => 'reminders_from_user_id_fk', :column => 'from_user_id'

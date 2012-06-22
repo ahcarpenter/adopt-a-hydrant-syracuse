@@ -1,7 +1,7 @@
 = form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => 'edit_form', :method => :put} do |f|
   = f.hidden_field 'id'
   %fieldset.control-group
-    %label{:for => 'user_email', :id => 'user_email_edit_label'}
+    %label{:for => 'user_email', :id => 'user-email_edit_label'}
       = t('labels.email')
     = f.email_field 'email', :placeholder => ' ', :id => 'user_email_edit'
   %fieldset.control-group
@@ -13,7 +13,7 @@
       = t('labels.organization')
     = f.text_field 'organization'
   %fieldset.control-group
-    %label{:for => 'user_sms_number', :id => 'user_sms_number_label'}
+    %label{:for => 'user_sms_number', :id => 'user-sms-number-label'}
       = t('labels.sms_number')
     = f.telephone_field 'sms_number', :placeholder => t('defaults.sms_number'), :value => number_to_phone(f.object.sms_number)
   %fieldset.control-group
@@ -47,7 +47,7 @@
   %fieldset.form-actions
     = f.submit t('buttons.update'), :class => 'btn btn-primary'
     #save
-    %a{:id => 'back_link', :class => 'btn', :href => '/'}
+    %a{:id => 'back-link', :class => 'btn', :href => '/'}
       = t('buttons.back')
 :javascript
   $(function() {

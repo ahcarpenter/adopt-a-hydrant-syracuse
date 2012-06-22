@@ -1,14 +1,14 @@
 = form_for :user, :html => {:id => 'combo-form', :class => 'form-vertical'} do |f|
   %fieldset#common_fields
     .control-group
-      %label{:for => 'user_email', :id => 'user_email_label'}
+      %label{:for => 'user_email', :id => 'user-email-label'}
         = t('labels.email')
       = f.email_field 'email', :value => params[:user] ? params[:user][:email] : nil, :placeholder => ' '
       %label{:id => 'required'}
         #required_text 
           = @required
     .control-group.radio
-      #radio1
+      #radio1 
         = f.label 'new', radio_button_tag('user', 'new', true).html_safe + t('labels.user_new')
       #radio2
         = f.label 'existing', radio_button_tag('user', 'existing').html_safe + t('labels.user_existing')
@@ -22,7 +22,7 @@
         = t('labels.organization')
       = f.text_field 'organization'
     .control-group
-      %label{:for => 'user_sms_number', :id => 'user_sms_number_label'}
+      %label{:for => 'user_sms_number', :id => 'user-sms-number-label'}
         = t('labels.sms_number')
       = f.telephone_field 'sms_number', :placeholder => t('defaults.sms_number')
     .control-group
@@ -30,7 +30,8 @@
         = t('labels.password')
       = f.password_field 'password_confirmation', :placeholder => ' '
       %label{:id => 'required'}
-        = @required
+        .required-password
+          = @required
     .form-actions
       = f.submit t('buttons.sign_up'), :class => 'btn btn-primary'
       #signup
@@ -43,12 +44,14 @@
       = f.password_field 'password', :placeholder => ' '
     .control-group
       %label{:for => 'check', :id => 'check'}
-        = f.label 'remember_me', f.check_box('remember_me', :checked => true).html_safe + t('labels.remember_me')
+        = f.label 'remember_me1', f.check_box('remember_me', :checked => true).html_safe + t('labels.remember_me')
     .form-actions
       = f.submit t('buttons.sign_in'), :class => 'btn btn-primary'
       #login
     %p
       = link_to t('links.forgot_password'), '#', :id => 'user_forgot_password_link'
+    / %p
+    /   = link_to t('links.forgot_password'), '#', :id => 'user_forgot_password_link'
   %fieldset#user_forgot_password_fields{:style => 'display: none;'}
     .form-actions
       = f.submit t('buttons.email_password'), :class => 'btn btn-primary'

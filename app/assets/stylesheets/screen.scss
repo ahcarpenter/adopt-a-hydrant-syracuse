@@ -49,7 +49,7 @@ img{
   height: 40px;
 }
 
-#bostonandlexingtonbuilt{
+#boston-and-lexington-built{
   width: 95px;
   height: 44px;
   margin-top: -7px;
@@ -72,10 +72,10 @@ h2 {
   margin: 12px 0px;
 }
 
-#h2_adopt{
- border-bottom: 1px solid #DDDDDD;
- margin-right: 3px;
- margin-bottom: 16px;
+#h2-infowindow{
+  border-bottom: 1px solid #DDDDDD;
+  margin-right: 3px;
+  margin-bottom: 16px;
 }
 
 @-moz-document url-prefix() {
@@ -327,11 +327,15 @@ p{
   margin-bottom: -6px;
 }
 
-#user_remember_me{
+.required-password{
+  margin-bottom: 22px;
+}
+
+#user-remember-me{
  margin-top: 1px;
 }
 
-#user_email_label{
+#user-email-label{
   margin-top: 8px;
 }
 
@@ -339,7 +343,7 @@ p{
   font-family: Drew;
 }
 
-#user_email_edit{
+#user-email-edit{
   font-family: MyriadPro-Regular;
 }
 
@@ -353,7 +357,7 @@ p{
   margin-top: 18px;
 }
 
-#city_state_label{
+#city-state-label{
   margin-top: 8px;
 }
 
@@ -361,7 +365,7 @@ p{
   margin-bottom: 0px;
 }
 
-#sign_out_link{
+#sign-out-link{
   margin-bottom: 8px;
 }
 
@@ -409,13 +413,53 @@ i{
   margin-bottom: 10px;
 }
 
+#sms-referral{
+ margin-top: 0px;
+ margin-bottom: -28px;
+ margin-left: 4px;
+ margin-right: 4px;
+ text-align:right;
+ width: 10px;
+ float:left;
+}
+
+#user_sms_referral_field{
+  width: 169px;
+  margin-left: 35px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+#email-referral{
+  margin-top: -1px;
+  margin-left: 4px;
+  margin-right: 4px;
+  text-align:right;
+  width: 10px;
+  float:left;
+  margin-bottom: 10px;
+}
+
+#user_email_referral_field{
+  width: 169px;
+  margin-top: -1px;
+  margin-left: 35px;
+  margin-right: 4px;
+}
+
+#send_referral{
+  margin-left: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
 #thing_name{
   width: 138px;
   float: left;
   margin-bottom: 2px;
 }
 
-#adopt_button{
+#adopt-button{
   margin-bottom: 0px;
 }
 
@@ -423,17 +467,17 @@ i{
   margin-top: 8px;
 }
 
-#back_link{
+#back-link{
   margin-bottom: 8px;
 }
 
 .icon-comment-alt{
-  margin-left: -2px;
+  margin-left: -3px;
   margin-right: 0px;
 }
 
 .icon-envelope{
-  margin-left: -2px;
+  margin-left: -3px;
   margin-right: 0px;
 }
 
@@ -457,4 +501,31 @@ i{
 
 #radio2{
   margin-bottom: -8px;
+}
+
+#referral{
+  align: center;
+  width: 248px;
+  font-family: MyriadPro-Regular;
+
+  #user-email-label{
+    margin-left: 4px;
+  }
+  #user-sms-number-label{
+    margin-left: 4px;
+  }
+}
+
+#check{
+  margin-bottom: -4px;
+}
+
+.icon-remove{
+  margin-right: -4px;
+  margin-top: -2px;
+  font-size: 14px;
+}
+
+.icon-heart{
+  color: red;
 }

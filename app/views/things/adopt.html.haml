@@ -1,6 +1,6 @@
 -# http://railscasts.com/episodes/59-optimistic-locking
 %h2
-  #h2_adopt
+  #h2-infowindow
     = t('titles.adopt', :thing => t('defaults.thing'))
 = form_for :thing, :url => '', :method => :put, :html => {:id => 'adoption_form'} do |f|
   = f.hidden_field 'id', :value => session[:thing].id
@@ -13,5 +13,5 @@
     .btn-group
       %a{:id => 'email_notifications', :class => 'btn disabled', 'data-content' => t('labels.email_notifications'), 'data-title' => t('labels.email_notifications_title')}
       %a{:id => 'sms_notifications', :class => 'btn disabled', 'data-content' => t('labels.sms_notifications'), 'data-title' => t('labels.sms_notifications_title')}
-    %a{:id => 'adopt_button', :class => 'btn primary', :type => 'submit', :name => 'commit'}
+    %a{:id => 'adopt-button', :class => 'btn primary', :type => 'submit', :name => 'commit'}
       = t('buttons.adopt')

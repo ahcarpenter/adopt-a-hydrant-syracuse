@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :reminders_to, :class_name => "Reminder", :foreign_key => "to_user_id"
   has_many :reminders_from, :class_name => "Reminder", :foreign_key => "from_user_id"
   has_many :things
+  has_many :referrals
   before_validation :remove_non_digits_from_phone_numbers
   
   def filter(number)
@@ -18,5 +19,13 @@ class User < ActiveRecord::Base
   
   def remove_non_digits_from_phone_numbers
     self.sms_number = filter(self.sms_number) if self.sms_number.present?
+  end
+  
+  def self.current
+     Thread.current[:user]
+  end
+  
+  def self.current=(user)
+     Thread.current[:user] = user
   end
 end

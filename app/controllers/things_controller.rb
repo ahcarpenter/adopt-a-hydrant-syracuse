@@ -13,9 +13,6 @@ class ThingsController < ApplicationController
   end
 
   def update
-    # response.headers.each_key do |header|
-    #   puts response.headers[header]
-    # end
     session[:conflict] = false
     session[:id] = session[:thing].id
     if session[:thing].update_attributes(params[:thing])
