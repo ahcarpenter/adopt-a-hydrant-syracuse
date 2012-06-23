@@ -8,6 +8,7 @@
 // http://api.jquery.com/add/
 // http://api.jquery.com/jQuery.browser/
 // http://www.census.gov/tiger/tms/gazetteer/places2k.txt
+// https://github.com/twitter/bootstrap/issues/452
 $(function() {
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -292,6 +293,14 @@ $(function() {
   $('#find').live('click', function() {
 	address()
     return false
+  })
+  $('#referral').on('show', function() {
+    var modal = $(this);
+
+    modal.css('margin-top', -(modal.outerHeight() / 2))
+    modal.css('margin-left', -(modal.outerWidth() / 2));
+
+    return this;
   })
   $('#referral').on('hidden', function () {
     // do something…
