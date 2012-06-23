@@ -11,6 +11,7 @@
 // https://github.com/twitter/bootstrap/issues/452
 // https://github.com/dnagir/spinjs-rails/tree/master/vendor/assets/javascripts
 // http://fgnass.github.com/spin.js/
+// http://api.jquery.com/remove/
 $(function() {
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -306,7 +307,7 @@ $(function() {
   })
   $('#referral').live('hidden', function () {
     // do something…
-	$('#referral').spin(false)
+	if(!opera){$('#referral').spin(false)}
 	$('#user_email_referral_field').val('')
 	$('#user_sms_referral_field').val('')
 	$('#user_email_referral_field').attr('disabled', 'disabled')
@@ -316,7 +317,7 @@ $(function() {
 	$('#send_referral').removeClass('btn btn-primary').addClass('btn disabled')
   })
   $('#send_referral').live('click', function() {
-	$('#referral').spin({
+	if(!opera){$('#referral').spin({
 	  lines: 11, // The number of lines to draw
 	  length: 7, // The length of each line
 	  width: 4, // The line thickness
@@ -331,7 +332,7 @@ $(function() {
 	  zIndex: 2e9, // The z-index (defaults to 2000000000)
 	  top: 'auto', // Top position relative to parent in px
 	  left: 'auto' // Left position relative to parent in px
-	})
+	})}
   	$.ajax({
       type: 'POST',
       url: '/referrals',
