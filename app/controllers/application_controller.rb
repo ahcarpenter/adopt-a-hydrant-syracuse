@@ -24,13 +24,16 @@ protected
   end
 
   def set_locale
-    if !((params[:locale] == 'ar') || (params[:locale] == 'cn') || (params[:locale] == 'de') || (params[:locale] == 'en') || (params[:locale] == 'es') || (params[:locale] == 'fr') || (params[:locale] == 'gr') || (params[:locale] == 'ht') || (params[:locale] == 'iw') || (params[:locale] == 'it') || (params[:locale] == 'kr') || (params[:locale] == 'pl') || (params[:locale] == 'pt') || (params[:locale] == 'ru') || (params[:locale] == 'yi') || params[:locale].nil?)
-      Referral.resolve_token(params[:locale])
-    end
     available_languages = Dir.glob(Rails.root + 'config/locales/??.yml').map do |file|
       File.basename(file, '.yml')
     end
-    cookies[:locale] = params[:locale]  if ((params[:locale] == 'ar') || (params[:locale] == 'cn') || (params[:locale] == 'de') || (params[:locale] == 'en') || (params[:locale] == 'es') || (params[:locale] == 'fr') || (params[:locale] == 'gr') || (params[:locale] == 'ht') || (params[:locale] == 'iw') || (params[:locale] == 'it') || (params[:locale] == 'kr') || (params[:locale] == 'pl') || (params[:locale] == 'pt') || (params[:locale] == 'ru') || (params[:locale] == 'yi'))
+    
+    locale_token_in_uri = true if ((params[:locale] == 'ar') || (params[:locale] == 'cn') || (params[:locale] == 'de') || (params[:locale] == 'en') || (params[:locale] == 'es') || (params[:locale] == 'fr') || (params[:locale] == 'gr') || (params[:locale] == 'ht') || (params[:locale] == 'iw') || (params[:locale] == 'it') || (params[:locale] == 'kr') || (params[:locale] == 'pl') || (params[:locale] == 'pt') || (params[:locale] == 'ru') || (params[:locale] == 'yi'))
+    
+    Referral.resolve_token(params[:locale]) if !locale_token_in_uri && !params[:locale].nil?
+    
+    cookies[:locale] = params[:locale]  if locale_token_in_uri
+    
     I18n.locale = cookies[:locale] || I18n.default_locale
   end
 end
