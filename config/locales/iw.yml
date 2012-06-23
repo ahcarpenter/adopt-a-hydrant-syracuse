@@ -10,6 +10,7 @@ iw:
     edit_profile: 'עריכת פרופיל'
     email_password: 'שלח לי את הסיסמה שלי'
     find: "למצוא %{thing}"
+    send_referral: 'שלח הפניה'
     send_reminder: 'שלח תזכורת חפירה'
     sign_in: 'התחבר'
     sign_out: 'התנתק'
@@ -69,6 +70,7 @@ iw:
     abandoned: 'ברז נטוש!'
     adopted: 'ברז אומץ!'
     password_reset: 'איפוס סיסמה הוראות נשלח! בדוק את תיבת הדוא"ל שלך.'
+    referral_sent: 'הפנייה נשלחה!'
     reminder_sent: 'תזכורת שנשלח!'
     signed_in: 'מחובר!'
     signed_out: 'הרשאות משתמש.'
@@ -91,6 +93,7 @@ iw:
     edit_profile: 'ערוך את הפרופיל שלך'
     main: "Adopt-a-%{thing}"
     ofline: "של %{organization}"
+    referral: 'להפנות'
     sign_in: "היכנסו, על מנת לאמץ את %{thing}"
     thank_you: "תודה על אימוץ %{thing}!"
     tos: 'תנאי שימוש'

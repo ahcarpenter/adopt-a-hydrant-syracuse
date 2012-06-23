@@ -10,6 +10,7 @@ kr:
     edit_profile: '프로필 수정'
     email_password: '비밀 번호를 이메일로 받음'
     find: '급수전 찾기'
+    send_referral: '추천 보내기'
     send_reminder: '삽에게 알림을 보내려면'
     sign_in: '로그인'
     sign_out: '로그아웃'
@@ -69,6 +70,7 @@ kr:
     abandoned: '급수전은 포기!'
     adopted: '급수전 입양!'
     password_reset: '비밀 번호 재설정 지침을 보냈습니다! 이메일을 확인합니다.'
+    referral_sent: '추천을 보냈습니다!'
     reminder_sent: '알림을 보냈습니다!'
     signed_in: '로그인!'
     signed_out: '로그아웃하였습니다.'
@@ -91,6 +93,7 @@ kr:
     edit_profile: '프로필을 편집'
     main: "Adopt-a-%{thing}"
     ofline: "중 %{organization}"
+    referral: '참조'
     sign_in: '이 급수전을 채택 로그인'
     thank_you: '이 급수전을 채택 주셔서 감사합니다!'
     tos: '서비스 약관'

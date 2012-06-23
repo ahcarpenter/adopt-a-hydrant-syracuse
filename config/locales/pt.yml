@@ -10,6 +10,7 @@ pt:
     edit_profile: 'Editar perfil'
     email_password: 'E-mail minha senha'
     find: "Encontrar %{thing}"
+    send_referral: 'Enviar encaminhamento'
     send_reminder: 'Enviar lembrete para pá'
     sign_in: 'Entrar'
     sign_out: 'Sair'
@@ -69,6 +70,7 @@ pt:
     abandoned: 'Hidrante abandonada!'
     adopted: 'Hidrante adotada!'
     password_reset: 'Instruções de redefinição de senha enviada! Verifique se o seu e-mail.'
+    referral_sent: 'Referral enviada com sucesso!'
     reminder_sent: 'Lembrete enviado!'
     signed_in: 'Logado!'
     signed_out: 'Desconectado.'
@@ -91,6 +93,7 @@ pt:
     edit_profile: 'Editar seu Perfil'
     main: "Adotar-um-%{thing}"
     ofline: "do %{organization}"
+    referral: 'Referir'
     sign_in: "Entrar para adotar essa %{thing}"
     thank_you: "Obrigado por adotar este %{thing}!"
     tos: 'Termos de Serviço'

@@ -10,6 +10,7 @@ ru:
     edit_profile: 'Изменить профиль'
     email_password: 'Напишите мне мой пароль'
     find: "Найти %{thing}"
+    send_referral: 'Отправить направления'
     send_reminder: 'Отправить напоминание лопатой'
     sign_in: 'Войти'
     sign_out: 'Выход'
@@ -69,6 +70,7 @@ ru:
     abandoned: 'Гидрант отказались!'
     adopted: 'Гидрант приняты!'
     password_reset: 'Инструкции Сброс пароля отправлен! Проверьте электронную почту.'
+    referral_sent: 'Направление отправлено!'
     reminder_sent: 'Напоминание отправлено!'
     signed_in: 'Вход в систему!'
     signed_out: 'Выход из системы.'
@@ -91,6 +93,7 @@ ru:
     edit_profile: 'Изменить профиль'
     main: "Adopt-a-%{thing}"
     ofline: "из %{organization}"
+    referral: 'обращаться'
     sign_in: "Войти принять это %{thing}"
     thank_you: "Благодарим Вас за принятие этого %{thing}!"
     tos: 'Условия предоставления услуг'

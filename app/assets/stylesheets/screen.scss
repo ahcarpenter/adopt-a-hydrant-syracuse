@@ -1,6 +1,7 @@
 //http://railscasts.com/episodes/268-sass-basics?view=comments
 //http://stackoverflow.com/questions/10441563/asset-pipeline-and-font-face-on-railsrails-3-2-3
 //http://stackoverflow.com/questions/5874122/is-it-possible-to-detect-firefox-users-in-pure-css
+//http://stackoverflow.com/questions/7362340/disable-horizontal-scroll-on-div
 @font-face{
   font-family: MyriadPro-Semibold;
   src: url('MyriadPro-Semibold.otf');
@@ -507,8 +508,10 @@ i{
   align: center;
   width: 248px;
   font-family: MyriadPro-Regular;
+  overflow-x: hidden;
 
   #user-email-label{
+	margin-top: 0px;
     margin-left: 4px;
   }
   #user-sms-number-label{
@@ -524,4 +527,10 @@ i{
   margin-right: -4px;
   margin-top: -2px;
   font-size: 14px;
+}
+
+.alert .icon-remove{
+  margin-right: 0px;
+  margin-top: 5px;
+  font-size: 12px;
 }

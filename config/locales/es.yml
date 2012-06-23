@@ -10,6 +10,7 @@ es:
     edit_profile: 'Editar perfil'
     email_password: 'Correo electrónico mi contraseña'
     find: "Encontrar %{thing}"
+    send_referral: 'Enviar referencia'
     send_reminder: 'Enviar aviso a pala'
     sign_in: 'Acceder'
     sign_out: 'Finalizar la sesión'
@@ -69,6 +70,7 @@ es:
     abandoned: 'Toma de agua abandonada!'
     adopted: 'Hidrante adoptado!'
     password_reset: 'Las instrucciones de restablecimiento de contraseña enviado! Revise su correo electrónico.'
+    referral_sent: 'Referencia enviado!'
     reminder_sent: 'Recordatorio enviado!'
     signed_in: 'Conectado!'
     signed_out: 'Sesión.'
@@ -91,6 +93,7 @@ es:
     edit_profile: 'Edita tu perfil'
     main: "Adopt-a-%{thing}"
     ofline: "de %{organization}"
+    referral: 'Remitir'
     sign_in: "Acceda a esta adopción %{thing}"
     thank_you: "Gracias por la adopción de esta %{thing}!"
     tos: 'Términos de Servicio'

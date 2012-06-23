@@ -14,7 +14,7 @@
     %a{:id => 'sign-out-link', :class => 'btn btn-danger', :href => 'users/sign_out'}
       = t('buttons.sign_out')
   %p
-    = link_to 'Send referral', '', 'data-toggle' => 'modal', 'data-target' => '#referral'
+    = link_to t('titles.referral'), '', 'data-toggle' => 'modal', 'data-target' => '#referral'
 = render :partial => 'sidebar/referral'
 :javascript
   $(function() {

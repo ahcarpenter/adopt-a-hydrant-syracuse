@@ -10,6 +10,7 @@ pl:
     edit_profile: 'Edytuj profil'
     email_password: 'Powiadom mi moje hasło'
     find: "Znajdź %{thing}"
+    send_referral: 'Wyślij skierowania'
     send_reminder: 'Wyślij przypomnienie do łopaty'
     sign_in: 'Zaloguj się'
     sign_out: 'Wyloguj się'
@@ -69,6 +70,7 @@ pl:
     abandoned: 'Hydrant opuszczony!'
     adopted: 'Hydrant przyjęty!'
     password_reset: 'Instrukcje resetowania hasła została wysłana! Sprawdź pocztę.'
+    referral_sent: 'Skierowanie wysłane!'
     reminder_sent: 'Przypomnienie wysłane!'
     signed_in: 'Zalogowany!'
     signed_out: 'Wylogowany.'
@@ -91,6 +93,7 @@ pl:
     edit_profile: 'Edytuj swój Profil'
     main: "Adopt-a-%{thing}"
     ofline: "z %{organization}"
+    referral: 'Odnosić się'
     sign_in: "Zaloguj się, by przyjąć ten %{thing}"
     thank_you: "Dziękujemy za przyjęcie tego %{thing}!"
     tos: 'Warunki korzystania z usług'

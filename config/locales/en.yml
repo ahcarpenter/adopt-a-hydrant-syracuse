@@ -10,6 +10,7 @@ en:
     edit_profile: 'Edit profile'
     email_password: 'Email me my password'
     find: "Find %{thing}"
+    send_referral: 'Send referral'
     send_reminder: 'Send reminder to shovel'
     sign_in: 'Log in'
     sign_out: 'Log out'
@@ -72,6 +73,7 @@ en:
     abandoned: 'Hydrant abandoned!'
     adopted: 'Hydrant adopted!'
     password_reset: 'Password reset instructions sent! Check your email.'
+    referral_sent: 'Referral sent!'
     reminder_sent: 'Reminder sent!'
     signed_in: 'Logged in!'
     signed_out: 'Logged out.'
@@ -94,6 +96,7 @@ en:
     edit_profile: 'Edit your profile'
     main: "Adopt-a-%{thing}"
     ofline: "of %{organization}"
+    referral: 'Refer'
     sign_in: "Log in to adopt this %{thing}"
     thank_you: "Thank you for adopting this %{thing}!"
     tos: 'Terms of Service'

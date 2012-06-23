@@ -10,6 +10,7 @@ ar:
     edit_profile: 'تعديل الملف الشخصي'
     email_password: 'البريد الالكتروني لي كلمة السر'
     find: "البحث %{thing}"
+    send_referral: 'إرسال الإحالة'
     send_reminder: 'إرسال تذكير للمجرفة'
     sign_in: 'تسجيل الدخول'
     sign_out: 'تسجيل الخروج'
@@ -69,6 +70,7 @@ ar:
     abandoned: 'تخلى صنبور!'
     adopted: 'اعتمد صنبور!'
     password_reset: 'إرسال إرشادات إعادة تعيين كلمة السر! التحقق من بريدك الالكتروني.'
+    referral_sent: 'أرسلت الإحالة!'
     reminder_sent: 'أرسلت تذكير!'
     signed_in: 'في تسجيل!'
     signed_out: 'تسجيل الخروج.'
@@ -91,6 +93,7 @@ ar:
     edit_profile: 'تعديل ملفك الشخصي'
     main: "Adopt-a-%{thing}"
     ofline: "من %{organization}"
+    referral: 'الرجوع'
     sign_in: "تسجيل الدخول إلى تبني هذا %{thing}"
     thank_you: "أشكركم على اعتماد هذه %{thing}!"
     tos: 'شروط الخدمة'

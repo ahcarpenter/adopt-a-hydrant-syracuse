@@ -10,6 +10,7 @@ gr:
     edit_profile: 'Επεξεργασία του προφίλ'
     email_password: 'Στείλε μου τον κωδικό μου'
     find: "Βρείτε %{thing}"
+    send_referral: 'Αποστολή παραπομπή'
     send_reminder: 'Αποστολή υπενθύμιση φτυάρι'
     sign_in: 'Σύνδεση'
     sign_out: 'Έξοδος'
@@ -69,6 +70,7 @@ gr:
     abandoned: 'Υδροληψίας εγκαταλειφθεί!'
     adopted: 'Υδροληψίας υιοθέτησε!'
     password_reset: 'Οδηγίες επαναφοράς κωδικού πρόσβασης εστάλη! Ελέγξτε το email σας.'
+    referral_sent: 'Παραπομπή εστάλη!'
     reminder_sent: 'Υπενθύμιση εστάλη!'
     signed_in: 'Συνδέθηκε!'
     signed_out: 'Καταγράφηκε έξω.'
@@ -91,6 +93,7 @@ gr:
     edit_profile: 'Επεξεργασία του προφίλ σας'
     main: "Adopt-a-%{thing}"
     ofline: "του %{organization}"
+    referral: 'Ανατρέξτε'
     sign_in: "Συνδεθείτε, για να υιοθετήσουν αυτό %{thing}"
     thank_you: "Σας ευχαριστούμε για την έγκριση αυτής %{thing}!"
     tos: 'Όροι Χρήσης'

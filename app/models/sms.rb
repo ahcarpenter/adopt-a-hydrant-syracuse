@@ -18,6 +18,6 @@ class SMS
   
   def self.send_referral(referral)
     # @@account.sms.messages.create(:from => '+18599030353', :to => Referee.find(referral.referee_id).endpoint, :body => User.find(referral.user_id).name + ' has referred you to ' + I18n.t('titles.main') + '. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(referral.id.to_s) + '.')
-    @@account.sms.messages.create(:from => '+18599030353', :to => Referee.find(referral.referee_id).endpoint, :body => User.find(referral.user_id).name + ' has referred you to Adopt-a-Hydrant. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(referral.id.to_s) + '.')
+    @@account.sms.messages.create(:from => '+18599030353', :to => Referee.find(referral.referee_id).endpoint, :body => User.find(referral.user_id).name + ' has referred you to Adopt-a-Hydrant. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(referral.id.to_s).chop + '.')
   end
 end

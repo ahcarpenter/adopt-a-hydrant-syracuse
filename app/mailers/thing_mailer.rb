@@ -19,6 +19,6 @@ class ThingMailer < ActionMailer::Base
   
   def send_referral(referral)
     # mail(:to => Referee.find(referral.referee_id).endpoint, :from => 'adoptahydrantsyracuse@gmail.com', :subject => t('titles.main'), :body => User.find(referral.user_id).name + ' has referred you to ' + t('titles.main') + '. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(referral.id.to_s) + '.')
-    mail(:to => Referee.find(referral.referee_id).endpoint, :from => 'adoptahydrantsyracuse@gmail.com', :subject => 'Adopt-a-Hydrant', :body => User.find(referral.user_id).name + ' has referred you to Adopt-a-Hydrant. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(referral.id.to_s) + '.')
+    mail(:to => Referee.find(referral.referee_id).endpoint, :from => 'adoptahydrantsyracuse@gmail.com', :subject => 'Adopt-a-Hydrant', :body => User.find(referral.user_id).name + ' has referred you to Adopt-a-Hydrant. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(referral.id.to_s).chop + '.')
   end
 end

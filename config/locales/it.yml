@@ -10,6 +10,7 @@ it:
     edit_profile: 'Modifica il profilo'
     email_password: 'Email me la mia password'
     find: 'Trova idrante'
+    send_referral: 'Invia rinvio'
     send_reminder: 'Invia promemoria pala'
     sign_in: 'Entra'
     sign_out: 'Esci'
@@ -69,6 +70,7 @@ it:
     abandoned: 'Idrante abbandonato!'
     adopted: 'Idrante adottato!'
     password_reset: 'Istruzioni per reimpostare la password ricevuta! Controlla la tua email.'
+    referral_sent: 'Referral inviato!'
     reminder_sent: 'Promemoria inviato!'
     signed_in: 'Accesso effettuato!'
     signed_out: 'Disconnesso.'
@@ -91,6 +93,7 @@ it:
     edit_profile: 'Modifica il tuo profilo'
     main: "Adopt-a-%{thing}"
     ofline: "di %{organization}"
+    referral: 'Fare riferimento'
     sign_in: "Accedere a adottare questo %{thing}"
     thank_you: "Grazie di aver adottato questo %{thing}!"
     tos: 'Termini di Servizio'

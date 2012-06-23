@@ -11,6 +11,7 @@ fr:
     edit_profile: 'Modifier le profil'
     email_password: 'Envoyez-moi mon mot de passe'
     find: 'Trouver %{thing}'
+    send_referral: 'Envoyer le renvoi'
     send_reminder: 'Envoyer un rappel à la pelle'
     sign_in: 'Connectez-vous'
     sign_out: 'Déconnexion'
@@ -70,6 +71,7 @@ fr:
     abandoned: 'Bouche abandonné!'
     adopted: 'Bouche adopté!'
     password_reset: 'Les instructions de réinitialisation de mot de passe envoyé! Vérifiez votre adresse email.'
+    referral_sent: 'Renvoi envoyé!'
     reminder_sent: 'Rappel envoyé!'
     signed_in: 'Connecté!'
     signed_out: 'Déconnecté.'
@@ -92,6 +94,7 @@ fr:
     edit_profile: 'Modifiez votre profil'
     main: "Adopt-a-%{thing}"
     ofline: "de %{organization}"
+    referral: 'Référer'
     sign_in: "Connectez-vous à adopter cette %{thing}"
     thank_you: "Merci pour l'adoption de cette %{thing}!"
     tos: "Conditions D'utilisation"

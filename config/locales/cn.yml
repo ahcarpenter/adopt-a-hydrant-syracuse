@@ -10,6 +10,7 @@ cn:
     edit_profile: '編輯個人資料'
     email_password: '我的密碼給我發電子郵件'
     find: '找到消防栓'
+    send_referral: '發送轉診'
     send_reminder: '發送提醒鏟'
     sign_in: '登錄'
     sign_out: '登出'
@@ -69,6 +70,7 @@ cn:
     abandoned: '消防栓被遺棄！'
     adopted: '消防栓通過了！'
     password_reset: '密碼的復位指令發出！檢查您的電子郵件。'
+    referral_sent: '轉診發送！'
     reminder_sent: '提醒發送！'
     signed_in: '登錄！'
     signed_out: '註銷。'
@@ -91,6 +93,7 @@ cn:
     edit_profile: '編輯個人資料'
     main: 'Adopt-a-消防栓'
     ofline: "的 %{organization}"
+    referral: '參考'
     sign_in: '登錄到採用這種消防栓'
     thank_you: '感謝您採用這種消防栓！'
     tos: '服務條款'

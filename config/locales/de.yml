@@ -12,6 +12,7 @@ de:
     edit_profile: 'Profil bearbeiten'
     email_password: 'Bitte schicken Sie mir mein Passwort'
     find: 'Finden Sie Hydranten'
+    send_referral: 'Senden Überweisung'
     send_reminder: 'Send Erinnerung zu schaufeln'
     sign_in: 'Einloggen'
     sign_out: 'Ausloggen'
@@ -71,6 +72,7 @@ de:
     abandoned: 'Hydrant verlassen!'
     adopted: 'Hydrant übernommen!'
     password_reset: 'Password Reset Anleitung geschickt! Überprüfen Sie Ihre E-Mail.'
+    referral_sent: 'Referral geschickt!'
     reminder_sent: 'Reminder versendet!'
     signed_in: 'Angemeldet!'
     signed_out: 'Abgemeldet.'
@@ -93,6 +95,7 @@ de:
     edit_profile: 'Ihr Profil bearbeiten'
     main: "Adopt-a-%{thing}"
     ofline: "der %{organization}"
+    referral: 'Verweisen'
     sign_in: "Melden Sie sich an, um diesen %{thing} übernehmen"
     thank_you: "Vielen Dank für die Annahme dieser %{thing}!"
     tos: 'Nutzungsbedingungen'

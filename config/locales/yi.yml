@@ -10,6 +10,7 @@ yi:
     edit_profile: 'רעדאַגירן פּראָפיל'
     email_password: 'בליצפּאָסט מיר מיין פּאַראָל'
     find: "געפינען %{thing}"
+    send_referral: 'שיקן ריפעראַל'
     send_reminder: 'שיקן דערמאָנונג צו רידל'
     sign_in: 'קלאָץ אין'
     sign_out: 'קלאָץ אויס'
@@ -69,6 +70,7 @@ yi:
     abandoned: 'הידראַנט פארלאזן!'
     adopted: 'הידראַנט אנגענומען!'
     password_reset: 'שפּריכוואָרט באַשטעטיק ינסטראַקשאַנז געשיקט! קוק דיין בליצפּאָסט.'
+    referral_sent: 'רעפערראַל געשיקט!'
     reminder_sent: 'דערמאָנונג געשיקט!'
     signed_in: 'לאָגד אין!'
     signed_out: 'לאָגד אויס!'
@@ -91,6 +93,7 @@ yi:
     edit_profile: 'רעדאַגירן דיין פּראָופייל'
     main: "Adopt-a-%{thing}"
     ofline: "פון %{organization}"
+    referral: 'אָפּשיקן'
     sign_in: "קלאָץ אין צו אַדאַפּט דעם %{thing}"
     thank_you: "דאנק פֿאַר אננעמען דעם %{thing}!"
     tos: 'תּנאָים פון סערוויס'

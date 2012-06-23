@@ -4,7 +4,8 @@
   .modal-header
     %a{:class => 'close', :'data-dismiss' => 'modal', :href => ''}
       %i.icon-remove
-    %h3 Refer
+    %h3
+      = t('titles.referral')
   .modal-body
     = form_for :user, :html => {:id => 'referral-form', :class => 'form-vertical'} do |f|
       %label{:for => 'email_referral_field', :id => 'user-email-label'}
@@ -16,4 +17,5 @@
       %a{:id => 'sms-referral', :class => 'btn disabled', 'data-content' => t('labels.sms_notifications'), 'data-title' => t('labels.sms_notifications_title')}
       = f.telephone_field 'sms_referral_field', :placeholder => t('defaults.sms_number'), 'disabled' => 'disabled'
   .modal-footer
-    %a.btn.disabled{:href => '#', :id => 'send_referral'} Send referral
+    %a.btn.disabled{:href => '#', :id => 'send_referral'}
+      = t('buttons.send_referral')

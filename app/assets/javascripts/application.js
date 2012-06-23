@@ -11,4 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require_tree .
+//= require spin.min
+//= require jquery.spin
 //= require bootstrap
