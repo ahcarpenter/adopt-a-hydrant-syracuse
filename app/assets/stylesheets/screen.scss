@@ -29,13 +29,15 @@
   font-style: normal;
 }
 
-html {
+html, body, .table, .table-cell, #map {
   height: 100%;
 }
 
-  
-img{
+img, #thing_name{
   margin-bottom: 2px;
+}
+ 
+img{
   margin-top: -8px;
 }
 
@@ -44,8 +46,11 @@ img{
   height: 114px;
 }
 
-#cfa{
+#cfa, #col1, #col2{
   width: 100px;
+}
+
+#cfa{
   height: 40px;
 }
 
@@ -55,9 +60,8 @@ img{
   margin-top: -7px;
 }
 
-body {
-  height: 100%;
-  margin: 0;
+h1, h2, .sidebar, p#tagline {
+  text-align: center;
 }
 
 h1, h2 {
@@ -91,21 +95,28 @@ form {
   margin-bottom: 0;
 }
 
-label {
+label, input, input[type="radio"], input[type="checkbox"], form select, button.btn, input[type="submit"].btn, a.btn, .sidebar p, p#tagline, p, #user-email-edit, #referral{
   font-family: MyriadPro-Regular;
+}
+
+label, .sidebar .alert-message.block-message, #tos {
   text-align: left;
 }
 
 input {
-  font-family: MyriadPro-Regular;
   width: 200px;
 }
 
-input[type="radio"], input[type="checkbox"] {
-  font-family: MyriadPro-Regular;
-  display: inline;
-  float:left;
+input[type="radio"], input[type="checkbox"], i, #sms_notifications, #email_notifications, #sms-referral, #email-referral, #col1, #col2, #thing_name{
+  float: left;
+}
+
+input[type="radio"], input[type="checkbox"], .map-container {
   width: auto;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  display: inline;
   margin-right: 10px;
 }
 
@@ -113,12 +124,7 @@ input#user_new {
   margin-bottom: 0;
 }
 
-input#user_existing {
-  margin-bottom: 10px;
-}
-
 form select, button.btn, input[type="submit"].btn {
-  font-family: MyriadPro-Regular;
   width: 210px;
 }
 
@@ -133,14 +139,12 @@ form input.search-query {
 }
 
 a.btn {
-  font-family: MyriadPro-Regular;
   width: 188px;
   align-text: center;
 }
 
 .table {
   display: table;
-  height: 100%;
   width: 100%;
 }
 
@@ -150,30 +154,33 @@ a.btn {
 
 .table-cell {
   display: table-cell;
-  height: 100%;
   vertical-align: top;
+}
+
+.alert-message.block-message, input, select, option, button, form.search-form input, form.search-form select, form.search-form option, a.btn, #tos p, #email_notifications, #email-referral, input #user_existing{
+  margin-bottom: 10px;
+}
+
+#abandon_button{
+  margin-bottom: 0px;
 }
 
 .alert-message.block-message {
   padding: 8px 12px 8px;
-  margin-bottom: 10px;
 }
 
 .sidebar .alert-message.block-message {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  text-align: left;
   padding-left: 10px;
 }
 
 .sidebar {
   width: 250px;
   border-right: 1px solid #ccc;
-  text-align: center;
 
   p {
-    font-family: MyriadPro-Regular;
 	padding: 0px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -181,7 +188,6 @@ a.btn {
 
   input, select, option, button, form.search-form input, form.search-form select, form.search-form option, a.btn {
     display: block;
-    margin-bottom: 10px;
   }
 
   .control-group {
@@ -197,7 +203,6 @@ a.btn {
   }
 
   p#tagline {
-    font-family: MyriadPro-Regular;
     color: #ffffff;
     background-color: #c43c35;
     background-repeat: repeat-x;
@@ -212,7 +217,6 @@ a.btn {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#c43c35', GradientType=0);
     padding: 10px 20px;
-    text-align: center;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     margin-left: 0px;
 	margin-right: 0px;
@@ -229,9 +233,7 @@ a.btn {
    }
 
     #col1 {
-	  float: left;
 	  margin-left: 20px;
-	  width: 100px;
 
 	  img {
 	    margin-top: 10px;
@@ -239,10 +241,8 @@ a.btn {
 	}
 
 	#col2 {
-	  float: left;
 	  margin-left: 12px;
 	  margin-top: 15px;
-	  width: 100px;
 	}
   }
 
@@ -263,18 +263,12 @@ a.btn {
   }
 }
 
-.map-container {
-  width: auto;
-}
-
 #map {
-  height: 100%;
   width: 100%;
   padding: 1px;
 }
 
 #tos {
-  text-align: left;
   font-family: BigCaslon;
   
   h2{
@@ -283,7 +277,6 @@ a.btn {
 
   p {
     font-family: BigCaslon;
-    margin-bottom: 10px;
   }
 }
 
@@ -306,10 +299,6 @@ img.lock {
   filter: alpha(opacity=80); /* For IE8 and earlier */
   margin-right: 22px;
   margin-top: 3px;
-}
-
-p{
-  font-family: MyriadPro-Regular;
 }
 
 #user_new{
@@ -341,10 +330,6 @@ p{
 
 #user_email{
   font-family: Drew;
-}
-
-#user-email-edit{
-  font-family: MyriadPro-Regular;
 }
 
 .alert{
@@ -393,15 +378,13 @@ p{
 i{
   margin-top: 4px;
   margin-right: -20px;
-  float:left;
 }
 
 #sms_notifications{
- margin-top: -39px;
- margin-left: 178px;
- text-align:right;
- width: 10px;
- float:left;
+  margin-top: -39px;
+  margin-left: 178px;
+  text-align:right;
+  width: 10px;
 }
 
 #email_notifications{
@@ -409,8 +392,6 @@ i{
   margin-left: 147px;
   text-align:right;
   width: 10px;
-  float:left;
-  margin-bottom: 10px;
 }
 
 #sms-referral{
@@ -420,7 +401,6 @@ i{
  margin-right: 4px;
  text-align:right;
  width: 10px;
- float:left;
 }
 
 #user_sms_referral_field{
@@ -436,8 +416,6 @@ i{
   margin-right: 4px;
   text-align:right;
   width: 10px;
-  float:left;
-  margin-bottom: 10px;
 }
 
 #user_email_referral_field{
@@ -455,8 +433,6 @@ i{
 
 #thing_name{
   width: 138px;
-  float: left;
-  margin-bottom: 2px;
 }
 
 #adopt-button{
@@ -506,7 +482,6 @@ i{
 #referral{
   align: center;
   width: 248px;
-  font-family: MyriadPro-Regular;
 
   #user-email-label{
     margin-left: 4px;
@@ -524,8 +499,4 @@ i{
   margin-right: -4px;
   margin-top: -2px;
   font-size: 14px;
-}
-
-.icon-heart{
-  color: red;
 }
