@@ -534,3 +534,24 @@ i{
 #referral h3{
   margin-left: 18px;
 }
+
+#preview, .preview-body{
+  text-align: left;
+  margin-left: 4px;
+  color: #9e9e9e;
+}
+
+.preview-body{
+  font-size: 12px;
+  margin-left: 12px;
+}
+
+.preview-title{
+  margin-left: 12px;
+  color: #787878;
+  
+  .icon-caret-down, .icon-caret-right{
+    margin-top: 2px;
+    margin-left: -12px;
+  }
+}

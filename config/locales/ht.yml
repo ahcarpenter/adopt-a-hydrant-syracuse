@@ -42,9 +42,15 @@ ht:
     address_2: 'Liy Adrès 2'
     city: 'Vil'
     city_state: 'Vil'
+    disable_email_notifications: 'Enfim notifikasyon atravè imel si Lanèj ki Tonbe an te prévue'
+    disable_sms_notifications: Enfim notifikasyon via SMS si Lanèj ki Tonbe an te prévue'
+    disable_email_transmission: 'Enfim transmisyon atravè imel'
+    disable_sms_transmission: 'Enfim transmisyon via SMS'
     email: 'Adrès imel'
-    email_notifications: "Notifye m 'via imel si Lanèj ki Tonbe an te prévue."
-    email_notifications_title: 'Notifikasyon imel'
+    enable_email_notifications: 'Pèmèt notifikasyon atravè imel si Lanèj ki Tonbe an te prévue'
+    enable_sms_notifications: 'Pèmèt notifikasyon via SMS si Lanèj ki Tonbe an te prévue'
+    enable_email_transmission: 'Pèmèt transmisyon atravè imel'
+    enable_sms_transmission: 'Pèmèt transmisyon via SMS'
     name: 'Non'
     name_thing: "Bay sa a %{thing} yon non"
     organization: 'Òganizasyon'
@@ -52,10 +58,9 @@ ht:
     password_choose: 'Chwazi yon modpas.'
     password_current: 'Aktyèl modpas'
     password_new: 'Nouvo modpas'
+    preview: 'Preview'
     remember_me: "Toujou chonje m '"
     required: 'Obligatwa'
-    sms_notifications: "Notifye m 'via SMS si Lanèj ki Tonbe an te prévue."
-    sms_notifications_title: 'SMS notifikasyon'
     sms_number: 'Telefòn mobil nimewo'
     state: 'Eta'
     user_existing: 'Mwen te deja siyen moute'

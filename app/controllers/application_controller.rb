@@ -24,6 +24,14 @@ protected
   end
 
   def set_locale
+    # test = true
+    # session[:enabled] = false
+    # test? puts @hello : puts test
+    # test = false
+    # test? puts @hello : puts test
+    # @enabled = false
+    session[:email_notifications] = false
+    # session[:email_notifications] = true
     available_languages = Dir.glob(Rails.root + 'config/locales/??.yml').map do |file|
       File.basename(file, '.yml')
     end

@@ -3,6 +3,7 @@ class InfoWindowController < ApplicationController
   def index
     session[:thing] = Thing.find_by_id(params[:thing_id])
     session[:thing] = Thing.find_by_id(session[:id]) if session[:thing].nil?
+    # @@test = I18n.t('titles.email_notifications_title')
     
     if session[:thing].adopted?
       if user_signed_in? && current_user.id == session[:thing].user_id

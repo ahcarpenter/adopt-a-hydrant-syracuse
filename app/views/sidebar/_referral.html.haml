@@ -10,12 +10,26 @@
     = form_for :user, :html => {:id => 'referral-form', :class => 'form-vertical'} do |f|
       %label{:for => 'email_referral_field', :id => 'user-email-label'}
         = t('labels.email')
-      %a{:id => 'email-referral', :class => 'btn disabled', 'data-content' => t('labels.email_notifications'), 'data-title' => t('labels.email_notifications_title')}
+      %a{:id => 'email-referral', :class => 'btn disabled', 'data-title' => t('labels.enable_email_transmission'), 'delay' => '{show: 1000, hide: 100}'}
       = f.email_field 'email_referral_field', :value => params[:user] ? params[:user][:email] : nil, 'disabled' => 'disabled'
       %label{:for => 'sms_referral_field', :id => 'user-sms-number-label'}
         = t('labels.sms_number')
-      %a{:id => 'sms-referral', :class => 'btn disabled', 'data-content' => t('labels.sms_notifications'), 'data-title' => t('labels.sms_notifications_title')}
+      %a{:id => 'sms-referral', :class => 'btn disabled', 'data-title' => t('labels.enable_sms_transmission'), 'delay' => '{show: 1000, hide: 100}'}
       = f.telephone_field 'sms_referral_field', :placeholder => t('defaults.sms_number'), 'disabled' => 'disabled'
   .modal-footer
+    #preview.hide{'data-toggle' => 'collapse', 'data-target' => '.preview-body'}
+      .preview-title
+        %i.icon-caret-right
+        = t('labels.preview')
+      .preview-body.collapse
+        = User.find(User.current.id).name + ' has referred you to Adopt-a-Hydrant. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(((Referral.all.last.id)+1).to_s).chop + '.'
     %a.btn.disabled{:href => '#', :id => 'send_referral'}
       = t('buttons.send_referral')
+    #disable_email_transmission.hide
+      = t('labels.disable_email_transmission')
+    #enable_email_transmission.hide
+      = t('labels.enable_email_transmission')
+    #disable_sms_transmission.hide
+      = t('labels.disable_sms_transmission')
+    #enable_sms_transmission.hide
+      = t('labels.enable_sms_transmission')
