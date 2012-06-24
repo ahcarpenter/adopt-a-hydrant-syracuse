@@ -667,15 +667,7 @@ $(function() {
     return false
   })
   $('#sms-referral').live('click', function() {
-	$.ajax({
-	      type: 'GET',
-	      url: '/referrals',
-	      error: function(jqXHR) {},
-	      success: function(data) {$('#content').html(data)}
-	})
     var link = $(this)
-	// alert(sms_referral)
-    // if(!email_notifications){$('#preview').collapse()}
     if(!sms_referral){
 	  $('#preview').removeClass('hide')
 	  $('.preview-body').removeClass('hide')
