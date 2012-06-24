@@ -308,7 +308,7 @@ $(function() {
 	search()
 	if(webkit){_webkit()}
   }
-  $('#send_referral').tooltip({title: 'Possible text: ' + '"' + "<%= User.find(User.current.id).name + ' has referred you to Adopt-a-Hydrant. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(((Referral.all.last.id)+1).to_s).chop + '.' %>" + '"'})
+  $('#send_referral').tooltip({title: 'Preview of possible contents of transmission: ' + '"' + "<%= User.find(User.current.id).name + ' has referred you to Adopt-a-Hydrant. You might be interested in checking out the following: http://adopt-a-hydrant-syracuse.herokuapp.com/' + Base64::encode64(((Referral.all.last.id)+1).to_s).chop + '.' %>" + '"'})
   $('#send_referral').live('click', function() {
 	disable_referral_modal_elements()
 	if(!opera){$('#referral').spin({
