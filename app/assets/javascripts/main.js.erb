@@ -297,19 +297,12 @@ $(function() {
   $('#preview').on('show', function () {
 	$('.preview-body').removeClass('hide')
     $('#send_referral').css('margin-top', '12px')
-	//     i = 0
-	// while (i != 1000){
-	// 	i+=1
-	// }
   })
   $('#preview').on('shown', function () {
   // do something…
-    // preview_hidden = false
     preview_shown = true
     $('.icon-caret-right').remove()
     $('.preview-title').prepend("<i class='icon-caret-down'></i>")
-    // $('#send_referral').css('margin-top', '12px')
-    // $('.preview-body').css('padding-bottom', '8px')
   })
   $('#preview').on('hide', function () {
     $('#send_referral').css('margin-top', '4px')
@@ -320,9 +313,6 @@ $(function() {
     preview_hidden = true
     $('.icon-caret-down').remove()
     $('.preview-title').prepend("<i class='icon-caret-right'></i>")
-    // $('preview-body').css('padding-bottom', '0px')
-    // $('preview-body').css('padding-top', '-4px')
-    // $('.preview-title').css('margin-bottom', '-4px')
   })
   function disable_referral_modal_elements(){
 	if(email_referral){
@@ -340,8 +330,6 @@ $(function() {
 	if(!preview_hidden){
 		if(!opera){
 			$('#referral').spin(false)
-			// $('#preview').collapse('hide')
-			// preview_hidden = true
 		}
 		$('#user_email_referral_field').val('')
 		$('#user_sms_referral_field').val('')
@@ -353,30 +341,7 @@ $(function() {
 		$('#preview').addClass('hide')
 	}
 	preview_hidden = false
-	// $('#preview').addClass('hide')
-	// $('#preview').collapse('hide')
   })
-  // $('#referral').on('show', function () {
-    // do something…
-	// if(!preview_hidden){
-	// 	if(!opera){
-	// 		$('#referral').spin(false)
-			// $('#preview').collapse('hide')
-			// preview_hidden = true
-		// }
-		// $('#user_email_referral_field').val('')
-		// $('#user_sms_referral_field').val('')
-		// disable_referral_modal_elements()
-		// sms_referral = false
-		// email_referral = false
-		// $('.preview-body').collapse('hide')
-		// $('.preview-body').removeClass('hide')
-	// 	$('#preview').addClass('hide')
-	// }
-	// preview_hidden = false
-	// $('#preview').addClass('hide')
-	// $('#preview').collapse('hide')
-  // })
   function prepare_search_elements() {
 	search()
 	if(webkit){_webkit()}
