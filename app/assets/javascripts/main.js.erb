@@ -95,12 +95,8 @@ $(function() {
 	}
   })
   function font(element){
-	$(element).focusout(function(event) {
-	  if($(element).val().length == 0){$(element).css('font-family', 'Drew')}
-	})
-	$(element).keydown(function(event) {
-      $(element).css('font-family', 'MyriadPro-Regular')
-	})
+	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
+	$(element).keydown(function(event) {$(element).css('font-family', 'MyriadPro-Regular')})
   }
   font('#user_email')
   search()
@@ -130,7 +126,7 @@ $(function() {
 	    activeInfoWindow.close()
 	  }
 	  var infoWindow = new google.maps.InfoWindow({
-	  	    maxWidth: 210
+	    maxWidth: 210
 	  })
 	  google.maps.event.addListener(infoWindow, 'closeclick', function() {
 	    isWindowOpen = false
@@ -189,30 +185,20 @@ $(function() {
           $('#address').parent().removeClass('error')
           var i = -1
           $(data).each(function(index, thing) {
-            if($.inArray(thing.id, thingIds) === -1) {
-              i += 1
-            } else {
+            if($.inArray(thing.id, thingIds) === -1) {i += 1} 
+			else {
               // continue
               return true
             }
             setTimeout(function() {
 			  thing_snow_cover = thing.snow_cover
               if(thing.user_id) {
-				if(thing_snow_cover > 6){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1')
-				} else if(thing_snow_cover <= 6 && thing_snow_cover > 0){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2')	
-				} else{
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green')	
-				}
-              } else {
-				if(thing_snow_cover > 6){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1')
-				} else if(thing_snow_cover <= 6 && thing_snow_cover > 0){
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2')	
-				} else{
-				  addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')	
-				}
+				if(thing_snow_cover > 6){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1')} 
+				else if(thing_snow_cover <= 6 && thing_snow_cover > 0){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2')} 
+				else{addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green')}
+              } else {if(thing_snow_cover > 6){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1')} 
+				else if(thing_snow_cover <= 6 && thing_snow_cover > 0){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2')} 
+				else{addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')}
               }
             }, i * 100)
           })
@@ -234,19 +220,15 @@ $(function() {
   }
   function stateChange(color){
 	if(color != undefined){
-		activeMarker.setMap()
-		activeMarker = addMarker(activeThingId, new google.maps.LatLng(activeMarker.getPosition().lat(), activeMarker.getPosition().lng()), color)
+	  activeMarker.setMap()
+	  activeMarker = addMarker(activeThingId, new google.maps.LatLng(activeMarker.getPosition().lat(), activeMarker.getPosition().lng()), color)
 	}
 	activeInfoWindow.close()
 	openInfoWindow(activeInfoWindow, map, activeMarker)
   }
   function openInfoWindow(infoWindow, map, marker){
-	if(map.getStreetView().getVisible()){
-	  infoWindow.open(map.getStreetView(), marker)
-	}
-	else{
-	  infoWindow.open(map, marker)
-	}
+	if(map.getStreetView().getVisible()){infoWindow.open(map.getStreetView(), marker)}
+	else{infoWindow.open(map, marker)}
   }
   function address(){
 	var submitButton = $("#address_form input[type='submit']")
@@ -281,9 +263,7 @@ $(function() {
 			if(!map.getStreetView().getVisible()){
 	            map.setCenter(new google.maps.LatLng(data[0], data[1]))
 	            map.setZoom(19)	
-			} else{
-				map.getStreetView().setPosition(new google.maps.LatLng(data[0], data[1]))
-			}
+			} else{map.getStreetView().setPosition(new google.maps.LatLng(data[0], data[1]))}
           }
         }
       })
@@ -305,18 +285,30 @@ $(function() {
 
     return this;
   })
+  function disable_referral_modal_elements(){
+	if(email_referral){
+	  $('#email-referral').removeClass('btn btn-success').addClass('btn disabled')	
+	  $('#user_email_referral_field').attr('disabled', 'disabled')
+	}
+	if(sms_referral){
+	  $('#sms-referral').removeClass('btn btn-success').addClass('btn disabled')
+	  $('#user_sms_referral_field').attr('disabled', 'disabled')
+	}
+	$('#send_referral').removeClass('btn btn-primary').addClass('btn disabled')
+  }
   $('#referral').live('hidden', function () {
     // do something…
 	if(!opera){$('#referral').spin(false)}
 	$('#user_email_referral_field').val('')
 	$('#user_sms_referral_field').val('')
-	$('#user_email_referral_field').attr('disabled', 'disabled')
-	$('#user_sms_referral_field').attr('disabled', 'disabled')
-	$('#email-referral').removeClass('btn btn-success').addClass('btn disabled')
-	$('#sms-referral').removeClass('btn btn-success').addClass('btn disabled')
-	$('#send_referral').removeClass('btn btn-primary').addClass('btn disabled')
+	disable_referral_modal_elements()
   })
+  function prepare_search_elements() {
+	search()
+	if(webkit){_webkit()}
+  }
   $('#send_referral').live('click', function() {
+	disable_referral_modal_elements()
 	if(!opera){$('#referral').spin({
 	  lines: 11, // The number of lines to draw
 	  length: 7, // The length of each line
@@ -359,9 +351,8 @@ $(function() {
 	      error: function(jqXHR) {
 	      },
 	      success: function(data) {
-			$('#content').html(data)
-			search()
-			if(webkit){_webkit()}
+		    $('#content').html(data)
+			prepare_search_elements()
 	      }
 	    })
       }
@@ -489,16 +480,11 @@ $(function() {
             $.ajax({
               type: 'GET',
               url: '/sidebar/search',
-              data: {
-                'flash': {
-                  'notice': 'notices.signed_up'
-                }
-              },
+              data: {'flash': {'notice': 'notices.signed_up'}},
               success: function(data) {
-                $('#content').html(data)
-                search()
-				if(webkit){_webkit()}
-              }
+				$('#content').html(data)
+				prepare_search_elements()
+			  }
             })
           }
         })
@@ -533,18 +519,13 @@ $(function() {
           },
           success: function(data) {
             $.ajax({
-              type: 'GET',
-              url: '/sidebar/search',
-              data: {
-                'flash': {
-                  'notice': 'notices.signed_in'
-                }
-              },
-              success: function(data) {
-                $('#content').html(data)
-				search()
-				if(webkit){_webkit()}
-              }
+                type: 'GET',
+                url: '/sidebar/search',
+                data: {'flash': {'notice': 'notices.signed_in'}},
+                success: function(data) {
+	              $('#content').html(data)
+				  prepare_search_elements()
+				}
             })
           }
         })
@@ -560,9 +541,7 @@ $(function() {
           data: {
             'utf8': '✓',
             'authenticity_token': $("#combo-form input[name='authenticity_token']").val(),
-            'user': {
-              'email': $('#user_email').val()
-            }
+            'user': {'email': $('#user_email').val()}
           },
           error: function(jqXHR) {
             $(submitButton).attr('disabled', false)
@@ -604,9 +583,7 @@ $(function() {
         $.ajax({
           type: 'GET',
           url: '/info_window',
-          data: {
-            'thing_id': activeThingId
-          },
+          data: {'thing_id': activeThingId},
           success: function(data) {
 			stateChange('green')
 			activeInfoWindow.setContent(data)
@@ -700,9 +677,7 @@ $(function() {
         $.ajax({
           type: 'GET',
           url: '/info_window',
-          data: {
-            'thing_id': activeThingId
-          },
+          data: {'thing_id': activeThingId},
           success: function(data) {
 			stateChange('red')
 			activeInfoWindow.setContent(data)
@@ -725,9 +700,7 @@ $(function() {
     $.ajax({
       type: 'GET',
       url: '/users/edit',
-      error: function(jqXHR) {
-        $(link).removeClass('disabled')
-      },
+      error: function(jqXHR) {$(link).removeClass('disabled')},
       success: function(data) {
         $('#content').html(data)
 		$('#user_city').typeahead({source: city_names})
@@ -751,33 +724,23 @@ $(function() {
     if(!/[\w\.%\+\]+@[\w\]+\.+[\w]{2,}/.test($('#user_email').val())) {
       errors.push($('#user_email'))
       $('#user_email').parent().addClass('error')
-    } else {
-      $('#user_email').parent().removeClass('error')
-    }
+    } else {$('#user_email').parent().removeClass('error')}
     if($('#user_name').val() === '') {
       errors.push($('#user_name'))
       $('#user_name').parent().addClass('error')
-    } else {
-      $('#user_name').parent().removeClass('error')
-    }
+    } else {$('#user_name').parent().removeClass('error')}
     if($('#user_zip').val() != '' && !/^\d{5}(-\d{4})?$/.test($('#user_zip').val())) {
       errors.push($('#user_zip'))
       $('#user_zip').parent().addClass('error')
-    } else {
-      $('#user_zip').parent().removeClass('error')
-    }
+    } else {$('#user_zip').parent().removeClass('error')}
     if($('#user_new_password').val() && ($('#user_new_password').val().length < 6 || $('#user_new_password').val().length > 20)) {
       errors.push($('#user_new_password'))
       $('#user_new_password').parent().addClass('error')
-    } else {
-      $('#user_new_password').parent().removeClass('error')
-    }
+    } else {$('#user_new_password').parent().removeClass('error')}
     if($('#user_current_password').val().length < 6 || $('#user_current_password').val().length > 20) {
       errors.push($('#user_current_password'))
       $('#user_current_password').parent().addClass('error')
-    } else {
-      $('#user_current_password').parent().removeClass('error')
-    }
+    } else {$('#user_current_password').parent().removeClass('error')}
     if(errors.length > 0) {
       $(submitButton).attr('disabled', false)
       errors[0].focus()
@@ -856,10 +819,9 @@ $(function() {
           errors[0].focus()
         },
         success: function(data) {
-          $('#content').html(data)
-          search()
-   		  if(webkit){_webkit()}
-        }
+	      $('#content').html(data)
+	      prepare_search_elements()
+	    }
       })
     }
     return false
@@ -870,18 +832,12 @@ $(function() {
     $.ajax({
       type: 'DELETE',
       url: '/users/sign_out.json',
-      error: function(jqXHR) {
-        $(link).removeClass('disabled')
-      },
+      error: function(jqXHR) {$(link).removeClass('disabled')},
       success: function(data) {
         $.ajax({
           type: 'GET',
           url: '/sidebar/combo_form',
-          data: {
-            'flash': {
-              'warning': 'notices.signed_out'
-            }
-          },
+          data: {'flash': {'warning': 'notices.signed_out'}},
           success: function(data) {
             $('#content').html(data)
    			font('#user_email')
@@ -901,9 +857,7 @@ $(function() {
     $.ajax({
       type: 'GET',
       url: '/users/sign_in',
-      error: function(jqXHR) {
-        $(submitButton).attr('disabled', false)
-      },
+      error: function(jqXHR) {$(submitButton).attr('disabled', false)},
       success: function(data) {
 		stateChange()
         activeInfoWindow.setContent(data)
@@ -917,14 +871,11 @@ $(function() {
     $.ajax({
       type: 'GET',
       url: '/sidebar/search',
-      error: function(jqXHR) {
-        $(link).removeClass('disabled')
-      },
+      error: function(jqXHR) {$(link).removeClass('disabled')},
       success: function(data) {
-        $('#content').html(data)
-        search()
-		if(webkit){_webkit()}
-      }
+	    $('#content').html(data)
+	    prepare_search_elements()
+	  }
     })
     return false
   })
@@ -952,9 +903,7 @@ $(function() {
           url: '/info_window',
           data: {
             'thing_id': activeThingId,
-            'flash': {
-              'notice': 'notices.reminder_sent'
-            }
+            'flash': {'notice': 'notices.reminder_sent'}
           },
           success: function(data) {
 			stateChange()
