@@ -14,7 +14,10 @@
       %a{:id => 'email_notifications', :class => 'btn disabled', 'data-title' => t('labels.enable_email_notifications')}
       %a{:id => 'sms_notifications', :class => 'btn disabled', 'data-title' => t('labels.enable_sms_notifications')}
     %a{:id => 'adopt-button', :class => 'btn primary', :type => 'submit', :name => 'commit'}
-      = t('buttons.adopt')
+      .icon-wing
+        = ' '
+      = '.'
+    = label 'adopt', t('buttons.adopt'), :id => 'adopt'
     #disable_email_notifications.hide
       = t('labels.disable_email_notifications')
     #enable_email_notifications.hide

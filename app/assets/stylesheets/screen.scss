@@ -30,6 +30,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: Drew1;
+  src: url('Drew1.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   height: 100%;
 }
@@ -554,4 +561,20 @@ i{
     margin-top: 2px;
     margin-left: -12px;
   }
+}
+
+.icon-wing{
+  margin-left: -14px;
+  margin-top: 0px;
+}
+
+a.btn#adopt-button{
+  font-family: Drew1;
+  text-align: left;
+  font-size: 16px;
+}
+
+#adopt{
+  margin-top: -23px;
+  text-align: center;
 }
