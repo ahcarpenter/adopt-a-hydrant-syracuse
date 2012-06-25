@@ -1,11 +1,15 @@
 # http://www.dzone.com/snippets/ruby-open-file-write-it-and
 # http://www.ruby-doc.org/core-1.9.3/Hash.html
+# http://rails-bestpractices.com/posts/47-fetch-current-user-in-models
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_flash_from_params
   before_filter :set_locale
 
 protected
+  def set_current_user
+    User.current = current_user
+  end
   def set_flash_from_params
     if params[:flash]
       params[:flash].each do |key, message|
