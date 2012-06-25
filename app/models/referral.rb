@@ -21,7 +21,7 @@ class Referral < ActiveRecord::Base
         # referral = Referral.new.create(referee.id, 1)
         referral = Referral.new
         referral.referee_id = referee.id
-        referral.user_id = User.current.id
+        referral.user_id = session[:user_id]
         referral.save
         SMS.send_referral(referral)
       end
@@ -38,7 +38,7 @@ class Referral < ActiveRecord::Base
         # referral = Referral.new.create(referee.id, 1)
         referral = Referral.new
         referral.referee_id = referee.id
-        referral.user_id = User.current.id
+        referral.user_id = session[:user_id]
         referral.save
         ThingMailer.send_referral(referral).deliver
       end
@@ -55,7 +55,7 @@ class Referral < ActiveRecord::Base
       clicked_through = 0
       for referral in referrals
         if Referee.find(referral.referee_id).endpoint.include? '@'
-          puts Referee.find(referral.referee_id).endpoint
+          # puts Referee.find(referral.referee_id).endpoint
           count += 1 
           clicked_through += 1 if referral.visits > 0
         end
@@ -73,7 +73,7 @@ class Referral < ActiveRecord::Base
       clicked_through = 0
       for referral in referrals
         if !Referee.find(referral.referee_id).endpoint.include? '@'
-          puts Referee.find(referral.referee_id).endpoint
+          # puts Referee.find(referral.referee_id).endpoint
           count += 1 
           clicked_through += 1 if referral.visits > 0
         end
@@ -97,16 +97,16 @@ class Referral < ActiveRecord::Base
         greatest_clickthrough_rate = clickthrough_rate
         user_with_greatest_clickthrough_rate = referral.user_id
       end
-      puts 'Referral clickthrough percentage: ' + (total_referrals_clicked_through.to_f / total_referrals.to_f * 100).to_s + '%'
+      puts 'Percentage of all referrals clicked through: ' + (total_referrals_clicked_through.to_f / total_referrals.to_f * 100).to_s + '%'
     end
-    puts User.find(user_with_greatest_clickthrough_rate).name + ': ' + greatest_clickthrough_rate.to_s
+    puts User.find(user_with_greatest_clickthrough_rate).name + ' exhibits the greatest clickthrough rate of any user at ' + greatest_clickthrough_rate.to_s + '%'
   end
   
   def self.test1
-    if self.percent_sms_clicked_through > self.percent_email_clicked_through
-      puts 'SMS'
+    if self.percent_sms_clicked_through.to_f > self.percent_email_clicked_through.to_f
+      puts 'SMS exhibits the greatest clickthrough rate of any medium at ' + self.percent_sms_clicked_through
     else
-      puts 'Email'
+      puts 'Email exhibits the greatest clickthrough rate of any medium at ' + self.percent_email_clicked_through
     end
   end
   
@@ -118,8 +118,8 @@ class Referral < ActiveRecord::Base
       referral.save
     end
     # puts self.percent_clicked_through
-    # puts self.percent_email_clicked_through
-    # puts self.percent_sms_clicked_through
+    # puts 'Email ' + self.percent_email_clicked_through
+    # puts 'SMS ' + self.percent_sms_clicked_through
     # self.test
     # self.test1
   end
