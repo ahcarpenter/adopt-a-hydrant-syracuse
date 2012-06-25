@@ -670,7 +670,6 @@ $(function() {
     var link = $(this)
     if(!sms_referral){
 	  $('#preview').removeClass('hide')
-	  $('.preview-body').removeClass('hide')
 	  $(link).removeClass('disabled').addClass('btn btn-success')
 	  sms_referral = true
 	  $('#user_sms_referral_field').removeAttr('disabled')
@@ -699,7 +698,6 @@ $(function() {
     var link = $(this)
     if(!email_referral){
 	  $('#preview').removeClass('hide')
-	  $('.preview-body').removeClass('hide')
 	  $(link).removeClass('disabled').addClass('btn btn-success')
 	  email_referral = true
 	  $('#user_email_referral_field').removeAttr('disabled')
