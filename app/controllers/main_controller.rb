@@ -2,11 +2,7 @@ class MainController < ApplicationController
   before_filter :set_current_user
 
   def index
-    if !User.current.nil?
-      @name = User.find(User.current.id).name
-    else
-      @name = "<your_first_name>"
-    end
+    @name = User.find(User.current.id).name 
         
     begin
     Referral.generate_referral(params[:referral]) if !params[:referral].nil?
