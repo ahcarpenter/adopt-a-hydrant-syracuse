@@ -22,7 +22,7 @@
         %i.icon-caret-right
         = t('labels.preview')
       .preview-body.collapse
-        = @name.nil? ? '<your_first_name>' + @portion_of_preview : @name. + @portion_of_preview if !@name.nil?
+        = @name.nil? ? '<your_first_name>' + @portion_of_preview : @name + @portion_of_preview if !@name.nil?
     %a.btn.disabled{:href => '#', :id => 'send_referral'}
       = t('buttons.send_referral')
     #disable_email_transmission.hide
