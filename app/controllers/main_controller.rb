@@ -1,4 +1,6 @@
-class MainController < ApplicationController  
+class MainController < ApplicationController
+  before_filter :set_current_user
+    
   def index
     begin
     Referral.generate_referral(params[:referral]) if !params[:referral].nil?
