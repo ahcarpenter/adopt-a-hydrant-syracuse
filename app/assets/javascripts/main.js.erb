@@ -654,7 +654,6 @@ $(function() {
   })
   $('#email_notifications').live('click', function() {
     var link = $(this)
-    // if(!sms_notifications){$('#preview').collapse()}
     if(!email_notifications){
 	  $(link).removeClass('disabled').addClass('btn btn-success')
 	  email_notifications = true

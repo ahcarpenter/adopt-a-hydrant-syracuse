@@ -4,6 +4,7 @@ class SessionsController < Devise::SessionsController
   end
 
   def create
+    session[:user_email] = params[:user][:email]
     resource = warden.authenticate(:scope => resource_name)
     if resource
       sign_in(resource_name, resource)

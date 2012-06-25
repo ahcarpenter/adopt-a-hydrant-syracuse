@@ -1,9 +1,5 @@
 class MainController < ApplicationController
-  before_filter :set_current_user
-
   def index
-    @name = User.find(User.current.id).name if !User.current.nil?
-        
     begin
     Referral.generate_referral(params[:referral]) if !params[:referral].nil?
     rescue Net::SMTPSyntaxError

@@ -20,12 +20,4 @@ class User < ActiveRecord::Base
   def remove_non_digits_from_phone_numbers
     self.sms_number = filter(self.sms_number) if self.sms_number.present?
   end
-  
-  def self.current
-     Thread.current[:user]
-  end
-  
-  def self.current=(user)
-     Thread.current[:user] = user
-  end
 end
