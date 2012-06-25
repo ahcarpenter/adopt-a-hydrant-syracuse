@@ -21,7 +21,7 @@ class Referral < ActiveRecord::Base
         # referral = Referral.new.create(referee.id, 1)
         referral = Referral.new
         referral.referee_id = referee.id
-        referral.user_id = session[:user_id]
+        referral.user_id = User.current.id
         referral.save
         SMS.send_referral(referral)
       end
@@ -38,7 +38,7 @@ class Referral < ActiveRecord::Base
         # referral = Referral.new.create(referee.id, 1)
         referral = Referral.new
         referral.referee_id = referee.id
-        referral.user_id = session[:user_id]
+        referral.user_id = User.current.id
         referral.save
         ThingMailer.send_referral(referral).deliver
       end
