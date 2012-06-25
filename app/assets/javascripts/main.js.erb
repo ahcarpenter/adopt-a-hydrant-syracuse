@@ -294,20 +294,20 @@ $(function() {
 
     return this;
   })
-  $('#preview').on('show', function () {
+  $('#preview').live('show', function () {
 	$('.preview-body').removeClass('hide')
     $('#send_referral').css('margin-top', '12px')
   })
-  $('#preview').on('shown', function () {
+  $('#preview').live('shown', function () {
   // do something…
     preview_shown = true
     $('.icon-caret-right').remove()
     $('.preview-title').prepend("<i class='icon-caret-down'></i>")
   })
-  $('#preview').on('hide', function () {
+  $('#preview').live('hide', function () {
     $('#send_referral').css('margin-top', '4px')
   })
-  $('#preview').on('hidden', function () {
+  $('#preview').live('hidden', function () {
   // do something…
     preview_shown = false
     preview_hidden = true
@@ -325,7 +325,7 @@ $(function() {
 	}
 	$('#send_referral').removeClass('btn btn-primary').addClass('btn disabled')
   }
-  $('#referral').on('hidden', function () {
+  $('#referral').live('hidden', function () {
     // do something…
 	if(!preview_hidden){
 		if(!opera){
