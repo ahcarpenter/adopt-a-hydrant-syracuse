@@ -287,10 +287,10 @@ $(function() {
     var modal = $(this);
     modal.css('margin-top', -(modal.outerHeight() / 2))
     modal.css('margin-left', -(modal.outerWidth() / 2));
-    $('#sms-referral').attr('title', $('#enable_sms_transmission').text()).tooltip('fixTitle').tooltip('show')
-    $('#email-referral').attr('title', $('#enable_email_transmission').text()).tooltip('fixTitle').tooltip('show')
-    $('#sms-referral').tooltip('hide')
-    $('#email-referral').tooltip('hide')
+    $('#sms-referral').tooltip({delay: delay_options})
+    $('#email-referral').tooltip({delay: delay_options})
+    $('#sms-referral').attr('title', $('#enable_sms_transmission').text()).tooltip('fixTitle')
+    $('#email-referral').attr('title', $('#enable_email_transmission').text()).tooltip('fixTitle')
 
     return this;
   })
