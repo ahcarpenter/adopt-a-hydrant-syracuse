@@ -419,16 +419,17 @@ $(function() {
     var radioInput = $(this)
     if('new' === radioInput.val()) {
       $('#combo-form').data('state', 'user_sign_up')
-	  if(opera){enableLegacySupport()}
+	  if(opera){
+		$('small').remove()
+	    enableLegacySupport()
+      }
       $('#user_forgot_password_fields').slideUp()
       $('#user_sign_in_fields').slideUp()
 	  if($('#required_text').text() == ''){
 	    $('#required').append("<div id='required_text'>" + required_text +"</div>")
 	    $('#user_email').css('margin-bottom', '9px')
 	  }
-      $('#user_sign_up_fields').slideDown(function() {
-        setComboFormFocus()
-      })
+      $('#user_sign_up_fields').slideDown(function() {setComboFormFocus()})
     } else if('existing' === radioInput.val()) {
 	  $('#user_sign_up_fields').slideUp()
       $('#user_sign_in_fields').slideDown(function() {
