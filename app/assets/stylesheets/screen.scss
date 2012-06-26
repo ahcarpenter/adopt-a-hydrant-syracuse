@@ -571,10 +571,18 @@ i{
 a.btn#adopt-button{
   font-family: Drew1;
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #adopt{
   margin-top: -23px;
   text-align: center;
+}
+
+#info-window.icon-remove{
+  margin-left: 224px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #cccccc;
 }

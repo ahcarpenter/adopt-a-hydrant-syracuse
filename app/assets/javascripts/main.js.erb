@@ -141,6 +141,12 @@ $(function() {
 		$('#sms_notifications').tooltip({delay: delay_options})
 		$('#email_notifications').append("<i class='icon-envelope'></i>")
 		$('#email_notifications').tooltip({delay: delay_options})
+		$('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').remove()
+		$('div[style*="width: 247px"]').append("<i id='info-window' class='icon-remove'></i>")
+		$("div[style*='width: 10px; height: 10px;']").hover(
+		  function () {$("#info-window[class='icon-remove']").css('color', '#999999')}, 
+		  function () {$("#info-window[class='icon-remove']").css('color', '#cccccc')}
+		);
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
