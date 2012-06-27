@@ -109,7 +109,7 @@ $(function() {
   }
   font('#user_email')
   search()
-  $('#remember_me').addClass('btn active')
+  $('#remember_me').addClass('btn btn-info active')
   function addMarker(thingId, point, color) {
 	if(color === 'green') {
 	  var image = greenMarkerImage
@@ -931,7 +931,7 @@ $(function() {
           success: function(data) {
             $('#content').html(data)
 		    if(remember_me){$('#remember_me').addClass('btn active')}
-		    else{$('#remember_me').addClass('btn')}
+		    else{$('#remember_me').addClass('btn btn-info')}
    			font('#user_email')
 		    $('#login').append("<i class='icon-signin'></i>")
 			$('#signup').append("<i class='icon-plus'></i>")
