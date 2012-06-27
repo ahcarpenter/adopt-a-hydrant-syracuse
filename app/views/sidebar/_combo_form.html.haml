@@ -7,11 +7,11 @@
       %label{:id => 'required'}
         #required_text 
           = @required
-    .control-group.radio
-      #radio1 
-        = f.label 'new', radio_button_tag('user', 'new', true).html_safe + t('labels.user_new')
-      #radio2
-        = f.label 'existing', radio_button_tag('user', 'existing').html_safe + t('labels.user_existing')
+    .btn-group{'data-toggle' => 'buttons-radio'}
+      %btn{:class => 'btn active', :id => 'radio1'}
+        = t('buttons.sign_up')
+      %btn{:class => 'btn', :id => 'radio2'}
+        = t('buttons.sign_in')
   %fieldset#user_sign_up_fields
     .control-group
       %label{:for => 'user_name', :id => 'user_name_label'}
@@ -43,8 +43,8 @@
         = t('labels.password')
       = f.password_field 'password', :placeholder => ' '
     .control-group
-      %label{:for => 'check', :id => 'check'}
-        = f.label 'remember_me1', f.check_box('remember_me', :checked => true).html_safe + t('labels.remember_me')
+      %btn{:class => 'btn-mini', :id => 'remember_me', 'data-toggle' => 'btn'}
+        = t('labels.remember_me')
     .form-actions
       = f.submit t('buttons.sign_in'), :class => 'btn btn-primary'
       #login

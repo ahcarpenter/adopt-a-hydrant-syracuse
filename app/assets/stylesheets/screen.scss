@@ -117,14 +117,6 @@ input[type="radio"], input[type="checkbox"] {
   margin-right: 10px;
 }
 
-input#user_new {
-  margin-bottom: 0;
-}
-
-input#user_existing {
-  margin-bottom: 10px;
-}
-
 form select, button.btn, input[type="submit"].btn {
   font-family: MyriadPro-Regular;
   width: 210px;
@@ -361,8 +353,25 @@ p{
   padding: 8px 20px 0px 14px;
 }
 
-.radio{
-  margin-top: 18px;
+.btn-group[data-toggle='buttons-radio']{
+  margin-top: 23px;
+  margin-bottom: 8px;
+}
+
+#radio1{
+  margin-top: 14px;
+  margin-bottom: 2px;
+  margin-left: 20px;
+  width: 83px;
+  float: left;
+  font-family: MyriadPro-Regular;
+}
+
+#radio2{
+  margin-top: -30px;
+  margin-left: 124px;
+  width: 84px;
+  font-family: MyriadPro-Regular;
 }
 
 #city-state-label{
@@ -493,6 +502,7 @@ i{
   margin-left: 10px;
   margin-top: -32px;
   color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 
 #login{
@@ -501,6 +511,10 @@ i{
 
 #signup{
   margin-top: 1px;
+}
+
+#radio{
+  margin-top: 100px;
 }
 
 #radio1{
@@ -569,4 +583,11 @@ i{
   font-size: 12px;
   font-weight: bold;
   color: #cccccc;
+}
+
+#remember_me{
+  width: 196px;
+  margin-left: -20px;
+  margin-top: 4px;
+  font-family: MyriadPro-Regular;
 }
