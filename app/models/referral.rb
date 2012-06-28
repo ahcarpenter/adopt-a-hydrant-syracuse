@@ -10,27 +10,23 @@ class Referral < ActiveRecord::Base
   end
   
   def self.generate_referral(attributes)
-      if attributes[:phone_number] != ''
-        phone_number = SMS.sieve(attributes[:phone_number])
-        if Referee.exists?(:endpoint => phone_number)
-          referee = Referee.find_by_endpoint(phone_number.to_s)
-        else
-          referee = Referee.new.set_endpoint(phone_number.to_s)
-        end
-        referral = Referral.new.construct(referee.id)
-        SMS.send_referral(referral)
+    if attributes[:phone_number] != ''
+      phone_number = SMS.sieve(attributes[:phone_number])
+      if Referee.exists?(:endpoint => phone_number)
+        SMS.send_referral(self.new.construct(Referee.find_by_endpoint(phone_number.to_s).id))
+      else
+        SMS.send_referral(self.new.construct(Referee.new.set_endpoint(phone_number.to_s).id))
       end
-      
-      if attributes[:email_address] != ''
-        email_address = attributes[:email_address]
-        if Referee.exists?(:endpoint => email_address)
-          referee = Referee.find_by_endpoint(email_address)
-        else
-          referee = Referee.new.set_endpoint(email_address)
-        end
-        referral = Referral.new.construct(referee.id)
-        ThingMailer.send_referral(referral).deliver
+    end
+    
+    if attributes[:email_address] != ''
+      email_address = attributes[:email_address]
+      if Referee.exists?(:endpoint => email_address)
+        ThingMailer.send_referral(self.new.construct(Referee.find_by_endpoint(email_address).id)).deliver
+      else
+        ThingMailer.send_referral(self.new.construct(Referee.new.set_endpoint(email_address).id)).deliver
       end
+    end
   end
   
   def self.percent_clicked_through
