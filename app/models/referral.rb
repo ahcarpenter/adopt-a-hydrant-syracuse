@@ -50,9 +50,11 @@ class Referral < ActiveRecord::Base
             end
           end 
         end
-        return ((clicked_through_email.to_f / count_email.to_f) * 100).to_s + '%', ((clicked_through_sms.to_f / count_sms.to_f) * 100).to_s + '%', ((Referral.where('visits > 0').count.to_f / Referral.count.to_f) * 100).to_s + '%'
+        puts ((clicked_through_email.to_f / count_email.to_f) * 100).to_s + '%' if email
+        puts ((clicked_through_sms.to_f / count_sms.to_f) * 100).to_s + '%' if sms
+        puts ((Referral.where('visits > 0').count.to_f / Referral.count.to_f) * 100).to_s + '%'
       else
-        return '0%'
+        puts '0%'
       end
     end
   end
@@ -101,7 +103,7 @@ class Referral < ActiveRecord::Base
       referral.visits = referral.visits + 1
       referral.save
     end
-    # puts self.percent_clicked_through('email', 'sms')
+    # self.percent_clicked_through('email', 'sms')
     # puts '---------------------------------------------------'
     # puts '| Email clickthrough rate   | ' + self.percent_email_clicked_through + '  |'
     # puts '---------------------------------------------------'
