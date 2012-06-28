@@ -1,28 +1,22 @@
 class Referral < ActiveRecord::Base
   attr_accessible :clicked_through, :referee_id, :user_id
 
-  # def create(referee_id, user_id)
-  #   self.referee_id = referee_id
-  #   self.user_id = user_id
-  #   self.save
-  #   return self
-  # end
+  def construct(referee_id)
+    referral = Referral.new
+    referral.referee_id = referee_id
+    referral.user_id = User.current.id
+    referral.save
+    return referral
+  end
   
   def self.generate_referral(attributes)
       if attributes[:phone_number] != ''
-        if Referee.exists?(:endpoint => attributes[:phone_number].gsub(/\D/, ''))
-          referee = Referee.find_by_endpoint(attributes[:phone_number].gsub(/\D/, '').to_s)
+        if Referee.exists?(:endpoint => SMS.sieve(attributes[:phone_number]))
+          referee = Referee.find_by_endpoint(SMS.sieve(attributes[:phone_number]).to_s)
         else
-          # referee = Referee.new.endpoint(attributes[:phone_number].gsub(/\D/, '').to_s)
-          referee = Referee.new
-          referee.endpoint = attributes[:phone_number].gsub(/\D/, '').to_s
-          referee.save
+          referee = Referee.new.set_endpoint(SMS.sieve(attributes[:phone_number]).to_s)
         end
-        # referral = Referral.new.create(referee.id, 1)
-        referral = Referral.new
-        referral.referee_id = referee.id
-        referral.user_id = User.current.id
-        referral.save
+        referral = Referral.new.construct(referee.id)
         SMS.send_referral(referral)
       end
       
@@ -30,16 +24,9 @@ class Referral < ActiveRecord::Base
         if Referee.exists?(:endpoint => attributes[:email_address])
           referee = Referee.find_by_endpoint(attributes[:email_address])
         else
-          # referee = Referee.new.endpoint(attributes[:email_address])
-          referee = Referee.new
-          referee.endpoint = attributes[:email_address]
-          referee.save
+          referee = Referee.new.set_endpoint(attributes[:email_address])
         end
-        # referral = Referral.new.create(referee.id, 1)
-        referral = Referral.new
-        referral.referee_id = referee.id
-        referral.user_id = User.current.id
-        referral.save
+        referral = Referral.new.construct(referee.id)
         ThingMailer.send_referral(referral).deliver
       end
   end
@@ -97,7 +84,8 @@ class Referral < ActiveRecord::Base
         greatest_clickthrough_rate = clickthrough_rate
         user_with_greatest_clickthrough_rate = referral.user_id
       end
-      puts 'Percentage of all referrals clicked through: ' + (total_referrals_clicked_through.to_f / total_referrals.to_f * 100).to_s + '%'
+      puts '| Overall clickthrough rate | ' + (total_referrals_clicked_through.to_f / total_referrals.to_f * 100).to_s + '%   |'
+      puts '---------------------------------------------------'
     end
     puts User.find(user_with_greatest_clickthrough_rate).name + ' exhibits the greatest clickthrough rate of any user at ' + greatest_clickthrough_rate.to_s + '%'
   end
@@ -110,6 +98,16 @@ class Referral < ActiveRecord::Base
     end
   end
   
+  def stats
+    puts '------------------------------------------------'
+    puts 'Email clickthrough rate   | ' + self.percent_email_clicked_through + ' |'
+    puts '------------------------------------------------'
+    puts 'SMS clickthrough rate    | ' + self.percent_sms_clicked_through + ' |'
+    puts '------------------------------------------------'
+    self.test
+    self.test1
+  end
+    
   def self.resolve_token(token)
     referral_id = Base64::decode64(token)
     if self.exists?(:id => referral_id)
@@ -118,8 +116,11 @@ class Referral < ActiveRecord::Base
       referral.save
     end
     # puts self.percent_clicked_through
-    # puts 'Email ' + self.percent_email_clicked_through
-    # puts 'SMS ' + self.percent_sms_clicked_through
+    # puts '---------------------------------------------------'
+    # puts '| Email clickthrough rate   | ' + self.percent_email_clicked_through + '  |'
+    # puts '---------------------------------------------------'
+    # puts '| SMS clickthrough rate     | ' + self.percent_sms_clicked_through + ' |'
+    # puts '---------------------------------------------------'
     # self.test
     # self.test1
   end

@@ -13,12 +13,8 @@ class User < ActiveRecord::Base
   has_many :referrals
   before_validation :remove_non_digits_from_phone_numbers
   
-  def filter(number)
-    return number.to_s.gsub(/\D/, '').to_i
-  end
-  
   def remove_non_digits_from_phone_numbers
-    self.sms_number = filter(self.sms_number) if self.sms_number.present?
+    self.sms_number = SMS.sieve(self.sms_number).to_i if self.sms_number.present?
   end
   
   def self.current

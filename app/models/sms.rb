@@ -3,6 +3,10 @@ class SMS
   @@auth_token = 'c32bcf082cb7cee728a99832858db23b'
   @@client = Twilio::REST::Client.new(@@account_sid, @@auth_token)
   @@account = @@client.account
+  
+  def self.sieve(number)
+    return number.to_s.gsub(/\D/, '')
+  end
 
   def self.send_notification(user, thing)
     extra = (110-(thing.snow_cover.to_s.length+thing.full_address.length))
