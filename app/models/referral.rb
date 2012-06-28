@@ -1,6 +1,11 @@
 class Referral < ActiveRecord::Base
   attr_accessible :clicked_through, :referee_id, :user_id
-  @@user_current_id = User.current.id if !User.current.nil?
+  
+  if !User.current.nil?
+    @@user_current_id = User.current.id
+  else
+    @@user_current_id = ''
+  end 
 
   def self.construct(referee_id)
     referral = Referral.new
