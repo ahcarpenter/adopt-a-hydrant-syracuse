@@ -2,9 +2,9 @@ class Referee < ActiveRecord::Base
   attr_accessible :endpoint
   has_many :referrals
   
-  def set_endpoint(value)
+  def self.construct(endpoint)
     referee = Referee.new
-    referee.endpoint = value
+    referee.endpoint = endpoint
     referee.save
     return referee
   end

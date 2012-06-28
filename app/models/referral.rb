@@ -1,7 +1,7 @@
 class Referral < ActiveRecord::Base
   attr_accessible :clicked_through, :referee_id, :user_id
 
-  def construct(referee_id)
+  def self.construct(referee_id)
     referral = Referral.new
     referral.referee_id = referee_id
     referral.user_id = User.current.id
@@ -13,17 +13,18 @@ class Referral < ActiveRecord::Base
     if attributes[:phone_number] != ''
       phone_number = SMS.sieve(attributes[:phone_number])
       if Referee.exists?(:endpoint => phone_number)
-        SMS.send_referral(self.new.construct(Referee.find_by_endpoint(phone_number.to_s).id))
+        SMS.send_referral(Referral.construct(Referee.find_by_endpoint(phone_number.to_s).id))
       else
-        SMS.send_referral(self.new.construct(Referee.new.set_endpoint(phone_number.to_s).id))
+        SMS.send_referral(Referral.construct(Referee.construct(phone_number.to_s).id))
       end
+      # }
     end
     if attributes[:email_address] != ''
       email_address = attributes[:email_address]
       if Referee.exists?(:endpoint => email_address)
-        ThingMailer.send_referral(self.new.construct(Referee.find_by_endpoint(email_address).id)).deliver
+        ThingMailer.send_referral(Referral.construct(Referee.find_by_endpoint(email_address).id)).deliver
       else
-        ThingMailer.send_referral(self.new.construct(Referee.new.set_endpoint(email_address).id)).deliver
+        ThingMailer.send_referral(Referral.construct(Referee.construct(email_address).id)).deliver
       end
     end
   end
