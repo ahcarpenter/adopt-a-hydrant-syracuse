@@ -1,5 +1,5 @@
 class Referral < ActiveRecord::Base
-  attr_accessible :clicked_through, :referee_id, :user_id
+  attr_accessible :referee_id, :user_id
 
   def self.construct(referee_id)
     referral = Referral.new
@@ -9,12 +9,12 @@ class Referral < ActiveRecord::Base
     return referral
   end
   
-  def self.generate_referral(attributes)
+  def self.generate_referral(endpoints)
     threads = []
     @user_current_id = User.current.id
-    if attributes[:phone_number] != ''
+    if endpoints[:phone_number] != ''
       threads << Thread.new('sms'){
-        phone_number = SMS.sieve(attributes[:phone_number])
+        phone_number = SMS.sieve(endpoints[:phone_number])
         if Referee.exists?(:endpoint => phone_number)
           SMS.send_referral(self.construct(Referee.find_by_endpoint(phone_number.to_s).id))
         else
@@ -22,9 +22,9 @@ class Referral < ActiveRecord::Base
         end
       }
     end
-    if attributes[:email_address] != ''
+    if endpoints[:email_address] != ''
       threads << Thread.new('email'){
-        email_address = attributes[:email_address]
+        email_address = endpoints[:email_address]
         if Referee.exists?(:endpoint => email_address)
           ThingMailer.send_referral(self.construct(Referee.find_by_endpoint(email_address).id)).deliver
         else
