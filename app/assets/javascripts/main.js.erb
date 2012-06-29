@@ -227,7 +227,7 @@ $(function() {
     var center = map.getCenter()
     addMarkersAround(center.lat(), center.lng())
   })
-  $('input').live('click', function() {focused_input_element = $(this))
+  $('input').live('click', function() {focused_input_element = $(this)})
   window.addEventListener('shake', shakeEventDidOccur, false)
   function shakeEventDidOccur () {focused_input_element.val('')}
   function stateChange(color){
