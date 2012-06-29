@@ -25,10 +25,14 @@ class Referral < ActiveRecord::Base
     if endpoints[:email_address] != ''
       threads << Thread.new('email'){
         email_address = endpoints[:email_address]
+        begin
         if Referee.exists?(:endpoint => email_address)
           ThingMailer.send_referral(self.construct(Referee.find_by_endpoint(email_address).id)).deliver
         else
           ThingMailer.send_referral(self.construct(Referee.construct(email_address).id)).deliver
+        end
+        rescue Net::SMTPSyntaxError
+          puts 'Hello'
         end
       }
     end
