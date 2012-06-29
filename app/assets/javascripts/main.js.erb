@@ -107,11 +107,7 @@ $(function() {
   })
   function font(element){
 	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
-	$(element).keydown(function(event) {
-	  $(element).val() = ''
-	  $(element).css('font-family', 'MyriadPro-Regular')
-	  focused_input_element = $(this)
-	})
+	$(element).keydown(function(event) {$(element).css('font-family', 'MyriadPro-Regular')})
   }
   font('#user_email')
   search()
@@ -231,7 +227,7 @@ $(function() {
     var center = map.getCenter()
     addMarkersAround(center.lat(), center.lng())
   })
-  $('input').live('click', function() {if ($(this).val() = ''){$(this).val() = ' '}})
+  $('input').live('click', function() {focused_input_element = $(this))
   window.addEventListener('shake', shakeEventDidOccur, false)
   function shakeEventDidOccur () {focused_input_element.val('')}
   function stateChange(color){
