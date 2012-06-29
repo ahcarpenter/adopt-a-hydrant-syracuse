@@ -108,6 +108,7 @@ $(function() {
   function font(element){
 	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
 	$(element).keydown(function(event) {
+	  $(element).val() = ''
 	  $(element).css('font-family', 'MyriadPro-Regular')
 	  focused_input_element = $(this)
 	})
@@ -230,6 +231,7 @@ $(function() {
     var center = map.getCenter()
     addMarkersAround(center.lat(), center.lng())
   })
+  $('input').live('click', function() {if ($(this).val() = ''){$(this).val() = ' '}})
   window.addEventListener('shake', shakeEventDidOccur, false)
   function shakeEventDidOccur () {focused_input_element.val('')}
   function stateChange(color){
