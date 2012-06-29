@@ -688,11 +688,14 @@ $(function() {
 	$('#send_referral').removeClass('btn btn-primary').addClass('btn disabled')
     $('#preview').addClass('hide')
   }
+  function adjust1(link){
+    $('#preview').removeClass('hide')
+	$(link).removeClass('disabled').addClass('btn btn-success')	
+  }
   $('#sms-referral').live('click', function() {
     var link = $(this)
     if(!sms_referral){
-	  $('#preview').removeClass('hide')
-	  $(link).removeClass('disabled').addClass('btn btn-success')
+	  adjust1(link)
 	  sms_referral = true
 	  $('#user_sms_referral_field').removeAttr('disabled')
 	  $('#send_referral').removeClass('btn disabled').addClass('btn btn-primary')
@@ -709,8 +712,7 @@ $(function() {
   $('#email-referral').live('click', function() {
     var link = $(this)
     if(!email_referral){
-	  $('#preview').removeClass('hide')
-	  $(link).removeClass('disabled').addClass('btn btn-success')
+	  adjust1(link)
 	  email_referral = true
 	  $('#user_email_referral_field').removeAttr('disabled')
 	  $('#send_referral').removeClass('btn disabled').addClass('btn btn-primary')
