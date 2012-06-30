@@ -14,7 +14,7 @@ gem 'validates_formatting_of'
 gem 'immigrant'
 gem 'twilio-ruby'
 gem 'libxml-ruby'
-gem 'referthis'
+gem 'referthis', '0.3.1'
 
 platforms :ruby_18 do
   gem 'fastercsv'
