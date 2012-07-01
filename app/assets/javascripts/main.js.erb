@@ -109,40 +109,31 @@ $(function() {
 	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
 	$(element).keydown(function(event) {$(element).css('font-family', 'MyriadPro-Regular')})
   }
-  function adjust3(){
+  $("div[style*='width: 256px']").live('click', function(){
 	if($('#info-window2').length == 0){
-      $('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').remove()
 	  $("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test1')){$(this).addClass('test')}})
 	  $("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")
 	  $("div[style*='height: 125px']").append("<i id='info-window2' class='icon-remove'></i>")
 	  $("div[style*='height: 124px']").append("<i id='info-window2' class='icon-remove'></i>")
 	  $("div[style*='height: 145px']").append("<i id='info-window2' class='icon-remove'></i>")
+	  $("div[style*='height: 108px']").append("<i id='info-window2' class='icon-remove'></i>")
 	  if(webkit){$("div[style*='height: 144px']").append("<i id='info-window2' class='icon-remove'></i>")}
+	  $('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').each(function(){if($(this).parent().hasClass('test')){$(this).remove()}})
 	}
     $('.test').hover(
       function () {$("#info-window2[class='icon-remove']").css('color', '#999999')}, 
 	  function () {$("#info-window2[class='icon-remove']").css('color', '#cccccc')}
     )
-  }
-  $("div[style*='width: 256px']").live('click', function(){
-	adjust3()
   })
   font('#user_email')
   search()
   function addMarker(thingId, point, color) {
-	if(color === 'green') {
-	  var image = greenMarkerImage
-	} else if(color === 'red') {
-	  var image = redMarkerImage
-	} else if(color === 'green1') {
-	  var image = green1MarkerImage
-	} else if(color === 'red1') {
-	  var image = red1MarkerImage
-	} else if(color === 'green2') {
-	  var image = green2MarkerImage
-	} else if(color === 'red2') {
-	  var image = red2MarkerImage
-	}
+	if(color === 'green') {var image = greenMarkerImage}
+	else if(color === 'red') {var image = redMarkerImage}
+	else if(color === 'green1') {var image = green1MarkerImage}
+	else if(color === 'red1') {var image = red1MarkerImage}
+	else if(color === 'green2') {var image = green2MarkerImage}
+	else if(color === 'red2') {var image = red2MarkerImage}
 	var marker = new google.maps.Marker({
 	  animation: google.maps.Animation.DROP,
 	  icon: image,
@@ -151,23 +142,23 @@ $(function() {
 	  shadow: markerShadowImage
 	})
 	google.maps.event.addListener(marker, 'click', function() {
-	  if(activeInfoWindow) {
-	    activeInfoWindow.close()
-	  }
-	  var infoWindow = new google.maps.InfoWindow({
-	    maxWidth: 210
-	  })
-	  google.maps.event.addListener(infoWindow, 'closeclick', function() {
-	    isWindowOpen = false
-	  })
+	  if(activeInfoWindow) {activeInfoWindow.close()}
+	  var infoWindow = new google.maps.InfoWindow({maxWidth: 210})
+	  google.maps.event.addListener(infoWindow, 'closeclick', function() {isWindowOpen = false})
 	  google.maps.event.addListener(infoWindow, 'domready', function() {
     	$('#sms_notifications').append("<i class='icon-comment-alt'></i>")
 		$('#sms_notifications').tooltip({delay: delay_options})
 		$('#email_notifications').append("<i class='icon-envelope'></i>")
 		$('#email_notifications').tooltip({delay: delay_options})
-		$("img[src*='http://maps.gstatic.com/mapfiles/mv/imgs8.png']").remove()
-		$("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
+		$("div[style*='width: 247px;'] div:first-child").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
+		$("div[style*='overflow: auto;']").removeClass('test1')
+		$('#h2-infowindow').removeClass('test1')
+		$('#sms_notifications').removeClass('test1')
+		$('#email_notifications').removeClass('test1')
+		$("div[class*='btn-group test1']").removeClass('btn-group test1').addClass('btn-group')
+		$("div[style*='overflow-x: auto;']").removeClass('test1')
 		$('div[style*="width: 247px"]').append("<i id='info-window1' class='icon-remove'></i>")
+		$("img[src*='http://maps.gstatic.com/mapfiles/mv/imgs8.png']").each(function(){if($(this).parent().hasClass('test1')){$(this).remove()}})
 		if(opera){
 		  $('#info-window1').css('margin-top', '10px')
 		  $('#info-window1').css('margin-left', '224px')
@@ -183,9 +174,7 @@ $(function() {
 	  $.ajax({
 	    type: 'GET',
 	    url: '/info_window',
-	    data: {
-	      'thing_id': thingId
-	    },
+	    data: {'thing_id': thingId},
 	    success: function(data) {
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
 	      if(infoWindow === activeInfoWindow) {
@@ -213,9 +202,7 @@ $(function() {
         'lng': lng,
         'limit': $("#address_form input[name='limit']").val()
       },
-      error: function(jqXHR) {
-        $(submitButton).attr('disabled', false)
-      },
+      error: function(jqXHR) {$(submitButton).attr('disabled', false)},
       success: function(data) {
         $(submitButton).attr('disabled', false)
         if(data.errors) {
@@ -417,8 +404,7 @@ $(function() {
 	        'authenticity_token': $("input[name='authenticity_token']").val(),
 			'flash': {'notice': 'notices.referral_sent'}
 	      },
-	      error: function(jqXHR) {
-	      },
+	      error: function(jqXHR) {},
 	      success: function(data) {
 		    $('#content').html(data)
 			prepare_search_elements()
@@ -490,22 +476,16 @@ $(function() {
     if(!/[\w\.%\+]+@[\w]+\.+[\w]{2,}/.test($('#user_email').val())) {
       errors.push($('#user_email'))
       $('#user_email').parent().addClass('error')
-    } else {
-      $('#user_email').parent().removeClass('error')
-    }
+    } else {$('#user_email').parent().removeClass('error')}
     if(!$(this).data('state') || $(this).data('state') === 'user_sign_up') {
       if($('#user_name').val() === '') {
         errors.push($('#user_name'))
         $('#user_name').parent().addClass('error')
-      } else {
-        $('#user_name').parent().removeClass('error')
-      }
+      } else {$('#user_name').parent().removeClass('error')}
       if($('#user_password_confirmation').val().length < 6 || $('#user_password_confirmation').val().length > 20) {
         errors.push($('#user_password_confirmation'))
         $('#user_password_confirmation').parent().addClass('error')
-      } else {
-        $('#user_password_confirmation').parent().removeClass('error')
-      }
+      } else {$('#user_password_confirmation').parent().removeClass('error')}
       if(errors.length > 0) {
         $(submitButton).attr('disabled', false)
         errors[0].focus()
@@ -567,9 +547,7 @@ $(function() {
       if($('#user_password').val().length < 6 || $('#user_password').val().length > 20) {
         errors.push($('#user_password'))
         $('#user_password').parent().addClass('error')
-      } else {
-        $('#user_password').parent().removeClass('error')
-      }
+      } else {$('#user_password').parent().removeClass('error')}
       if(errors.length > 0) {
         $(submitButton).attr('disabled', false)
         errors[0].focus()
@@ -650,9 +628,7 @@ $(function() {
 		  'email_notifications': email_notifications
         }
       },
-      error: function(jqXHR) {
-        $(submitButton).attr('disabled', false)
-      },
+      error: function(jqXHR) {$(submitButton).attr('disabled', false)},
       success: function(data) {
         $.ajax({
           type: 'GET',
