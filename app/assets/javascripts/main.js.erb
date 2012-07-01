@@ -25,8 +25,6 @@ $(function() {
   var mapOptions = {
     center: center,
     disableDoubleClickZoom: true,
-    keyboardShortcuts: false,
-    mapTypeControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     maxZoom: 19,
     minZoom: 15,
@@ -115,6 +113,7 @@ $(function() {
   }
   function adjust3(){
 	if($('#info-window2').length == 0){
+	  // alert('Hello')
       $('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').remove()
 	  $("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test1')){$(this).addClass('test')}})
  	  if(mozilla){$("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")}
@@ -170,7 +169,7 @@ $(function() {
 		$('#sms_notifications').tooltip({delay: delay_options})
 		$('#email_notifications').append("<i class='icon-envelope'></i>")
 		$('#email_notifications').tooltip({delay: delay_options})
-		$('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').remove()
+		$("img[src*='http://maps.gstatic.com/mapfiles/mv/imgs8.png']").remove()
 		$("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
 		$('div[style*="width: 247px"]').append("<i id='info-window1' class='icon-remove'></i>")
 		if(opera){
