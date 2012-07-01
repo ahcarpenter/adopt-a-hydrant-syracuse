@@ -58,7 +58,6 @@ $(function() {
   email_referral = false
   var opera = false
   var webkit = false
-  var mozilla = false
   preview_hidden = false
   preview_shown = false
   var remember_me = true
@@ -105,7 +104,6 @@ $(function() {
 	  webkit = true
 	  _webkit()
 	}
-	if(i == 'mozilla'){mozilla = true}
   })
   function font(element){
 	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
@@ -115,17 +113,15 @@ $(function() {
 	if($('#info-window2').length == 0){
       $('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').remove()
 	  $("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test1')){$(this).addClass('test')}})
- 	  if(mozilla){$("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")}
-      if(webkit || opera){
-	    $("div[style*='height: 125px']").append("<i id='info-window2' class='icon-remove'></i>")
-	    $("div[style*='height: 124px']").append("<i id='info-window2' class='icon-remove'></i>")
-	  }
-   	  if(webkit){$("div[style*='height: 144px']").append("<i id='info-window2' class='icon-remove'></i>")}
-    }
+	  $("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")
+	  $("div[style*='height: 125px']").append("<i id='info-window2' class='icon-remove'></i>")
+	  $("div[style*='height: 124px']").append("<i id='info-window2' class='icon-remove'></i>")
+	}
+   	if(webkit){$("div[style*='height: 144px']").append("<i id='info-window2' class='icon-remove'></i>")}
     $('.test').hover(
       function () {$("#info-window2[class='icon-remove']").css('color', '#999999')}, 
 	  function () {$("#info-window2[class='icon-remove']").css('color', '#cccccc')}
-    );
+    )
   }
   $("div[style*='width: 256px']").live('click', function(){
 	adjust3()
