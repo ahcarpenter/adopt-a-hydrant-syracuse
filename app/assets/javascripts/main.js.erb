@@ -18,6 +18,8 @@
 // http://api.jquery.com/attribute-contains-selector/
 // http://api.jquery.com/hover/
 // http://api.jquery.com/focus/
+// http://api.jquery.com/each/
+// http://api.jquery.com/hasClass/
 $(function() {
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -58,6 +60,7 @@ $(function() {
   email_referral = false
   var opera = false
   var webkit = false
+  var mozilla = false
   preview_hidden = false
   preview_shown = false
   var remember_me = true
@@ -104,11 +107,31 @@ $(function() {
 	  webkit = true
 	  _webkit()
 	}
+	if(i == 'mozilla'){mozilla = true}
   })
   function font(element){
 	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
 	$(element).keydown(function(event) {$(element).css('font-family', 'MyriadPro-Regular')})
   }
+  function adjust3(){
+	if($('#info-window2').length == 0){
+      $('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').remove()
+	  $("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test1')){$(this).addClass('test')}})
+ 	  if(mozilla){$("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")}
+      if(webkit || opera){
+	    $("div[style*='height: 125px']").append("<i id='info-window2' class='icon-remove'></i>")
+	    $("div[style*='height: 124px']").append("<i id='info-window2' class='icon-remove'></i>")
+	  }
+   	  if(webkit){$("div[style*='height: 144px']").append("<i id='info-window2' class='icon-remove'></i>")}
+    }
+    $('.test').hover(
+      function () {$("#info-window2[class='icon-remove']").css('color', '#999999')}, 
+	  function () {$("#info-window2[class='icon-remove']").css('color', '#cccccc')}
+    );
+  }
+  $("div[style*='width: 256px']").live('click', function(){
+	adjust3()
+  })
   font('#user_email')
   search()
   function addMarker(thingId, point, color) {
@@ -148,11 +171,16 @@ $(function() {
 		$('#email_notifications').append("<i class='icon-envelope'></i>")
 		$('#email_notifications').tooltip({delay: delay_options})
 		$('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').remove()
-		$('div[style*="width: 247px"]').append("<i id='info-window' class='icon-remove'></i>")
-		$("div[style*='width: 10px; height: 10px;']").hover(
-		  function () {$("#info-window[class='icon-remove']").css('color', '#999999')}, 
-		  function () {$("#info-window[class='icon-remove']").css('color', '#cccccc')}
-		);
+		$("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
+		$('div[style*="width: 247px"]').append("<i id='info-window1' class='icon-remove'></i>")
+		if(opera){
+		  $('#info-window1').css('margin-top', '10px')
+		  $('#info-window1').css('margin-left', '224px')
+		}
+		$('.test1').hover(
+		  function () {$("#info-window1[class='icon-remove']").css('color', '#999999')}, 
+		  function () {$("#info-window1[class='icon-remove']").css('color', '#cccccc')}
+		)
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
