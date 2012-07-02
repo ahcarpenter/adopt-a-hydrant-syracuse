@@ -250,7 +250,7 @@ $(function() {
 	openInfoWindow(activeInfoWindow, map, activeMarker)
   }
   function openInfoWindow(infoWindow, map, marker){
-	if(map.getStreetView().getVisible()){infoWindow.open(map.getStreetView(), marker))}
+	if(map.getStreetView().getVisible()){infoWindow.open(map.getStreetView(), marker)}
 	else{infoWindow.open(map, marker)}
   }
   function address(){
