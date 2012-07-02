@@ -43,8 +43,10 @@
         = t('labels.password')
       = f.password_field 'password', :placeholder => ' '
     .control-group
-      %label{:for => 'check', :id => 'check'}
-        = f.label 'remember_me1', f.check_box('remember_me', :checked => true).html_safe + t('labels.remember_me')
+      #remember_me1
+        %i.icon-check{:id=>'check1'}
+        #remember_me
+          = t('labels.remember_me')
     .form-actions
       = f.submit t('buttons.sign_in'), :class => 'btn btn-primary'
       #login
