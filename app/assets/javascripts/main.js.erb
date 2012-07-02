@@ -104,6 +104,7 @@ $(function() {
 	  webkit = true
 	  _webkit()
 	}
+	if(i == 'mozilla'){$('#remember_me').css('margin-left', '-37px')}
   })
   function font(element){
 	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
@@ -249,7 +250,7 @@ $(function() {
 	openInfoWindow(activeInfoWindow, map, activeMarker)
   }
   function openInfoWindow(infoWindow, map, marker){
-	if(map.getStreetView().getVisible()){infoWindow.open(map.getStreetView(), marker)}
+	if(map.getStreetView().getVisible()){infoWindow.open(map.getStreetView(), marker))}
 	else{infoWindow.open(map, marker)}
   }
   function address(){
@@ -465,10 +466,17 @@ $(function() {
       })
     })
   })
-  $('#user_remember_me').live('click', function() {
-	if(!remember_me){remember_me = true} 
-	else {remember_me = false}
+  $('#check1').live('click', function() {
+	if(!remember_me){
+	  remember_me = true
+	  $('#check1').removeClass('icon-check-empty').addClass('icon-check')
+	} 
+	else {
+	  remember_me = false
+	  $('#check1').removeClass('icon-check').addClass('icon-check-empty')
+	}
   })
+  $('#check1').hover(function () {$(this).css('cursor', 'pointer')})
   $('#combo-form').live('submit', function() {
     var submitButton = $("#combo-form input[type='submit']")
     $(submitButton).attr('disabled', true)
