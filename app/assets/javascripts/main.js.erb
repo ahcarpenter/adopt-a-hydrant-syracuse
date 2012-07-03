@@ -139,6 +139,12 @@ $(function() {
   toggle_lock_icon('#user_email')
   toggle_lock_icon1('#user_password_confirmation')
   search()
+  function adjust2(){
+	$('.icon-search').css('margin-top','2px')
+	$('.icon-edit').css('margin-top','2px')
+	$('.icon-signout').css('margin-top','2px')
+  }
+  if (opera) {adjust2()}
   function addMarker(thingId, point, color) {
 	if(color === 'green') {var image = greenMarkerImage}
 	else if(color === 'red') {var image = redMarkerImage}
@@ -312,15 +318,15 @@ $(function() {
     return false
   })
   $('#referral').live('show', function() {
-    var modal = $(this);
+    var modal = $(this)
     modal.css('margin-top', -(modal.outerHeight() / 2))
-    modal.css('margin-left', -(modal.outerWidth() / 2));
+    modal.css('margin-left', -(modal.outerWidth() / 2))
     $('#sms-referral').tooltip({delay: delay_options})
     $('#email-referral').tooltip({delay: delay_options})
     $('#sms-referral').attr('title', $('#enable_sms_transmission').text()).tooltip('fixTitle')
     $('#email-referral').attr('title', $('#enable_email_transmission').text()).tooltip('fixTitle')
 
-    return this;
+    return this
   })
   $('#preview').live('show', function () {
 	$('.preview-body').removeClass('hide')
@@ -373,6 +379,7 @@ $(function() {
   function prepare_search_elements() {
 	search()
 	if(webkit){_webkit()}
+	if (opera) {adjust2()}
   }
   $('#send_referral').live('click', function() {
 	disable_referral_modal_elements()
@@ -795,7 +802,10 @@ $(function() {
 		$('#user_city').typeahead({source: city_names})
 		$('#save').append("<i class='icon-hdd'></i>")
 		$('#back-link').append("<i class='icon-arrow-left'></i>")
-		if(opera){$('.icon-hdd').css('margin-top', '-30px')}
+		if(opera){
+		  $('.icon-hdd').css('margin-top', '-30px')
+		  $('.icon-arrow-left').css('margin-top','2px')
+		}
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
       }
