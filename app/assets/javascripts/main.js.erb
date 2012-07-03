@@ -113,6 +113,7 @@ $(function() {
 	  _mozilla()
 	}
   })
+  $('#user_email').focusin(function(event){if($(this).val().length > 0){$(this).removeClass('icon-lock')}})
   function toggle_lock_icon(element){
 	$(element).focusout(function(event) {
 	  if($(element).val().length == 0 && radio1){$('#test').addClass('icon-lock')}
