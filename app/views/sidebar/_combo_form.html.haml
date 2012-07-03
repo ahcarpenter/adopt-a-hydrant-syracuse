@@ -3,7 +3,8 @@
     .control-group
       %label{:for => 'user_email', :id => 'user-email-label'}
         = t('labels.email')
-      = f.email_field 'email', :value => params[:user] ? params[:user][:email] : nil, :placeholder => ' '
+      %i.icon-lock{:id=>'test'}
+      = f.email_field 'email', :value => params[:user] ? params[:user][:email] : nil
       %label{:id => 'required'}
         #required_text 
           = @required
@@ -28,7 +29,8 @@
     .control-group
       %label{:for => 'user_password_confirmation', :id => 'user_password_confirmation_label'}
         = t('labels.password')
-      = f.password_field 'password_confirmation', :placeholder => ' '
+      %i.icon-lock{:id=>'test1'}
+      = f.password_field 'password_confirmation'
       %label{:id => 'required'}
         .required-password
           = @required
@@ -41,7 +43,7 @@
     .control-group
       %label{:for => 'user_password', :id => 'user_password_label'}
         = t('labels.password')
-      = f.password_field 'password', :placeholder => ' '
+      = f.password_field 'password'
     .control-group
       #remember_me1
         %i.icon-check{:id=>'check1'}

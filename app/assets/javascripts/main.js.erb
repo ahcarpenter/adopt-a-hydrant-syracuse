@@ -77,14 +77,10 @@ $(function() {
 	$('#send_referral').append("<i class='icon-share-alt'></i>")
   }
   function enableLegacySupport(){
-	$('#user-email-label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
-	$('#user_password_confirmation_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
-	$('#user_password_label').append("<small><img class='lock' src='/assets/lock-0f02591a31a664243e8b28cfb62e0bbf.png'></small>")
 	$('#user_password').css('font-family', 'MyriadPro-Regular')
 	$('#user_password_confirmation').css('font-family', 'MyriadPro-Regular')
 	$('.icon-plus').css('margin-top', '-30px')
 	$('.icon-signin').css('margin-top', '-30px')
-	$('#user_email').removeAttr('placeholder')
   }
   function _webkit(){
 	$('#user-email-label').css('margin-top','15px')
@@ -94,6 +90,7 @@ $(function() {
 	$('.required-password').css('margin-bottom','21px')
 	$('.modal-header').css('margin-bottom','-15px')
 	$("#tos [class='modal-body']").css('margin-top', '15px')
+	$('.icon-lock').css('margin-top', '7px')
   }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
@@ -106,9 +103,13 @@ $(function() {
 	}
 	if(i == 'mozilla'){$('#remember_me').css('margin-left', '-37px')}
   })
-  function font(element){
-	$(element).focusout(function(event) {if($(element).val().length == 0){$(element).css('font-family', 'Drew')}})
-	$(element).keydown(function(event) {$(element).css('font-family', 'MyriadPro-Regular')})
+  function toggle_lock_icon(element){
+	$(element).focusout(function(event) {if($(element).val().length == 0){$('#test').addClass('icon-lock')}})
+	$(element).keydown(function(event) {$('#test').removeClass('icon-lock')})
+  }
+  function toggle_lock_icon1(element){
+	$(element).focusout(function(event) {if($(element).val().length == 0){$('#test1').addClass('icon-lock')}})
+	$(element).keydown(function(event) {$('#test1').removeClass('icon-lock')})
   }
   $("div[style*='width: 256px']").live('click', function(){
 	if($('#info-window2').length == 0){
@@ -126,7 +127,8 @@ $(function() {
 	  function () {$("#info-window2[class='icon-remove']").css('color', '#cccccc')}
     )
   })
-  font('#user_email')
+  toggle_lock_icon('#user_email')
+  toggle_lock_icon1('#user_password_confirmation')
   search()
   function addMarker(thingId, point, color) {
 	if(color === 'green') {var image = greenMarkerImage}
@@ -301,7 +303,6 @@ $(function() {
     return false
   })
   $('#referral').live('show', function() {
-	if(opera){$('small').remove()}
     var modal = $(this);
     modal.css('margin-top', -(modal.outerHeight() / 2))
     modal.css('margin-left', -(modal.outerWidth() / 2));
@@ -426,10 +427,8 @@ $(function() {
   $('#radio1').live('click', function() {
     var radioInput = $(this)
     $('#combo-form').data('state', 'user_sign_up')
-    if(opera){
-	  $('small').remove()
-      enableLegacySupport()
-    }
+    if(opera){enableLegacySupport()}
+	$('#test').addClass('icon-lock')
     $('#user_forgot_password_fields').slideUp()
     $('#user_sign_in_fields').slideUp()
     if($('#required_text').text() == ''){
@@ -442,7 +441,7 @@ $(function() {
     var radioInput = $(this)
     $('#user_sign_up_fields').slideUp()
     $('#user_sign_in_fields').slideDown(function() {
-	  if(opera){$('small').remove()}
+	  $('#test').removeClass('icon-lock')
       $('#combo-form').data('state', 'user_sign_in')
       setComboFormFocus()
       if($('#required_text').text() != ''){
@@ -785,14 +784,9 @@ $(function() {
       success: function(data) {
         $('#content').html(data)
 		$('#user_city').typeahead({source: city_names})
-        font('#user-email-edit')
-		if(opera){
-		  $('#user_new_password').css('font-family', 'MyriadPro-Regular')
-		  $('#user_current_password').css('font-family', 'MyriadPro-Regular')
-		  $('#user-email-edit').removeAttr('placeholder')
-		}
 		$('#save').append("<i class='icon-hdd'></i>")
 		$('#back-link').append("<i class='icon-arrow-left'></i>")
+		if(opera){$('.icon-hdd').css('margin-top', '-30px')}
 		if(webkit){_webkit()}
       }
     })
@@ -922,7 +916,6 @@ $(function() {
           success: function(data) {
             $('#content').html(data)
 			remember_me = true
-   			font('#user_email')
 		    $('#login').append("<i class='icon-signin'></i>")
 			$('#signup').append("<i class='icon-plus'></i>")
  			if(opera){enableLegacySupport()}
