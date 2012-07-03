@@ -58,6 +58,7 @@ $(function() {
   email_referral = false
   var opera = false
   var webkit = false
+  var mozilla = false
   preview_hidden = false
   preview_shown = false
   var remember_me = true
@@ -92,6 +93,11 @@ $(function() {
 	$("#tos [class='modal-body']").css('margin-top', '15px')
 	$('.icon-lock').css('margin-top', '7px')
   }
+  function _mozilla(){
+	$('#remember_me').css('margin-left', '-37px')
+	$('.icon-plus').css('margin-top', '-31px')
+	$('.icon-signin').css('margin-top', '-31px')
+  }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
 	  opera = true
@@ -101,7 +107,10 @@ $(function() {
 	  webkit = true
 	  _webkit()
 	}
-	if(i == 'mozilla'){$('#remember_me').css('margin-left', '-37px')}
+	if(i == 'mozilla'){
+	  mozilla = true
+	  _mozilla()
+	}
   })
   function toggle_lock_icon(element){
 	$(element).focusout(function(event) {if($(element).val().length == 0){$('#test').addClass('icon-lock')}})
@@ -112,7 +121,7 @@ $(function() {
 	$(element).keydown(function(event) {$('#test1').removeClass('icon-lock')})
   }
   $("div[style*='width: 256px']").live('click', function(){
-	if($('#info-window2').length == 0){
+    if($('#info-window2').length == 0){
 	  $("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test1')){$(this).addClass('test')}})
 	  $("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")
 	  $("div[style*='height: 125px']").append("<i id='info-window2' class='icon-remove'></i>")
@@ -788,6 +797,7 @@ $(function() {
 		$('#back-link').append("<i class='icon-arrow-left'></i>")
 		if(opera){$('.icon-hdd').css('margin-top', '-30px')}
 		if(webkit){_webkit()}
+		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
       }
     })
     return false
@@ -920,6 +930,7 @@ $(function() {
 			$('#signup').append("<i class='icon-plus'></i>")
  			if(opera){enableLegacySupport()}
 			if(webkit){_webkit()}
+			if (mozilla) {_mozilla()}
           }
         })
       }
