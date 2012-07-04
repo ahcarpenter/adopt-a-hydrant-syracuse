@@ -123,7 +123,7 @@ $(function() {
 	$(element).focusout(function(event) {if($(element).val().length == 0){$('#test1').addClass('icon-lock')}})
 	$(element).keydown(function(event) {$('#test1').removeClass('icon-lock')})
   }
-  $('#map').live('mousemove', function(){
+  $("div[style*='width: 256px']").live('click', function(){
     if($('#info-window2').length == 0){
 	  $("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test1')){$(this).addClass('test')}})
 	  $("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")
