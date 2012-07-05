@@ -10,9 +10,7 @@ class MainController < ApplicationController
     if !request[:code].nil?
       @graph = Koala::Facebook::API.new(@oauth.get_access_token(request[:code]))
       profile = @graph.get_object('me')
-      puts profile.inspect
       if User.exists?(:facebook_id=>profile['id'])
-        puts 'Hello'
         User.current = User.find_by_facebook_id(profile['id'])
         sign_in('user', User.current)
       else
