@@ -20,7 +20,7 @@
 // http://api.jquery.com/focus/
 // http://api.jquery.com/each/
 // http://api.jquery.com/hasClass/
-$(function() {
+$(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
     center: center,
@@ -145,11 +145,11 @@ $(function() {
 	  position: point,
 	  shadow: markerShadowImage
 	})
-	google.maps.event.addListener(marker, 'click', function() {
+	google.maps.event.addListener(marker, 'click', function(){
 	  if(activeInfoWindow) {activeInfoWindow.close()}
 	  var infoWindow = new google.maps.InfoWindow({maxWidth: 210})
-	  google.maps.event.addListener(infoWindow, 'closeclick', function() {isWindowOpen = false})
-	  google.maps.event.addListener(infoWindow, 'domready', function() {
+	  google.maps.event.addListener(infoWindow, 'closeclick', function(){isWindowOpen = false})
+	  google.maps.event.addListener(infoWindow, 'domready', function(){
     	$('#sms_notifications').append("<i class='icon-comment-alt'></i>")
 		$('#sms_notifications').tooltip({delay: delay_options})
 		$('#email_notifications').append("<i class='icon-envelope'></i>")
@@ -222,7 +222,7 @@ $(function() {
               // continue
               return true
             }
-            setTimeout(function() {
+            setTimeout(function(){
 			  thing_snow_cover = thing.snow_cover
               if(thing.user_id) {
 				if(thing_snow_cover > 6){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1')} 
@@ -238,11 +238,11 @@ $(function() {
       }
     })
   }
-  google.maps.event.addListener(map, 'dragend', function() {
+  google.maps.event.addListener(map, 'dragend', function(){
     var center = map.getCenter()
     addMarkersAround(center.lat(), center.lng())
   })
-  $('input').live('click', function() {focused_input_element = $(this)})
+  $('input').live('click', function(){focused_input_element = $(this)})
   window.addEventListener('shake', shakeEventDidOccur, false)
   function shakeEventDidOccur () {focused_input_element.val('')}
   function stateChange(color){
@@ -296,15 +296,15 @@ $(function() {
       })
     }
   }
-  $('#address_form').live('submit', function() {
+  $('#address_form').live('submit', function(){
 	address()
     return false
   })
-  $('#find').live('click', function() {
+  $('#find').live('click', function(){
 	address()
     return false
   })
-  $('#referral').live('show', function() {
+  $('#referral').live('show', function(){
     var modal = $(this)
     modal.css('margin-top', -(modal.outerHeight() / 2))
     modal.css('margin-left', -(modal.outerWidth() / 2))
@@ -366,7 +366,7 @@ $(function() {
 	if(webkit){_webkit()}
 	if (opera) {adjust2()}
   }
-  $('#send_referral').live('click', function() {
+  $('#send_referral').live('click', function(){
 	var errors = []
     if(!/[\w\.%\+]+@[\w]+\.+[\w]{2,}/.test($('#user_email_referral_field').val())) {
       errors.push($('#user_email_referral_field'))
@@ -433,7 +433,7 @@ $(function() {
       }
     })
   }
-  $('#radio1').live('click', function() {
+  $('#radio1').live('click', function(){
 	radio1 = true
     var radioInput = $(this)
     $('#combo-form').data('state', 'user_sign_up')
@@ -445,13 +445,13 @@ $(function() {
       $('#required').append("<div id='required_text'>" + required_text +"</div>")
       $('#user_email').css('margin-bottom', '9px')
     }
-    $('#user_sign_up_fields').slideDown(function() {setComboFormFocus()})
+    $('#user_sign_up_fields').slideDown(function(){setComboFormFocus()})
   })
-  $('#radio2').live('click', function() {
+  $('#radio2').live('click', function(){
 	radio1 = false
     var radioInput = $(this)
     $('#user_sign_up_fields').slideUp()
-    $('#user_sign_in_fields').slideDown(function() {
+    $('#user_sign_in_fields').slideDown(function(){
 	  $('#test').removeClass('icon-lock')
       $('#combo-form').data('state', 'user_sign_in')
       setComboFormFocus()
@@ -460,23 +460,21 @@ $(function() {
         $('#required_text').remove()
         $('#user_email').css('margin-bottom', '30px')
       }
-      $('#user_forgot_password_link').click(function() {
+      $('#user_forgot_password_link').click(function(){
         $('#combo-form').data('state', 'user_forgot_password')
         $('#user_sign_in_fields').slideUp()
-        $('#user_forgot_password_fields').slideDown(function() {
+        $('#user_forgot_password_fields').slideDown(function(){
           setComboFormFocus()
-          $('#user_remembered_password_link').click(function() {
+          $('#user_remembered_password_link').click(function(){
             $('#combo-form').data('state', 'user_sign_in')
             $('#user_forgot_password_fields').slideUp()
-            $('#user_sign_in_fields').slideDown(function() {
-              setComboFormFocus()
-            })
+            $('#user_sign_in_fields').slideDown(function(){setComboFormFocus()})
           })
         })
       })
     })
   })
-  $('#check1').live('click', function() {
+  $('#check1').live('click', function(){
 	if(!remember_me){
 	  remember_me = true
 	  $('#check1').removeClass('icon-check-empty').addClass('icon-check')
@@ -487,7 +485,7 @@ $(function() {
 	}
   })
   $('#check1').hover(function () {$(this).css('cursor', 'pointer')})
-  $('#combo-form').live('submit', function() {
+  $('#combo-form').live('submit', function(){
     var submitButton = $("#combo-form input[type='submit']")
     $(submitButton).attr('disabled', true)
     var errors = []
@@ -618,7 +616,7 @@ $(function() {
             $('#user_email').parent().addClass('error')
             $('#user_email').focus()
           },
-          success: function() {
+          success: function(){
             $(submitButton).attr('disabled', false)
             $('#user_remembered_password_link').click()
             $('#user_password').focus()
@@ -674,15 +672,15 @@ $(function() {
       }
     })	
   }
-  $('#adopt-button').live('click', function() {
+  $('#adopt-button').live('click', function(){
 	adopt()
     return false
   })
-  $('#adoption_form').live('submit', function() {
+  $('#adoption_form').live('submit', function(){
 	adopt()
     return false
   })
-  $('#sms_notifications').live('click', function() {
+  $('#sms_notifications').live('click', function(){
     var link = $(this)
     if(!sms_notifications){
 	  $(link).removeClass('disabled').addClass('btn btn-success')
@@ -695,7 +693,7 @@ $(function() {
 	}
     return false
   })
-  $('#email_notifications').live('click', function() {
+  $('#email_notifications').live('click', function(){
     var link = $(this)
     if(!email_notifications){
 	  $(link).removeClass('disabled').addClass('btn btn-success')
@@ -723,7 +721,7 @@ $(function() {
     $('#preview').removeClass('hide')
 	$(link).removeClass('disabled').addClass('btn btn-success')	
   }
-  $('#sms-referral').live('click', function() {
+  $('#sms-referral').live('click', function(){
     var link = $(this)
     if(!sms_referral){
 	  adjust1(link)
@@ -740,7 +738,7 @@ $(function() {
 	}
     return false
   })
-  $('#email-referral').live('click', function() {
+  $('#email-referral').live('click', function(){
     var link = $(this)
     if(!email_referral){
 	  adjust1(link)
@@ -791,15 +789,15 @@ $(function() {
       }
     })
   }
-  $('#abandon_button').live('click', function() {
+  $('#abandon_button').live('click', function(){
 	abandon()
     return false
   })
-  $('#abandon_button').live('submit', function() {
+  $('#abandon_button').live('submit', function(){
 	abandon()
     return false
   })
-  $('#edit_profile_link').live('click', function() {
+  $('#edit_profile_link').live('click', function(){
     var link = $(this)
     $(link).addClass('disabled')
     $.ajax({
@@ -821,7 +819,7 @@ $(function() {
     })
     return false
   })
-  $('#edit_form').live('submit', function() {
+  $('#edit_form').live('submit', function(){
     var submitButton = $("#edit_form input[type='submit']")
     $(submitButton).attr('disabled', true)
     var errors = []
@@ -930,7 +928,7 @@ $(function() {
     }
     return false
   })
-  $('#sign-out-link').live('click', function() {
+  $('#sign-out-link').live('click', function(){
     var link = $(this)
     $(link).addClass('disabled')
     $.ajax({
@@ -956,7 +954,7 @@ $(function() {
     })
     return false
   })
-  $('#sign_in_form').live('submit', function() {
+  $('#sign_in_form').live('submit', function(){
     var submitButton = $("#sign_in_form input[type='submit']")
     $(submitButton).attr('disabled', true)
     $.ajax({
@@ -970,7 +968,7 @@ $(function() {
     })
     return false
   })
-  $('#back-link').live('click', function() {
+  $('#back-link').live('click', function(){
     var link = $(this)
     $(link).addClass('disabled')
     $.ajax({
@@ -984,9 +982,9 @@ $(function() {
     })
     return false
   })
-  $('#reminder_form').live('submit', function() {
+  $('#reminder_button').live('click', function(){
     var submitButton = $("#reminder_form input[type='submit']")
-    $(submitButton).attr('disabled', true)
+    $('#reminder_button').attr('disabled', true)
 	if(!opera){$('#info-window').spin({
 	  lines: 11, // The number of lines to draw
 	  length: 7, // The length of each line
@@ -1015,9 +1013,7 @@ $(function() {
           'thing_id': activeThingId
         }
       },
-      error: function(jqXHR) {
-        $(submitButton).attr('disabled', false)
-      },
+      error: function(jqXHR) {$('#reminder_button').attr('disabled', false)},
       success: function(data) {
 		if(!opera){$('#info-window').spin(false)}
         $.ajax({
@@ -1026,6 +1022,7 @@ $(function() {
           data: {'flash': {'notice': 'notices.reminder_sent'}},
           success: function(data) {
 			$('#content').html(data)
+			prepare_search_elements()
 			stateChange()
           }
         })

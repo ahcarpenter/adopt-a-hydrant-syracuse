@@ -3,4 +3,6 @@
   = f.hidden_field 'to_user_id', :value => session[:thing].user.id
   = f.hidden_field 'thing_id', :value => session[:thing].id
   %fieldset.control-group
-    = f.submit t('buttons.send_reminder'), :class => 'btn btn-primary', :id=>'reminder_button'
+    %a.btn{:id=>'reminder_button', :class => 'btn btn-primary', :type => 'submit', :name => 'commit'}
+      = t('buttons.send_reminder')
+      %i.icon-share-alt
