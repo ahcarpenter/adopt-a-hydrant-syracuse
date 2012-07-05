@@ -114,10 +114,8 @@ $(function() {
   })
   $('#user_email').focusin(function(event){if($(this).val().length > 0){$(this).removeClass('icon-lock')}})
   function toggle_lock_icon(element){
-	$(element).focusout(function(event) {
-	  if($(element).val().length == 0 && radio1){$('#test').addClass('icon-lock')}
-	})
-	$(element).keydown(function(event) {$('#test').removeClass('icon-lock')})
+	$(element).live('focusout', function(event) {if($(element).val().length == 0 && radio1){$('#test').addClass('icon-lock')}})
+	$(element).live('keydown', function(event) {$('#test').removeClass('icon-lock')})
   }
   function toggle_lock_icon1(element){
 	$(element).focusout(function(event) {if($(element).val().length == 0){$('#test1').addClass('icon-lock')}})
@@ -630,7 +628,7 @@ $(function() {
     }
     return false
   })
-  $(document).ready(function () {
+  $(document).ready(function(){
       if(window.location.search.length > 150){
 		$.ajax({
 		  type: 'GET',
@@ -643,9 +641,7 @@ $(function() {
 		})
 	  }
   })
-  $('#fb').click(function () {
-	window.location.replace($('#url_for_oauth_code').text())
-  })
+  $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function adopt(){
 	var submitButton = $("#adoption_form input[type='submit']")
     $(submitButton).attr('disabled', true)
@@ -664,8 +660,8 @@ $(function() {
 		  'email_notifications': email_notifications
         }
       },
-      error: function(jqXHR) {$(submitButton).attr('disabled', false)},
-      success: function(data) {
+      error: function(jqXHR){$(submitButton).attr('disabled', false)},
+      success: function(data){
         $.ajax({
           type: 'GET',
           url: '/info_window',

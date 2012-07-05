@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
   
   def self.new1
     user = self.new
-    user.id = (User.all.last.id) + 1
+    user.id = (User.all.last.id) + 1 if User.any?
+    user.id = 1 if !User.any?
     puts user.id
     user.created_at = Time.now
     user.updated_at = Time.now
