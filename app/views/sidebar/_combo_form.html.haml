@@ -13,6 +13,11 @@
         = t('buttons.sign_up')
       %btn{:class => 'btn', :id => 'radio2'}
         = t('buttons.sign_in')
+    %a.btn{:class => 'btn btn-primary', :id => 'fb', :type=>'submit', :name=>'commit'}
+      %i.icon-facebook
+      = 'Facebook Connect'
+      #url_for_oauth_code.hide
+        = session[:url_for_oauth_code]
   %fieldset#user_sign_up_fields
     .control-group
       %label{:for => 'user_name', :id => 'user_name_label'}
@@ -37,11 +42,6 @@
     .form-actions
       = f.submit t('buttons.sign_up'), :class => 'btn btn-primary'
       #signup
-      %a.btn{:class => 'btn btn-primary', :id => 'fb', :type=>'submit', :name=>'commit'}
-        %i.icon-facebook 
-        = 'Facebook Connect'
-        #url_for_oauth_code.hide
-          = session[:url_for_oauth_code]
     %p
       = t('defaults.tos', :tos => link_to(t('titles.tos'), '#tos', :id => 'tos_link', :'data-toggle' => 'modal')).html_safe
   %fieldset#user_sign_in_fields{:style => 'display: none;'}
