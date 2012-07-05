@@ -5,8 +5,8 @@ class MainController < ApplicationController
     
   def index
     ReferThis.url(params[:referral], User.current.id, request.base_url, User.current.name, 'Adopt-a-Hydrant') if !params[:referral].nil?
-    @oauth = Koala::Facebook::OAuth.new(255900427854057, '8efe989aeb23f1206c40362da5795ba0', 'http://localhost:3000/')
-    session[:url_for_oauth_code] = @oauth.url_for_oauth_code(:permissions=>'publish_stream', :callback_url=>'http://localhost:3000/')
+    @oauth = Koala::Facebook::OAuth.new(255900427854057, '8efe989aeb23f1206c40362da5795ba0', 'http://adopt-a-hydrant-syracuse.herokuapp.com/')
+    session[:url_for_oauth_code] = @oauth.url_for_oauth_code(:permissions=>'publish_stream', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/')
     if !request[:code].nil?
       @graph = Koala::Facebook::API.new(@oauth.get_access_token(request[:code]))
       profile = @graph.get_object('me')
