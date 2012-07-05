@@ -5,12 +5,8 @@ class ThingMailer < ActionMailer::Base
   def reminder(thing)
     @thing = thing
     @user = thing.user
-    mail(
-      {
-        :to => thing.user.email,
-        :subject => ['Remember to shovel', thing.name].compact.join(' '),
-      }
-    )
+    @current_user_name = User.current.name
+    mail({:to => thing.user.email,:subject => thing.name,})
   end
   
   def notify(thing)
