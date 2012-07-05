@@ -14,6 +14,7 @@ protected
     if params[:flash]
       params[:flash].each do |key, message|
         if message.include? 'notices'
+          I18n.locale = cookies[:locale]
           flash.now[key.to_sym] = I18n.t(message)
         else
           flash.now[key.to_sym] = message
