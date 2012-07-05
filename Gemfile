@@ -15,6 +15,7 @@ gem 'immigrant'
 gem 'twilio-ruby'
 gem 'libxml-ruby'
 gem 'referthis'
+gem 'koala'
 
 platforms :ruby_18 do
   gem 'fastercsv'

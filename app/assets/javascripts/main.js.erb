@@ -71,7 +71,7 @@ $(function() {
   $('#login').append("<i class='icon-signin'></i>")
   function search(){
 	$('#find').append("<i class='icon-search'></i>")
-	$('#edit_profile_link').append("<i class='icon-edit'></i>")
+	$('#edit_profile_link').append("<i class='icon-pencil'></i>")
 	$('#sign-out-link').append("<i class='icon-signout'></i>")
 	$('#address').typeahead({source: street_addresses})
     $('#sms-referral').append("<i class='icon-comment-alt'></i>")
@@ -123,27 +123,12 @@ $(function() {
 	$(element).focusout(function(event) {if($(element).val().length == 0){$('#test1').addClass('icon-lock')}})
 	$(element).keydown(function(event) {$('#test1').removeClass('icon-lock')})
   }
-  $("div[style*='width: 256px']").live('click', function(){
-    if($('#info-window2').length == 0){
-	  $("div[style*='width: 10px; height: 10px;']").each(function(){if(!$(this).hasClass('test1')){$(this).addClass('test')}})
-	  $("div[style*='height: 126px']").append("<i id='info-window2' class='icon-remove'></i>")
-	  $("div[style*='height: 125px']").append("<i id='info-window2' class='icon-remove'></i>")
-	  $("div[style*='height: 124px']").append("<i id='info-window2' class='icon-remove'></i>")
-	  $("div[style*='height: 145px']").append("<i id='info-window2' class='icon-remove'></i>")
-	  if(webkit){$("div[style*='height: 144px']").append("<i id='info-window2' class='icon-remove'></i>")}
-	  $('img[src*="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]').each(function(){if($(this).parent().hasClass('test')){$(this).remove()}})
-	}
-    $('.test').hover(
-      function () {$("#info-window2[class='icon-remove']").css('color', '#999999')}, 
-	  function () {$("#info-window2[class='icon-remove']").css('color', '#cccccc')}
-    )
-  })
   toggle_lock_icon('#user_email')
   toggle_lock_icon1('#user_password_confirmation')
   search()
   function adjust2(){
 	$('.icon-search').css('margin-top','2px')
-	$('.icon-edit').css('margin-top','2px')
+	$('.icon-pencil').css('margin-top','2px')
 	$('.icon-signout').css('margin-top','2px')
   }
   if (opera) {adjust2()}
@@ -644,6 +629,22 @@ $(function() {
       }
     }
     return false
+  })
+  $(document).ready(function () {
+      if(window.location.search.length > 150){
+		$.ajax({
+		  type: 'GET',
+		  url: '/sidebar/search',
+		  data: {'flash': {'notice': 'notices.signed_in'}},
+		  success: function(data) {
+		    $('#content').html(data)
+			prepare_search_elements()
+		  }
+		})
+	  }
+  })
+  $('#fb').click(function () {
+	window.location.replace($('#url_for_oauth_code').text())
   })
   function adopt(){
 	var submitButton = $("#adoption_form input[type='submit']")

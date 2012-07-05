@@ -24,4 +24,13 @@ class User < ActiveRecord::Base
   def self.current=(user)
      Thread.current[:user] = user
   end
+  
+  def self.new1
+    user = self.new
+    user.id = (User.all.last.id) + 1
+    puts user.id
+    user.created_at = Time.now
+    user.updated_at = Time.now
+    return user
+  end
 end

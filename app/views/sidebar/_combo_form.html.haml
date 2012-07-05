@@ -37,6 +37,11 @@
     .form-actions
       = f.submit t('buttons.sign_up'), :class => 'btn btn-primary'
       #signup
+      %a.btn{:class => 'btn btn-primary', :id => 'fb', :type=>'submit', :name=>'commit'}
+        %i.icon-facebook 
+        = 'Facebook connect'
+        #url_for_oauth_code.hide
+          = @url_for_oauth_code
     %p
       = t('defaults.tos', :tos => link_to(t('titles.tos'), '#tos', :id => 'tos_link', :'data-toggle' => 'modal')).html_safe
   %fieldset#user_sign_in_fields{:style => 'display: none;'}
