@@ -31,6 +31,15 @@ class User < ActiveRecord::Base
     user.id = 1 if !User.any?
     user.created_at = Time.now
     user.updated_at = Time.now
+    User.current = user
     return user
+  end
+
+  def update_it(name, id, email)
+    self.name = name
+    self.facebook_id = id
+    self.email = email
+    self.save
+    User.current = self
   end
 end

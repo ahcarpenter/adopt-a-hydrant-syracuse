@@ -11,20 +11,9 @@ class MainController < ApplicationController
       @graph = Koala::Facebook::API.new(@oauth.get_access_token(request[:code]))
       profile = @graph.get_object('me')
       if User.exists?(:facebook_id=>profile['id'])
-        user = User.find_by_facebook_id(profile['id'])
-        user.name = profile['name']
-        user.email = profile['email']
-        user.save
-        sign_in('user', user)
-        User.current = User.find_by_facebook_id(profile['id'])
+        sign_in('user', User.find_by_facebook_id(profile['id']).update_it(profile['name'], profile['id'], profile['email']))
       else
-        user = User.new1
-        user.name = profile['name']
-        user.facebook_id = profile['id']
-        user.email = profile['email']
-        user.save
-        sign_in('user', user)
-        User.current = user
+        sign_in('user', User.new1.update_it(profile['name'], profile['id'], profile['email']))
       end
     end
     
