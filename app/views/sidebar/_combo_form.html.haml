@@ -40,7 +40,7 @@
         .required-password
           = @required
     .form-actions
-      = f.submit t('buttons.sign_up'), :class => 'btn btn-primary'
+      = f.submit t('buttons.sign_up'), :class => 'btn btn-primary', :id=>'signup1'
       #signup
     %p
       = t('defaults.tos', :tos => link_to(t('titles.tos'), '#tos', :id => 'tos_link', :'data-toggle' => 'modal')).html_safe
@@ -55,7 +55,7 @@
         #remember_me
           = t('labels.remember_me')
     .form-actions
-      = f.submit t('buttons.sign_in'), :class => 'btn btn-primary'
+      = f.submit t('buttons.sign_in'), :class => 'btn btn-primary', :id=>'log-in'
       #login
     %p
       = link_to t('links.forgot_password'), '#', :id => 'user_forgot_password_link'
