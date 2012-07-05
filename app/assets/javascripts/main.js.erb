@@ -20,6 +20,8 @@
 // http://api.jquery.com/focus/
 // http://api.jquery.com/each/
 // http://api.jquery.com/hasClass/
+// http://www.w3schools.com/jsref/met_loc_assign.asp
+// http://www.w3schools.com/jsref/obj_location.asp
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -637,6 +639,7 @@ $(function(){
 			prepare_search_elements()
 		  }
 		})
+		window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/')
 	  }
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
