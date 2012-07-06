@@ -440,7 +440,7 @@ $(function(){
     var radioInput = $(this)
     $('#combo-form').data('state', 'user_sign_up')
     if(opera){enableLegacySupport()}
-	if(!$('#user_email').val().length > 0){$('#test').addClass('icon-lock')}
+	if(!$('#user_email').val().length>0){$('#test').addClass('icon-lock')}
     $('#user_forgot_password_fields').slideUp()
     $('#user_sign_in_fields').slideUp()
     if($('#required_text').text() == ''){
@@ -628,19 +628,7 @@ $(function(){
     }
     return false
   })
-  $(document).ready(function(){
-      if(window.location.search.length > 150){
-		$.ajax({
-		  type: 'GET',
-		  url: '/sidebar/search',
-		  data: {'flash': {'notice': 'notices.signed_in'}},
-		  success: function(data) {
-		    $('#content').html(data)
-			prepare_search_elements()
-		  }
-		})
-	  }
-  })
+  $(document).ready(function(){if(window.location.search.length > 150){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/')}})
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function adopt(){
 	var submitButton = $("#adoption_form input[type='submit']")
