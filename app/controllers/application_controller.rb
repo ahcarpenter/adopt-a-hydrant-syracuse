@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_flash_from_params
   before_filter :set_locale
-
+  
 protected
   def set_current_user
     User.current = current_user
@@ -24,6 +24,9 @@ protected
   end
 
   def set_locale
+    @@oauth = Koala::Facebook::OAuth.new(255900427854057, '8efe989aeb23f1206c40362da5795ba0', 'http://adopt-a-hydrant-syracuse.herokuapp.com/')
+    session[:url_for_oauth_code] = @@oauth.url_for_oauth_code(:permissions=>'publish_stream', :permissions=>'email', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/')
+    
     available_languages = Dir.glob(Rails.root + 'config/locales/??.yml').map do |file|
       File.basename(file, '.yml')
     end

@@ -17,8 +17,7 @@ class SessionsController < Devise::SessionsController
   def destroy
     signed_in = signed_in?(resource_name)
     sign_out(resource_name) if signed_in
-    @oauth = Koala::Facebook::OAuth.new(255900427854057, '8efe989aeb23f1206c40362da5795ba0', 'http://adopt-a-hydrant-syracuse.herokuapp.com/')
-    session[:url_for_oauth_code] = @oauth.url_for_oauth_code(:permissions=>'publish_stream', :permissions=>'email', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/')
+    session[:url_for_oauth_code] = @@oauth.url_for_oauth_code(:permissions=>'publish_stream', :permissions=>'email', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/')
     render(:json => {'success' => signed_in})
   end
 end

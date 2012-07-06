@@ -5,16 +5,10 @@ class MainController < ApplicationController
     
   def index
     ReferThis.url(params[:referral], User.current.id, request.base_url, User.current.name, 'Adopt-a-Hydrant') if !params[:referral].nil?
-    @oauth = Koala::Facebook::OAuth.new(255900427854057, '8efe989aeb23f1206c40362da5795ba0', 'http://adopt-a-hydrant-syracuse.herokuapp.com/')
-    session[:url_for_oauth_code] = @oauth.url_for_oauth_code(:permissions=>'publish_stream', :permissions=>'email', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/')
     if !request[:code].nil?
-      @graph = Koala::Facebook::API.new(@oauth.get_access_token(request[:code]))
+      @graph = Koala::Facebook::API.new(@@oauth.get_access_token(request[:code]))
       profile = @graph.get_object('me')
-      if User.exists?(:facebook_id=>profile['id'])
-        sign_in('user', User.find_by_facebook_id(profile['id']).update_it(profile['name'], profile['id'], profile['email']))
-      else
-        sign_in('user', User.new1.update_it(profile['name'], profile['id'], profile['email']))
-      end
+      User.exists?(:facebook_id=>profile['id']) ? sign_in('user', User.find_by_facebook_id(profile['id']).update1(profile['name'], profile['id'], profile['email'])) : sign_in('user', User.new1.update1(profile['name'], profile['id'], profile['email']))
     end
     
     @required = Sidebar.translate_required if @required.nil?
