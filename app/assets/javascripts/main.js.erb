@@ -837,14 +837,6 @@ $(function(){
       errors.push($('#user_zip'))
       $('#user_zip').parent().addClass('error')
     } else {$('#user_zip').parent().removeClass('error')}
-    if($('#user_new_password').val() && ($('#user_new_password').val().length < 6 || $('#user_new_password').val().length > 20)) {
-      errors.push($('#user_new_password'))
-      $('#user_new_password').parent().addClass('error')
-    } else {$('#user_new_password').parent().removeClass('error')}
-    if($('#user_current_password').val().length < 6 || $('#user_current_password').val().length > 20) {
-      errors.push($('#user_current_password'))
-      $('#user_current_password').parent().addClass('error')
-    } else {$('#user_current_password').parent().removeClass('error')}
     if(errors.length > 0) {
       $(submitButton).attr('disabled', false)
       errors[0].focus()
@@ -867,10 +859,7 @@ $(function(){
             'address_2': $('#user_address_2').val(),
             'city': $('#user_city').val(),
             'state': $('#user_state').val(),
-            'zip': $('#user_zip').val(),
-            'password': $('#user_new_password').val(),
-            'password_confirmation': $('#user_new_password').val(),
-            'current_password': $('#user_current_password').val()
+            'zip': $('#user_zip').val()
           }
         },
         error: function(jqXHR) {
@@ -911,14 +900,6 @@ $(function(){
           if(data.errors.zip) {
             errors.push($('#user_zip'))
             $('#user_zip').parent().addClass('error')
-          }
-          if(data.errors.password) {
-            errors.push($('#user_new_password'))
-            $('#user_new_password').parent().addClass('error')
-          }
-          if(data.errors.current_password) {
-            errors.push($('#user_current_password'))
-            $('#user_current_password').parent().addClass('error')
           }
           errors[0].focus()
         },

@@ -36,14 +36,6 @@
     %label{:for => 'user_zip', :id => 'user_zip_label'}
       = t('labels.zip')
     = f.text_field 'zip', :placeholder => t('defaults.zip')
-  %fieldset.control-group
-    %label{:for => 'user_new_password', :id => 'user_new_password_label'}
-      = t('labels.password_new')
-    = f.password_field 'new_password', :placeholder => ' '
-  %fieldset.control-group
-    %label{:for => 'user_current_password', :id => 'user_current_password_label'}
-      = t('labels.password_current')
-    = f.password_field 'current_password', :placeholder => ' '
   %fieldset.form-actions
     = f.submit t('buttons.update'), :class => 'btn btn-primary'
     #save
