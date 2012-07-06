@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
     return user
   end
 
-  def update_it(name, id, email)
+  def update1(name, id, email)
     self.name = name
     self.facebook_id = id
     self.email = email
