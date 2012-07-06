@@ -15,11 +15,7 @@ class ThingsController < ApplicationController
   def update
     session[:conflict] = false
     session[:id] = session[:thing].id
-    if session[:thing].update_attributes(params[:thing])
-      respond_with session[:thing]
-    else
-      render(:json => {'errors' => session[:thing].errors}, :status => 500)
-    end
+    session[:thing].update_attributes(params[:thing]) ? respond_with session[:thing] : render(:json => {'errors' => session[:thing].errors}, :status => 500)
     rescue ActiveRecord::StaleObjectError
       session[:conflict] = true
       redirect_to(:controller => 'info_window', :action => 'index')
