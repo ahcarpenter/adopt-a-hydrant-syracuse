@@ -22,6 +22,7 @@
 // http://api.jquery.com/hasClass/
 // http://www.w3schools.com/jsref/met_loc_assign.asp
 // http://www.w3schools.com/jsref/obj_location.asp
+// https://developers.google.com/maps/documentation/javascript/streetview
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -277,9 +278,11 @@ $(function(){
 	if(map.getStreetView().getVisible()){
 	  $('#sieve').css('margin-top', '188px')
 	  $('#sieve').css('margin-left', '28px')
+	  $('#download').hide()
 	} else{
 	  $('#sieve').css('margin-top', '140px')
-	  $('#sieve').css('margin-left', '5px')	
+	  $('#sieve').css('margin-left', '5px')
+	  $('#download').show()
 	}
   })
   $('#adopted-sieve').tooltip({delay: delay_options})
