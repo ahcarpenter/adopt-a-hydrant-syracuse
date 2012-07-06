@@ -7,6 +7,7 @@ ru:
     back: 'назад'
     change_password: 'Изменение пароля'
     close: 'закрывать'
+    connect: 'соединяться'
     edit_profile: 'Изменить профиль'
     email_password: 'Напишите мне мой пароль'
     find: "Найти %{thing}"

@@ -15,7 +15,7 @@
         = t('buttons.sign_in')
     %a.btn{:class => 'btn btn-primary', :id => 'fb', :type=>'submit', :name=>'commit'}
       %i.icon-facebook
-      = 'Facebook Connect'
+      = t('buttons.connect')
       #url_for_oauth_code.hide
         = session[:url_for_oauth_code]
   %fieldset#user_sign_up_fields

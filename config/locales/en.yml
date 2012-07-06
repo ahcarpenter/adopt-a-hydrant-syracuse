@@ -7,6 +7,7 @@ en:
     back: 'Back'
     change_password: 'Change password'
     close: 'Close'
+    connect: 'Connect'
     edit_profile: 'Edit profile'
     email_password: 'Email me my password'
     find: "Find %{thing}"

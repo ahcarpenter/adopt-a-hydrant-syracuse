@@ -7,6 +7,7 @@ ar:
     back: 'ظهر'
     change_password: 'تغيير كلمة السر'
     close: 'أغلق'
+    connect: 'ربط'
     edit_profile: 'تعديل الملف الشخصي'
     email_password: 'البريد الالكتروني لي كلمة السر'
     find: "البحث %{thing}"

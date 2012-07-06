@@ -7,6 +7,7 @@ pl:
     back: 'Z powrotem'
     change_password: 'Zmień hasło'
     close: 'Zamknąć'
+    connect: 'Połączyć'
     edit_profile: 'Edytuj profil'
     email_password: 'Powiadom mi moje hasło'
     find: "Znajdź %{thing}"

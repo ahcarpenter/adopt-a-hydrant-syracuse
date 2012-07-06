@@ -7,6 +7,7 @@ ht:
     back: 'Retounen'
     change_password: 'Chanje modpas mwen'
     close: 'Fèmen'
+    connect: 'Konekte'
     edit_profile: 'Edit pwofil'
     email_password: "Voye yon imèl ba m 'modpas mwen"
     find: "Jwenn %{thing}"

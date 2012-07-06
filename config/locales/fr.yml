@@ -8,6 +8,7 @@ fr:
     back: 'Retour'
     change_password: 'Changer mon mot de passe'
     close: 'Fermer'
+    connect: 'Relier'
     edit_profile: 'Modifier le profil'
     email_password: 'Envoyez-moi mon mot de passe'
     find: 'Trouver %{thing}'

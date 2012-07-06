@@ -7,6 +7,7 @@ es:
     back: 'De nuevo'
     change_password: 'Cambiar mi contraseña'
     close: 'Cerca'
+    connect: 'Conectar'
     edit_profile: 'Editar perfil'
     email_password: 'Correo electrónico mi contraseña'
     find: "Encontrar %{thing}"

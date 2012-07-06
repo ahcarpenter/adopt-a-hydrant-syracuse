@@ -7,6 +7,7 @@ iw:
     back: 'בחזרה'
     change_password: 'לשנות את הסיסמה שלי'
     close: 'לסגור'
+    connect: 'לחבר'
     edit_profile: 'עריכת פרופיל'
     email_password: 'שלח לי את הסיסמה שלי'
     find: "למצוא %{thing}"

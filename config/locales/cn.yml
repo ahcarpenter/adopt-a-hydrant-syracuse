@@ -7,6 +7,7 @@ cn:
     back: '背面'
     change_password: '更改我的密碼'
     close: '關閉'
+    connect: '連'
     edit_profile: '編輯個人資料'
     email_password: '我的密碼給我發電子郵件'
     find: '找到消防栓'

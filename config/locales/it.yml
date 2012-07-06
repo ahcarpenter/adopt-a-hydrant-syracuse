@@ -7,6 +7,7 @@ it:
     back: 'Indietro'
     change_password: 'Cambiare la mia password'
     close: 'Chiudere'
+    connect: 'Collegare'
     edit_profile: 'Modifica il profilo'
     email_password: 'Email me la mia password'
     find: 'Trova idrante'
