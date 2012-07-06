@@ -116,7 +116,7 @@ $(function(){
 	}
   })
   $('#user_email').focusin(function(event){if($(this).val().length > 0){$(this).removeClass('icon-lock')}})
-  $('#user_password_confirmation').focusin(function(event){if($(this).val().length > 0){$(this).removeClass('icon-lock')}})
+  $('#user_password_confirmation').focusin(function(event){if($(this).val().length > 0){$('#test1').removeClass('icon-lock')}})
   function toggle_lock_icon(element){
 	$(element).live('focusout', function(event) {if($(element).val().length == 0 && radio1){$('#test').addClass('icon-lock')}})
 	$(element).live('keydown', function(event) {$('#test').removeClass('icon-lock')})
