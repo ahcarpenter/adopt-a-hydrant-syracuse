@@ -15,17 +15,17 @@ class UsersController < Devise::RegistrationsController
   end
 
   def create
-    begin
     build_resource
     if resource.save
+      begin
       sign_in(resource_name, resource)
+      rescue ActiveRecord::RecordNotUnique
+        flash[:notice] = 'An account with that email address already exists!'
+      end
       render(:json => resource)
     else
       clean_up_passwords(resource)
       render(:json => {'errors' => resource.errors}, :status => 500)
-    end
-    rescue ActiveRecord::RecordNotUnique
-      flash[:notice] = 'An account with that email address already exists!'
     end
   end
 end
