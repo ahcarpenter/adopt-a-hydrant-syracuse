@@ -628,19 +628,7 @@ $(function(){
     }
     return false
   })
-  $(document).ready(function(){
-      if(window.location.search.length > 150){
-		$.ajax({
-		  type: 'GET',
-		  url: '/sidebar/search',
-		  data: {'flash': {'notice': 'notices.signed_in'}},
-		  success: function(data) {
-		    $('#content').html(data)
-			prepare_search_elements()
-		  }
-		})
-	  }
-  })
+  $(document).ready(function(){if(window.location.search.length > 150){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/')}})
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function adopt(){
 	var submitButton = $("#adoption_form input[type='submit']")
