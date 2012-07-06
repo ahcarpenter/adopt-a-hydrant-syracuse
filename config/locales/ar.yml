@@ -75,6 +75,7 @@ ar:
     abandoned: 'تخلى صنبور!'
     adopted: 'اعتمد صنبور!'
     password_reset: 'إرسال إرشادات إعادة تعيين كلمة السر! التحقق من بريدك الالكتروني.'
+    profile_updated: 'يتم تجديد!'
     referral_sent: 'أرسلت الإحالة!'
     reminder_sent: 'أرسلت تذكير!'
     signed_in: 'في تسجيل!'

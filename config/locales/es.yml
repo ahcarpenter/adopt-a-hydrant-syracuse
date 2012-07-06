@@ -75,6 +75,7 @@ es:
     abandoned: 'Toma de agua abandonada!'
     adopted: 'Hidrante adoptado!'
     password_reset: 'Las instrucciones de restablecimiento de contraseña enviado! Revise su correo electrónico.'
+    profile_updated: 'Perfil actualizado!'
     referral_sent: 'Referencia enviado!'
     reminder_sent: 'Recordatorio enviado!'
     signed_in: 'Conectado!'

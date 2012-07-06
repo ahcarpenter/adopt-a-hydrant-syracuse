@@ -77,6 +77,7 @@ de:
     abandoned: 'Hydrant verlassen!'
     adopted: 'Hydrant übernommen!'
     password_reset: 'Password Reset Anleitung geschickt! Überprüfen Sie Ihre E-Mail.'
+    profile_updated: 'Profil aktualisiert!'
     referral_sent: 'Referral geschickt!'
     reminder_sent: 'Reminder versendet!'
     signed_in: 'Angemeldet!'

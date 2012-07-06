@@ -75,6 +75,7 @@ cn:
     abandoned: '消防栓被遺棄！'
     adopted: '消防栓通過了！'
     password_reset: '密碼的復位指令發出！檢查您的電子郵件。'
+    profile_updated: '更新個人信息！'
     referral_sent: '轉診發送！'
     reminder_sent: '提醒發送！'
     signed_in: '登錄！'

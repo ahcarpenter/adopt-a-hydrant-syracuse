@@ -75,6 +75,7 @@ ht:
     abandoned: 'Tiyo abandone!'
     adopted: 'Tiyo adopte!'
     password_reset: 'Enstriksyon Reset modpas voye! Tcheke imel ou.'
+    profile_updated: 'Profile mete ajou!'
     referral_sent: 'Referans voye!'
     reminder_sent: 'Rapèl voye!'
     signed_in: 'Logged in!'

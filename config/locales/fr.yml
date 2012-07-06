@@ -76,6 +76,7 @@ fr:
     abandoned: 'Bouche abandonné!'
     adopted: 'Bouche adopté!'
     password_reset: 'Les instructions de réinitialisation de mot de passe envoyé! Vérifiez votre adresse email.'
+    profile_updated: 'Profil mis à jour!'
     referral_sent: 'Renvoi envoyé!'
     reminder_sent: 'Rappel envoyé!'
     signed_in: 'Connecté!'

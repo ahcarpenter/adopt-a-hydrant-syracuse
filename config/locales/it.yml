@@ -75,6 +75,7 @@ it:
     abandoned: 'Idrante abbandonato!'
     adopted: 'Idrante adottato!'
     password_reset: 'Istruzioni per reimpostare la password ricevuta! Controlla la tua email.'
+    profile_updated: 'Aggiornato il profilo!'
     referral_sent: 'Referral inviato!'
     reminder_sent: 'Promemoria inviato!'
     signed_in: 'Accesso effettuato!'

@@ -75,6 +75,7 @@ iw:
     abandoned: 'ברז נטוש!'
     adopted: 'ברז אומץ!'
     password_reset: 'איפוס סיסמה הוראות נשלח! בדוק את תיבת הדוא"ל שלך.'
+    profile_updated: 'הפרופיל עודכן!'
     referral_sent: 'הפנייה נשלחה!'
     reminder_sent: 'תזכורת שנשלח!'
     signed_in: 'מחובר!'

@@ -75,6 +75,7 @@ kr:
     abandoned: '급수전은 포기!'
     adopted: '급수전 입양!'
     password_reset: '비밀 번호 재설정 지침을 보냈습니다! 이메일을 확인합니다.'
+    profile_updated: '프로필 업데이트!'
     referral_sent: '추천을 보냈습니다!'
     reminder_sent: '알림을 보냈습니다!'
     signed_in: '로그인!'

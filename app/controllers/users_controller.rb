@@ -6,7 +6,7 @@ class UsersController < Devise::RegistrationsController
   def update
     if resource.update_without_password(params[resource_name])
       sign_in(resource_name, resource, :bypass => true)
-      flash[:notice] = 'Profile updated!'
+      flash[:notice] = I18n.t('notices.profile_updated')
       redirect_to(:controller => 'sidebar', :action => 'search')
     else
       clean_up_passwords(resource)

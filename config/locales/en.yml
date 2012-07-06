@@ -78,6 +78,7 @@ en:
     abandoned: 'Hydrant abandoned!'
     adopted: 'Hydrant adopted!'
     password_reset: 'Password reset instructions sent! Check your email.'
+    profile_updated: 'Profile updated!'
     referral_sent: 'Referral sent!'
     reminder_sent: 'Reminder sent!'
     signed_in: 'Logged in!'
