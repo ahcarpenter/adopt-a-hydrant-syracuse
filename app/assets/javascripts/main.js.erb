@@ -440,7 +440,7 @@ $(function(){
     var radioInput = $(this)
     $('#combo-form').data('state', 'user_sign_up')
     if(opera){enableLegacySupport()}
-	$('#test').addClass('icon-lock')
+	if(!$('#user_email').val().length > 0){$('#test').addClass('icon-lock')}
     $('#user_forgot_password_fields').slideUp()
     $('#user_sign_in_fields').slideUp()
     if($('#required_text').text() == ''){
