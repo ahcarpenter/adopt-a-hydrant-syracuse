@@ -273,6 +273,15 @@ $(function(){
     var center = map.getCenter()
     addMarkersAround(center.lat(), center.lng(), sieve_adopted)
   })
+  google.maps.event.addListener(map.getStreetView(), 'visible_changed', function(){
+	if(map.getStreetView().getVisible()){
+	  $('#sieve').css('margin-top', '188px')
+	  $('#sieve').css('margin-left', '28px')
+	} else{
+	  $('#sieve').css('margin-top', '140px')
+	  $('#sieve').css('margin-left', '5px')	
+	}
+  })
   $('#adopted-sieve').tooltip({delay: delay_options})
   $('#adopted-sieve').click(function(){
     if(sieve_adopted){
