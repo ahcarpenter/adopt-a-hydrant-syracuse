@@ -69,6 +69,7 @@ kr:
     voice_number: '홈 전화 번호'
     zip: '우편 번호'
   links:
+    data: '데이터'
     feedback: '의견 보내기'
     forgot_password: '비밀 번호를 잊으 셨나요?'
     remembered_password: '신경 쓰지 마십시오. 내 비밀 번호 기억.'

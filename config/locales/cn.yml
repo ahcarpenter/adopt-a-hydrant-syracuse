@@ -69,6 +69,7 @@ cn:
     voice_number: '家裡的電話號碼'
     zip: '郵政編碼'
   links:
+    data: '數據'  
     feedback: '發送反饋'
     forgot_password: '忘記密碼？'
     remembered_password: '不要介意。我記得我的密碼。'

@@ -23,14 +23,12 @@
           %a{:href => 'http://bostonbuilt.org/'}
             = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built'), :id => 'boston-and-lexington-built'
       #feedback
-        .table
-          .table-cell
-            %p
-              %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
-                = t('links.feedback')
-          .table-cell
-            %p
-              = link_to 'Download data', 'xml/hydrants.kml'
+        %p
+          %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
+            = t('links.feedback')
+        %p
+          = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
+          %i.icon-download-alt
     .table-cell.map-container
       #map
         &nbsp;

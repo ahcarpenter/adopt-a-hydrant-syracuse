@@ -69,6 +69,7 @@ it:
     voice_number: 'Numero di telefono di casa'
     zip: 'Codice di avviamento postale'
   links:
+    data: 'Dati'
     feedback: 'Inviare commenti e suggerimenti'
     forgot_password: 'Hai dimenticato la password?'
     remembered_password: 'Non importa. Mi sono ricordato la mia password.'

@@ -69,6 +69,7 @@ ar:
     voice_number: 'رقم هاتف المنزل'
     zip: 'الرمز البريدي'
   links:
+    data: 'بيانات'
     feedback: 'أرسل تعليقا'
     forgot_password: 'نسيت كلمة المرور؟'
     remembered_password: 'ناهيك. تذكرت كلمة السر الخاصة بي.'

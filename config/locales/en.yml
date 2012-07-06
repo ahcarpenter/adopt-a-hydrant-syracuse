@@ -72,6 +72,7 @@ en:
     voice_number: 'Home phone number'
     zip: 'ZIP code'
   links:
+    data: 'Data'
     feedback: 'Send feedback'
     forgot_password: 'Forgot password?'
     remembered_password: 'Never mind. I remembered my password.'

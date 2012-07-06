@@ -71,6 +71,7 @@ de:
     voice_number: 'Startseite Telefonnummer'
     zip: 'Postleitzahl'
   links:
+    data: 'Daten'
     feedback: 'Feedback senden'
     forgot_password: 'Passwort vergessen?'
     remembered_password: 'Das macht nichts. Ich erinnerte mich an mein Passwort vergessen.'

@@ -126,6 +126,10 @@ $(function(){
   toggle_lock_icon('#user_email')
   toggle_lock_icon1('#user_password_confirmation')
   search()
+  $('#download-link').hover(
+	function(){$('.icon-download-alt').css('color', '#005580')},
+	function(){$('.icon-download-alt').css('color', '#08C')}
+  )
   function adjust2(){
 	$('.icon-search').css('margin-top','2px')
 	$('.icon-pencil').css('margin-top','2px')

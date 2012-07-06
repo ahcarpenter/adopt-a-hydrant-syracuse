@@ -69,6 +69,7 @@ pt:
     voice_number: 'Número de telefone residencial'
     zip: 'Código postal'
   links:
+    data: 'Dados'
     feedback: 'Envie seu comentário'
     forgot_password: 'Esqueceu sua senha?'
     remembered_password: 'Não se preocupe. Lembrei-me minha senha.'

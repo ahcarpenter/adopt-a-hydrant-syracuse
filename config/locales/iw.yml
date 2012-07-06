@@ -69,6 +69,7 @@ iw:
     voice_number: 'טלפון בבית'
     zip: 'מיקוד'
   links:
+    data: 'נתונים'
     feedback: 'שלח משוב'
     forgot_password: 'שכחת את הסיסמה?'
     remembered_password: 'לא חשוב. זכרתי את הסיסמה שלי.'

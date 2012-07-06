@@ -69,6 +69,7 @@ ht:
     voice_number: 'Nimewo Telefòn Lakay'
     zip: 'Kòd postal'
   links:
+    data: 'Done'
     feedback: 'Voye fidbak'
     forgot_password: 'Bliye modpas ou a?'
     remembered_password: 'Pa janm bliye. Mwen vin chonje modpas mwen.'

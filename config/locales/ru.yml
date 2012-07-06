@@ -69,6 +69,7 @@ ru:
     voice_number: 'Домашний телефон'
     zip: 'почтовый индекс'
   links:
+    data: 'данные'
     feedback: 'обратная связь'
     forgot_password: 'Забыли пароль?'
     remembered_password: 'Не берите в голову. Я вспомнил пароль.'
