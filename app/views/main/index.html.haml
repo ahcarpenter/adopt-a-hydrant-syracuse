@@ -27,8 +27,9 @@
           %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
             = t('links.feedback')
     .table-cell.map-container
-      %i.icon-download-alt
-      = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
+      #download
+        %i.icon-download-alt
+        = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
       #sieve
         %btn{:id => 'adopted-sieve', :class => 'btn btn-danger', :type => 'submit', :name => 'commit', 'data-toggle'=>'buttons-checkbox', 'data-title'=>'Enable adopted sieve'}
           %i.icon-filter
