@@ -29,7 +29,7 @@
     .table-cell.map-container
       %i.icon-download-alt
       = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
-      #filter
+      #sieve
         %btn{:id => 'adopted-sieve', :class => 'btn btn-danger', :type => 'submit', :name => 'commit', 'data-toggle'=>'buttons-checkbox', 'data-title'=>'Enable adopted sieve'}
           %i.icon-filter
       #map
