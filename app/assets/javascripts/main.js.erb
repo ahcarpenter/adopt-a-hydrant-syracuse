@@ -289,11 +289,11 @@ $(function(){
   $('#adopted-sieve').click(function(){
     if(sieve_adopted){
 	  sieve_adopted = false
-	  $(this).attr('title', 'Enable adopted sieve').tooltip('fixTitle').tooltip('show')
+	  $(this).attr('title', $('#enable_adopted_sieve').text()).tooltip('fixTitle').tooltip('show')
 	}
 	else{
 	  sieve_adopted = true
-	  $(this).attr('title', 'Disable adopted sieve').tooltip('fixTitle').tooltip('show')
+	  $(this).attr('title', $('#disable_adopted_sieve').text()).tooltip('fixTitle').tooltip('show')
 	}
   })
   $('input').live('click', function(){focused_input_element = $(this)})

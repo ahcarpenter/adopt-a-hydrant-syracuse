@@ -31,7 +31,11 @@
         %i.icon-download-alt
         = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
       #sieve
-        %btn{:id => 'adopted-sieve', :class => 'btn btn-danger', :type => 'submit', :name => 'commit', 'data-toggle'=>'buttons-checkbox', 'data-title'=>'Enable adopted sieve'}
+        %btn{:id => 'adopted-sieve', :class => 'btn btn-danger', :type => 'submit', :name => 'commit', 'data-toggle'=>'buttons-checkbox', 'data-title'=>t('labels.enable_adopted_sieve')}
           %i.icon-filter
       #map
         &nbsp;
+  #disable_adopted_sieve.hide
+    = t('labels.disable_adopted_sieve')
+  #enable_adopted_sieve.hide
+    = t('labels.enable_adopted_sieve')
