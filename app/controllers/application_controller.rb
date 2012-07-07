@@ -1,6 +1,8 @@
 # http://www.dzone.com/snippets/ruby-open-file-write-it-and
 # http://www.ruby-doc.org/core-1.9.3/Hash.html
 # http://rails-bestpractices.com/posts/47-fetch-current-user-in-models
+# http://stackoverflow.com/questions/5226946/rails3-http-user-agent
+# https://github.com/arsduo/koala/wiki/OAuth
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_flash_from_params
@@ -25,7 +27,11 @@ protected
 
   def set_locale
     @@oauth = Koala::Facebook::OAuth.new(255900427854057, '8efe989aeb23f1206c40362da5795ba0', 'http://adopt-a-hydrant-syracuse.herokuapp.com/')
-    session[:url_for_oauth_code] = @@oauth.url_for_oauth_code(:permissions=>'publish_stream', :permissions=>'email', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/')
+    if request.env['HTTP_USER_AGENT'].include? 'Mobile'
+      session[:url_for_oauth_code] = @@oauth.url_for_oauth_code(:permissions=>'publish_stream', :permissions=>'email', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/', :display=>'touch')
+    else
+      session[:url_for_oauth_code] = @@oauth.url_for_oauth_code(:permissions=>'publish_stream', :permissions=>'email', :callback_url=>'http://adopt-a-hydrant-syracuse.herokuapp.com/')
+    end
     
     available_languages = Dir.glob(Rails.root + 'config/locales/??.yml').map do |file|
       File.basename(file, '.yml')
