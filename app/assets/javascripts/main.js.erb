@@ -157,6 +157,7 @@ $(function(){
 	$('.icon-signout').css('margin-top','2px')
   }
   if (opera) {adjust2()}
+  $('.alert').live('close', function(){$(this).hide()})
   function addMarker(thingId, point, color) {
 	if(color === 'green') {var image = greenMarkerImage}
 	else if(color === 'red') {var image = redMarkerImage}
@@ -473,6 +474,7 @@ $(function(){
 		      error: function(jqXHR) {},
 		      success: function(data) {
 			    $('#content').html(data)
+				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepare_search_elements()
 		      }
 		    })
@@ -609,6 +611,7 @@ $(function(){
               data: {'flash': {'notice': 'notices.signed_up'}},
               success: function(data) {
 				$('#content').html(data)
+				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepare_search_elements()
 			  }
             })
@@ -648,6 +651,7 @@ $(function(){
                 data: {'flash': {'notice': 'notices.signed_in'}},
                 success: function(data) {
 	              $('#content').html(data)
+				  $('.alert').effect('pulsate', {times: 2}, 300)
 				  prepare_search_elements()
 				}
             })
@@ -690,6 +694,7 @@ $(function(){
 		  data: {'flash': {'notice': 'notices.signed_in'}},
 		  success: function(data) {
 		    $('#content').html(data)
+			$('.alert').effect('pulsate', {times: 2}, 300)
 			prepare_search_elements()
 		  }
 		})
@@ -979,6 +984,7 @@ $(function(){
           data: {'flash': {'warning': 'notices.signed_out'}},
           success: function(data) {
             $('#content').html(data)
+			$('.alert').effect('pulsate', {times: 2}, 300)
 			remember_me = true
 		    $('#login').append("<i class='icon-signin'></i>")
 			$('#signup').append("<i class='icon-plus'></i>")
@@ -1059,6 +1065,7 @@ $(function(){
           data: {'flash': {'notice': 'notices.reminder_sent'}},
           success: function(data) {
 			$('#content').html(data)
+			$('.alert').effect('pulsate', {times: 2}, 300)
 			prepare_search_elements()
 			stateChange()
           }
