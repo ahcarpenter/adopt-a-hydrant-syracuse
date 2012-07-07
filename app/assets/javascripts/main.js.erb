@@ -532,6 +532,11 @@ $(function(){
       })
     })
   })
+  if($('#radio2').height() != $('#radio1').height()){
+	$('#radio2').css('margin-top', -30-($('#radio1').height()-$('#radio2').height()))
+	$('#radio2').css('padding-top', ($('#radio1').height()-$('#radio2').height())-4)
+	$('#radio2').css('height', ($('#radio1').height()-(($('#radio1').height()-$('#radio2').height())/2))-1)
+  }
   $('#check1').live('click', function(){
 	if(!remember_me){
 	  remember_me = true
