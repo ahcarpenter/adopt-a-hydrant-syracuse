@@ -23,6 +23,7 @@
 // http://www.w3schools.com/jsref/met_loc_assign.asp
 // http://www.w3schools.com/jsref/obj_location.asp
 // https://developers.google.com/maps/documentation/javascript/streetview
+// http://docs.jquery.com/UI/Effects/Pulsate
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -287,7 +288,7 @@ $(function(){
 	  $('#sieve').css('margin-left', '5px')
 	  $('#download').show()
 	}
-  })
+  })	
   $('#adopted-sieve').tooltip({delay: delay_options})
   $('#adopted-sieve').click(function(){
     if(sieve_adopted){
