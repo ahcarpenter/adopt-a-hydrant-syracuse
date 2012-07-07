@@ -288,7 +288,11 @@ $(function(){
 	  $('#sieve').css('margin-left', '5px')
 	  $('#download').show()
 	}
-  })	
+  })
+  google.maps.event.addListener(map.getStreetView(), 'position_changed', function(){
+	var position = map.getStreetView().getPosition()
+    addMarkersAround(position.lat(), position.lng(), sieve_adopted)
+  })
   $('#adopted-sieve').tooltip({delay: delay_options})
   $('#adopted-sieve').click(function(){
     if(sieve_adopted){
