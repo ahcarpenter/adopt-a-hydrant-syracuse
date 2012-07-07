@@ -532,11 +532,14 @@ $(function(){
       })
     })
   })
-  if($('#radio2').height() != $('#radio1').height()){
-	$('#radio2').css('margin-top', -30-($('#radio1').height()-$('#radio2').height()))
-	$('#radio2').css('padding-top', ($('#radio1').height()-$('#radio2').height())-4)
-	$('#radio2').css('height', ($('#radio1').height()-(($('#radio1').height()-$('#radio2').height())/2))-1)
+  function adjust3(){
+	if($('#radio2').height() != $('#radio1').height()){
+	  $('#radio2').css('margin-top', -30-($('#radio1').height()-$('#radio2').height()))
+	  $('#radio2').css('padding-top', ($('#radio1').height()-$('#radio2').height())-4)
+	  $('#radio2').css('height', ($('#radio1').height()-(($('#radio1').height()-$('#radio2').height())/2))-1)
+	}
   }
+  adjust3()
   $('#check1').live('click', function(){
 	if(!remember_me){
 	  remember_me = true
@@ -989,6 +992,7 @@ $(function(){
           data: {'flash': {'warning': 'notices.signed_out'}},
           success: function(data) {
             $('#content').html(data)
+			adjust3()
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			remember_me = true
 		    $('#login').append("<i class='icon-signin'></i>")
