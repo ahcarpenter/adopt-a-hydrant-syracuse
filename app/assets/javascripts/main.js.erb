@@ -172,7 +172,6 @@ $(function(){
   }
   if (opera) {adjust2()}
   $('.alert').live('close', function(){$(this).hide()})
-  $(function(){$('#sidebar').resizable({maxWidth: 251, handles: 'e'})})
   function addMarker(thingId, point, color) {
 	if(color === 'green') {var image = greenMarkerImage}
 	else if(color === 'red') {var image = redMarkerImage}
