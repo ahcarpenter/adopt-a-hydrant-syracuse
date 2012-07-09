@@ -14,3 +14,4 @@
 //= require spin.min
 //= require jquery.spin
 //= require bootstrap
+//= require jquery.ui.touch-punch.min

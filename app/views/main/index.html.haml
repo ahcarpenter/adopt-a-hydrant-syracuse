@@ -3,7 +3,7 @@
 .table
   .table-row
     - if request.env['HTTP_USER_AGENT'].include? 'Mobi'
-      #sidebar.hide
+      #sidebar.hide{:class=>'ui-widget-content'}
         .table-cell.sidebar
           %h1
             %a{:href => 'http://adopt-a-hydrant-syracuse.herokuapp.com/'}
