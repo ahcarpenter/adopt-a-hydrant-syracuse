@@ -32,6 +32,7 @@ $(function(){
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     maxZoom: 19,
     minZoom: 15,
+	optimized:false,
     panControl: false,
     rotateControl: false,
     scaleControl: false,
@@ -292,10 +293,12 @@ $(function(){
 	if(map.getStreetView().getVisible()){
 	  $('#sieve').css('margin-top', '188px')
 	  $('#sieve').css('margin-left', '28px')
+	  $('#sieve1').css('margin-top', '67px')
 	  $('#download').hide()
 	} else{
 	  $('#sieve').css('margin-top', '140px')
 	  $('#sieve').css('margin-left', '5px')
+	  $('#sieve1').css('margin-top', '50px')
 	  $('#download').show()
 	}
   })
