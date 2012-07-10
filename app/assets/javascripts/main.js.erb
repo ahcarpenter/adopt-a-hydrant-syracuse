@@ -24,6 +24,7 @@
 // http://www.w3schools.com/jsref/obj_location.asp
 // https://developers.google.com/maps/documentation/javascript/streetview
 // http://docs.jquery.com/UI/Effects/Pulsate
+// http://stackoverflow.com/questions/1789945/javascript-string-contains
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -1105,9 +1106,9 @@ $(function(){
   })
   $('#tos_link').live('click', function(){
 	if(navigator.userAgent.indexOf('Mobi') != -1){
-	  $('#tos').css('-webkit-transform','scale(.5)')
-	  $('#tos').css('-mozilla-transform','scale(.5)')	
-	  $('#tos').css('-o-transform','scale(.5)')	
+	  if(webkit){$('#tos').css('-webkit-transform','scale(.5)')}
+	  if(mozilla){$('#tos').css('-mozilla-transform','scale(.5)')}	
+	  if(opera){$('#tos').css('-o-transform','scale(.5)')}
 	}
   })
 })
