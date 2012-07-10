@@ -1103,4 +1103,11 @@ $(function(){
     })
     return false
   })
+  $('#tos_link').live('click', function(){
+	if(navigator.userAgent.indexOf('Mobi') != -1){
+	  $('#tos').css('-webkit-transform','scale(.5)')
+	  $('#tos').css('-mozilla-transform','scale(.5)')	
+	  $('#tos').css('-o-transform','scale(.5)')	
+	}
+  })
 })
