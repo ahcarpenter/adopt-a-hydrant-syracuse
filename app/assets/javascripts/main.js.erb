@@ -73,6 +73,7 @@ $(function(){
   var radio1 = true
   var sieve_adopted = false
   var sidebar_visible = false
+  var adjusted = false
   var mobile = navigator.userAgent.indexOf('Mobi') != -1
   var focused_input_element = ''
   delay_options = {show: 1000, hide: 100}
@@ -548,7 +549,12 @@ $(function(){
     var radioInput = $(this)
     $('#user_sign_up_fields').slideUp()
     $('#user_sign_in_fields').slideDown(function(){
-	  if(mobile){$('#map').css('height', $('.sidebar').height()-19)}
+	  if(mobile){
+		if(!adjusted){
+		  $('#map').css('height', $('.sidebar').height()-19)
+		  adjusted = true
+		}
+	  }
 	  $('#test').removeClass('icon-lock')
       $('#combo-form').data('state', 'user_sign_in')
       setComboFormFocus()
