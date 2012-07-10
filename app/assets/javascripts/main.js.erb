@@ -924,6 +924,7 @@ $(function(){
 		}
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
+		if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
       }
     })
     return false
@@ -1012,6 +1013,7 @@ $(function(){
         },
         success: function(data) {
 	      $('#content').html(data)
+	      if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
 	      prepare_search_elements()
 	    }
       })
@@ -1070,6 +1072,7 @@ $(function(){
       error: function(jqXHR) {$(link).removeClass('disabled')},
       success: function(data) {
 	    $('#content').html(data)
+	    if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
 	    prepare_search_elements()
 	  }
     })
