@@ -25,6 +25,7 @@
 // https://developers.google.com/maps/documentation/javascript/streetview
 // http://docs.jquery.com/UI/Effects/Pulsate
 // http://stackoverflow.com/questions/1789945/javascript-string-contains
+// http://www.w3schools.com/cssref/css3_pr_transform.asp
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -1109,6 +1110,7 @@ $(function(){
 	  if(webkit){$('#tos').css('-webkit-transform','scale(.5)')}
 	  if(mozilla){$('#tos').css('-moz-transform','scale(.5)')}	
 	  if(opera){$('#tos').css('-o-transform','scale(.5)')}
+	  $('#tos').css('-ms-transform','scale(.5)')
 	}
   })
 })
