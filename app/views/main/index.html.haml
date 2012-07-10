@@ -1,34 +1,34 @@
 / http://stackoverflow.com/questions/6392003/how-to-download-a-file-from-rails-application
 / http://twitter.github.com/bootstrap/javascript.html#tooltips
-.table
-  .table-row
-    - if request.env['HTTP_USER_AGENT'].include? 'Mobi'
-      #sidebar.hide
-        .table-cell.sidebar
-          %h1
-            %a{:href => 'http://adopt-a-hydrant-syracuse.herokuapp.com/'}
-              = image_tag 'logos/adopt-a-hydrant-syracuse-snow-capped.png', :alt => t('titles.main', :thing => t('defaults.thing').titleize), :title => t('titles.main', :thing => t('defaults.thing').titleize), :id => 'adopt-a-hydrant-syracuse-snow-capped'
-          %p.alert-message.block-message#tagline
-            = t('defaults.tagline')
-          #content
-            = render :partial => 'layouts/flash', :locals => {:flash => flash}
-            - if signed_in?
-              = render :partial => 'sidebar/search'
-            - else
-              = render :partial => 'sidebar/combo_form'
-          #logos
-            %a{:href => 'http://github.com/syracuse-saves'}
-              = image_tag 'logos/syracusesaves.png', :id => 'syracusesaves_logo', :alt => 'Syracuse Saves', :title => 'Syracuse Saves'
-            #col1
-              %a{:href => 'http://codeforamerica.org/'}
-                = image_tag 'logos/cfa.png', :alt => t('sponsors.cfa'), :title => t('sponsors.cfa'), :id => 'cfa'
-            #col2
-              %a{:href => 'http://bostonbuilt.org/'}
-                = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built'), :id => 'boston-and-lexington-built'
-          #feedback
-            %p
-              %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
-                = t('links.feedback')
+- if request.env['HTTP_USER_AGENT'].include? 'Mobi'
+  #test-sidebar.hide
+    .table-cell.sidebar
+      %h1
+        %a{:href => 'http://adopt-a-hydrant-syracuse.herokuapp.com/'}
+          = image_tag 'logos/adopt-a-hydrant-syracuse-snow-capped.png', :alt => t('titles.main', :thing => t('defaults.thing').titleize), :title => t('titles.main', :thing => t('defaults.thing').titleize), :id => 'adopt-a-hydrant-syracuse-snow-capped'
+      %p.alert-message.block-message#tagline
+        = t('defaults.tagline')
+      #content
+        = render :partial => 'layouts/flash', :locals => {:flash => flash}
+        - if signed_in?
+          = render :partial => 'sidebar/search'
+        - else
+          = render :partial => 'sidebar/combo_form'
+      #logos
+        %a{:href => 'http://github.com/syracuse-saves'}
+          = image_tag 'logos/syracusesaves.png', :id => 'syracusesaves_logo', :alt => 'Syracuse Saves', :title => 'Syracuse Saves'
+        #col1
+          %a{:href => 'http://codeforamerica.org/'}
+            = image_tag 'logos/cfa.png', :alt => t('sponsors.cfa'), :title => t('sponsors.cfa'), :id => 'cfa'
+        #col2
+          %a{:href => 'http://bostonbuilt.org/'}
+            = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built'), :id => 'boston-and-lexington-built'
+      #feedback
+        %p
+          %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
+            = t('links.feedback')
+  .table
+    .table-row
       .table-cell.map-container
         #download
           #text
@@ -42,33 +42,34 @@
             t
         #map
           &nbsp;
-    - else
-      #sidebar
-        .table-cell.sidebar
-          %h1
-            %a{:href => 'http://adopt-a-hydrant-syracuse.herokuapp.com/'}
-              = image_tag 'logos/adopt-a-hydrant-syracuse-snow-capped.png', :alt => t('titles.main', :thing => t('defaults.thing').titleize), :title => t('titles.main', :thing => t('defaults.thing').titleize), :id => 'adopt-a-hydrant-syracuse-snow-capped'
-          %p.alert-message.block-message#tagline
-            = t('defaults.tagline')
-          #content
-            = render :partial => 'layouts/flash', :locals => {:flash => flash}
-            - if signed_in?
-              = render :partial => 'sidebar/search'
-            - else
-              = render :partial => 'sidebar/combo_form'
-          #logos
-            %a{:href => 'http://github.com/syracuse-saves'}
-              = image_tag 'logos/syracusesaves.png', :id => 'syracusesaves_logo', :alt => 'Syracuse Saves', :title => 'Syracuse Saves'
-            #col1
-              %a{:href => 'http://codeforamerica.org/'}
-                = image_tag 'logos/cfa.png', :alt => t('sponsors.cfa'), :title => t('sponsors.cfa'), :id => 'cfa'
-            #col2
-              %a{:href => 'http://bostonbuilt.org/'}
-                = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built'), :id => 'boston-and-lexington-built'
-          #feedback
-            %p
-              %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
-                = t('links.feedback')
+- else
+  .table
+    .table-row
+      .table-cell.sidebar
+        %h1
+          %a{:href => 'http://adopt-a-hydrant-syracuse.herokuapp.com/'}
+            = image_tag 'logos/adopt-a-hydrant-syracuse-snow-capped.png', :alt => t('titles.main', :thing => t('defaults.thing').titleize), :title => t('titles.main', :thing => t('defaults.thing').titleize), :id => 'adopt-a-hydrant-syracuse-snow-capped'
+        %p.alert-message.block-message#tagline
+          = t('defaults.tagline')
+        #content
+          = render :partial => 'layouts/flash', :locals => {:flash => flash}
+          - if signed_in?
+            = render :partial => 'sidebar/search'
+          - else
+            = render :partial => 'sidebar/combo_form'
+        #logos
+          %a{:href => 'http://github.com/syracuse-saves'}
+            = image_tag 'logos/syracusesaves.png', :id => 'syracusesaves_logo', :alt => 'Syracuse Saves', :title => 'Syracuse Saves'
+          #col1
+            %a{:href => 'http://codeforamerica.org/'}
+              = image_tag 'logos/cfa.png', :alt => t('sponsors.cfa'), :title => t('sponsors.cfa'), :id => 'cfa'
+          #col2
+            %a{:href => 'http://bostonbuilt.org/'}
+              = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built'), :id => 'boston-and-lexington-built'
+        #feedback
+          %p
+            %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
+              = t('links.feedback')
       .table-cell.map-container
         #download
           #text
@@ -79,7 +80,7 @@
             %i.icon-filter
         #map
           &nbsp;
-  #disable_adopted_sieve.hide
-    = t('labels.disable_adopted_sieve')
-  #enable_adopted_sieve.hide
-    = t('labels.enable_adopted_sieve')
+#disable_adopted_sieve.hide
+  = t('labels.disable_adopted_sieve')
+#enable_adopted_sieve.hide
+  = t('labels.enable_adopted_sieve')

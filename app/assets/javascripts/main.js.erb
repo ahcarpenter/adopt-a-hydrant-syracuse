@@ -26,6 +26,7 @@
 // http://docs.jquery.com/UI/Effects/Pulsate
 // http://stackoverflow.com/questions/1789945/javascript-string-contains
 // http://www.w3schools.com/cssref/css3_pr_transform.asp
+// http://ricostacruz.com/jquery.transit/
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -137,11 +138,18 @@ $(function(){
   search()
   $('.icon-list-ul').click(function(){
 	if(!sidebar_visible){
-	  $('#sidebar').show()
+	  $('#test-sidebar').show()
 	  sidebar_visible = true
+	  $('#test-sidebar').transition({x: '250px'})
+	  $('.icon-list-ul').transition({x: '250px'})
+	  $('#map').css('height', $('.sidebar').height()-2)
 	} else{
-	  $('#sidebar').hide()
+	  $('#test-sidebar').transition({x: '0px'}, function(){
+		$(this).hide()
+		$('#map').css('height', '100%')
+	  })
 	  sidebar_visible = false
+	  $('.icon-list-ul').transition({x: '0px'})
 	}
   })
   $('#download-link').hover(
@@ -525,13 +533,17 @@ $(function(){
       $('#required').append("<div id='required_text'>" + required_text +"</div>")
       $('#user_email').css('margin-bottom', '9px')
     }
-    $('#user_sign_up_fields').slideDown(function(){setComboFormFocus()})
+    $('#user_sign_up_fields').slideDown(function(){
+	  setComboFormFocus()
+	  if(navigator.userAgent.indexOf('Mobi') != -1){$('#map').css('height', $('.sidebar').height()-2)}
+	})
   })
   $('#radio2').live('click', function(){
 	radio1 = false
     var radioInput = $(this)
     $('#user_sign_up_fields').slideUp()
     $('#user_sign_in_fields').slideDown(function(){
+	  if(navigator.userAgent.indexOf('Mobi') != -1){$('#map').css('height', $('.sidebar').height()-20)}
 	  $('#test').removeClass('icon-lock')
       $('#combo-form').data('state', 'user_sign_in')
       setComboFormFocus()

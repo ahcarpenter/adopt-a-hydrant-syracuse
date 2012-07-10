@@ -1,3 +1,4 @@
+// https://github.com/furf/jquery-ui-touch-punch/
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -15,3 +16,4 @@
 //= require jquery.spin
 //= require bootstrap
 //= require jquery.ui.touch-punch.min
+//= require jquery.transit.min
