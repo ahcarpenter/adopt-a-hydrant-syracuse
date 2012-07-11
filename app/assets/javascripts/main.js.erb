@@ -145,19 +145,21 @@ $(function(){
   $('.icon-list-ul').click(function(){
 	if(!sidebar_visible){
 	  $('#test-sidebar').show()
+	  $('#test-refer').show()
 	  sidebar_visible = true
-	  $('#test-sidebar').transition({x: '250px'}, function(){$('#test-refer').show()})
+	  $('#test-sidebar').transition({x: '250px'})
 	  $('.icon-list-ul').transition({x: '250px'})
+	  $('#test-refer').transition({x: '125px'})
 	  if(search_shown){$('#logos1').css('margin-top', '42px')}
 	  $('#map').css('height', $('.sidebar').height()-2)
 	} else{
 	  $('#test-sidebar').transition({x: '0px'}, function(){
 		$(this).hide()
 		$('#map').css('height', '100%')
-		$('#test-refer').hide()
 	  })
 	  sidebar_visible = false
 	  $('.icon-list-ul').transition({x: '0px'})
+	  $('#test-refer').transition({x: '0px'}, function(){$('#test-refer').hide()})
 	}
   })
   $('#download-link').hover(
