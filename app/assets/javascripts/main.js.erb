@@ -542,7 +542,10 @@ $(function(){
     }
     $('#user_sign_up_fields').slideDown(function(){
 	  setComboFormFocus()
-	  if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
+	  if(mobile){
+		$('#map').css('height', $('.sidebar').height()-2)
+		adjusted = false
+	  }
 	})
   })
   $('#radio2').live('click', function(){
