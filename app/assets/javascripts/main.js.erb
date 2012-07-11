@@ -147,9 +147,10 @@ $(function(){
 	  $('#test-sidebar').show()
 	  $('#test-refer').show()
 	  sidebar_visible = true
-	  $('#test-sidebar').transition({x: '250px'})
+	  // $('#test-refer').transition({x: '0px'})
+	  $('#test-sidebar').transition({x: '250px'}, function(){})
 	  $('.icon-list-ul').transition({x: '250px'})
-	  $('#test-refer').transition({x: '125px'})
+	  $('#test-refer').transition({x: '0px'})
 	  if(search_shown){$('#logos1').css('margin-top', '42px')}
 	  $('#map').css('height', $('.sidebar').height()-2)
 	} else{
@@ -159,7 +160,7 @@ $(function(){
 	  })
 	  sidebar_visible = false
 	  $('.icon-list-ul').transition({x: '0px'})
-	  $('#test-refer').transition({x: '0px'}, function(){$('#test-refer').hide()})
+	  $('#test-refer').transition({x: '-250px'}, function(){$('#test-refer').hide()})
 	}
   })
   $('#download-link').hover(
