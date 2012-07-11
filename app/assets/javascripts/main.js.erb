@@ -722,6 +722,8 @@ $(function(){
 				  prepare_search_elements()
 				  search_shown = true
 				  $('#test-refer').show()
+				  $('#logos1').css('margin-top', '42px')
+				  $('#test-refer').css('margin-top', '-154px')
 				}
             })
           }
@@ -1070,6 +1072,7 @@ $(function(){
 			if(mozilla){_mozilla()}
 			search_shown = false
 			$('#test-refer').hide()
+			$('#logos1').css('margin-top', '0px')
           }
         })
       }
@@ -1088,6 +1091,8 @@ $(function(){
         activeInfoWindow.setContent(data)
 		search_shown = true
 		$('#test-refer').show()
+		$('#logos1').css('margin-top', '42px')
+		$('#test-refer').css('margin-top', '-154px')
       }
     })
     return false
