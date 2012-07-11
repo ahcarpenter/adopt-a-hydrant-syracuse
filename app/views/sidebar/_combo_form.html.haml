@@ -64,7 +64,8 @@
       = f.submit t('buttons.email_password'), :class => 'btn btn-primary'
     %p
       = link_to t('links.remembered_password'), '#', :id => 'user_remembered_password_link'
-= render :partial => 'sidebar/tos'
+- if !request.env['HTTP_USER_AGENT'].include? 'Mobi'
+  = render :partial => 'sidebar/tos'
 :javascript
   $(function() {
     $('#user_email').focus();
