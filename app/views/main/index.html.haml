@@ -42,6 +42,10 @@
             t
         #map
           &nbsp;
+  .sidebar
+    %p
+      = link_to t('titles.referral'), '', 'data-toggle' => 'modal', 'data-target' => '#referral'
+    = render :partial => 'sidebar/referral'
 - else
   .table
     .table-row
@@ -80,7 +84,7 @@
             %i.icon-filter
         #map
           &nbsp;
-#disable_adopted_sieve.hide
-  = t('labels.disable_adopted_sieve')
-#enable_adopted_sieve.hide
-  = t('labels.enable_adopted_sieve')
+  #disable_adopted_sieve.hide
+    = t('labels.disable_adopted_sieve')
+  #enable_adopted_sieve.hide
+    = t('labels.enable_adopted_sieve')
