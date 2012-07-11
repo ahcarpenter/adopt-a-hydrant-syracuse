@@ -42,11 +42,8 @@
             t
         #map
           &nbsp;
-  .sidebar
-    #test-refer.hide
-      %p
-        = link_to t('titles.referral'), '', 'data-toggle' => 'modal', 'data-target' => '#referral'
-    = render :partial => 'sidebar/referral'
+    .sidebar
+      = render :partial => 'sidebar/referral'
 - else
   .table
     .table-row
