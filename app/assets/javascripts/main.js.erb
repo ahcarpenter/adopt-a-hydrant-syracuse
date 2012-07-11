@@ -146,12 +146,9 @@ $(function(){
 	if(!sidebar_visible){
 	  $('#test-sidebar').show()
 	  sidebar_visible = true
-	  $('#test-sidebar').transition({x: '250px'})
+	  $('#test-sidebar').transition({x: '250px'}, function(){$('#test-refer').show()})
 	  $('.icon-list-ul').transition({x: '250px'})
-	  if(search_shown){
-		$('#test-refer').show()
-		$('#logos1').css('margin-top', '42px')
-	  }
+	  if(search_shown){$('#logos1').css('margin-top', '42px')}
 	  $('#map').css('height', $('.sidebar').height()-2)
 	} else{
 	  $('#test-sidebar').transition({x: '0px'}, function(){
