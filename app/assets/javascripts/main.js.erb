@@ -101,9 +101,16 @@ $(function(){
 	$('#sign-out-link').append("<i class='icon-signout'></i>")
 	$('#address').typeahead({source: street_addresses})
 	if(mobile){$('#map').css('width', $('#map').width()-1)}
-    $('#sms-referral').append("<i class='icon-comment-alt'></i>")
-    $('#email-referral').append("<i class='icon-envelope'></i>")
-    $('#send_referral').append("<i class='icon-share-alt'></i>")
+	else{
+      $('#sms-referral').append("<i class='icon-comment-alt'></i>")
+	  $('#email-referral').append("<i class='icon-envelope'></i>")
+	  $('#send_referral').append("<i class='icon-share-alt'></i>")
+    }
+  }
+  if(mobile){
+	$('#sms-referral').append("<i class='icon-comment-alt'></i>")
+	$('#email-referral').append("<i class='icon-envelope'></i>")
+	$('#send_referral').append("<i class='icon-share-alt'></i>")
   }
   function enableLegacySupport(){
 	$('#user_password').css('font-family', 'MyriadPro-Regular')
