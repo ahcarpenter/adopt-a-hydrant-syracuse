@@ -6,7 +6,7 @@
       %i.icon-remove
     %h3
       = t('titles.referral')
-  .modal-body
+  #referral.modal-body
     = form_for :user, :html => {:id => 'referral-form', :class => 'form-vertical'} do |f|
       %label{:for => 'email_referral_field', :id => 'user-email-label'}
         = t('labels.email')

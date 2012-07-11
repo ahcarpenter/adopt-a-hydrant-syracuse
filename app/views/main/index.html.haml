@@ -14,7 +14,7 @@
           = render :partial => 'sidebar/search'
         - else
           = render :partial => 'sidebar/combo_form'
-      #logos
+      #logos1
         %a{:href => 'http://github.com/syracuse-saves'}
           = image_tag 'logos/syracusesaves.png', :id => 'syracusesaves_logo', :alt => 'Syracuse Saves', :title => 'Syracuse Saves'
         #col1
@@ -42,6 +42,11 @@
             t
         #map
           &nbsp;
+  .sidebar
+    #test-refer.hide
+      %p
+        = link_to t('titles.referral'), '', 'data-toggle' => 'modal', 'data-target' => '#referral'
+    = render :partial => 'sidebar/referral'
 - else
   .table
     .table-row
