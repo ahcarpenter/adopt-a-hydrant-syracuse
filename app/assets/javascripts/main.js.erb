@@ -27,6 +27,7 @@
 // http://stackoverflow.com/questions/1789945/javascript-string-contains
 // http://www.w3schools.com/cssref/css3_pr_transform.asp
 // http://ricostacruz.com/jquery.transit/
+// stackoverflow.com/questions/9799221/resizing-google-maps-api-v3-div-with-jquery-tiles-not-refreshing-properly
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -121,6 +122,7 @@ $(function(){
 	$('#extrusion').css('margin-top', '-32px')
 	if(mobile){$('.map-container').css('height', $('.sidebar').height()-2)}
 	else{$('#map').css('height', $(window).height())}
+	google.maps.event.trigger(map, 'resize')
   }
   function _webkit(){
 	$('#user-email-label').css('margin-top','15px')
@@ -163,6 +165,7 @@ $(function(){
 	  sidebar_visible = false
 	  $('.icon-list-ul').transition({x: '0px'})
 	}
+	google.maps.event.trigger(map, 'resize')
   })
   $('#download-link').hover(
 	function(){
@@ -197,6 +200,7 @@ $(function(){
 	$(this).hide()
 	if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 	else{$('#map').css('height', $(window).height())}
+	google.maps.event.trigger(map, 'resize')
   })
   function addMarker(thingId, point, color) {
 	if(color === 'green') {var image = greenMarkerImage}
@@ -524,6 +528,7 @@ $(function(){
 				prepare_search_elements()
 				if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 				else{$('#map').css('height', $(window).height())}
+				google.maps.event.trigger(map, 'resize')
 		      }
 		    })
 	      }
@@ -555,6 +560,7 @@ $(function(){
 	  setComboFormFocus()
 	  if(mobile){adjusted = false}
 	  $('#map').css('height', $('.sidebar').height()-2)
+	  google.maps.event.trigger(map, 'resize')
 	})
   })
   $('#radio2').live('click', function(){
@@ -723,6 +729,7 @@ $(function(){
 				  search_shown = true
 				  if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 				  else{$('#map').css('height', $(window).height())}
+				  google.maps.event.trigger(map, 'resize')
 				}
             })
           }
@@ -768,6 +775,7 @@ $(function(){
 			prepare_search_elements()
 			if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 			else{$('#map').css('height', $(window).height())}
+			google.maps.event.trigger(map, 'resize')
 		  }
 		})
 	  }
@@ -949,6 +957,7 @@ $(function(){
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
 		$('#map').css('height', $('.sidebar').height()-2)
+		google.maps.event.trigger(map, 'resize')
       }
     })
     return false
@@ -1038,6 +1047,7 @@ $(function(){
         success: function(data) {
 	      $('#content').html(data)
 	      if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
+		  google.maps.event.trigger(map, 'resize')
 	      prepare_search_elements()
 	    }
       })
@@ -1067,6 +1077,8 @@ $(function(){
 			if(webkit){_webkit()}
 			if(mozilla){_mozilla()}
 			$('#map').css('height', $('.sidebar').height()-2)
+			google.maps.event.trigger(map, 'resize')
+			if(mobile){adjusted = false}
           }
         })
       }
@@ -1085,6 +1097,7 @@ $(function(){
         activeInfoWindow.setContent(data)
 		if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 		else{$('#map').css('height', $(window).height())}
+		google.maps.event.trigger(map, 'resize')
       }
     })
     return false
@@ -1100,6 +1113,7 @@ $(function(){
 	    $('#content').html(data)
 	    if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
 		else{$('#map').css('height', $(window).height())}
+		google.maps.event.trigger(map, 'resize')
 	    prepare_search_elements()
 	  }
     })
