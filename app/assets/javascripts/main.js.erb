@@ -1174,7 +1174,7 @@ $(function(){
 	  $('#tos').css('-moz-transform', 'scale(.5)')
 	  $('#tos').css('-o-transform', 'scale(.5)')
 	  $('#tos').css('-ms-transform', 'scale(.5)')
-	  if(webkit && navigator.userAgent.indexOf('iPhone') == -1){$('ol').css('-webkit-transform', 'scale(.5)')}
+	  if(webkit && navigator.userAgent.indexOf('iPhone') == -1){$('ol').css('width', $('.modal-body').width()-24)}
 	}
   })
 })
