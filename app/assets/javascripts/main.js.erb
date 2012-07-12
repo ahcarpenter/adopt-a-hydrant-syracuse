@@ -1154,10 +1154,12 @@ $(function(){
     })
     return false
   })
-  $('#tos_link').click(function(){if(mobile && $(window).width() < 800){
-	$('#tos').css('-webkit-transform', 'scale(.5)')}
-	$('#tos').css('-moz-transform', 'scale(.5)')}
-	$('#tos').css('-o-transform', 'scale(.5)')}
-	$('#tos').css('-ms-transform', 'scale(.5)')}
+  $('#tos_link').click(function(){
+	if(mobile && $(window).width() < 800){
+	  $('#tos').css('-webkit-transform', 'scale(.5)')
+	  $('#tos').css('-moz-transform', 'scale(.5)')
+	  $('#tos').css('-o-transform', 'scale(.5)')
+	  $('#tos').css('-ms-transform', 'scale(.5)')
+	}
   })
 })
