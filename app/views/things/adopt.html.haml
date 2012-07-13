@@ -8,7 +8,7 @@
   = f.hidden_field 'lock_version', :value => session[:thing].lock_version
   %fieldset.control-group
     = f.label 'name', t('labels.name_thing', :thing => t('defaults.thing')), :id => 'thing_name_label'
-    = f.text_field 'name'
+    = f.text_field 'name', :autocomplete => 'off'
   %fieldset.control-group
     .btn-group
       %a{:id => 'email_notifications', :class => 'btn disabled', 'data-title' => t('labels.enable_email_notifications')}
