@@ -1,0 +1,6 @@
+#stat
+  %span{:class=>'badge badge-success'}
+    = Thing.where('user_id is not null').count
+#stat1
+  %span{:class=>'badge badge-error'}
+    = Thing.where('user_id is null').count
