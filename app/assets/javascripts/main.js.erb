@@ -442,7 +442,7 @@ $(function(){
     $('.icon-caret-down').remove()
     $('.preview-title').prepend("<i class='icon-caret-right'></i>")
   })
-  function disable_referral_modal_elements(){
+  function disableReferralModalElements(){
 	if(email_referral){
 	  $('#email-referral').removeClass('btn btn-success').addClass('btn disabled')
 	  $('#user_email_referral_field').attr('disabled', 'disabled')
@@ -459,7 +459,7 @@ $(function(){
 		if(!opera){$('#referral').spin(false)}
 		$('#user_email_referral_field').val('')
 		$('#user_sms_referral_field').val('')
-		disable_referral_modal_elements()
+		disableReferralModalElements()
 		sms_referral = false
 		email_referral = false
 		$('.preview-body').collapse('hide')
@@ -468,7 +468,7 @@ $(function(){
 	}
 	preview_hidden = false
   })
-  function prepare_search_elements() {
+  function prepareSearchElements() {
 	search()
 	if(webkit){_webkit()}
 	if(opera){adjust2()}
@@ -480,7 +480,7 @@ $(function(){
       $('#user_email_referral_field').parent().addClass('error')
     } else {
 	    $('#user_email_referral_field').parent().removeClass('error')
-	    disable_referral_modal_elements()
+	    disableReferralModalElements()
 		if(!opera){$('#referral').spin({
 		  lines: 11, // The number of lines to draw
 		  length: 7, // The length of each line
@@ -525,7 +525,7 @@ $(function(){
 		      success: function(data) {
 			    $('#content').html(data)
 				$('.alert').effect('pulsate', {times: 2}, 300)
-				prepare_search_elements()
+				prepareSearchElements()
 				if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 				google.maps.event.trigger(map, 'resize')
 		      }
@@ -683,7 +683,7 @@ $(function(){
               success: function(data) {
 				$('#content').html(data)
 				$('.alert').effect('pulsate', {times: 2}, 300)
-				prepare_search_elements()
+				prepareSearchElements()
 			  }
             })
           }
@@ -724,7 +724,7 @@ $(function(){
 	              $('#content').html(data)
 				  if(mobile){$('#map').css('height', $('.sidebar').height()+4)}
 				  $('.alert').effect('pulsate', {times: 2}, 300)
-				  prepare_search_elements()
+				  prepareSearchElements()
 				  search_shown = true
 				  if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 				  google.maps.event.trigger(map, 'resize')
@@ -770,7 +770,7 @@ $(function(){
 		  success: function(data) {
 		    $('#content').html(data)
 			$('.alert').effect('pulsate', {times: 2}, 300)
-			prepare_search_elements()
+			prepareSearchElements()
 			if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
 			google.maps.event.trigger(map, 'resize')
 		  }
@@ -778,6 +778,30 @@ $(function(){
 	  }
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
+  function updateStats(){
+	$.ajax({
+      type: 'GET',
+      url: '/stats',
+      data: {
+        'utf8': '✓',
+        'authenticity_token': $("input[name='authenticity_token']").val()
+      },
+      error: function(jqXHR) {},
+      success: function(data) {
+		i = 0
+		test = []
+		$(data).find('.badge').each(function(){
+		  that = this
+		  test.push($(that).text())
+		})
+		$('html').find('.badge').each(function(){
+		  if(i==0){$(this).text(test[0])}
+		  else{$(this).text(test[1])}
+		  i+=1
+		})
+	  }
+	})
+  }
   function adopt(){
 	var submitButton = $("#adoption_form input[type='submit']")
     $(submitButton).attr('disabled', true)
@@ -805,6 +829,7 @@ $(function(){
           success: function(data) {
 			stateChange('green')
 			activeInfoWindow.setContent(data)
+			updateStats()
 		  }
         })
       }
@@ -922,6 +947,7 @@ $(function(){
           success: function(data) {
 			stateChange('red')
 			activeInfoWindow.setContent(data)
+			updateStats()
           }
         })
       }
@@ -1045,7 +1071,7 @@ $(function(){
 	      $('#content').html(data)
 	      if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
 		  google.maps.event.trigger(map, 'resize')
-	      prepare_search_elements()
+	      prepareSearchElements()
 	    }
       })
     }
@@ -1109,7 +1135,7 @@ $(function(){
 	    $('#content').html(data)
 	    if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
 		google.maps.event.trigger(map, 'resize')
-	    prepare_search_elements()
+	    prepareSearchElements()
 	  }
     })
     return false
@@ -1155,7 +1181,7 @@ $(function(){
           success: function(data) {
 			$('#content').html(data)
 			$('.alert').effect('pulsate', {times: 2}, 300)
-			prepare_search_elements()
+			prepareSearchElements()
 			stateChange()
           }
         })
