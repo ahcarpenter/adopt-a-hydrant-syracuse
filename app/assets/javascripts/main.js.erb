@@ -28,6 +28,7 @@
 // http://www.w3schools.com/cssref/css3_pr_transform.asp
 // http://ricostacruz.com/jquery.transit/
 // stackoverflow.com/questions/9799221/resizing-google-maps-api-v3-div-with-jquery-tiles-not-refreshing-properly
+// http://stackoverflow.com/questions/5373844/rails-refresh-view-after-submit-from-different-controller
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -781,25 +782,13 @@ $(function(){
   function updateStats(){
 	$.ajax({
       type: 'GET',
-      url: '/stats',
+      url: '/sidebar/stat',
       data: {
         'utf8': '✓',
         'authenticity_token': $("input[name='authenticity_token']").val()
       },
       error: function(jqXHR) {},
-      success: function(data) {
-		i = 0
-		test = []
-		$(data).find('.badge').each(function(){
-		  that = this
-		  test.push($(that).text())
-		})
-		$('html').find('.badge').each(function(){
-		  if(i==0){$(this).text(test[0])}
-		  else{$(this).text(test[1])}
-		  i+=1
-		})
-	  }
+      success: function(data) {$('.stats-container').html(data)}
 	})
   }
   function adopt(){

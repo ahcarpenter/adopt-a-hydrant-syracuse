@@ -13,6 +13,7 @@ AdoptAThing::Application.routes.draw do
     get :search, :as => 'search'
     get :combo_form, :as => 'combo_form'
     get :edit_profile, :as => 'edit_profile'
+    get :stat, :as => 'stat'
   end
     
   resource :reminders, :things
