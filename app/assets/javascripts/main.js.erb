@@ -121,7 +121,6 @@ $(function(){
 	$('.icon-facebook').css('margin-top', '2px')
 	$('#extrusion').css('margin-top', '-32px')
 	if(mobile){$('.map-container').css('height', $('.sidebar').height()-2)}
-	else{$('#map').css('height', $(window).height())}
 	google.maps.event.trigger(map, 'resize')
   }
   function _webkit(){
@@ -199,7 +198,6 @@ $(function(){
   $('.alert').live('close', function(){
 	$(this).hide()
 	if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-	else{$('#map').css('height', $(window).height())}
 	google.maps.event.trigger(map, 'resize')
   })
   function addMarker(thingId, point, color) {
@@ -327,11 +325,13 @@ $(function(){
 	  $('#sieve').css('margin-left', '28px')
 	  $('#sieve1').css('margin-top', '67px')
 	  $('#download').hide()
+	  $('.stats-container').hide()
 	} else{
 	  $('#sieve').css('margin-top', '140px')
 	  $('#sieve').css('margin-left', '5px')
 	  $('#sieve1').css('margin-top', '50px')
 	  $('#download').show()
+	  $('.stats-container').show()
 	}
   })
   google.maps.event.addListener(map.getStreetView(), 'position_changed', function(){
@@ -527,7 +527,6 @@ $(function(){
 				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepare_search_elements()
 				if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-				else{$('#map').css('height', $(window).height())}
 				google.maps.event.trigger(map, 'resize')
 		      }
 		    })
@@ -728,7 +727,6 @@ $(function(){
 				  prepare_search_elements()
 				  search_shown = true
 				  if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-				  else{$('#map').css('height', $(window).height())}
 				  google.maps.event.trigger(map, 'resize')
 				}
             })
@@ -774,7 +772,6 @@ $(function(){
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			prepare_search_elements()
 			if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-			else{$('#map').css('height', $(window).height())}
 			google.maps.event.trigger(map, 'resize')
 		  }
 		})
@@ -1096,7 +1093,6 @@ $(function(){
 		stateChange()
         activeInfoWindow.setContent(data)
 		if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-		else{$('#map').css('height', $(window).height())}
 		google.maps.event.trigger(map, 'resize')
       }
     })
@@ -1112,7 +1108,6 @@ $(function(){
       success: function(data) {
 	    $('#content').html(data)
 	    if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
-		else{$('#map').css('height', $(window).height())}
 		google.maps.event.trigger(map, 'resize')
 	    prepare_search_elements()
 	  }
