@@ -3626,13 +3626,9 @@ a.thumbnail:hover {
 .badge:hover {
   color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
 }
 .badge-error {
   background-color: #da4f49;
-}
-.badge-error:hover {
-  background-color: #953b39;
 }
 .badge-warning {
   background-color: #f89406;
@@ -3642,9 +3638,6 @@ a.thumbnail:hover {
 }
 .badge-success {
   background-color: #0cc148;
-}
-.badge-success:hover {
-  background-color: #356635;
 }
 .badge-info {
   background-color: #3a87ad;
