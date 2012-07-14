@@ -1,10 +1,10 @@
 #stat
-  %span{:class=>'badge badge-error'}
+  %span{:class=>'badge badge-error', :id=>'stat-span'}
     #icon
       %i.icon-map-marker
     #text1
       = Thing.where('user_id is null').count
 #stat1
-  %span{:class=>'badge badge-success'}
-    #text1
+  %span{:class=>'badge badge-success', :id=>'stat1-span'}
+    #text2
       = Thing.where('user_id is not null').count

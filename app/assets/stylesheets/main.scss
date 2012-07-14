@@ -698,9 +698,20 @@ i {
 }
 
 #stat1 {
-  margin-left: 42px;
+  margin-left: 55px;
   position: absolute;
   z-index: 2
+}
+
+#stat1-span {
+  padding-left: 0px;
+  border-radius: 0 4px 4px 0;
+  border-left: 0
+}
+
+#stat-span {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
 }
 
 .stats-container {  margin-left: -74px }
@@ -713,6 +724,11 @@ i {
 
 #text1 {
   margin-left: 12px;
+  margin-top: 2px
+}
+
+#text2 {
+  margin-left: 6px;
   margin-top: 2px
 }
 
