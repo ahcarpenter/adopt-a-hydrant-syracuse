@@ -30,10 +30,6 @@
   .table
     .table-row
       .table-cell.map-container
-        #download
-          #text
-            %i.icon-download-alt
-            = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
         .stats-container
           = render :partial => 'sidebar/stat'
         #sieve1
@@ -76,13 +72,8 @@
             %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
               = t('links.feedback')
       .table-cell.map-container
-        %span
-          #download
-            #text
-              %i.icon-download-alt
-              = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
-          .stats-container
-            = render :partial => 'sidebar/stat'
+        .stats-container
+          = render :partial => 'sidebar/stat'
         #sieve
           %btn{:id => 'adopted-sieve', :class => 'btn btn-danger', :type => 'submit', :name => 'commit', 'data-toggle'=>'buttons-checkbox', 'data-title'=>t('labels.enable_adopted_sieve'), 'data-placement'=>'right'}
             %i.icon-filter
