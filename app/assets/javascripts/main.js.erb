@@ -37,7 +37,6 @@ $(function(){
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     maxZoom: 19,
     minZoom: 15,
-	optimized:false,
     panControl: false,
     rotateControl: false,
     scaleControl: false,
@@ -212,6 +211,7 @@ $(function(){
 	  animation: google.maps.Animation.DROP,
 	  icon: image,
 	  map: map,
+	  optimized:false,
 	  position: point,
 	  shadow: markerShadowImage
 	})
