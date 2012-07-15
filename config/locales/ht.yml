@@ -91,10 +91,6 @@ ht:
   sponsors:
     built: 'Bati nan Boston & Lexington'
     cfa: 'Kòd pou Amerik'
-    city: 'Vil Boston'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: "Adopte sa a %{thing}"
     adopted: "%{thing_name} ki te adopte"

@@ -91,10 +91,6 @@ iw:
   sponsors:
     built: 'נבנה בבוסטון & לקסינגטון'
     cfa: 'קוד אמריקה'
-    city: 'העיר בוסטון'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: "לאמץ את %{thing}"
     adopted: "%{thing_name} אומצה"

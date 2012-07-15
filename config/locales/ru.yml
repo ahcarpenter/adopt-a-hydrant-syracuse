@@ -91,10 +91,6 @@ ru:
   sponsors:
     built: 'Встроенный в Бостоне & Лексингтон'
     cfa: 'Код для Америки'
-    city: 'Город Бостон'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: "Принятие этого %{thing}"
     adopted: "%{thing_name} был принят"

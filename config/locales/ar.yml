@@ -91,10 +91,6 @@ ar:
   sponsors:
     built: 'بنيت في بوسطن ويكسينغتون'
     cfa: 'رمز لأمريكا'
-    city: 'مدينة بوسطن'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: "تعتمد هذه %{thing}"
     adopted: "%{thing_name} وقد اعتمدت"

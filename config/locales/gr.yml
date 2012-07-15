@@ -91,10 +91,6 @@ gr:
   sponsors:
     built: 'Χτισμένο στη Βοστώνη & Λέξινγκτον'
     cfa: 'Κωδικός για την Αμερική'
-    city: 'Πόλη της Βοστώνης'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: "Υιοθετήστε αυτή %{thing}"
     adopted: "%{thing_name} έχει υιοθετηθεί"

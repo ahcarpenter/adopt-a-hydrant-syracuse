@@ -93,10 +93,6 @@ de:
   sponsors:
     built: 'Erbaut in Boston & Lexington'
     cfa: 'Code für Amerika'
-    city: 'City of Boston'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: "Übernehmen diesem %{thing}"
     adopted: "%{thing_name} wurde verabschiedet"

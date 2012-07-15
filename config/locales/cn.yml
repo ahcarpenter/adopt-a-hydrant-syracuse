@@ -91,10 +91,6 @@ cn:
   sponsors:
     built: '內置在波士頓和列剋星敦'
     cfa: '美國代碼'
-    city: '波士頓城市'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: '採用這種消防栓'
     adopted: '消防栓已被採納'

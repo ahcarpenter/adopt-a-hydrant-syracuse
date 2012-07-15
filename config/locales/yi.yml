@@ -91,10 +91,6 @@ yi:
   sponsors:
     built: 'געבויט אין באָסטאָן & לעקסינגטאָן'
     cfa: 'קאָד פֿאַר אַמעריקע'
-    city: 'שטאָט פון באָסטאָן'
-    mayor:
-      name: 'Thomas M. Menino'
-      title: 'Mayor'
   titles:
     adopt: "אַדאָפּט דעם %{thing}"
     adopted: "%{thing_name} האט שוין אנגענומען"
