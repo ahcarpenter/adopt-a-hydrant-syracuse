@@ -157,6 +157,14 @@ h2,
 #map,
 .table {  width: 100% }
 
+#sms-referral,
+#email-referral,
+#send_referral,
+#preview,
+.preview-body,
+#referral #user-sms-number-label,
+#referral #user-email-label {  margin-left: 4px }
+
 .alert-message.block-message,
 #tos p,
 #email_notifications,
@@ -269,14 +277,6 @@ i,
 #email_notifications,
 #sms-referral,
 #email-referral {  width: 10px }
-
-#sms-referral,
-#email-referral,
-#send_referral,
-#preview,
-.preview-body,
-#referral #user-sms-number-label,
-#referral #user-email-label {  margin-left: 4px }
 
 #sms-referral,
 #user_sms_referral_field,
