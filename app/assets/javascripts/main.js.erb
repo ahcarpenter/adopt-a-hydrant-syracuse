@@ -437,6 +437,7 @@ $(function(){
 	if(opera){
 	  $('i').css('margin-top', '2px')
 	  $('.btn').css('height', '18px')
+	  $('.icon-caret-right').css('margin-top', '0px')
 	}
 
     return this
@@ -450,6 +451,7 @@ $(function(){
     preview_shown = true
     $('.icon-caret-right').remove()
     $('.preview-title').prepend("<i class='icon-caret-down'></i>")
+	if(opera){$('.icon-caret-down').css('margin-top', '0px')}
   })
   $('#preview').live('hide', function () {
     $('#send_referral').css('margin-top', '4px')
@@ -460,6 +462,7 @@ $(function(){
     preview_hidden = true
     $('.icon-caret-down').remove()
     $('.preview-title').prepend("<i class='icon-caret-right'></i>")
+	if(opera){$('.icon-caret-right').css('margin-top', '0px')}
   })
   function disableReferralModalElements(){
 	if(email_referral){
