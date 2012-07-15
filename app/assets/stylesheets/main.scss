@@ -184,6 +184,58 @@ h2,
 #download-link,
 #test-sidebar {  background-color: white }
 
+.sidebar p#tagline,
+.icon-signin,
+.icon-plus,
+.icon-hdd {  color: #ffffff }
+
+.sidebar p#tagline,
+.icon-check,
+.icon-check-empty,
+#test-refer { margin-left: 0px }
+
+.sidebar p#tagline,
+.icon-comment-alt,
+.icon-envelope,
+.alert .icon-remove {  margin-right: 0px }
+
+.sidebar p#tagline,
+.btn-group[data-toggle='buttons-radio'],
+#sign-out-link,
+#back-link,
+#signup1,
+#log-in {  margin-bottom: 8px }
+
+.sidebar #logos #syracusesaves_logo,
+#save,
+#sms-referral,
+#user-email-label,
+#test-sidebar {  margin-top: 0px }
+
+.sidebar p,
+.sidebar .control-group,
+.sidebar #col1,
+#radio1,
+#remember_me,
+#fb {  margin-left: 20px }
+
+.sidebar #logos #col1 img,
+.icon-list-ul,
+#reminder_button {  margin-top: 10px }
+
+.sidebar #logos #col2,
+#referral .preview-body,
+#referral .preview-title,
+#text1 {  margin-left: 12px }
+
+#user_new,
+#user_existing,
+#user-remember-me,
+#login,
+#signup,
+.icon-check,
+.icon-check-empty {  margin-top: 1px }
+
 .badge {
   margin-left: 114px;
   border: 1px solid #cccccc;
@@ -267,7 +319,6 @@ a.btn {  width: 188px }
 .sidebar {
   p {
     padding: 0px;
-    margin-left: 20px;
     margin-right: 20px
   }
   input,
@@ -281,13 +332,9 @@ a.btn {  width: 188px }
 	display: block;
 	margin-bottom: 10px
   }
-  .control-group {
-	margin-left: 20px
-  }
   .form-actions,
   .form-action {  padding: 17px 20px 10px }
   p#tagline {
-	color: #ffffff;
 	background-color: #c43c35;
 	background-repeat: repeat-x;
 	background-image: -khtml-gradient(linear,left top,left bottom,from(#ee5f5b),to(#c43c35));
@@ -300,25 +347,13 @@ a.btn {  width: 188px }
 	border-color: #c43c35 #c43c35 #882a25;
 	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.4);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b',endColorstr='#c43c35',GradientType=0);
-	padding: 10px 20px;
-	margin-left: 0px;
-	margin-right: 0px;
-	margin-bottom: 8px
+	padding: 10px 20px
   }
   #logos {
     height: 100px;
-	#syracusesaves_logo {
-	  margin-top: 0px;
-	  height: 55px
-	}
-	#col1 {
-	  margin-left: 20px;
-	  img {	 margin-top: 10px }
-	}
-	#col2 {
-	  margin-left: 12px;
-	  margin-top: 15px
-	}
+	#syracusesaves_logo {  height: 55px }
+	#col1 img {	 margin-top: 10px }
+	#col2 {  margin-top: 15px }
   }
   #mayor {
 	font-family: "Times New Roman",Times,serif;
@@ -344,12 +379,6 @@ a.btn {  width: 188px }
 
 .roman {  list-style-type: lower-roman }
 
-#user_new,
-#user_existing,
-#user-remember-me,
-#login,
-#signup {  margin-top: 1px }
-
 #required {
   margin-top: -4px;
   color: #ee5f5b;
@@ -367,14 +396,10 @@ a.btn {  width: 188px }
   padding: 8px 20px 0px 14px
 }
 
-.btn-group[data-toggle='buttons-radio'] {
-  margin-top: 23px;
-  margin-bottom: 8px
-}
+.btn-group[data-toggle='buttons-radio'] {  margin-top: 23px }
 
 #radio1 {
   margin-top: 14px;
-  margin-left: 20px;
   width: 83px;
   word-wrap: break-word;
   z-index: 0
@@ -386,13 +411,6 @@ a.btn {  width: 188px }
   width: 84px;
   z-index: 0
 }
-
-#sign-out-link,
-#back-link,
-#signup1,
-#log-in {  margin-bottom: 8px }
-
-#save {  margin-top: 0px }
 
 i {
   margin-top: 4px;
@@ -414,12 +432,11 @@ i {
 }
 
 #sms-referral {
-  margin-top: 0px;
   margin-bottom: -28px;
   margin-left: 4px;
   margin-right: 4px;
   text-align: right;
-  width: 10px;
+  width: 10px
 }
 
 #user_sms_referral_field {
@@ -453,17 +470,13 @@ i {
 #thing_name {  width: 138px }
 
 .icon-comment-alt,
-.icon-envelope {
-  margin-left: -3px;
-  margin-right: 0px
-}
+.icon-envelope {  margin-left: -3px }
 
 .icon-signin,
 .icon-plus,
 .icon-hdd {
   margin-left: 10px;
-  margin-top: -32px;
-  color: #ffffff;
+  margin-top: -32px
 }
 
 .icon-signin,
@@ -484,18 +497,13 @@ i {
   overflow-x: hidden
 }
 
-#user-email-label {  margin-top: 0px }
-
 .icon-remove {
   margin-right: 2px;
   margin-top: 2px;
   font-size: 14px
 }
 
-.alert .icon-remove {
-  margin-right: 0px;
-  font-size: 12px
-}
+.alert .icon-remove {  font-size: 12px }
 
 #referral h3 {  margin-left: 18px }
 
@@ -507,13 +515,9 @@ i {
   word-wrap: break-word
 }
 
-.preview-body {
-  font-size: 12px;
-  margin-left: 12px
-}
+.preview-body {  font-size: 12px }
 
 .preview-title {
-  margin-left: 12px;
   color: #787878;
   .icon-caret-down,
   .icon-caret-right {
@@ -530,8 +534,6 @@ i {
   color: #cccccc
 }
 
-#remember_me {  margin-left: 20px; }
-
 #referral #user-email-label {  margin-bottom: 6px }
 
 #info-window2.icon-remove {
@@ -544,11 +546,7 @@ i {
 }
 
 .icon-check,
-.icon-check-empty {
-  margin-top: 1px;
-  font-size: 13px;
-  margin-left: 0px
-}
+.icon-check-empty {  font-size: 13px }
 
 #remember_me1 {  margin-bottom: -4px }
 
@@ -569,8 +567,6 @@ i {
   margin-bottom: -4px;
   font-weight: normal
 }
-
-#fb {  margin-left: 20px }
 
 #info-window {
   overflow-x: hidden;
@@ -663,12 +659,10 @@ i {
 
 #test-sidebar {
   z-index: 4;
-  margin-left: -250px;
-  margin-top: 0px
+  margin-left: -250px
 }
 
 #test-refer {
-  margin-left: 0px;
   margin-top: -180px;
   z-index: 50;
   position: relative
@@ -689,10 +683,7 @@ i {
 
 .stats-container {  margin-left: -74px }
 
-#text1 {
-  margin-left: 12px;
-  margin-top: 2px
-}
+#text1 {  margin-top: 2px }
 
 #text2 {
   margin-left: 6px;
