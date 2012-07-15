@@ -88,7 +88,7 @@ $(function(){
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
 	  opera = true
-	  enableLegacySupport()
+	  _opera()
 	} 
 	if(i == 'webkit'){
 	  webkit = true
@@ -119,7 +119,7 @@ $(function(){
 	$('#send_referral').append("<i class='icon-share-alt'></i>")
 	if(opera){$('#map').css('height', $(window).height())}
   }
-  function enableLegacySupport(){
+  function _opera(){
 	$('#user_password').css('font-family', 'MyriadPro-Regular')
 	$('#user_password_confirmation').css('font-family', 'MyriadPro-Regular')
 	$('.icon-plus').css('margin-top', '-28px')
@@ -555,7 +555,7 @@ $(function(){
 	radio1 = true
     var radioInput = $(this)
     $('#combo-form').data('state', 'user_sign_up')
-    if(opera){enableLegacySupport()}
+    if(opera){_opera()}
 	if(!$('#user_email').val().length>0){$('#test').addClass('icon-lock')}
     $('#user_forgot_password_fields').slideUp()
     $('#user_sign_in_fields').slideUp()
@@ -1092,7 +1092,7 @@ $(function(){
 			remember_me = true
 		    $('#login').append("<i class='icon-signin'></i>")
 			$('#signup').append("<i class='icon-plus'></i>")
- 			if(opera){enableLegacySupport()}
+ 			if(opera){_opera()}
 			if(webkit){_webkit()}
 			if(mozilla){_mozilla()}
 			$('#map').css('height', $('.sidebar').height()-2)
