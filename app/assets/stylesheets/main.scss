@@ -160,6 +160,30 @@ h2,
 #referral #user-sms-number-label,
 #referral #user-email-label{  margin-left: 4px }
 
+.alert-message.block-message,
+#tos p,
+#email_notifications,
+#email-referral,
+#fb {  margin-bottom: 10px }
+
+.sidebar .alert-message.block-message,
+.icon-list-ul {  padding-left: 10px }
+
+.sidebar .alert-message.block-message,
+#stat1 {  z-index: 2 }
+
+.sidebar,
+#test-sidebar {  width: 250px }
+
+.sidebar,
+.icon-list-ul,
+#extrusion {  border-right: 1px solid #CCC }
+
+.sidebar,
+.icon-download-alt,
+#download-link,
+#test-sidebar {  background-color: white }
+
 .badge {
   margin-left: 114px;
   border: 1px solid #cccccc;
@@ -232,23 +256,15 @@ a.btn {  width: 188px }
   vertical-align: top
 }
 
-.alert-message.block-message {
-  padding: 8px 12px 8px;
-  margin-bottom: 10px
-}
+.alert-message.block-message {  padding: 8px 12px 8px }
 
 .sidebar .alert-message.block-message {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  border-radius: 0;
-  padding-left: 10px;
-  z-index: 2
+  border-radius: 0
 }
 
 .sidebar {
-  width: 250px;
-  border-right: 1px solid #ccc;
-  background-color: white;
   p {
     padding: 0px;
     margin-left: 20px;
@@ -322,8 +338,6 @@ a.btn {  width: 188px }
 
 #map {  padding: 1px }
 
-#tos p{  margin-bottom: 10px }
-
 .upcase {  text-transform: uppercase }
 
 .alpha {  list-style-type: lower-alpha }
@@ -396,8 +410,7 @@ i {
   margin-top: -39px;
   margin-left: 147px;
   text-align: right;
-  width: 10px;
-  margin-bottom: 10px
+  width: 10px
 }
 
 #sms-referral {
@@ -421,8 +434,7 @@ i {
   margin-left: 4px;
   margin-right: 4px;
   text-align: right;
-  width: 10px;
-  margin-bottom: 10px
+  width: 10px
 }
 
 #user_email_referral_field {
@@ -558,10 +570,7 @@ i {
   font-weight: normal
 }
 
-#fb {
-  margin-bottom: 10px;
-  margin-left: 20px
-}
+#fb {  margin-left: 20px }
 
 #info-window {
   overflow-x: hidden;
@@ -573,7 +582,6 @@ i {
   color: #08C;
   z-index: 1;
   float: right;
-  background-color: white;
   width: 14px;
   height: 18px;
   padding-top: 4px;
@@ -584,7 +592,6 @@ i {
 #download-link {
   z-index: 1;
   margin-left: 218px;
-  background-color: white;
   padding-top: 4px;
   padding-bottom: 0px;
   opacity: 0.75;
@@ -624,12 +631,10 @@ i {
   height: 31px;
   padding-top: 16px;
   border-top: 1px solid #CCC;
-  border-right: 1px solid #CCC;
   border-bottom: 1px solid #CCC;
   border-radius: 0 4px 4px 0;
   z-index: 1;
   margin-top: 45%;
-  padding-left: 10px;
   cursor: pointer;
   color: #969696;
   box-shadow: 0px 2px 3px -2px #000000;
@@ -653,14 +658,11 @@ i {
   color: #CCC;
   box-shadow: -2px 0px 5px -2px whiteSmoke;
   border-top: 1px solid #CCC;
-  border-right: 1px solid #CCC;
   border-bottom: 1px solid #CCC
 }
 
 #test-sidebar {
-  width: 250px;
   z-index: 4;
-  background-color: white;
   margin-left: -250px;
   margin-top: 0px
 }
@@ -672,10 +674,7 @@ i {
   position: relative
 }
 
-#stat1 {
-  margin-left: 53px;
-  z-index: 2
-}
+#stat1 {  margin-left: 53px }
 
 #stat1-span {
   padding-left: 0px;
