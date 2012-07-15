@@ -985,10 +985,8 @@ $(function(){
 		}
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
-		if(opera){
-		  $('#map').css('height', $('.sidebar').height()-2)
-		  google.maps.event.trigger(map, 'resize')
-		}
+		if(opera){$('#map').css('height', $('.sidebar').height()-2)}
+		google.maps.event.trigger(map, 'resize')
       }
     })
     return false
