@@ -165,7 +165,8 @@ $(function(){
 	} else{
 	  $('#test-sidebar').transition({x: '0px'}, function(){
 		$(this).hide()
-		$('#map').css('height', '100%')
+		if(opera){$('#map').css('height', $(window).height())}
+		else{$('#map').css('height', '100%')}
 	  })
 	  sidebar_visible = false
 	  $('.icon-list-ul').transition({x: '0px'})
