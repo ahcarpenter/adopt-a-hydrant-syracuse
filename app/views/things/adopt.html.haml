@@ -6,13 +6,14 @@
   = f.hidden_field 'id', :value => session[:thing].id
   = f.hidden_field 'user_id', :value => current_user.id
   = f.hidden_field 'lock_version', :value => session[:thing].lock_version
-  %fieldset.control-group
+  %fieldset.control-group{:id=>'info-window'}
     = f.label 'name', t('labels.name_thing', :thing => t('defaults.thing')), :id => 'thing_name_label'
     = f.text_field 'name', :autocomplete => 'off'
-  %fieldset.control-group
+  %fieldset.control-group{:id=>'info-window'}
     .btn-group
-      %a{:id => 'email_notifications', :class => 'btn disabled', 'data-title' => t('labels.enable_email_notifications')}
-      %a{:id => 'sms_notifications', :class => 'btn disabled', 'data-title' => t('labels.enable_sms_notifications')}
+      .group
+        %a{:id => 'email_notifications', :class => 'btn disabled', 'data-title' => t('labels.enable_email_notifications')}
+        %a{:id => 'sms_notifications', :class => 'btn disabled', 'data-title' => t('labels.enable_sms_notifications')}
     %a{:id => 'adopt-button', :class => 'btn primary', :type => 'submit', :name => 'commit'}
       = t('buttons.adopt')
     #disable_email_notifications.hide

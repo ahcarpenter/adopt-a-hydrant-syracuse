@@ -4,6 +4,6 @@
   = f.hidden_field 'user_id', :value => ''
   = f.hidden_field 'name', :value => ''
   = f.hidden_field 'lock_version'
-  %fieldset.control-group
+  %fieldset.control-group{:id=>'info-window'}
     %a{:id => 'abandon_button', :class => 'btn btn-danger', :type => 'submit', :name => 'commit'}
       = t('buttons.abandon', :thing => t('defaults.thing'))

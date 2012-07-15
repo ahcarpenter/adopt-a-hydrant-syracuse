@@ -398,6 +398,9 @@ h2 {
 @-moz-document url-prefix() {
   h2 {  font-family: MyriadPro-Regular }
   .badge {  font-family: MyriadPro-Regular }
+  .control-group {  margin-bottom: 0px }
+  .control-group#info-window{  margin-bottom: 10px }
+  .group{  margin-top: -1px }
 }
 
 input {  width: 200px }
