@@ -153,6 +153,10 @@ h2,
 .sidebar,
 .sidebar p#tagline {  text-align: center }
 
+.map-container,
+#map,
+.table {  width: 100% }
+
 .badge {
   margin-left: 114px;
   border: 1px solid #cccccc;
@@ -216,10 +220,7 @@ form input.search-query {
 
 a.btn {  width: 188px }
 
-.table {
-  display: table;
-  width: 100%;
-}
+.table {  display: table }
 
 .table-row {  display: table-row }
 
@@ -316,13 +317,7 @@ a.btn {  width: 188px }
   #feedback {  margin-top: 25px }
 }
 
-.map-container {  width: 100%; }
-
-#map {
-  height: 100%;
-  padding: 1px;
-  width: 100%
-}
+#map {  padding: 1px }
 
 #tos p{  margin-bottom: 10px }
 
