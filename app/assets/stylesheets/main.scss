@@ -112,11 +112,6 @@ img,
 .sidebar #logos #col2,
 .sidebar #logos #col1 {  width: 100px }
 
-h1,
-h2,
-.sidebar,
-.sidebar p#tagline {  text-align: center }
-
 form,
 #address,
 #user_current_password,
@@ -142,6 +137,21 @@ i,
 #sms-referral,
 #email-referral,
 #thing_name {  float: left }
+
+#download-link,
+input[type="radio"],
+input[type="checkbox"] {  width: auto }
+
+form select,
+button.btn,
+input[type="submit"].btn,
+.sidebar #logos #syracuse_saves {  width: 210px }
+
+a.btn,
+h1,
+h2,
+.sidebar,
+.sidebar p#tagline {  text-align: center }
 
 .badge {
   margin-left: 114px;
@@ -192,13 +202,8 @@ input {  width: 200px }
 input[type="radio"],
 input[type="checkbox"] {
   display: inline;
-  width: auto;
   margin-right: 10px
 }
-
-form select,
-button.btn,
-input[type="submit"].btn {  width: 210px }
 
 form input.search-query {
   -moz-border-radius: 14px;
@@ -209,10 +214,7 @@ form input.search-query {
   width: 180px
 }
 
-a.btn {
-  width: 188px;
-  text-align: center
-}
+a.btn {  width: 188px }
 
 .table {
   display: table;
@@ -287,8 +289,7 @@ a.btn {
     height: 100px;
 	#syracusesaves_logo {
 	  margin-top: 0px;
-	  height: 55px;
-	  width: 210px
+	  height: 55px
 	}
 	#col1 {
 	  margin-left: 20px;
@@ -296,7 +297,7 @@ a.btn {
 	}
 	#col2 {
 	  margin-left: 12px;
-	  margin-top: 15px;
+	  margin-top: 15px
 	}
   }
   #mayor {
@@ -586,7 +587,6 @@ i {
   z-index: 1;
   margin-left: 218px;
   background-color: white;
-  width: auto;
   padding-top: 4px;
   padding-bottom: 0px;
   opacity: 0.75;
