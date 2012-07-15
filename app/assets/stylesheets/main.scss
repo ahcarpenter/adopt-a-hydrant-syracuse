@@ -308,7 +308,51 @@ i,
 .icon-remove,
 .preview-title,
 #text1,
-#text2 {  margin-top: 2px }
+#text2,
+.icon-caret-down,
+.icon-caret-right {  margin-top: 2px }
+
+#info-window1.icon-remove,
+#info-window2.icon-remove {
+  margin-top: 9px;
+  font-weight: bold;
+  color: #cccccc
+}
+
+#info-window2.icon-remove,
+.icon-download-alt {  float: right }
+
+#remember_me1,
+#reminder_button {  margin-bottom: -4px }
+
+.icon-lock,
+#adopted-sieve {  font-size: 10px }
+
+.icon-download-alt,
+#adopted-sieve {  height: 18px }
+
+.icon-download-alt,
+#download-link {
+  padding-top: 4px;
+  padding-bottom: 0px;
+  opacity: 0.75
+}
+
+#sieve,
+#sieve1 {
+  margin-left: 11px;
+  btn {  padding: 0px 5px }
+}
+
+.icon-list-ul,
+#extrusion {
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  background-color: #CCC
+}
+
+.icon-list-ul,
+#stat1-span {  border-radius: 0 4px 4px 0 }
 
 .badge {
   margin-left: 114px;
@@ -426,7 +470,6 @@ a.btn {  width: 188px }
   #logos {
     height: 100px;
 	#syracusesaves_logo {  height: 55px }
-	#col1 img {	 margin-top: 10px }
 	#col2 {  margin-top: 15px }
   }
   #feedback {  margin-top: 25px }
@@ -511,69 +554,41 @@ i {  margin-right: -20px }
   .icon-caret-right {  margin-left: -11px }
 }
 
-#info-window1.icon-remove {
-  margin-left: 225px;
-  margin-top: 9px;
-  font-weight: bold;
-  color: #cccccc
-}
+#info-window1.icon-remove {  margin-left: 225px }
 
 #referral #user-email-label {  margin-bottom: 6px }
 
-#info-window2.icon-remove {
-  margin-right: 9px;
-  margin-top: 9px;
-  font-weight: bold;
-  color: #cccccc;
-  float: right
-}
+#info-window2.icon-remove {  margin-right: 9px }
 
 .icon-check,
 .icon-check-empty {  font-size: 13px }
 
-#remember_me1 {  margin-bottom: -4px }
-
 .icon-lock {
   margin-left: 3px;
-  color: #999999;
-  font-size: 10px
+  color: #999999
 }
 
 .icon-facebook {  margin-left: -2px }
 
-#reminder_button {
-  margin-top: 10px;
-  margin-bottom: -4px;
-  font-weight: normal
-}
+#reminder_button {  font-weight: normal }
 
 #info-window {  overflow-y: hidden }
 
 .icon-download-alt {
   margin-left: 198px;
   color: #08C;
-  float: right;
-  width: 14px;
-  height: 18px;
-  padding-top: 4px;
-  padding-bottom: 0px;
-  opacity: 0.75
+  width: 14px
 }
 
 #download-link {
   margin-left: 218px;
-  padding-top: 4px;
-  padding-bottom: 0px;
-  opacity: 0.75;
   padding-right: 6px;
   padding-left: 2px
 }
 
 #adopted-sieve {
   width: 7px;
-  height: 18px;
-  background-image: none;
-  font-size: 10px
+  background-image: none
 }
 
 .icon-filter {
@@ -581,11 +596,7 @@ i {  margin-right: -20px }
   margin-top: 6px
 }
 
-#sieve {
-  margin-top: 140px;
-  margin-left: 11px;
-  btn {  padding: 0px 5px }
-}
+#sieve {  margin-top: 140px }
 
 #text {
   opacity: 1.0;
@@ -593,39 +604,27 @@ i {  margin-right: -20px }
 }
 
 .icon-list-ul {
-  margin-top: 10px;
   margin-left: -1px;
   width: 22px;
   height: 31px;
   padding-top: 16px;
-  border-top: 1px solid #CCC;
-  border-bottom: 1px solid #CCC;
-  border-radius: 0 4px 4px 0;
   margin-top: 45%;
   cursor: pointer;
   color: #969696;
-  box-shadow: 0px 2px 3px -2px #000000;
-  background-color: #CCC
+  box-shadow: 0px 2px 3px -2px #000000
 }
 
-#sieve1 {
-  margin-top: 50px;
-  margin-left: 11px;
-  btn {  padding: 0px 5px }
-}
+#sieve1 {  margin-top: 50px }
 
 #extrusion {
   padding-right: 4px;
-  background-color: #CCC;
   margin-left: 14px;
   width: 4px;
   border-radius: 0px 4px 4px 0px;
   height: 47px;
   margin-top: -33px;
   color: #CCC;
-  box-shadow: -2px 0px 5px -2px whiteSmoke;
-  border-top: 1px solid #CCC;
-  border-bottom: 1px solid #CCC
+  box-shadow: -2px 0px 5px -2px whiteSmoke
 }
 
 #test-sidebar {
@@ -643,7 +642,6 @@ i {  margin-right: -20px }
 
 #stat1-span {
   padding-left: 0px;
-  border-radius: 0 4px 4px 0;
   border-left: 0
 }
 
