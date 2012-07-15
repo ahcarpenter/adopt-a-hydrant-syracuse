@@ -117,6 +117,7 @@ $(function(){
 	$('#sms-referral').append("<i class='icon-comment-alt'></i>")
 	$('#email-referral').append("<i class='icon-envelope'></i>")
 	$('#send_referral').append("<i class='icon-share-alt'></i>")
+	if(opera){$('#map').css('height', $(window).height())}
   }
   function enableLegacySupport(){
 	$('#user_password').css('font-family', 'MyriadPro-Regular')
