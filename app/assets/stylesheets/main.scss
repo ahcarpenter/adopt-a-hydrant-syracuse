@@ -236,6 +236,38 @@ h2,
 .icon-check,
 .icon-check-empty {  margin-top: 1px }
 
+#required,
+.alert .icon-remove,
+#referral .preview-body,
+#info-window1.icon-remove,
+#info-window2.icon-remove {  font-size: 12px }
+
+.icon-lock,
+#user-email-label {  margin-top: 8px }
+
+.alert,
+#radio1 {  margin-top: -10px }
+
+#radio1,
+#preview,
+.preview-body {  word-wrap: break-word }
+
+#radio1,
+#radio2 {  z-index: 0 }
+
+i,
+#send-referral,
+.icon-facebook {  margin-top: 4px }
+
+#sms_notifications,
+#email_notifications {  margin-top: -39px }
+
+#sms_notifications,
+#email_notifications,
+#sms-referral,
+#email-referral,
+#adopted-sieve {  text-align: right }
+
 .badge {
   margin-left: 114px;
   border: 1px solid #cccccc;
@@ -369,52 +401,35 @@ a.btn {  width: 188px }
 #required {
   margin-top: -4px;
   color: #ee5f5b;
-  font-size: 12px;
   margin-bottom: -6px
 }
 
 .required-password {  margin-bottom: 22px }
 
-#user-email-label {  margin-top: 8px }
-
 .alert {
-  margin-top: -10px;
   margin-bottom: 1px;
   padding: 8px 20px 0px 14px
 }
 
 .btn-group[data-toggle='buttons-radio'] {  margin-top: 23px }
 
-#radio1 {
-  margin-top: 14px;
-  width: 83px;
-  word-wrap: break-word;
-  z-index: 0
-}
+#radio1 {  width: 83px }
 
 #radio2 {
   margin-top: -30px;
   margin-left: 124px;
-  width: 84px;
-  z-index: 0
+  width: 84px
 }
 
-i {
-  margin-top: 4px;
-  margin-right: -20px;
-}
+i {  margin-right: -20px }
 
 #sms_notifications {
-  margin-top: -39px;
   margin-left: 178px;
-  text-align: right;
   width: 10px;
 }
 
 #email_notifications {
-  margin-top: -39px;
   margin-left: 147px;
-  text-align: right;
   width: 10px
 }
 
@@ -422,7 +437,6 @@ i {
   margin-bottom: -28px;
   margin-left: 4px;
   margin-right: 4px;
-  text-align: right;
   width: 10px
 }
 
@@ -437,7 +451,6 @@ i {
   margin-top: -1px;
   margin-left: 4px;
   margin-right: 4px;
-  text-align: right;
   width: 10px
 }
 
@@ -450,7 +463,6 @@ i {
 
 #send_referral {
   margin-left: 4px;
-  margin-top: 4px;
   margin-bottom: 4px
 }
 
@@ -471,8 +483,6 @@ i {
 
 #radio {  margin-top: 100px }
 
-#radio1 {  margin-top: -10px }
-
 #radio2 {  margin-bottom: -8px }
 
 #radio1,
@@ -490,19 +500,14 @@ i {
   font-size: 14px
 }
 
-.alert .icon-remove {  font-size: 12px }
-
 #referral h3 {  margin-left: 18px }
 
 #preview,
 .preview-body {
   margin-left: 4px;
   color: #9e9e9e;
-  margin-right: 4px;
-  word-wrap: break-word
+  margin-right: 4px
 }
-
-.preview-body {  font-size: 12px }
 
 .preview-title {
   color: #787878;
@@ -516,7 +521,6 @@ i {
 #info-window1.icon-remove {
   margin-left: 225px;
   margin-top: 9px;
-  font-size: 12px;
   font-weight: bold;
   color: #cccccc
 }
@@ -526,7 +530,6 @@ i {
 #info-window2.icon-remove {
   margin-right: 9px;
   margin-top: 9px;
-  font-size: 12px;
   font-weight: bold;
   color: #cccccc;
   float: right
@@ -539,15 +542,11 @@ i {
 
 .icon-lock {
   margin-left: 3px;
-  margin-top: 8px;
   color: #999999;
   font-size: 10px
 }
 
-.icon-facebook {
-  margin-left: -2px;
-  margin-top: 4px
-}
+.icon-facebook {  margin-left: -2px }
 
 #reminder_button {
   margin-top: 10px;
@@ -585,7 +584,6 @@ i {
 #adopted-sieve {
   z-index: 1;
   width: 7px;
-  text-align: right;
   height: 18px;
   background-image: none;
   font-size: 10px
