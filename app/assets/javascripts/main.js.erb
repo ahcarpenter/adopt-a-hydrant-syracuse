@@ -431,6 +431,7 @@ $(function(){
     $('#email-referral').tooltip({delay: delay_options})
     $('#sms-referral').attr('title', $('#enable_sms_transmission').text()).tooltip('fixTitle')
     $('#email-referral').attr('title', $('#enable_email_transmission').text()).tooltip('fixTitle')
+	if(mozilla || opera){$('#user-email-label').css('margin-top', '0px')}
 
     return this
   })
