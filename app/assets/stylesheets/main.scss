@@ -305,6 +305,11 @@ i,
 #adopted-sieve,
 .icon-list-ul {  z-index: 1 }
 
+.icon-remove,
+.preview-title,
+#text1,
+#text2 {  margin-top: 2px }
+
 .badge {
   margin-left: 114px;
   border: 1px solid #cccccc;
@@ -492,7 +497,6 @@ i {  margin-right: -20px }
 
 .icon-remove {
   margin-right: 2px;
-  margin-top: 2px;
   font-size: 14px
 }
 
@@ -504,10 +508,7 @@ i {  margin-right: -20px }
 .preview-title {
   color: #787878;
   .icon-caret-down,
-  .icon-caret-right {
-	margin-top: 2px;
-	margin-left: -11px
-  }
+  .icon-caret-right {  margin-left: -11px }
 }
 
 #info-window1.icon-remove {
@@ -653,11 +654,6 @@ i {  margin-right: -20px }
 
 .stats-container {  margin-left: -74px }
 
-#text1 {  margin-top: 2px }
-
-#text2 {
-  margin-left: 6px;
-  margin-top: 2px
-}
+#text2 {  margin-left: 6px }
 
 #download{  margin-left: -10px }
