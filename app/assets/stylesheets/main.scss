@@ -124,6 +124,25 @@ form,
 form input.search-query,
 .table {  margin-bottom: 0 }
 
+label,
+.sidebar .alert-message.block-message,
+#tos,
+#preview,
+.preview-body,
+#remember_me {  text-align: left }
+
+input[type="radio"],
+input[type="checkbox"],
+.sidebar #logos #col1,
+.sidebar #logos #col2,
+#radio1,
+i,
+#sms_notifications,
+#email_notifications,
+#sms-referral,
+#email-referral,
+#thing_name {  float: left }
+
 .badge {
   margin-left: 114px;
   border: 1px solid #cccccc;
@@ -168,14 +187,11 @@ h2 {
   .badge {  font-family: MyriadPro-Regular }
 }
 
-label {  text-align: left }
-
 input {  width: 200px }
 
 input[type="radio"],
 input[type="checkbox"] {
   display: inline;
-  float: left;
   width: auto;
   margin-right: 10px
 }
@@ -219,7 +235,6 @@ a.btn {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  text-align: left;
   padding-left: 10px;
   z-index: 2
 }
@@ -276,12 +291,10 @@ a.btn {
 	  width: 210px
 	}
 	#col1 {
-	  float: left;
 	  margin-left: 20px;
 	  img {	 margin-top: 10px }
 	}
 	#col2 {
-	  float: left;
 	  margin-left: 12px;
 	  margin-top: 15px;
 	}
@@ -310,10 +323,7 @@ a.btn {
   width: 100%
 }
 
-#tos {
-  text-align: left;
-  p {  margin-bottom: 10px }
-}
+#tos p{  margin-bottom: 10px }
 
 .upcase {  text-transform: uppercase }
 
@@ -353,7 +363,6 @@ a.btn {
   margin-top: 14px;
   margin-left: 20px;
   width: 83px;
-  float: left;
   word-wrap: break-word;
   z-index: 0
 }
@@ -375,7 +384,6 @@ a.btn {
 i {
   margin-top: 4px;
   margin-right: -20px;
-  float: left
 }
 
 #sms_notifications {
@@ -383,7 +391,6 @@ i {
   margin-left: 178px;
   text-align: right;
   width: 10px;
-  float: left
 }
 
 #email_notifications {
@@ -391,7 +398,6 @@ i {
   margin-left: 147px;
   text-align: right;
   width: 10px;
-  float: left;
   margin-bottom: 10px
 }
 
@@ -402,7 +408,6 @@ i {
   margin-right: 4px;
   text-align: right;
   width: 10px;
-  float: left
 }
 
 #user_sms_referral_field {
@@ -418,7 +423,6 @@ i {
   margin-right: 4px;
   text-align: right;
   width: 10px;
-  float: left;
   margin-bottom: 10px
 }
 
@@ -435,10 +439,7 @@ i {
   margin-bottom: 4px
 }
 
-#thing_name {
-  width: 138px;
-  float: left;
-}
+#thing_name {  width: 138px }
 
 .icon-comment-alt,
 .icon-envelope {
@@ -472,12 +473,7 @@ i {
   overflow-x: hidden
 }
 
-#user-email-label,
-#city-state-label,
-#user_email_edit_label {
-  margin-top: 0px;
-  margin-left: 4px
-}
+#user-email-label {  margin-top: 0px }
 
 .icon-remove {
   margin-right: 2px;
@@ -494,7 +490,6 @@ i {
 
 #preview,
 .preview-body {
-  text-align: left;
   margin-left: 4px;
   color: #9e9e9e;
   margin-right: 4px;
@@ -524,10 +519,7 @@ i {
   color: #cccccc
 }
 
-#remember_me {
-  margin-left: 20px;
-  text-align: left
-}
+#remember_me {  margin-left: 20px; }
 
 #referral #user-email-label {  margin-bottom: 6px }
 
@@ -700,12 +692,6 @@ i {
 
 .stats-container {  margin-left: -74px }
 
-.icon-map-maker {
-  right: -40px;
-  position: relative;
-  float: left
-}
-
 #text1 {
   margin-left: 12px;
   margin-top: 2px
@@ -715,7 +701,5 @@ i {
   margin-left: 6px;
   margin-top: 2px
 }
-
-#user-sms-number-label {  margin-left: 4px }
 
 #download{  margin-left: -10px }
