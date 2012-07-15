@@ -204,8 +204,10 @@ $(function(){
   if (opera) {adjust2()}
   $('.alert').live('close', function(){
 	$(this).hide()
-	if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-	google.maps.event.trigger(map, 'resize')
+	if(mobile){
+	  $('#map').css('height', $('.sidebar').height()-2)
+	  google.maps.event.trigger(map, 'resize')
+	}
   })
   function addMarker(thingId, point, color) {
 	if(color === 'green') {var image = greenMarkerImage}
@@ -534,8 +536,10 @@ $(function(){
 			    $('#content').html(data)
 				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepareSearchElements()
-				if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-				google.maps.event.trigger(map, 'resize')
+				if(mobile){
+				  $('#map').css('height', $('.sidebar').height()-2)
+				  google.maps.event.trigger(map, 'resize')
+				}
 		      }
 		    })
 	      }
@@ -566,8 +570,10 @@ $(function(){
     $('#user_sign_up_fields').slideDown(function(){
 	  setComboFormFocus()
 	  if(mobile){adjusted = false}
-	  $('#map').css('height', $('.sidebar').height()-2)
-	  google.maps.event.trigger(map, 'resize')
+	  if(opera){
+		$('#map').css('height', $('.sidebar').height()-2)
+	    google.maps.event.trigger(map, 'resize')
+	  }
 	})
   })
   $('#radio2').live('click', function(){
@@ -730,12 +736,13 @@ $(function(){
                 data: {'flash': {'notice': 'notices.signed_in'}},
                 success: function(data) {
 	              $('#content').html(data)
-				  if(mobile){$('#map').css('height', $('.sidebar').height()+4)}
 				  $('.alert').effect('pulsate', {times: 2}, 300)
 				  prepareSearchElements()
 				  search_shown = true
-				  if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-				  google.maps.event.trigger(map, 'resize')
+				  if(mobile){
+					$('#map').css('height', $('.sidebar').height()-2)
+					google.maps.event.trigger(map, 'resize')
+				  }
 				}
             })
           }
@@ -779,8 +786,11 @@ $(function(){
 		    $('#content').html(data)
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			prepareSearchElements()
-			if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-			google.maps.event.trigger(map, 'resize')
+			if(mobile){
+			  $('#map').css('height', $('.sidebar').height()-2)
+			  google.maps.event.trigger(map, 'resize')
+			}
+			
 		  }
 		})
 	  }
@@ -975,8 +985,10 @@ $(function(){
 		}
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
-		$('#map').css('height', $('.sidebar').height()-2)
-		google.maps.event.trigger(map, 'resize')
+		if(opera){
+		  $('#map').css('height', $('.sidebar').height()-2)
+		  google.maps.event.trigger(map, 'resize')
+		}
       }
     })
     return false
@@ -1065,8 +1077,10 @@ $(function(){
         },
         success: function(data) {
 	      $('#content').html(data)
-	      if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
-		  google.maps.event.trigger(map, 'resize')
+	      if(mobile){
+			$('#map').css('height', $('.sidebar').height()+5)
+			google.maps.event.trigger(map, 'resize')
+		  }
 	      prepareSearchElements()
 	    }
       })
@@ -1095,8 +1109,10 @@ $(function(){
  			if(opera){_opera()}
 			if(webkit){_webkit()}
 			if(mozilla){_mozilla()}
-			$('#map').css('height', $('.sidebar').height()-2)
-			google.maps.event.trigger(map, 'resize')
+			if(opera){
+			  $('#map').css('height', $('.sidebar').height()-2)
+			  google.maps.event.trigger(map, 'resize')
+			}
 			if(mobile){adjusted = false}
           }
         })
@@ -1114,8 +1130,10 @@ $(function(){
       success: function(data) {
 		stateChange()
         activeInfoWindow.setContent(data)
-		if(mobile){$('#map').css('height', $('.sidebar').height()-2)}
-		google.maps.event.trigger(map, 'resize')
+		if(mobile){
+		  $('#map').css('height', $('.sidebar').height()-2)
+		  google.maps.event.trigger(map, 'resize')
+		}
       }
     })
     return false
@@ -1129,8 +1147,10 @@ $(function(){
       error: function(jqXHR) {$(link).removeClass('disabled')},
       success: function(data) {
 	    $('#content').html(data)
-	    if(mobile){$('#map').css('height', $('.sidebar').height()+5)}
-		google.maps.event.trigger(map, 'resize')
+	    if(mobile){
+		  $('#map').css('height', $('.sidebar').height()+5)
+		  google.maps.event.trigger(map, 'resize')
+		}
 	    prepareSearchElements()
 	  }
     })
