@@ -581,7 +581,11 @@ $(function(){
     }
     $('#user_sign_up_fields').slideDown(function(){
 	  setComboFormFocus()
-	  if(mobile){adjusted = false}
+	  if(mobile){
+		adjusted = false
+		$('#map').css('height', $('.sidebar').height()-2)
+	    google.maps.event.trigger(map, 'resize')
+	  }
 	  if(opera){
 		$('#map').css('height', $('.sidebar').height()-2)
 	    google.maps.event.trigger(map, 'resize')
