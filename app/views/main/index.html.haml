@@ -14,19 +14,6 @@
           = render :partial => 'sidebar/search'
         - else
           = render :partial => 'sidebar/combo_form'
-      #logos
-        %a{:href => 'http://github.com/syracuse-saves'}
-          = image_tag 'logos/syracusesaves.png', :id => 'syracusesaves_logo', :alt => 'Syracuse Saves', :title => 'Syracuse Saves'
-        #col1
-          %a{:href => 'http://codeforamerica.org/'}
-            = image_tag 'logos/cfa.png', :alt => t('sponsors.cfa'), :title => t('sponsors.cfa'), :id => 'cfa'
-        #col2
-          %a{:href => 'http://bostonbuilt.org/'}
-            = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built'), :id => 'boston-and-lexington-built'
-      #feedback
-        %p
-          %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
-            = t('links.feedback')
   .table
     .table-row
       .table-cell.map-container
@@ -62,19 +49,6 @@
             = render :partial => 'sidebar/search'
           - else
             = render :partial => 'sidebar/combo_form'
-        #logos
-          %a{:href => 'http://github.com/syracuse-saves'}
-            = image_tag 'logos/syracusesaves.png', :id => 'syracusesaves_logo', :alt => 'Syracuse Saves', :title => 'Syracuse Saves'
-          #col1
-            %a{:href => 'http://codeforamerica.org/'}
-              = image_tag 'logos/cfa.png', :alt => t('sponsors.cfa'), :title => t('sponsors.cfa'), :id => 'cfa'
-          #col2
-            %a{:href => 'http://bostonbuilt.org/'}
-              = image_tag 'logos/boston&lexingtonbuilt.png', :alt => t('sponsors.built'), :title => t('sponsors.built'), :id => 'boston-and-lexington-built'
-        #feedback
-          %p
-            %a{:href => URI.escape("mailto:adoptahydrantsyracuse@gmail.com?subject=#{t('titles.main', :thing => t('defaults.thing').titleize)} #{t('links.feedback').titleize}")}
-              = t('links.feedback')
       .table-cell.map-container
         %span
           #download
