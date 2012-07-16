@@ -1154,7 +1154,8 @@ $(function(){
 		stateChange()
         activeInfoWindow.setContent(data)
 		if(mobile){
-		  $('#map').css('height', $('.sidebar').height()-2)
+		  if(opera){$('#map').css('height', $('.sidebar').height()-4)}
+		  else{$('#map').css('height', $('.sidebar').height()-2)}
 		  google.maps.event.trigger(map, 'resize')
 		}
 		if(opera){
