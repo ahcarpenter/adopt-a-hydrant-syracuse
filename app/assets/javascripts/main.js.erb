@@ -752,7 +752,7 @@ $(function(){
 				  prepareSearchElements()
 				  search_shown = true
 				  if(mobile){
-					if(opera){$('#map').css('height', $('.sidebar').height()-8)}
+					if(opera){$('#map').css('height', $('.sidebar').height()-12)}
 					else{$('#map').css('height', $('.sidebar').height()-2)}
 					google.maps.event.trigger(map, 'resize')
 				  }
@@ -1154,7 +1154,7 @@ $(function(){
 		stateChange()
         activeInfoWindow.setContent(data)
 		if(mobile){
-		  if(opera){$('#map').css('height', $('.sidebar').height()-8)}
+		  if(opera){$('#map').css('height', $('.sidebar').height()-12)}
 		  else{$('#map').css('height', $('.sidebar').height()-2)}
 		  google.maps.event.trigger(map, 'resize')
 		}
