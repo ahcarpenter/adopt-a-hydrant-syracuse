@@ -808,11 +808,6 @@ $(function(){
 		    $('#content').html(data)
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			prepareSearchElements()
-			if(mobile){
-			  $('#map').css('height', $('.sidebar').height()-2)
-			  google.maps.event.trigger(map, 'resize')
-			}
-			
 		  }
 		})
 	  }
