@@ -210,7 +210,7 @@ $(function(){
 	  google.maps.event.trigger(map, 'resize')
 	}
   })
-  $('#locale').change(function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/' + $(this).val())})
+  $('#locale').live('change', function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/' + $(this).val())})
   function addMarker(thingId, point, color) {
 	if(color === 'green') {var image = greenMarkerImage}
 	else if(color === 'red') {var image = redMarkerImage}
