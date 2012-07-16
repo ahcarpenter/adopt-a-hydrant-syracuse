@@ -30,6 +30,8 @@
 // stackoverflow.com/questions/9799221/resizing-google-maps-api-v3-div-with-jquery-tiles-not-refreshing-properly
 // http://stackoverflow.com/questions/5373844/rails-refresh-view-after-submit-from-different-controller
 // www.gutensite.com/Google-Maps-Custom-Markers-Cut-Off-By-Canvas-Tiles
+// http://www.cssgirl.com/articles/2011/05/29/how-to-anchor-the-footer-to-bottom-of-page-or-header-to-top/
+// http://stackoverflow.com/questions/1462799/html-anchor-block-element-inside-bottom-of-parent-block
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -574,6 +576,7 @@ $(function(){
     $('#combo-form').data('state', 'user_sign_up')
     if(opera){_opera()}
 	if(!$('#user_email').val().length>0){$('#test').addClass('icon-lock')}
+    $('#locale').css('position', 'relative')
     $('#user_forgot_password_fields').slideUp()
     $('#user_sign_in_fields').slideUp()
     if($('#required_text').text() == ''){
@@ -596,6 +599,7 @@ $(function(){
   $('#radio2').live('click', function(){
 	radio1 = false
     var radioInput = $(this)
+    $('#locale').css('position', 'absolute')
     $('#user_sign_up_fields').slideUp()
     $('#user_sign_in_fields').slideDown(function(){
 	  if(mobile){
@@ -753,6 +757,7 @@ $(function(){
                 data: {'flash': {'notice': 'notices.signed_in'}},
                 success: function(data) {
 	              $('#content').html(data)
+				  $('#locale').css('position', 'absolute')
 				  $('.alert').effect('pulsate', {times: 2}, 300)
 				  prepareSearchElements()
 				  search_shown = true
@@ -806,6 +811,7 @@ $(function(){
 		  data: {'flash': {'notice': 'notices.signed_in'}},
 		  success: function(data) {
 		    $('#content').html(data)
+			$('#locale').css('position', 'absolute')
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			prepareSearchElements()
 		  }
@@ -1096,6 +1102,7 @@ $(function(){
         },
         success: function(data) {
 	      $('#content').html(data)
+		  $('#locale').css('position', 'absolute')
 	      if(mobile){
 			$('#map').css('height', $('.sidebar').height()+5)
 			google.maps.event.trigger(map, 'resize')
@@ -1153,6 +1160,7 @@ $(function(){
       success: function(data) {
 		stateChange()
         activeInfoWindow.setContent(data)
+		$('#locale').css('position', 'absolute')
 		if(mobile){
 		  if(opera){$('#map').css('height', $('.sidebar').height()-12)}
 		  else{$('#map').css('height', $('.sidebar').height()-2)}
@@ -1175,6 +1183,7 @@ $(function(){
       error: function(jqXHR) {$(link).removeClass('disabled')},
       success: function(data) {
 	    $('#content').html(data)
+		$('#locale').css('position', 'absolute')
 	    if(mobile){
 		  $('#map').css('height', $('.sidebar').height()+5)
 		  google.maps.event.trigger(map, 'resize')
