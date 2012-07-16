@@ -17,6 +17,7 @@
     = link_to t('titles.referral'), '', 'data-toggle' => 'modal', 'data-target' => '#referral'
 - if !request.env['HTTP_USER_AGENT'].include? 'Mobi'
   = render :partial => 'sidebar/referral'
+= render :partial => 'sidebar/locale'
 :javascript
   $(function() {
     $('#address').focus();
