@@ -553,6 +553,7 @@ $(function(){
 		      error: function(jqXHR) {},
 		      success: function(data) {
 			    $('#content').html(data)
+				if(!mobile){$('#locale').css('position', 'absolute')}
 				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepareSearchElements()
 				if(mobile){
