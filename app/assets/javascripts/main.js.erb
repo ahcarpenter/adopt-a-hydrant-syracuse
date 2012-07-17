@@ -32,6 +32,7 @@
 // www.gutensite.com/Google-Maps-Custom-Markers-Cut-Off-By-Canvas-Tiles
 // http://www.cssgirl.com/articles/2011/05/29/how-to-anchor-the-footer-to-bottom-of-page-or-header-to-top/
 // http://stackoverflow.com/questions/1462799/html-anchor-block-element-inside-bottom-of-parent-block
+// http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/#transforms
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -1271,6 +1272,7 @@ $(function(){
 	  $('#tos').css('-webkit-transform', 'scale(.5)')
 	  $('#tos').css('-moz-transform', 'scale(.5)')
 	  $('#tos').css('-o-transform', 'scale(.5)')
+	  $('#tos').css('-o-transform-origin', 'right top')
 	  $('#tos').css('-ms-transform', 'scale(.5)')
 	}
   })

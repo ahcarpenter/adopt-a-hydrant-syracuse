@@ -39,7 +39,7 @@
           	transitionEnd = "webkitTransitionEnd"
           } else if ( $.browser.mozilla ) {
           	transitionEnd = "transitionend"
-          } else if ( $.browser.opera && parseInt($.browser.version) >= 12) {
+          } else if ( $.browser.opera && parseInt($.browser.version) >= 12 && !(navigator.userAgent.indexOf('Mobi') != -1)) {
 		    transitionEnd = "otransitionend"
 		  } else if ( $.browser.opera ) {
           	transitionEnd = "oTransitionEnd"
