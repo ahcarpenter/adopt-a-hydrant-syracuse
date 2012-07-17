@@ -185,7 +185,8 @@ h2,
 
 .sidebar,
 .icon-list-ul,
-#extrusion {  border-right: 1px solid #CCC }
+#extrusion,
+#test-sidebar {  border-right: 1px solid #CCC }
 
 .sidebar,
 .icon-download-alt,
@@ -212,7 +213,8 @@ h2,
 #sign-out-link,
 #back-link,
 #signup1,
-#log-in {  margin-bottom: 8px }
+#log-in,
+#locale {  margin-bottom: 8px }
 
 .sidebar #logos #syracusesaves_logo,
 #save,
@@ -671,7 +673,4 @@ i {  margin-right: -20px }
 a:hover,
 .icon-download-alt:hover {  text-decoration: none }
 
-#locale {
-  margin-bottom: 8px;
-  bottom: 0
-}
+#locale {  bottom: 0 }
