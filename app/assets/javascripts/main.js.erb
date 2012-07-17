@@ -171,7 +171,8 @@ $(function(){
 	  $('#test-sidebar').show()
 	  if(iPad){
 		$('#test-sidebar').css('height', $('#map').height()+2)
-		$('#map').css('height', $('#test-sidebar').height()-2)
+		if($('#radio1').hasClass('btn active')) {$('#map').css('height', $('.sidebar').height()-2)}
+		else{$('#map').css('height', $('#test-sidebar').height()-2)}
 	  }
 	  sidebar_visible = true
 	  $('#test-sidebar').transition({x: '250px'})
@@ -397,7 +398,7 @@ $(function(){
   function address(){
 	var submitButton = $("#address_form input[type='submit']")
     $(submitButton).attr('disabled', true)
-    if($('#address').val() === '') {
+    if($('#address').val() === ''){
       $(submitButton).attr('disabled', false)
       $('#address').parent().addClass('error')
       $('#address').focus()
