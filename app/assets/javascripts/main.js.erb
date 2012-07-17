@@ -91,6 +91,17 @@ $(function(){
     if($('#address').val() === ''){$('#locale').css('position', 'absolute')}
     else{$('#locale').css('position', 'relative')}
   }
+  function _opera(){
+	$('#user_password').css('font-family', 'MyriadPro-Regular')
+	$('#user_password_confirmation').css('font-family', 'MyriadPro-Regular')
+	$('.icon-plus').css('margin-top', '-28px')
+	$('.icon-signin').css('margin-top', '-28px')
+	$('.icon-facebook').css('margin-top', '2px')
+	$('#extrusion').css('margin-top', '-32px')
+	$('.map-container').css('height', $('.sidebar').height()-2)
+	google.maps.event.trigger(map, 'resize')
+	$('.control-group').css('margin-bottom','0px')
+  }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
 	  opera = true
@@ -128,17 +139,6 @@ $(function(){
 	  $('#map').css('height', $('#test-sidebar').height()-2)
 	  google.maps.event.trigger(map, 'resize')
 	}
-  }
-  function _opera(){
-	$('#user_password').css('font-family', 'MyriadPro-Regular')
-	$('#user_password_confirmation').css('font-family', 'MyriadPro-Regular')
-	$('.icon-plus').css('margin-top', '-28px')
-	$('.icon-signin').css('margin-top', '-28px')
-	$('.icon-facebook').css('margin-top', '2px')
-	$('#extrusion').css('margin-top', '-32px')
-	$('.map-container').css('height', $('.sidebar').height()-2)
-	google.maps.event.trigger(map, 'resize')
-	$('.control-group').css('margin-bottom','0px')
   }
   function _webkit(){
 	$('#user-email-label').css('margin-top','15px')
