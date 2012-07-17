@@ -124,6 +124,10 @@ $(function(){
 	$('#email-referral').append("<i class='icon-envelope'></i>")
 	$('#send_referral').append("<i class='icon-share-alt'></i>")
 	if(opera){$('#map').css('height', $(window).height())}
+	if(iPad){
+	  $('#map').css('height', $('#test-sidebar').height()-2)
+	  google.maps.event.trigger(map, 'resize')
+	}
   }
   function _opera(){
 	$('#user_password').css('font-family', 'MyriadPro-Regular')
@@ -165,11 +169,14 @@ $(function(){
   $('.icon-list-ul').click(function(){
 	if(!sidebar_visible){
 	  $('#test-sidebar').show()
-	  if(iPad){$('#test-sidebar').css('height', $('#map').height()+2)}
+	  if(iPad){
+		$('#test-sidebar').css('height', $('#map').height()+2)
+		$('#map').css('height', $('#test-sidebar').height()-2)
+	  }
 	  sidebar_visible = true
-	  $('#test-sidebar').transition({x: '250px'}, function(){})
+	  $('#test-sidebar').transition({x: '250px'})
 	  $('.icon-list-ul').transition({x: '250px'})
-	  $('#map').css('height', $('.sidebar').height()-2)
+	  if(!iPad){$('#map').css('height', $('.sidebar').height()-2)}
 	} else{
 	  $('#test-sidebar').transition({x: '0px'}, function(){
 		$(this).hide()
