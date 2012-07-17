@@ -165,6 +165,7 @@ $(function(){
   $('.icon-list-ul').click(function(){
 	if(!sidebar_visible){
 	  $('#test-sidebar').show()
+	  if(iPad){$('#test-sidebar').css('height', $('#map').height()+2)}
 	  sidebar_visible = true
 	  $('#test-sidebar').transition({x: '250px'}, function(){})
 	  $('.icon-list-ul').transition({x: '250px'})
