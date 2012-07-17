@@ -1186,7 +1186,7 @@ $(function(){
         activeInfoWindow.setContent(data)
 		if(!mobile || iPad){$('#locale').css('position', 'absolute')}
 		if(mobile){
-		  if(opera){$('#map').css('height', $('.sidebar').height()-12)}
+		  if(opera && mobile){$('#map').css('height', $('.sidebar').height()-12)}
 		  else{
 			if(iPad){$('#map').css('height', $('#test-sidebar').height()-2)}
 			else{$('#map').css('height', $('.sidebar').height()-2)}
