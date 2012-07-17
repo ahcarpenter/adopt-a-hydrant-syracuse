@@ -360,6 +360,9 @@ i,
 .icon-list-ul,
 #stat1-span {  border-radius: 0 4px 4px 0 }
 
+#test-refer,
+#locale {  position: relative }
+
 .badge {
   margin-left: 114px;
   border: 1px solid #cccccc;
@@ -644,8 +647,7 @@ i {  margin-right: -20px }
 
 #test-refer {
   margin-top: -180px;
-  z-index: 50;
-  position: relative
+  z-index: 50
 }
 
 #stat1 {  margin-left: 53px }
@@ -669,4 +671,7 @@ i {  margin-right: -20px }
 a:hover,
 .icon-download-alt:hover {  text-decoration: none }
 
-#locale {  margin-bottom: 8px }
+#locale {
+  margin-bottom: 8px;
+  bottom: 0
+}
