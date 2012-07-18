@@ -101,6 +101,8 @@ $(function(){
 	$('#map').css('height', $('.sidebar').height()-2)
 	google.maps.event.trigger(map, 'resize')
 	$('.control-group').css('margin-bottom','0px')
+	greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>', size, origin, anchor)
+	redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>', size, origin, anchor)
   }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
