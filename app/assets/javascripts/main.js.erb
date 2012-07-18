@@ -677,6 +677,10 @@ $(function(){
 	  $('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-2))
 	  $('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-2))
 	}
+	if($('#map').css('height') != $('.sidebar').css('height')){
+	  $('#map').css('height', $('.sidebar').css('height'))
+	  google.maps.event.trigger(map, 'resize')
+	}
   }
   adjust3()
   $('#check1').live('click', function(){
