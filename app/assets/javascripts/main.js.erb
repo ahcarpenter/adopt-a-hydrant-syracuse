@@ -843,7 +843,7 @@ $(function(){
 		})
 	  }
   })
-  $('#fb').live('click', function(){setTimeout(window.location.replace($('#url_for_oauth_code').text()), 60000)})
+  $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
 	$.ajax({
       type: 'GET',
