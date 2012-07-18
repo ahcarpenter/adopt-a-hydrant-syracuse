@@ -213,9 +213,15 @@ $(function(){
   )
   $('.icon-download-alt').live('click', function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/xml/hydrants.kml')})
   function adjust2(){
-	$('.icon-search').css('margin-top','2px')
-	$('.icon-pencil').css('margin-top','2px')
-	$('.icon-signout').css('margin-top','2px')
+	if(mobile){
+	  $('.icon-search').css('margin-top','3px')
+	  $('.icon-pencil').css('margin-top','3px')
+	  $('.icon-signout').css('margin-top','3px')	
+	} else{
+	  $('.icon-search').css('margin-top','2px')
+	  $('.icon-pencil').css('margin-top','2px')
+	  $('.icon-signout').css('margin-top','2px')
+	}
   }
   if (opera) {adjust2()}
   $('.alert').live('close', function(){
