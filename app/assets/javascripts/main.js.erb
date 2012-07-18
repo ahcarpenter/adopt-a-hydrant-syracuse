@@ -104,6 +104,7 @@ $(function(){
 	$('#map').css('height', $('.sidebar').height()-2)
 	google.maps.event.trigger(map, 'resize')
 	$('.control-group').css('margin-bottom','0px')
+	if(!mobile){$('.icon-filter').css('margin-top', '5px')}
   }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
@@ -120,7 +121,10 @@ $(function(){
 	}
   })
   if(mozilla){$('#stat1').css('margin-left', '55px')}
-  if(iPad || iPhone){$('#stat1').css('margin-left', '57px')}
+  if(iPad || iPhone){
+	$('#stat1').css('margin-left', '57px')
+	$('.icon-filter').css('margin-top', '5px')
+  }
   function search(){
 	$('#find').append("<i class='icon-search'></i>")
 	$('#edit_profile_link').append("<i class='icon-pencil'></i>")
