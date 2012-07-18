@@ -1031,7 +1031,8 @@ $(function(){
 		$('#back-link').append("<i class='icon-arrow-left'></i>")
 		if(opera){
 		  $('.icon-hdd').css('margin-top', '-30px')
-		  $('.icon-arrow-left').css('margin-top','2px')
+		  if(mobile){('.icon-arrow-left').css('margin-top','4px')}
+		  else{$('.icon-arrow-left').css('margin-top','2px')}
 		}
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
