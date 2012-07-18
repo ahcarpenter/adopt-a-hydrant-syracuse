@@ -32,6 +32,7 @@
 // www.gutensite.com/Google-Maps-Custom-Markers-Cut-Off-By-Canvas-Tiles
 // http://www.cssgirl.com/articles/2011/05/29/how-to-anchor-the-footer-to-bottom-of-page-or-header-to-top/
 // http://stackoverflow.com/questions/1462799/html-anchor-block-element-inside-bottom-of-parent-block
+// http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -52,8 +53,13 @@ $(function(){
   var size = new google.maps.Size(27.0, 37.0)
   var origin = new google.maps.Point(0, 0)
   var anchor = new google.maps.Point(13.0, 18.0)
-  var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.svg' %>', size, origin, anchor)
-  var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.svg' %>', size, origin, anchor)
+  if(!document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Shape', '1.0')){
+	var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.svg' %>', size, origin, anchor)
+	var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.svg' %>', size, origin, anchor)
+  } else{
+	var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>', size, origin, anchor)
+	var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>', size, origin, anchor)
+  }
   var green1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green1.png' %>', size, origin, anchor)
   var red1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red1.png' %>', size, origin, anchor)
   var green2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green2.png' %>', size, origin, anchor)
@@ -101,8 +107,6 @@ $(function(){
 	$('#map').css('height', $('.sidebar').height()-2)
 	google.maps.event.trigger(map, 'resize')
 	$('.control-group').css('margin-bottom','0px')
-	greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>', size, origin, anchor)
-	redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>', size, origin, anchor)
   }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
