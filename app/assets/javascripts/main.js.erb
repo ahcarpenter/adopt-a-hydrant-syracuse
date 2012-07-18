@@ -101,10 +101,10 @@ $(function(){
 	$('.icon-signin').css('margin-top', '-28px')
 	$('.icon-facebook').css('margin-top', '2px')
 	$('#extrusion').css('margin-top', '-32px')
+	if(!mobile){$('.icon-filter').css('margin-top', '5px')}
 	$('#map').css('height', $('.sidebar').height()-2)
 	google.maps.event.trigger(map, 'resize')
 	$('.control-group').css('margin-bottom','0px')
-	if(!mobile){$('.icon-filter').css('margin-top', '5px')}
   }
   jQuery.each(jQuery.browser, function(i, val) {
 	if(i == 'opera'){
