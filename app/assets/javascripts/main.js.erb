@@ -185,6 +185,7 @@ $(function(){
 	  $('#test-sidebar').transition({x: '250px'})
 	  $('.icon-list-ul').transition({x: '250px'})
 	  if(!iPad){$('#map').css('height', $('.sidebar').height()-2)}
+	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
 	} else{
 	  $('#test-sidebar').transition({x: '0px'}, function(){
 		$(this).hide()
