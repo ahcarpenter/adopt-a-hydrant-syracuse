@@ -589,7 +589,10 @@ i {  margin-right: -20px }
 
 #reminder_button {  font-weight: normal }
 
-#info-window {  overflow-y: hidden }
+#info-window {
+  overflow-y: hidden;
+  padding-left: 1px
+}
 
 .icon-download-alt {
   margin-left: 198px;
