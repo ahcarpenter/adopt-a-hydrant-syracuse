@@ -860,6 +860,10 @@ $(function(){
 		  }
 		})
 	  }
+	  if($('#map').css('height') != $('.sidebar').css('height') && opera){
+	    $('#map').css('height', $('.sidebar').css('height'))
+	    google.maps.event.trigger(map, 'resize')
+	  }
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
