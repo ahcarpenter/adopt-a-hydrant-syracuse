@@ -35,6 +35,7 @@
 // http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser
 // http://www.w3schools.com/js/js_timing.asp
 // http://stackoverflow.com/questions/1301512/truncate-a-string-straight-javascript
+// http://stackoverflow.com/questions/894860/how-do-i-make-a-default-value-for-a-parameter-to-a-javascript-function
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -52,21 +53,21 @@ $(function(){
     zoomControl: true,
   }
   var map = new google.maps.Map(document.getElementById("map"), mapOptions)
-  var size = new google.maps.Size(27.0, 37.0)
   var origin = new google.maps.Point(0, 0)
   var anchor = new google.maps.Point(13.0, 18.0)
+  function markerImage(image, size){return new google.maps.MarkerImage(image, typeof size !== undefined ? size : new google.maps.Size(27.0, 37.0), origin, anchor)}
   if(!document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Shape', '1.0')){
-	var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.svg' %>', size, origin, anchor)
-	var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.svg' %>', size, origin, anchor)
+	var greenMarkerImage = markerImage('<%= image_path 'markers/green.svg' %>')
+	var redMarkerImage = markerImage('<%= image_path 'markers/red.svg' %>')
   } else{
-	var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>', size, origin, anchor)
-	var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>', size, origin, anchor)
+	var greenMarkerImage = markerImage('<%= image_path 'markers/green.png' %>')
+	var redMarkerImage = markerImage('<%= image_path 'markers/red.png' %>')
   }
-  var green1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green1.png' %>', size, origin, anchor)
-  var red1MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red1.png' %>', size, origin, anchor)
-  var green2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green2.png' %>', size, origin, anchor)
-  var red2MarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red2.png' %>', size, origin, anchor)
-  var markerShadowImage = new google.maps.MarkerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0), origin, anchor)
+  var green1MarkerImage = markerImage('<%= image_path 'markers/green1.png' %>')
+  var red1MarkerImage = markerImage('<%= image_path 'markers/red1.png' %>')
+  var green2MarkerImage = markerImage('<%= image_path 'markers/green2.png' %>')
+  var red2MarkerImage = markerImage('<%= image_path 'markers/red2.png' %>')
+  var markerShadowImage = markerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0))
   var activeThingId
   var activeMarker
   var activeInfoWindow
