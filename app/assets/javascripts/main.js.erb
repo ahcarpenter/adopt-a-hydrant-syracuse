@@ -1060,7 +1060,7 @@ $(function(){
 		  $('#user_zip').css('margin-bottom','0px')
 		  $('.control-group').css('margin-bottom','0px')
 		}
-		if(mobile && !opera){
+		if(mobile || opera){
 		  $('#map').css('height', $('.sidebar').height()-2)
 		  google.maps.event.trigger(map, 'resize')
 		}
