@@ -1043,19 +1043,16 @@ $(function(){
 		$('#back-link').append("<i class='icon-arrow-left'></i>")
 		if(opera){
 		  $('.icon-hdd').css('margin-top', '-30px')
-		  if(mobile){('.icon-arrow-left').css('margin-top','4px')}
-		  else{$('.icon-arrow-left').css('margin-top','2px')}
+		  $('#user_zip').css('margin-bottom','0px')
+		  $('.control-group').css('margin-bottom','0px')
+		  if(mobile){
+			adjustMapHeight($('#test-sidebar').height()-84)
+			alert('Hello')
+		  } else{$('.icon-arrow-left').css('margin-top','2px')}
 		}
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
-		if(opera){
-		  $('#user_zip').css('margin-bottom','0px')
-		  $('.control-group').css('margin-bottom','0px')
-		}
-		if(mobile || opera){
-		  $('#map').css('height', $('.sidebar').height()-2)
-		  google.maps.event.trigger(map, 'resize')
-		}
+		if(mobile || opera){adjustMapHeight($('.sidebar').height()-2)}
       }
     })
     return false
