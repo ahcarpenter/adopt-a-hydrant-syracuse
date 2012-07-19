@@ -1226,6 +1226,7 @@ $(function(){
 	    $('#content').html(data)
 	    if(mobile){
 	  	  iPad ? value = $('#test-sidebar').height()-2 : value = $('.sidebar').height()+5
+		  opera ? value = $('.sidebar').height()-12 : null
 		  adjustMapHeight(value)
 		}
 	    prepareSearchElements()
