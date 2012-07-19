@@ -199,7 +199,6 @@ $(function(){
 	  sidebar_visible = false
 	  $('.icon-list-ul').transition({x: '0px'})
 	}
-	google.maps.event.trigger(map, 'resize')
   })
   $('#download-link').hover(
 	function(){
@@ -583,9 +582,8 @@ $(function(){
 				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepareSearchElements()
 				if(mobile){
-				  if(iPad){$('#map').css('height', $('#test-sidebar').height()-2)}
-				  else{$('#map').css('height', $('.sidebar').height()-2)}
-				  google.maps.event.trigger(map, 'resize')
+				  iPad ? identifier = '#test-sidebar' : identifier = '.sidebar'
+				  adjustMapHeight($(identifier).height()-2)
 				}
 		      }
 		    })
@@ -616,14 +614,9 @@ $(function(){
     }
     $('#user_sign_up_fields').slideDown(function(){
 	  setComboFormFocus()
-	  if(mobile){
+	  if(mobile || opera){
+		adjustMapHeight($('.sidebar').height()-2)
 		adjusted = false
-		$('#map').css('height', $('.sidebar').height()-2)
-	    google.maps.event.trigger(map, 'resize')
-	  }
-	  if(opera){
-		$('#map').css('height', $('.sidebar').height()-2)
-	    google.maps.event.trigger(map, 'resize')
 	  }
 	})
   })
@@ -810,7 +803,6 @@ $(function(){
 					  iPad ? identifier = '#test-sidebar' : identifier = '.sidebar'
 					  adjustMapHeight($(identifier).height()-2)
 					}
-					google.maps.event.trigger(map, 'resize')
 				  }
 				  if(opera){
 				    $('#user_zip').css('margin-bottom','0px')
