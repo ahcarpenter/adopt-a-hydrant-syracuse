@@ -86,6 +86,7 @@ $(function(){
   var sieve_adopted = false
   var sidebar_visible = false
   var adjusted = false
+  var adjusted1 = false
   var mobile = navigator.userAgent.indexOf('Mobi') != -1
   var iPhone = navigator.userAgent.indexOf('iPhone') != -1
   var iPad = navigator.userAgent.indexOf('iPad') != -1
@@ -673,9 +674,11 @@ $(function(){
 	  if($('#radio2').css('margin-top') > $('#radio1').css('margin-top')){$('#radio2').css('margin-top', -($('#radio1').outerHeight()+2))}
 	  else{$('#radio1').css('margin-top', -($('#radio2').outerHeight()+2))}
 	}
-	if(window.location.pathname == '/ar' && opera && !mobile){
-	  $('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-2))
-	  $('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-2))
+	if((window.location.pathname == '/ar' || '<%=I18n.locale%>' == 'ar') && opera && !adjusted1){
+	  mobile ? value = 1 : value = 2
+	  $('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-value))
+	  $('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-value))
+	  adjusted1 = true
 	}
   }
   adjust3()
