@@ -50,7 +50,7 @@ $(function(){
     scrollwheel: false,
     streetViewControl: true,
     zoom: 15,
-    zoomControl: true,
+    zoomControl: true
   }
   var map = new google.maps.Map(document.getElementById("map"), mapOptions)
   var origin = new google.maps.Point(0, 0)
@@ -68,26 +68,10 @@ $(function(){
   var green2MarkerImage = markerImage('<%= image_path 'markers/green2.png' %>')
   var red2MarkerImage = markerImage('<%= image_path 'markers/red2.png' %>')
   var markerShadowImage = markerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0))
-  var activeThingId
-  var activeMarker
-  var activeInfoWindow
-  var isWindowOpen = false
+  var activeThingId, activeMarker, activeInfoWindow
+  var isWindowOpen, sms_notifications, email_notifications, sms_referral, email_referral, opera, webkit, mozilla, preview_hidden, preview_shown, sieve_adopted, sidebar_visible, adjusted, adjusted1 = false
   var thingIds = []
-  sms_notifications = false
-  email_notifications = false
-  sms_referral = false
-  email_referral = false
-  var opera = false
-  var webkit = false
-  var mozilla = false
-  preview_hidden = false
-  preview_shown = false
-  var remember_me = true
-  var radio1 = true
-  var sieve_adopted = false
-  var sidebar_visible = false
-  var adjusted = false
-  var adjusted1 = false
+  var remember_me, radio1 = true
   var mobile = navigator.userAgent.indexOf('Mobi') != -1
   var iPhone = navigator.userAgent.indexOf('iPhone') != -1
   var iPad = navigator.userAgent.indexOf('iPad') != -1
