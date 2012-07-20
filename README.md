@@ -5,8 +5,8 @@ Claim responsibility for shoveling out a fire hydrant after it snows. Available 
 ¹http://translate.google.com<br>
 ²http://en.wikipedia.org/wiki/Traditional_Chinese
 
-[travis]: http://travis-ci.org/ahcarpenter/adopt-a-hydrant
-[gemnasium]: https://gemnasium.com/ahcarpenter/adopt-a-hydrant
+[travis]: http://travis-ci.org/ahcarpenter/adopt-a-hydrant-syracuse
+[gemnasium]: https://gemnasium.com/ahcarpenter/adopt-a-hydrant-syracuse
 
 ## <a name="screenshots"></a>Screenshots
 ![Adopt-a-Hydrant Syracuse](https://github.com/ahcarpenter/adopt-a-hydrant-syracuse/raw/master/screenshot37.png "Adopt-a-Hydrant Syracuse")
