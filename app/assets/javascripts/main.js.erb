@@ -174,11 +174,11 @@ $(function(){
 	  if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
 	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
 	} else{
+	  $('.icon-list-ul').transition({x: '0px'})
 	  $('#test-sidebar').transition({x: '0px'}, function(){
 		$(this).hide()
 		sidebar_visible = false
 	  })
-	  $('.icon-list-ul').transition({x: '0px'})
 	  opera ? value = $(window).height() : value = '100%'
 	  adjustMapHeight(value)
 	}
