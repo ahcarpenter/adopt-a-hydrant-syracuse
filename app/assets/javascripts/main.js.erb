@@ -831,7 +831,10 @@ $(function(){
 		  }
 		})
 	  }
-	  if($('#map').css('height') != $('.sidebar').css('height') && opera){adjustMapHeight($('.sidebar').css('height'))}
+	  if($('#map').css('height') != $('.sidebar').css('height') && opera){
+		adjustMapHeight($('.sidebar').css('height'))
+		adjustHeight('html', $('#map').height())
+	  }
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
