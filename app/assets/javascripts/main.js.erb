@@ -57,7 +57,21 @@ $(function(){
   var origin = new google.maps.Point(0, 0)
   var anchor = new google.maps.Point(13.0, 18.0)
   function markerImage(image, size){return new google.maps.MarkerImage(image, typeof size !== undefined ? size : new google.maps.Size(27.0, 37.0), origin, anchor)}
-  if(!document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Shape', '1.0')){
+  jQuery.each(jQuery.browser, function(i, val) {
+	if(i == 'opera'){
+	  opera = true
+	  _opera()
+	} 
+	if(i == 'webkit'){
+	  webkit = true
+	  _webkit()
+	}
+	if(i == 'mozilla'){
+	  mozilla = true
+	  _mozilla()
+	}
+  })
+  if(!document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Shape', '1.0') || mozilla){
 	var greenMarkerImage = markerImage('<%= image_path 'markers/green.svg' %>')
 	var redMarkerImage = markerImage('<%= image_path 'markers/red.svg' %>')
   } else{
@@ -104,20 +118,6 @@ $(function(){
 	$('.control-group').css('margin-bottom','0px')
 	if(!mobile){$('.icon-filter').css('margin-top', '5px')}
   }
-  jQuery.each(jQuery.browser, function(i, val) {
-	if(i == 'opera'){
-	  opera = true
-	  _opera()
-	} 
-	if(i == 'webkit'){
-	  webkit = true
-	  _webkit()
-	}
-	if(i == 'mozilla'){
-	  mozilla = true
-	  _mozilla()
-	}
-  })
   if(mozilla){$('#stat1').css('margin-left', '55px')}
   if(iPad || iPhone){
 	$('#stat1').css('margin-left', '57px')
@@ -1256,5 +1256,5 @@ $(function(){
     })
     return false
   })
-  $('#tos_link').click(function(){mobile && $(window).width() < 800 ? $('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)') : null})
+  $('#tos_link').click(function(){mobile && $(window).width() < 800 ? $('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)').css('transform', 'scale(.5)') : null})
 })
