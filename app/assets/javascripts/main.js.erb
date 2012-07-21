@@ -506,7 +506,7 @@ $(function(){
   }
   $('#send_referral').live('click', function(){
 	var errors = []
-    if(!/[\w\.%\+]+@[\w]+\.+[\w]{2,}/.test($('#user_email_referral_field').val())) {
+    if(!/[\w\.%\+]+@[\w]+\.+[\w]{2,}/.test($('#user_email_referral_field').val()) && $('#user_email_referral_field').val() != '') {
       errors.push($('#user_email_referral_field'))
       $('#user_email_referral_field').parent().addClass('error')
     } else {
