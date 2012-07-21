@@ -81,6 +81,8 @@ ar:
     password_reset: 'إرسال إرشادات إعادة تعيين كلمة السر! التحقق من بريدك الالكتروني.'
     profile_updated: 'يتم تجديد!'
     referral_sent: 'أرسلت الإحالة!'
+    referral0: 'لقد أشرتم إلى'
+    referral1: 'انك قد تكون مهتمة في ما يلي:'
     reminder_sent: 'أرسلت تذكير!'
     signed_in: 'في تسجيل!'
     signed_out: 'تسجيل الخروج.'

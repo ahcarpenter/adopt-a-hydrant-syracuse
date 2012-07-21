@@ -81,6 +81,8 @@ pt:
     password_reset: 'Instruções de redefinição de senha enviada! Verifique se o seu e-mail.'
     profile_updated: 'Perfil atualizado!'
     referral_sent: 'Referral enviada com sucesso!'
+    referral0: 'se referiu a você'
+    referral1: 'Możesz być zainteresowany, co następuje:'
     reminder_sent: 'Lembrete enviado!'
     signed_in: 'Logado!'
     signed_out: 'Desconectado.'

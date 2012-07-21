@@ -81,6 +81,8 @@ ht:
     password_reset: 'Enstriksyon Reset modpas voye! Tcheke imel ou.'
     profile_updated: 'Profile mete ajou!'
     referral_sent: 'Referans voye!'
+    referral0: 'te refere ou a'
+    referral1: 'Ou ka enterese nan bagay sa yo:'
     reminder_sent: 'Rapèl voye!'
     signed_in: 'Logged in!'
     signed_out: 'Logged deyò.'

@@ -84,6 +84,8 @@ en:
     password_reset: 'Password reset instructions sent! Check your email.'
     profile_updated: 'Profile updated!'
     referral_sent: 'Referral sent!'
+    referral0: 'has referred you to'
+    referral1: 'You might be interested in the following:'
     reminder_sent: 'Reminder sent!'
     signed_in: 'Logged in!'
     signed_out: 'Logged out.'

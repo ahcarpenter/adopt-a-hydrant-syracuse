@@ -83,6 +83,8 @@ de:
     password_reset: 'Password Reset Anleitung geschickt! Überprüfen Sie Ihre E-Mail.'
     profile_updated: 'Profil aktualisiert!'
     referral_sent: 'Referral geschickt!'
+    referral0: 'bezogen hat Sie zu'
+    referral1: 'Vielleicht haben Sie Interesse in der folgenden Optionen:'
     reminder_sent: 'Reminder versendet!'
     signed_in: 'Angemeldet!'
     signed_out: 'Abgemeldet.'

@@ -81,6 +81,8 @@ es:
     password_reset: 'Las instrucciones de restablecimiento de contraseña enviado! Revise su correo electrónico.'
     profile_updated: 'Perfil actualizado!'
     referral_sent: 'Referencia enviado!'
+    referral0: 'se ha referido a'
+    referral1: 'Usted podría estar interesado en lo siguiente:'
     reminder_sent: 'Recordatorio enviado!'
     signed_in: 'Conectado!'
     signed_out: 'Sesión.'

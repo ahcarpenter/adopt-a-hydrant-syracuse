@@ -81,6 +81,8 @@ it:
     password_reset: 'Istruzioni per reimpostare la password ricevuta! Controlla la tua email.'
     profile_updated: 'Aggiornato il profilo!'
     referral_sent: 'Referral inviato!'
+    referral0: 'ha fatto riferimento a'
+    referral1: 'Potresti essere interessato al seguente:'
     reminder_sent: 'Promemoria inviato!'
     signed_in: 'Accesso effettuato!'
     signed_out: 'Disconnesso.'

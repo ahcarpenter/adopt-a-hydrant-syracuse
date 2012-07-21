@@ -82,6 +82,8 @@ fr:
     password_reset: 'Les instructions de réinitialisation de mot de passe envoyé! Vérifiez votre adresse email.'
     profile_updated: 'Profil mis à jour!'
     referral_sent: 'Renvoi envoyé!'
+    referral0: 'a vous a référé à'
+    referral1: 'Vous pourriez être intéressé par ce qui suit:'
     reminder_sent: 'Rappel envoyé!'
     signed_in: 'Connecté!'
     signed_out: 'Déconnecté.'

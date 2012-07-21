@@ -81,6 +81,8 @@ iw:
     password_reset: 'איפוס סיסמה הוראות נשלח! בדוק את תיבת הדוא"ל שלך.'
     profile_updated: 'הפרופיל עודכן!'
     referral_sent: 'הפנייה נשלחה!'
+    referral0: 'התייחס לך'
+    referral1: 'אתה עשוי להיות מעוניין הבאות:'
     reminder_sent: 'תזכורת שנשלח!'
     signed_in: 'מחובר!'
     signed_out: 'הרשאות משתמש.'
