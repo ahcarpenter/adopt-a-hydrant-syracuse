@@ -200,7 +200,6 @@ DEPENDENCIES
   sass-rails
   simplecov
   sqlite3
-  twilio-ruby
   uglifier
   validates_formatting_of
   webmock
