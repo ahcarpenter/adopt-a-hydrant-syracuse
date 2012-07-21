@@ -42,7 +42,7 @@ protected
     
     !params[:locale].nil? && params[:locale].slice(2..params[:locale].length).length > 0 ? Referral.resolve_token(params[:locale].slice(2..params[:locale].length)) : nil
     
-    locale_token_in_uri ? cookies[:locale] = uri_slice
+    locale_token_in_uri ? cookies[:locale] = uri_slice : nil
     
     I18n.locale = cookies[:locale] || I18n.default_locale
   end
