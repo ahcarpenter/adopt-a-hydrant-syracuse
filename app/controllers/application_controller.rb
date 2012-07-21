@@ -37,11 +37,12 @@ protected
       File.basename(file, '.yml')
     end
     
-    locale_token_in_uri = true if ((params[:locale] == 'ar') || (params[:locale] == 'cn') || (params[:locale] == 'de') || (params[:locale] == 'en') || (params[:locale] == 'es') || (params[:locale] == 'fr') || (params[:locale] == 'gr') || (params[:locale] == 'ht') || (params[:locale] == 'iw') || (params[:locale] == 'it') || (params[:locale] == 'kr') || (params[:locale] == 'pl') || (params[:locale] == 'pt') || (params[:locale] == 'ru') || (params[:locale] == 'yi'))
+    uri_slice = params[:locale].slice(0..1)
+    (uri_slice == 'ar') || (uri_slice == 'cn') || (uri_slice == 'de') || (uri_slice == 'en') || (uri_slice == 'es') || (uri_slice == 'fr') || (uri_slice == 'gr') || (uri_slice == 'ht') || (uri_slice == 'iw') || (uri_slice == 'it') || (uri_slice == 'kr') || (uri_slice == 'pl') || (uri_slice == 'pt') || (uri_slice == 'ru') || (uri_slice == 'yi') ? locale_token_in_uri = true : nil
     
-    Referral.resolve_token(params[:locale]) if !locale_token_in_uri && !params[:locale].nil?
+    params[:locale].nil? && params[:locale].slice(2..params[:locale].length).length > 0 ? Referral.resolve_token(params[:locale].slice(2..params[:locale].length)) : nil
     
-    cookies[:locale] = params[:locale]  if locale_token_in_uri
+    cookies[:locale] = uri_slice if locale_token_in_uri
     
     I18n.locale = cookies[:locale] || I18n.default_locale
   end
