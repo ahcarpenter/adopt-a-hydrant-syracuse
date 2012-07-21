@@ -4,7 +4,7 @@ class MainController < ApplicationController
   before_filter :set_current_user
     
   def index
-    ReferThis.url(params[:referral], User.current.id, request.base_url, User.current.name, 'Adopt-a-Hydrant') if !params[:referral].nil?
+    ReferThis.url(params[:referral], User.current.id, request.base_url, User.current.name, {:app_name=>'Adopt-a-Hydrant'}) if !params[:referral].nil?
     if !request[:code].nil?
       @graph = Koala::Facebook::API.new(@@oauth.get_access_token(request[:code]))
       profile = @graph.get_object('me')
