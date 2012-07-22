@@ -477,8 +477,7 @@ $(function(){
 		if(!opera){$('#referral').spin(false)}
 		$('#user_email_referral_field, #user_sms_referral_field').val('')
 		disableReferralModalElements()
-		sms_referral = false
-		email_referral = false
+		sms_referral, email_referral = false
 		$('.preview-body').collapse('hide')
 		$('.preview-body, #preview').addClass('hide')
 	}
