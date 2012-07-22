@@ -307,7 +307,7 @@ $(function(){
             }
             setTimeout(function(){
 			  thing_snow_cover = thing.snow_cover
-			  if(sieve_adopted){
+			  if(sieve_adopted) {
 				if(!thing.user_id) {
 				  if(thing_snow_cover > 6){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1')} 
 				  else if(thing_snow_cover <= 6 && thing_snow_cover > 0){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2')} 
@@ -338,14 +338,12 @@ $(function(){
 	  $('#sieve').css('margin-top', '188px')
 	  $('#sieve').css('margin-left', '35px')
 	  $('#sieve1').css('margin-top', '67px')
-	  $('#download').hide()
-	  $('.stats-container').hide()
+	  $('#download, .stats-container').hide()
 	} else{
 	  $('#sieve').css('margin-top', '140px')
 	  $('#sieve').css('margin-left', '11px')
 	  $('#sieve1').css('margin-top', '50px')
-	  $('#download').show()
-	  $('.stats-container').show()
+	  $('#download, .stats-container').show()
 	}
   })
   google.maps.event.addListener(map.getStreetView(), 'position_changed', function(){
@@ -356,12 +354,13 @@ $(function(){
   $('#adopted-sieve').click(function(){
     if(sieve_adopted){
 	  sieve_adopted = false
-	  $(this).attr('title', $('#enable_adopted_sieve').text()).tooltip('fixTitle').tooltip('show')
+	  $(this).attr('title', $('#enable_adopted_sieve').text())
 	}
 	else{
 	  sieve_adopted = true
-	  $(this).attr('title', $('#disable_adopted_sieve').text()).tooltip('fixTitle').tooltip('show')
+	  $(this).attr('title', $('#disable_adopted_sieve').text())
 	}
+	$(this).tooltip('fixTitle').tooltip('show')
   })
   $('input').live('click', function(){focused_input_element = $(this)})
   window.addEventListener('shake', shakeEventDidOccur, false)
@@ -374,10 +373,7 @@ $(function(){
 	activeInfoWindow.close()
 	openInfoWindow(activeInfoWindow, map, activeMarker)
   }
-  function openInfoWindow(infoWindow, map, marker){
-	if(map.getStreetView().getVisible()){infoWindow.open(map.getStreetView(), marker)}
-	else{infoWindow.open(map, marker)}
-  }
+  function openInfoWindow(infoWindow, map, marker){map.getStreetView().getVisible() ? infoWindow.open(map.getStreetView(), marker) : infoWindow.open(map, marker)}
   function address(){
 	var submitButton = $("#address_form input[type='submit']")
     $(submitButton).attr('disabled', true)
@@ -429,10 +425,10 @@ $(function(){
     var modal = $(this)
     modal.css('margin-top', -(modal.outerHeight() / 2))
     modal.css('margin-left', -(modal.outerWidth() / 2))
-    $('#sms-referral').tooltip({delay: delay_options})
-    $('#email-referral').tooltip({delay: delay_options})
-    $('#sms-referral').attr('title', $('#enable_sms_transmission').text()).tooltip('fixTitle')
-    $('#email-referral').attr('title', $('#enable_email_transmission').text()).tooltip('fixTitle')
+    $('#sms-referral, #email-referral').tooltip({delay: delay_options})
+    $('#sms-referral').attr('title', $('#enable_sms_transmission').text())
+    $('#email-referral').attr('title', $('#enable_email_transmission').text())
+    $('#sms-referral, #email-referral').tooltip('fixTitle')
 	if(mozilla || opera){$('#user-email-label').css('margin-top', '0px')}
 	if(opera && !mobile){
 	  $('#referral i').css('margin-top', '2px')
@@ -479,14 +475,12 @@ $(function(){
     // do something…
 	if(!preview_hidden){
 		if(!opera){$('#referral').spin(false)}
-		$('#user_email_referral_field').val('')
-		$('#user_sms_referral_field').val('')
+		$('#user_email_referral_field, #user_sms_referral_field').val('')
 		disableReferralModalElements()
 		sms_referral = false
 		email_referral = false
 		$('.preview-body').collapse('hide')
-		$('.preview-body').addClass('hide')
-		$('#preview').addClass('hide')
+		$('.preview-body, #preview').addClass('hide')
 	}
 	preview_hidden = false
   })
@@ -573,8 +567,7 @@ $(function(){
     $('#combo-form').data('state', 'user_sign_up')
     if(opera){_opera()}
 	if(!$('#user_email').val().length>0){$('#test').addClass('icon-lock')}
-    $('#user_forgot_password_fields').slideUp()
-    $('#user_sign_in_fields').slideUp()
+    $('#user_forgot_password_fields, #user_sign_in_fields').slideUp()
     if($('#required_text').text() == ''){
       $('#required').append("<div id='required_text'>" + required_text +"</div>")
       $('#user_email').css('margin-bottom', '9px')
@@ -771,10 +764,7 @@ $(function(){
 					  adjustMapHeight($(identifier).height()-2)
 					}
 				  }
-				  if(opera){
-				    $('#user_zip').css('margin-bottom','0px')
-				    $('.control-group').css('margin-bottom','0px')
-				  }
+				  if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
 				}
             })
           }
@@ -883,12 +873,13 @@ $(function(){
     if(!sms_notifications){
 	  $(link).removeClass('disabled').addClass('btn btn-success')
 	  sms_notifications = true
-	  $(link).attr('title', $('#disable_sms_notifications').text()).tooltip('fixTitle').tooltip('show')
+	  $(link).attr('title', $('#disable_sms_notifications').text())
 	}else{
 	  $(link).removeClass('btn btn-success').addClass('btn disabled')
 	  sms_notifications = false
-	  $(link).attr('title', $('#enable_sms_notifications').text()).tooltip('fixTitle').tooltip('show')
+	  $(link).attr('title', $('#enable_sms_notifications').text())
 	}
+	$(link).tooltip('fixTitle').tooltip('show')
     return false
   })
   $('#email_notifications').live('click', function(){
@@ -896,12 +887,13 @@ $(function(){
     if(!email_notifications){
 	  $(link).removeClass('disabled').addClass('btn btn-success')
 	  email_notifications = true
-	  $(link).attr('title', $('#disable_email_notifications').text()).tooltip('fixTitle').tooltip('show')
+	  $(link).attr('title', $('#disable_email_notifications').text())
 	} else{
 	  $(link).removeClass('btn btn-success').addClass('btn disabled')
 	  email_notifications = false
-	  $(link).attr('title', $('#enable_email_notifications').text()).tooltip('fixTitle').tooltip('show')
+	  $(link).attr('title', $('#enable_email_notifications').text())
 	}
+	$(link).tooltip('fixTitle').tooltip('show')
     return false
   })
   function adjust(){
@@ -973,8 +965,7 @@ $(function(){
         $(submitButton).attr('disabled', false)
       },
       success: function(data) {
-		email_notifications = false
-		sms_notifications = false
+		email_notifications, sms_notifications = false
         $.ajax({
           type: 'GET',
           url: '/info_window',
@@ -1010,8 +1001,7 @@ $(function(){
 		$('#back-link').icon('arrow-left')
 		if(opera){
 		  $('.icon-hdd').css('margin-top', '-30px')
-		  $('#user_zip').css('margin-bottom','0px')
-		  $('.control-group').css('margin-bottom','0px')
+		  $('#user_zip, .control-group').css('margin-bottom','0px')
 		  mobile ? adjustMapHeight($('#test-sidebar').height()-84) : $('.icon-arrow-left').css('margin-top','2px')
 		}
 		if(webkit){_webkit()}
@@ -1110,10 +1100,7 @@ $(function(){
 			adjustMapHeight(value)
 		  }
 	      prepareSearchElements()
-		  if(opera){
-		    $('#user_zip').css('margin-bottom','0px')
-		    $('.control-group').css('margin-bottom','0px')
-		  }
+		  if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
 	    }
       })
     }
@@ -1167,10 +1154,7 @@ $(function(){
 			adjustMapHeight($(identifier).height()-2)
 		  }
 		}
-		if(opera){
-		  $('#user_zip').css('margin-bottom','0px')
-		  $('.control-group').css('margin-bottom','0px')
-		}
+		if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
       }
     })
     return false
