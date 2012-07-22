@@ -118,7 +118,7 @@ $(function(){
 	$('#extrusion').css('margin-top', '-32px')
 	adjustMapHeight($('.sidebar').height()-2)
 	$('.control-group').css('margin-bottom','0px')
-	!mobile ? $('.icon-filter').css('margin-top', '5px') : null
+	if(!mobile){$('.icon-filter').css('margin-top', '5px')}
   }
   if(mozilla){$('#stat1').css('margin-left', '55px')}
   if(iPad || iPhone){
@@ -139,7 +139,7 @@ $(function(){
   }
   if(mobile){
 	setIcons()
-	opera || iPad ? adjustMapHeight($(window).height()) : null
+	if(opera || iPad){adjustMapHeight($(window).height())}
   }
   function _webkit(){
 	$('#user-email-label').css('margin-top','15px')
@@ -171,8 +171,8 @@ $(function(){
 		$('#radio1').hasClass('btn active') ? identifier = '.sidebar' : identifier = '#test-sidebar'
 		adjustMapHeight($(identifier).height()-2)
 	  }
-	  !iPad ? adjustMapHeight($('.sidebar').height()-2) : null
-	  mobile && opera ? $('.icon-facebook').css('margin-top', '4px') : null
+	  if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
+	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
 	} else{
 	  $('.icon-list-ul').transition({x: '0px'})
 	  $('#test-sidebar').transition({x: '0px'}, function(){
@@ -236,11 +236,11 @@ $(function(){
 	  shadow: markerShadowImage
 	})
 	google.maps.event.addListener(marker, 'click', function(){
-	  activeInfoWindow ? activeInfoWindow.close() : null
+	  if(activeInfoWindow){activeInfoWindow.close()}
 	  var infoWindow = new google.maps.InfoWindow({maxWidth: 210})
 	  google.maps.event.addListener(infoWindow, 'closeclick', function(){isWindowOpen = false})
 	  google.maps.event.addListener(infoWindow, 'domready', function(){
-		$("div[style*='width: 247px;'] div:first-child").each(function(){!$(this).hasClass('test') ? $(this).addClass('test1') : null})
+		$("div[style*='width: 247px;'] div:first-child").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
     	$("img[src*='http://maps.gstatic.com/mapfiles/mv/imgs8.png']").each(function(){if($(this).parent().hasClass('test1')){$(this).remove()}})
 		$('#sms_notifications').icon('comment-alt').tooltip({delay: delay_options})
 		$('#email_notifications').icon('envelope').tooltip({delay: delay_options})
@@ -1186,7 +1186,7 @@ $(function(){
 	    $('#content').html(data)
 	    if(mobile){
 	  	  iPad ? value = $('#test-sidebar').height()-2 : value = $('.sidebar').height()+5
-		  opera ? value = $('.sidebar').height()-12 : null
+		  if(opera){value = $('.sidebar').height()-12}
 		  adjustMapHeight(value)
 		}
 	    prepareSearchElements()
@@ -1247,5 +1247,5 @@ $(function(){
     })
     return false
   })
-  $('#tos_link').click(function(){mobile && $(window).width() < 800 ? $('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)') : null})
+  $('#tos_link').click(function(){if(mobile && $(window).width() < 800){$('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)')}})
 })
