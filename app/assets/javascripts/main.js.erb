@@ -38,6 +38,7 @@
 // http://stackoverflow.com/questions/894860/how-do-i-make-a-default-value-for-a-parameter-to-a-javascript-function
 // http://stackoverflow.com/questions/4083351/what-does-jquery-fn-mean
 // http://stackoverflow.com/questions/11600275/assign-window-height-to-document-height/11600769#11600769
+// http://www.sitepoint.com/forums/showthread.php?689515-ternary-if()-elseif()-else
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -107,7 +108,7 @@ $(function(){
   setIcons1()
   function adjustHeight(identifier, value){$(identifier).css('height', value)}
   function adjustMapHeight(value){
-	adjustHeight('#map', value)
+	$('#map').height(value)
 	google.maps.event.trigger(map, 'resize')
   }
   function _opera(){
@@ -117,7 +118,7 @@ $(function(){
 	$('#extrusion').css('margin-top', '-32px')
 	adjustMapHeight($('.sidebar').height()-2)
 	$('.control-group').css('margin-bottom','0px')
-	if(!mobile){$('.icon-filter').css('margin-top', '5px')}
+	!mobile ? $('.icon-filter').css('margin-top', '5px') : null
   }
   if(mozilla){$('#stat1').css('margin-left', '55px')}
   if(iPad || iPhone){
@@ -134,13 +135,11 @@ $(function(){
 	$('#edit_profile_link').icon('pencil')
 	$('#sign-out-link').icon('signout')
 	$('#address').typeahead({source: street_addresses})
-	if(mobile){$('#map').css('width', $('#map').width()-1)}
-	else{setIcons()}
+	mobile ? $('#map').css('width', $('#map').width()-1) : setIcons()
   }
   if(mobile){
 	setIcons()
-	if(opera){adjustHeight($(window).height())}
-	if(iPad){adjustMapHeight($(window).height())}
+	opera || iPad ? adjustMapHeight($(window).height()) : null
   }
   function _webkit(){
 	$('#user-email-label').css('margin-top','15px')
@@ -172,8 +171,8 @@ $(function(){
 		$('#radio1').hasClass('btn active') ? identifier = '.sidebar' : identifier = '#test-sidebar'
 		adjustMapHeight($(identifier).height()-2)
 	  }
-	  if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
-	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
+	  !iPad ? adjustMapHeight($('.sidebar').height()-2) : null
+	  mobile && opera ? $('.icon-facebook').css('margin-top', '4px') : null
 	} else{
 	  $('.icon-list-ul').transition({x: '0px'})
 	  $('#test-sidebar').transition({x: '0px'}, function(){
@@ -227,12 +226,7 @@ $(function(){
   $('#locale').live('change', function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/' + $(this).val())})
   function addMarker(thingId, point, color) {
 	var image
-	if(color === 'green') {image = greenMarkerImage}
-	else if(color === 'red') {image = redMarkerImage}
-	else if(color === 'green1') {image = green1MarkerImage}
-	else if(color === 'red1') {image = red1MarkerImage}
-	else if(color === 'green2') {image = green2MarkerImage}
-	else if(color === 'red2') {image = red2MarkerImage}
+	color === 'green' ? image = greenMarkerImage : color === 'red' ? image = redMarkerImage : color === 'green1' ? image = green1MarkerImage : color === 'red1' ? image = red1MarkerImage : color === 'green2' ? image = green2MarkerImage : color === 'red2' ? image = red2MarkerImage : null
 	var marker = new google.maps.Marker({
 	  animation: google.maps.Animation.DROP,
 	  icon: image,
@@ -242,11 +236,11 @@ $(function(){
 	  shadow: markerShadowImage
 	})
 	google.maps.event.addListener(marker, 'click', function(){
-	  if(activeInfoWindow) {activeInfoWindow.close()}
+	  activeInfoWindow ? activeInfoWindow.close() : null
 	  var infoWindow = new google.maps.InfoWindow({maxWidth: 210})
 	  google.maps.event.addListener(infoWindow, 'closeclick', function(){isWindowOpen = false})
 	  google.maps.event.addListener(infoWindow, 'domready', function(){
-		$("div[style*='width: 247px;'] div:first-child").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
+		$("div[style*='width: 247px;'] div:first-child").each(function(){!$(this).hasClass('test') ? $(this).addClass('test1') : null})
     	$("img[src*='http://maps.gstatic.com/mapfiles/mv/imgs8.png']").each(function(){if($(this).parent().hasClass('test1')){$(this).remove()}})
 		$('#sms_notifications').icon('comment-alt').tooltip({delay: delay_options})
 		$('#email_notifications').icon('envelope').tooltip({delay: delay_options})
