@@ -37,6 +37,7 @@
 // http://stackoverflow.com/questions/1301512/truncate-a-string-straight-javascript
 // http://stackoverflow.com/questions/894860/how-do-i-make-a-default-value-for-a-parameter-to-a-javascript-function
 // http://stackoverflow.com/questions/4083351/what-does-jquery-fn-mean
+// http://stackoverflow.com/questions/11600275/assign-window-height-to-document-height/11600769#11600769
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -247,14 +248,10 @@ $(function(){
 	  google.maps.event.addListener(infoWindow, 'domready', function(){
 		$("div[style*='width: 247px;'] div:first-child").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
     	$("img[src*='http://maps.gstatic.com/mapfiles/mv/imgs8.png']").each(function(){if($(this).parent().hasClass('test1')){$(this).remove()}})
-		$('#sms_notifications').icon('comment-alt').tooltip({delay: delay_options}).removeClass('test1')
-		$('#email_notifications').icon('envelope').tooltip({delay: delay_options}).removeClass('test1')
-		$("div[style*='overflow: auto;']").removeClass('test1')
-		$('#h2-infowindow').removeClass('test1')
+		$('#sms_notifications').icon('comment-alt').tooltip({delay: delay_options})
+		$('#email_notifications').icon('envelope').tooltip({delay: delay_options})
+		$("div[style*='overflow: auto;'], #email_notifications, #sms_notifications, #h2-infowindow, div[style*='overflow-x: auto;'], div[style*='overflow-x: auto;'], #info-window, .group").removeClass('test1')
 		$("div[class*='btn-group test1']").removeClass('btn-group test1').addClass('btn-group')
-		$("div[style*='overflow-x: auto;']").removeClass('test1')
-		$('#info-window').removeClass('test1')
-		$('.group').removeClass('test1')
 		$('div[style*="width: 247px"]').append("<i id='info-window1' class='icon-remove'></i>")
 		if(opera){
 		  $('#info-window i').css('margin-top', '2px')
