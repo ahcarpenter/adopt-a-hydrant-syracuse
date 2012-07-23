@@ -51,9 +51,9 @@
       = f.password_field 'password'
     .control-group
       #remember_me1
-        %i.icon-check{:id=>'check1'}
         #remember_me
           = t('labels.remember_me')
+        %i.icon-check{:id=>'check1'}
     .form-actions
       = f.submit t('buttons.sign_in'), :class => 'btn btn-primary', :id=>'log-in'
       #login
