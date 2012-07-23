@@ -606,7 +606,7 @@ $(function(){
 	iw = windowLocationPathname == '/iw' || locale == 'iw'
 	yi = windowLocationPathname == '/yi' || locale == 'yi'
 	ar ? $('#remember_me').css('margin-left', '-40px') : iw ? $('#remember_me').css('margin-left', '-58px') : yi ? $('#remember_me').css('margin-left', '-72px') : null
-	$('.icon-check').css('margin-top', '-16px')
+	if(!mobile){$('.icon-check').css('margin-top', '-16px')}
 	$('.icon-lock').css('margin-top', '12px').css('position', 'absolute')
     $('label').css('text-align', 'right').css('margin-right', '20px')
     $('input').css('direction', 'rtl')
