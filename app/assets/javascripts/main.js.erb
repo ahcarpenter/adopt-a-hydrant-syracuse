@@ -272,6 +272,7 @@ $(function(){
 			infoWindow.setContent("<div id='info-window'>" + data + "</div>")
 			openInfoWindow(infoWindow, map, marker)
 	        isWindowOpen = true
+			adjust3()
 	      }
 	    }
 	  })
@@ -599,6 +600,19 @@ $(function(){
       })
     })
   })
+  function adjust4(){
+	$('#remember_me1').css('margin-left', '197px')
+	ar = windowLocationPathname == '/ar' || locale == 'ar'
+	iw = windowLocationPathname == '/iw' || locale == 'iw'
+	yi = windowLocationPathname == '/yi' || locale == 'yi'
+	ar ? $('#remember_me').css('margin-left', '-40px') : iw ? $('#remember_me').css('margin-left', '-58px') : yi ? $('#remember_me').css('margin-left', '-72px') : null
+	$('.icon-check').css('margin-top', '-16px')
+	$('.icon-lock').css('margin-top', '12px').css('position', 'absolute')
+    $('label').css('text-align', 'right').css('margin-right', '20px')
+    $('input').css('direction', 'rtl')
+    $('.icon-lock').css('margin-left', '194px')
+	$('#info-window label').css('text-align', 'right').css('margin-right', '0px')
+  }
   function adjust3(){
 	if($('#radio2').height() != $('#radio1').height()){
 	  if($('#radio2').height() > $('#radio1').height()){
@@ -616,9 +630,14 @@ $(function(){
 	locale = '<%=I18n.locale%>'
 	if((windowLocationPathname == '/ar' || locale == 'ar') || (windowLocationPathname == '/cn' || locale == 'cn') || (windowLocationPathname == '/iw' || locale == 'iw') || (windowLocationPathname == '/kr' || locale == 'kr') || (windowLocationPathname == '/yi' || locale == 'yi') && opera && !adjusted1){
 	  mobile ? (windowLocationPathname == '/ar' || locale == 'ar') ? value = 0 : (windowLocationPathname == '/yi' || locale == 'yi') ? value = 2 : value = 1 : (windowLocationPathname == '/kr' || locale == 'kr') ? value = 0 : value = 2
-	  $('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-value))
+	  if(!radio1)$('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-value))
 	  $('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-value))
 	  adjusted1 = true
+	  $('#remember_me1').css('margin-left', '197px')
+	  ar = windowLocationPathname == '/ar' || locale == 'ar'
+	  iw = windowLocationPathname == '/iw' || locale == 'iw'
+	  yi = windowLocationPathname == '/yi' || locale == 'yi'
+	  ar || iw || yi ? adjust4() : null
 	}
   }
   $('#check1').live('click', function(){
@@ -702,6 +721,7 @@ $(function(){
 				$('#content').html(data)
 				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepareSearchElements()
+				radio1 = false
 			  }
             })
           }
@@ -750,7 +770,11 @@ $(function(){
 					  adjustMapHeight($(identifier).height()-2)
 					}
 				  }
-				  if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
+				  if(opera){
+				    $('#user_zip, .control-group').css('margin-bottom','0px')
+					adjusted1 = false
+					adjust3()
+				  }
 				}
             })
           }
@@ -795,6 +819,7 @@ $(function(){
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			prepareSearchElements()
 			if(iPad){adjustHeight('#test-sidebar', $('#map').height()+2)}
+			radio1 = false
 		  }
 		})
 	  }
@@ -1141,7 +1166,11 @@ $(function(){
 			adjustMapHeight($(identifier).height()-2)
 		  }
 		}
-		if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
+		if(opera){
+		  $('#user_zip, .control-group').css('margin-bottom','0px')
+		  adjusted1 = false
+		  adjust3()
+		}
       }
     })
     return false
