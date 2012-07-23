@@ -422,6 +422,10 @@ $(function(){
 	  adjustHeight('#referral .btn', '18px')
 	  $('.icon-caret-right').css('margin-top', '0px')
 	}
+	if(opera){
+	  adjusted1 = false
+	  adjust3()
+	}
 
     return this
   })
@@ -611,6 +615,7 @@ $(function(){
     $('input').css('direction', 'rtl')
     $('.icon-lock').css('margin-left', '194px')
 	$('#info-window label').css('text-align', 'right').css('margin-right', '0px')
+	$('#referral label').css('text-align', 'right').css('margin-right', '34px')
   }
   function adjust3(){
 	if($('#radio2').height() != $('#radio1').height()){
@@ -1018,6 +1023,8 @@ $(function(){
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
 		if(mobile || opera){adjustMapHeight($('.sidebar').height()-2)}
+		adjusted1 = false
+		adjust3()
       }
     })
     return false
@@ -1112,6 +1119,8 @@ $(function(){
 		  }
 	      prepareSearchElements()
 		  if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
+		  adjusted1 = false
+		  adjust3()
 	    }
       })
     }
@@ -1193,6 +1202,8 @@ $(function(){
 		  $('#user_zip').css('margin-bottom','0px')
 		  $('.control-group').css('margin-bottom','0px')
 		}
+		adjusted1 = false
+		adjust3()
 	  }
     })
     return false
