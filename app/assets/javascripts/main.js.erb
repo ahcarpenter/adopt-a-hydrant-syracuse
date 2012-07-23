@@ -612,7 +612,7 @@ $(function(){
 	  if($('#radio2').css('margin-top') > $('#radio1').css('margin-top')){$('#radio2').css('margin-top', -($('#radio1').outerHeight()+2))}
 	  else{$('#radio1').css('margin-top', -($('#radio2').outerHeight()+2))}
 	}
-	windowLocationPathname = window.location.pathname.substring(0,2)
+	windowLocationPathname = window.location.pathname.substring(0,3)
 	locale = '<%=I18n.locale%>'
 	if((windowLocationPathname == '/ar' || locale == 'ar') || (windowLocationPathname == '/cn' || locale == 'cn') || (windowLocationPathname == '/iw' || locale == 'iw') || (windowLocationPathname == '/kr' || locale == 'kr') || (windowLocationPathname == '/yi' || locale == 'yi') && opera && !adjusted1){
 	  mobile ? (windowLocationPathname == '/ar' || locale == 'ar') ? value = 0 : (windowLocationPathname == '/yi' || locale == 'yi') ? value = 2 : value = 1 : (windowLocationPathname == '/kr' || locale == 'kr') ? value = 0 : value = 2
@@ -621,7 +621,6 @@ $(function(){
 	  adjusted1 = true
 	}
   }
-  adjust3()
   $('#check1').live('click', function(){
 	if(!remember_me){
 	  remember_me = true
@@ -800,6 +799,7 @@ $(function(){
 		})
 	  }
 	  if($('#map').css('height') != $('.sidebar').css('height') && opera){adjustMapHeight($('.sidebar').css('height'))}
+	  adjust3()
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
