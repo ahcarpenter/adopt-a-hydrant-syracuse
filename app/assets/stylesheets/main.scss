@@ -244,9 +244,10 @@ h2,
 #user_existing,
 #user-remember-me,
 #login,
-#signup,
+#signup {  margin-top: 1px }
+
 .icon-check,
-.icon-check-empty {  margin-top: 1px }
+.icon-check-empty {  margin-top: -17px }
 
 #required,
 .alert .icon-remove,
