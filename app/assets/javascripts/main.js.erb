@@ -39,6 +39,7 @@
 // http://stackoverflow.com/questions/4083351/what-does-jquery-fn-mean
 // http://stackoverflow.com/questions/11600275/assign-window-height-to-document-height/11600769#11600769
 // http://www.sitepoint.com/forums/showthread.php?689515-ternary-if()-elseif()-else
+// http://stackoverflow.com/questions/8916679/js-ternary-operator-confusion
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -307,23 +308,8 @@ $(function(){
             }
             setTimeout(function(){
 			  thing_snow_cover = thing.snow_cover
-			  if(sieve_adopted) {
-				if(!thing.user_id) {
-				  if(thing_snow_cover > 6){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1')} 
-				  else if(thing_snow_cover <= 6 && thing_snow_cover > 0){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2')} 
-			      else{addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')}
-	            }
-			  } else{
-                if(thing.user_id) {
-				  if(thing_snow_cover > 6){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1')} 
-				  else if(thing_snow_cover <= 6 && thing_snow_cover > 0){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2')} 
-				  else{addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green')}
-                } else {if(thing_snow_cover > 6){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1')} 
-				  else if(thing_snow_cover <= 6 && thing_snow_cover > 0){addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2')} 
-				  else{addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')}
-                }
-			  }
-            }, i * 100)
+              sieve_adopted && !thing.user_id ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red') : thing.user_id ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green') : thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')
+			}, i * 100)
           })
         }
       }
