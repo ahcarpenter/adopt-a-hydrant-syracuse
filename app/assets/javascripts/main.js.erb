@@ -832,7 +832,7 @@ $(function(){
 	  }
 	  if($('#map').css('height') != $('.sidebar').css('height') && opera){adjustMapHeight($('.sidebar').css('height'))}
 	  $('#radio1').hasClass('btn active') ? radio1 = true : radio1 = false
-	  if(!mobile){adjust3()}
+	  adjust3()
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
