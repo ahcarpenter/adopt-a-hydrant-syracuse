@@ -635,7 +635,7 @@ $(function(){
 	  mobile ? (windowLocationPathname == '/ar' || locale == 'ar') ? value = 0 : (windowLocationPathname == '/yi' || locale == 'yi' || windowLocationPathname == '/he' || locale == 'he') ? value = 2 : value = 1 : (windowLocationPathname == '/kr' || locale == 'kr') ? value = 0 : value = 2
 	  if(webkit || mozilla){value = 0}
 	  if(radio1 && !adjusted1){$('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-value))}
-	  if((window.location.pathname.substring(0,3) == '/he' || '<%=I18n.locale%>' == '/he') && opera && mobile){value = 0}
+	  if((window.LocationPathname == '/he' || locale == '/he') && opera && mobile){value = 0}
 	  $('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-value))
 	  adjusted1 = true
 	  $('#remember_me1').css('margin-left', '197px')
