@@ -627,7 +627,7 @@ $(function(){
 		$('#radio2').css('padding-top', ($('#radio1').height()/3)+2)
 		adjustHeight('#radio2', $('#radio1').height()-10)
 	  }
-	  $('#radio2').css('margin-top') > $('#radio1').css('margin-top')) ? {$('#radio2').css('margin-top', -($('#radio1').outerHeight()+2)) : $('#radio1').css('margin-top', -($('#radio2').outerHeight()+2))
+	  $('#radio2').css('margin-top') > $('#radio1').css('margin-top') ? $('#radio2').css('margin-top', -($('#radio1').outerHeight()+2)) : $('#radio1').css('margin-top', -($('#radio2').outerHeight()+2))
 	}
 	windowLocationPathname = window.location.pathname.substring(0,3)
 	locale = '<%=I18n.locale%>'
