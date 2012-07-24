@@ -1142,7 +1142,7 @@ $(function(){
           data: {'flash': {'warning': 'notices.signed_out'}},
           success: function(data) {
             $('#content').html(data)
-			radio1 = false
+			radio1 = true
 			adjust3()
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			remember_me = true
