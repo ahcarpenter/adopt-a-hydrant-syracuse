@@ -38,7 +38,7 @@ protected
     end
     
     !params[:locale].nil? ? uri_slice = params[:locale].slice(0..1) : nil
-    (uri_slice == 'ar') || (uri_slice == 'cn') || (uri_slice == 'de') || (uri_slice == 'en') || (uri_slice == 'es') || (uri_slice == 'fr') || (uri_slice == 'gr') || (uri_slice == 'ht') || (uri_slice == 'iw') || (uri_slice == 'it') || (uri_slice == 'kr') || (uri_slice == 'pl') || (uri_slice == 'pt') || (uri_slice == 'ru') || (uri_slice == 'yi') ? locale_token_in_uri = true : nil
+    (uri_slice == 'ar') || (uri_slice == 'cn') || (uri_slice == 'de') || (uri_slice == 'en') || (uri_slice == 'es') || (uri_slice == 'fr') || (uri_slice == 'gr') || (uri_slice == 'ht') || (uri_slice == 'he') || (uri_slice == 'it') || (uri_slice == 'kr') || (uri_slice == 'pl') || (uri_slice == 'pt') || (uri_slice == 'ru') || (uri_slice == 'yi') ? locale_token_in_uri = true : nil
     
     !params[:locale].nil? && params[:locale].slice(2..params[:locale].length).length > 0 ? Referral.resolve_token(params[:locale].slice(2..params[:locale].length)) : nil
     
