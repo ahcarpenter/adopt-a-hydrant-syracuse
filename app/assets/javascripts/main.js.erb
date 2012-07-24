@@ -657,6 +657,10 @@ $(function(){
 	}
   })
   $('#check1').hover(function () {$(this).css('cursor', 'pointer')})
+  function adjust5(){
+	adjusted1, radio1 = false
+	adjust3()
+  }
   $('#combo-form').live('submit', function(){
     var submitButton = $("#combo-form input[type='submit']")
     $(submitButton).attr('disabled', true)
@@ -778,8 +782,7 @@ $(function(){
 				  }
 				  if(opera){
 				    $('#user_zip, .control-group').css('margin-bottom','0px')
-					adjusted1, radio1 = false
-					adjust3()
+					adjust5()
 				  }
 				}
             })
@@ -1026,8 +1029,7 @@ $(function(){
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
 		if(mobile || opera){adjustMapHeight($('.sidebar').height()-2)}
-		adjusted1, radio1 = false
-		adjust3()
+		adjust5()
       }
     })
     return false
@@ -1122,8 +1124,7 @@ $(function(){
 		  }
 	      prepareSearchElements()
 		  if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
-		  adjusted1, radio1 = false
-		  adjust3()
+		  adjust5()
 	    }
       })
     }
@@ -1180,8 +1181,7 @@ $(function(){
 		}
 		if(opera){
 		  $('#user_zip, .control-group').css('margin-bottom','0px')
-		  adjusted1, radio1 = false
-		  adjust3()
+		  adjust5()
 		}
       }
     })
@@ -1206,8 +1206,7 @@ $(function(){
 		  $('#user_zip').css('margin-bottom','0px')
 		  $('.control-group').css('margin-bottom','0px')
 		}
-		adjusted1, radio1 = false
-		adjust3()
+		adjust5()
 	  }
     })
     return false
