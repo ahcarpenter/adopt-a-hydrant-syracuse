@@ -633,9 +633,10 @@ $(function(){
 	windowLocationPathname = window.location.pathname.substring(0,3)
 	locale = '<%=I18n.locale%>'
 	if((windowLocationPathname == '/ar' || locale == 'ar') || (windowLocationPathname == '/cn' || locale == 'cn') || (windowLocationPathname == '/iw' || locale == 'iw') || (windowLocationPathname == '/kr' || locale == 'kr') || (windowLocationPathname == '/yi' || locale == 'yi') && !adjusted1){
-	  mobile ? (windowLocationPathname == '/ar' || locale == 'ar') ? value = 0 : (windowLocationPathname == '/yi' || locale == 'yi') ? value = 2 : value = 1 : (windowLocationPathname == '/kr' || locale == 'kr') ? value = 0 : value = 2
+	  mobile ? (windowLocationPathname == '/ar' || locale == 'ar') ? value = 0 : (windowLocationPathname == '/yi' || locale == 'yi' || windowLocationPathname == '/iw' || locale == 'iw') ? value = 2 : value = 1 : (windowLocationPathname == '/kr' || locale == 'kr') ? value = 0 : value = 2
 	  if(webkit || mozilla){value = 0}
-	  if(radio1){$('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-value))}
+	  if(radio1 && !adjusted1){$('#radio2').css('margin-top', ($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-value))}
+	  if((window.location.pathname.substring(0,3) == '/iw' || '<%=I18n.locale%>' == '/iw') && opera && mobile){value = 0}
 	  $('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-value))
 	  adjusted1 = true
 	  $('#remember_me1').css('margin-left', '197px')
@@ -645,6 +646,7 @@ $(function(){
 	  ar || iw || yi ? adjust4() : null
 	}
   }
+  if((window.location.pathname.substring(0,3) == '/iw' || '<%=I18n.locale%>' == '/iw') && opera && mobile){$('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-2))}
   $('#check1').live('click', function(){
 	if(!remember_me){
 	  remember_me = true
@@ -830,7 +832,7 @@ $(function(){
 	  }
 	  if($('#map').css('height') != $('.sidebar').css('height') && opera){adjustMapHeight($('.sidebar').css('height'))}
 	  $('#radio1').hasClass('btn active') ? radio1 = true : radio1 = false
-	  adjust3()
+	  if(!mobile){adjust3()}
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
