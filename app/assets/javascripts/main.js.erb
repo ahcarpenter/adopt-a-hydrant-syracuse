@@ -76,17 +76,17 @@ $(function(){
 	}
   })
   if(!document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Shape', '1.0') || mozilla){
-	var greenMarkerImage = markerImage('<%= image_path 'markers/green.svg' %>')
-	var redMarkerImage = markerImage('<%= image_path 'markers/red.svg' %>')
+	var greenMarkerImage = markerImage('<%= asset_path 'markers/green.svg' %>')
+	var redMarkerImage = markerImage('<%= asset_path 'markers/red.svg' %>')
   } else{
-	var greenMarkerImage = markerImage('<%= image_path 'markers/green.png' %>')
-	var redMarkerImage = markerImage('<%= image_path 'markers/red.png' %>')
+	var greenMarkerImage = markerImage('<%= asset_path 'markers/green.png' %>')
+	var redMarkerImage = markerImage('<%= asset_path 'markers/red.png' %>')
   }
-  var green1MarkerImage = markerImage('<%= image_path 'markers/green1.png' %>')
-  var red1MarkerImage = markerImage('<%= image_path 'markers/red1.png' %>')
-  var green2MarkerImage = markerImage('<%= image_path 'markers/green2.png' %>')
-  var red2MarkerImage = markerImage('<%= image_path 'markers/red2.png' %>')
-  var markerShadowImage = markerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0))
+  var green1MarkerImage = markerImage('<%= asset_path 'markers/green1.png' %>')
+  var red1MarkerImage = markerImage('<%= asset_path 'markers/red1.png' %>')
+  var green2MarkerImage = markerImage('<%= asset_path 'markers/green2.png' %>')
+  var red2MarkerImage = markerImage('<%= asset_path 'markers/red2.png' %>')
+  var markerShadowImage = markerImage('<%= asset_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0))
   var activeThingId, activeMarker, activeInfoWindow
   var isWindowOpen, sms_notifications, email_notifications, sms_referral, email_referral, opera, webkit, mozilla, preview_hidden, preview_shown, sieve_adopted, sidebar_visible, adjusted, adjusted1 = false
   var thingIds = []
