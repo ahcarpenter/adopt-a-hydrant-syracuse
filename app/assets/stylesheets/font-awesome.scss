@@ -22,10 +22,9 @@
 
     */
 
-@import "compass/css3/font-face";
 $fontAwesomePath: "../font/fontawesome-webfont" !default;
 
-@include font-face(
+@font-face(
     'FontAwesome',
     font-files(
         "#{$fontAwesomePath}.woff", woff,
