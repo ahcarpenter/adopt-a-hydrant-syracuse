@@ -24,6 +24,7 @@ group :assets do
   gem 'sass-rails'
   gem 'uglifier'
   gem 'font-awesome-sass-rails'
+  gem 'asset_sync'
 end
 
 group :production do
