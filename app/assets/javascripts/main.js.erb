@@ -606,9 +606,7 @@ $(function(){
     })
   })
   function getLocale(){
-	windowLocationPathname = window.location.pathname.substring(0,3)
-	locale1 = '<%=I18n.locale%>'
-	windowLocationPathname != '/' ? windowLocationPathname != locale1 ? locale1 = windowLocationPathname.substring(1,3) : null : locale1 = document.cookie.split('locale=')[1].substring(0,2)
+	locale1 = document.cookie.split('locale=')[1].substring(0,2)
 	
 	return locale1
   }
@@ -650,14 +648,14 @@ $(function(){
   $('#check1').live('click', function(){
 	if(!remember_me){
 	  remember_me = true
-	  $('#check1').removeClass('icon-check-empty').addClass('icon-check')
-	} 
+	  $('#check1').removeClass('icon-check').addClass('icon-check-empty')
+	}  
 	else {
 	  remember_me = false
-	  $('#check1').removeClass('icon-check').addClass('icon-check-empty')
+	  $('#check1').removeClass('icon-check-empty').addClass('icon-check')
 	}
   })
-  $('#check1').hover(function () {$(this).css('cursor', 'pointer')})
+  $('#check1').hover(function(){$(this).css('cursor', 'pointer')})
   function adjust5(){
 	adjusted1, radio1 = false
 	adjust3()
