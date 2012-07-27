@@ -1,5 +1,6 @@
 # https://devcenter.heroku.com/articles/cdn-asset-host-rails31
 # https://github.com/rumblelabs/asset_sync
+# http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html
 AdoptAThing::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
