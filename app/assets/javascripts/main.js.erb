@@ -500,7 +500,7 @@ $(function(){
 		  shadow: false, // Whether to render a shadow
 		  hwaccel: true, // Whether to use hardware acceleration
 		  className: 'spinner', // The CSS class to assign to the spinner
-		  zIndex: 2e9, // The z-index (defaults to 2000000000)
+		  zIndex: 29, // The z-index (defaults to 2000000000)
 		  top: 'auto', // Top position relative to parent in px
 		  left: 'auto' // Left position relative to parent in px
 		})}
@@ -614,10 +614,10 @@ $(function(){
   function adjust4(){
 	$('#remember_me1').css('margin-left', '197px')
 	locale1 == 'ar' ? $('#remember_me').css('margin-left', '-40px') : locale1 == 'he' ? $('#remember_me').css('margin-left', '-58px') : locale1 == 'yi' ? $('#remember_me').css('margin-left', '-72px') : null
-	$('.icon-lock').css('margin-top', '12px').css('position', 'absolute')
+	$('#test, #test1').css('position', 'absolute').css('text-align', 'right')
+	mozilla ? $('#test, #test1').css('margin-top', '8px').css('margin-left', '72px') : $('#test, #test1').css('margin-top', '12px').css('margin-left', '189px')
     $('label').css('text-align', 'right').css('margin-right', '20px')
     $('input').css('direction', 'rtl')
-    $('.icon-lock').css('margin-left', '194px')
 	$('#info-window label').css('text-align', 'right').css('margin-right', '0px')
 	$('#referral label').css('text-align', 'right').css('margin-right', '34px')
   }
@@ -1225,7 +1225,7 @@ $(function(){
 	  shadow: false, // Whether to render a shadow
 	  hwaccel: true, // Whether to use hardware acceleration
 	  className: 'spinner', // The CSS class to assign to the spinner
-	  zIndex: 2e9, // The z-index (defaults to 2000000000)
+	  zIndex: 29, // The z-index (defaults to 2000000000)
 	  top: 'auto', // Top position relative to parent in px
 	  left: 'auto' // Left position relative to parent in px
 	})}

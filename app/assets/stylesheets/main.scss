@@ -406,6 +406,11 @@ h2 {
   margin-bottom: 16px
 }
 
+.icon-lock {
+  margin-left: 3px;
+  color: #999999
+}
+
 @-moz-document url-prefix() {
   h2 {  font-family: MyriadPro-Regular }
   .badge {  font-family: MyriadPro-Regular }
@@ -413,6 +418,7 @@ h2 {
   #info-window .control-group {  margin-bottom: 10px }
   .group{  margin-top: -1px }
   #user_zip{  margin-bottom: 0px }
+  .icon-lock {  margin-left: 5px }
 }
 
 input {  width: 200px }
@@ -579,11 +585,6 @@ i {  margin-right: -20px }
 
 .icon-check,
 .icon-check-empty {  font-size: 13px }
-
-.icon-lock {
-  margin-left: 3px;
-  color: #999999
-}
 
 .icon-facebook {  margin-left: -2px }
 
