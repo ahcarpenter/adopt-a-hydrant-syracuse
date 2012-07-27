@@ -31,5 +31,4 @@ AdoptAThing::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  config.action_controller.asset_host = Proc.new { |source, request| request.user_agent.include?('Firefox') ? 'http://adopt-a-hydrant-syracuse.herokuapp.com' : 'https://d1f2hg8y6iibwb.cloudfront.net'}
 end
