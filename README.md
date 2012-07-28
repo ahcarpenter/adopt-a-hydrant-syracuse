@@ -102,8 +102,8 @@ time of a major release, support for that Ruby version may be dropped.
 ## <a name="copyright"></a>Copyright
 Copyright (c) 2012 Code for America. See [LICENSE][] for details.
 
-##API
-There is support for the following API calls:
+##JSON API
+The following calls to the API might return a response:
 ```
 http://adopt-a-hydrant-syracuse.herokuapp.com/?adopted=
 http://adopt-a-hydrant-syracuse.herokuapp.com/?not_adopted=
