@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_flash_from_params
   before_filter :set_locale
+  respond_to :json
   
 protected
   def set_current_user
@@ -45,5 +46,8 @@ protected
     locale_token_in_uri ? cookies[:locale] = uri_slice : nil
     
     I18n.locale = cookies[:locale] || I18n.default_locale
+    !request.query_parameters[:adopted].nil? ? render(:json=>Thing.where('user_id is not null')) : nil
+    !request.query_parameters[:all].nil? ? render(:json=>Thing.all) : nil
+    !request.query_parameters[:not_adopted].nil? ? render(:json=>Thing.where('user_id is null')) : nil
   end
 end
