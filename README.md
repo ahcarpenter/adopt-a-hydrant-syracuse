@@ -102,7 +102,7 @@ time of a major release, support for that Ruby version may be dropped.
 ## <a name="copyright"></a>Copyright
 Copyright (c) 2012 Code for America. See [LICENSE][] for details.
 
-##JSON API
+##API
 The following calls to the API might return a response:
 ```
 http://adopt-a-hydrant-syracuse.herokuapp.com/?adopted=
