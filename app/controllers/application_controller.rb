@@ -3,6 +3,7 @@
 # http://rails-bestpractices.com/posts/47-fetch-current-user-in-models
 # http://stackoverflow.com/questions/5226946/rails3-http-user-agent
 # https://github.com/arsduo/koala/wiki/OAuth
+# http://api.rubyonrails.org/classes/ActionDispatch/Request.html
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_flash_from_params
