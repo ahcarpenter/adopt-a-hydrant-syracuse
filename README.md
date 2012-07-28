@@ -99,9 +99,6 @@ implementation, you will be personally responsible for providing patches in a
 timely fashion. If critical issues for a particular implementation exist at the
 time of a major release, support for that Ruby version may be dropped.
 
-## <a name="copyright"></a>Copyright
-Copyright (c) 2012 Code for America. See [LICENSE][] for details.
-
 ##Calling To The API
 The following might return a response:
 ```
@@ -109,6 +106,9 @@ http://adopt-a-hydrant-syracuse.herokuapp.com/?adopted=
 http://adopt-a-hydrant-syracuse.herokuapp.com/?not_adopted=
 http://adopt-a-hydrant-syracuse.herokuapp.com/?all=
 ```
+
+## <a name="copyright"></a>Copyright
+Copyright (c) 2012 Code for America. See [LICENSE][] for details.
 
 [license]: https://github.com/codeforamerica/adopt-a-hydrant/blob/master/LICENSE.md
 
