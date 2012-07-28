@@ -102,6 +102,13 @@ time of a major release, support for that Ruby version may be dropped.
 ## <a name="copyright"></a>Copyright
 Copyright (c) 2012 Code for America. See [LICENSE][] for details.
 
+##API
+```
+http://adopt-a-hydrant-syracuse.herokuapp.com/?adopted=
+http://adopt-a-hydrant-syracuse.herokuapp.com/?not_adopted=
+http://adopt-a-hydrant-syracuse.herokuapp.com/?all=
+```
+
 [license]: https://github.com/codeforamerica/adopt-a-hydrant/blob/master/LICENSE.md
 
 [![Code for America Tracker](http://stats.codeforamerica.org/codeforamerica/adopt-a-hydrant.png)][tracker]
