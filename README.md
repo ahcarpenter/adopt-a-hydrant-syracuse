@@ -102,9 +102,9 @@ time of a major release, support for that Ruby version may be dropped.
 ##Calling To The API
 The following might return a response:
 ```
-http://adopt-a-hydrant-syracuse.herokuapp.com/?adopted=
-http://adopt-a-hydrant-syracuse.herokuapp.com/?not_adopted=
-http://adopt-a-hydrant-syracuse.herokuapp.com/?all=
+http://adopt-a-hydrant-syracuse.herokuapp.com/?hydrants_adopted=
+http://adopt-a-hydrant-syracuse.herokuapp.com/?hydrants_not_adopted=
+http://adopt-a-hydrant-syracuse.herokuapp.com/?hydrants_all=
 ```
 
 ## <a name="copyright"></a>Copyright
