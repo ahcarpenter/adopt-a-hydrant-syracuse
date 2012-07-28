@@ -133,7 +133,6 @@ $(function(){
 	$('#send_referral').icon('share-alt')
   }
   function search(){
-	$('#find').icon('search')
 	$('#edit_profile_link').icon('pencil')
 	$('#sign-out-link').icon('signout')
 	$('#address').typeahead({source: street_addresses})
@@ -817,7 +816,7 @@ $(function(){
     return false
   })
   $(document).ready(function(){
-      if(window.location.search.length > 150){
+      if(window.location.search.length > 150 && window.location.search.length < 236){
 		$.ajax({
 		  type: 'GET',
 		  url: '/sidebar/search',
