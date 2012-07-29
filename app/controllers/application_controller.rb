@@ -8,12 +8,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_flash_from_params
   before_filter :set_locale
-  respond_to :json
+  respond_to :xml, :json
   
 protected
+  def piece(mime_type, contents)
+    contents.each do |query_parameter, query|
+      !request.query_parameters[query_parameter].nil? ? render(mime_type=>query) : nil
+    end
+  end
+    
   def set_current_user
     User.current = current_user
   end
+  
   def set_flash_from_params
     if params[:flash]
       params[:flash].each do |key, message|
@@ -51,8 +58,6 @@ protected
     locale_token_in_uri ? cookies[:locale] = uri_slice : nil
     
     I18n.locale = cookies[:locale] || I18n.default_locale
-    !request.query_parameters[:hydrants_adopted].nil? ? render(:json=>Thing.where('user_id is not null')) : nil
-    !request.query_parameters[:hydrants_all].nil? ? render(:json=>Thing.all) : nil
-    !request.query_parameters[:hydrants_not_adopted].nil? ? render(:json=>Thing.where('user_id is null')) : nil
+    piece(:json, {:hydrants_adopted=>Thing.where('user_id is not null'), :hydrants_not_adopted=>Thing.where('user_id is null'), :hydrants_all=>Thing.all})
   end
 end
