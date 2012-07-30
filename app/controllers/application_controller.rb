@@ -6,9 +6,8 @@
 # http://api.rubyonrails.org/classes/ActionDispatch/Request.html
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :set_flash_from_params
-  before_filter :set_locale
-  respond_to :xml, :json
+  before_filter :set_flash_from_params, :set_locale
+  respond_to :json
   
 protected
   def piece(mime_type, contents)
