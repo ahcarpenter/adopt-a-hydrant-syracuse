@@ -41,6 +41,7 @@
 // http://www.sitepoint.com/forums/showthread.php?689515-ternary-if()-elseif()-else
 // http://stackoverflow.com/questions/8916679/js-ternary-operator-confusion
 // http://www.w3schools.com/js/js_cookies.asp
+// http://stackoverflow.com/questions/807878/javascript-that-executes-after-page-load
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -643,6 +644,7 @@ $(function(){
 	  locale1 == 'ar' || locale1 == 'he' || locale1 == 'yi' ? adjust4() : null
 	}
   }
+  window.onload = function(){adjust3()}
   if(locale1 == 'he' && opera && mobile){$('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-2))}
   $('#check1').live('click', function(){
 	if(!remember_me){
@@ -832,7 +834,6 @@ $(function(){
 	  }
 	  if($('#map').css('height') != $('.sidebar').css('height') && opera){adjustMapHeight($('.sidebar').css('height'))}
 	  $('#radio1').hasClass('btn active') ? radio1 = true : radio1 = false
-	  adjust3()
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
