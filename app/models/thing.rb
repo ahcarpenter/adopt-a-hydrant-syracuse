@@ -12,11 +12,11 @@ class Thing < ActiveRecord::Base
       ORDER BY distance
       LIMIT ?
       SQL
-    find_by_sql([query, lat.to_f, lng.to_f, lat.to_f, limit.to_i])
+    find_by_sql [query, lat.to_f, lng.to_f, lat.to_f, limit.to_i]
   end
 
   def reverse_geocode
-    @reverse_geocode ||= MultiGeocoder.reverse_geocode([lat, lng])
+    @reverse_geocode ||= MultiGeocoder.reverse_geocode [lat, lng]
   end
 
   def street_number

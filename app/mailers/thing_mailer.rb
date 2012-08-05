@@ -6,10 +6,10 @@ class ThingMailer < ActionMailer::Base
     @thing = thing
     @user = thing.user
     @current_user_name = User.current.name
-    mail({:to => thing.user.email,:subject => thing.name,})
+    mail {:to => thing.user.email,:subject => thing.name}
   end
   
   def notify(thing)
-    mail(:to => thing.user.email, :from => 'adoptahydrantsyracuse@gmail.com', :subject => thing.name, :body => thing.user.name + ', ' + thing.name + ' might be surrounded by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.')
+    mail :to => thing.user.email, :from => 'adoptahydrantsyracuse@gmail.com', :subject => thing.name, :body => thing.user.name + ', ' + thing.name + ' might be surrounded by ' + thing.snow_cover.to_s + ' in. of snow. Location: ' + thing.full_address + '.'
   end
 end
