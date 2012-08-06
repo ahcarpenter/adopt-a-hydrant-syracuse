@@ -29,6 +29,6 @@ module AdoptAThing
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     ActiveRecord::SessionStore::Session.primary_key = 'session_id'
-    config.action_controller.asset_host = Proc.new {|source, request| request.user_agent.include?('Firefox') ? 'http://adopt-a-hydrant-syracuse.herokuapp.com' : 'https://d1f2hg8y6iibwb.cloudfront.net'}
+    config.action_controller.asset_host = Proc.new {|source, request| request.user_agent.include?('Firefox') ? 'http://adopt-a-hydrant-syracuse.herokuapp.com' : 'https://dq4ojm550l82t.cloudfront.net'}
   end
 end
