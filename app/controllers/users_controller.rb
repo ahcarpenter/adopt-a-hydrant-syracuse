@@ -30,4 +30,4 @@ class UsersController < Devise::RegistrationsController
       render(:json => {'errors' => resource.errors}, :status => 500)
     end
   end
-end
+end 
