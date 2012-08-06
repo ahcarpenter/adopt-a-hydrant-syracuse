@@ -607,7 +607,7 @@ $(function(){
     })
   })
   function getLocale(){
-	typeof document.cookie.split('locale=')[1].substring(0,2) == 'undefined' ? typeof window.location.pathname.substring(1,3) == 'undefined' ? locale1 = '<%=I18n.locale%>' : locale1 = window.location.pathname.substring(1,3) : locale1 = document.cookie.split('locale=')[1].substring(0,2)
+	typeof window.location.pathname.substring(1,3) == 'undefined' ? locale1 = '<%=I18n.locale%>' : locale1 = window.location.pathname.substring(1,3)
 	
 	return locale1
   }
