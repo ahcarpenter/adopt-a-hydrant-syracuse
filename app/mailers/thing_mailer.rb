@@ -6,7 +6,7 @@ class ThingMailer < ActionMailer::Base
     @thing = thing
     @user = thing.user
     @current_user_name = User.current.name
-    mail({:to => thing.user.email,:subject => thing.name,})
+    mail({:to => thing.user.email,:subject => thing.name})
   end
   
   def notify(thing)
