@@ -88,7 +88,7 @@ $(function(){
   var green2MarkerImage = markerImage('<%= image_path 'markers/green2.png' %>')
   var red2MarkerImage = markerImage('<%= image_path 'markers/red2.png' %>')
   var markerShadowImage = markerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0))
-  var activeThingId, activeMarker, activeInfoWindow
+  var activeThingId, activeMarker, activeInfoWindow, locale1
   var isWindowOpen, sms_notifications, email_notifications, sms_referral, email_referral, opera, webkit, mozilla, preview_hidden, preview_shown, sieve_adopted, sidebar_visible, adjusted, adjusted1 = false
   var thingIds = []
   var remember_me, radio1 = true
@@ -607,7 +607,7 @@ $(function(){
     })
   })
   function getLocale(){
-	locale1 = document.cookie.split('locale=')[1].substring(0,2)
+	locale1 = typeof locale1 == 'undefined' ? locale1 = '<%=I18n.locale%>' : document.cookie.split('locale=')[1].substring(0,2)
 	
 	return locale1
   }
