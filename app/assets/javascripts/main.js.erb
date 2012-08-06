@@ -643,10 +643,10 @@ $(function(){
 	  locale1 == 'ar' || locale1 == 'he' || locale1 == 'yi' ? adjust4() : null
 	}
   }
-  $(window).load(function(){
+  window.onload = function(){
 	locale1 = getLocale()
 	adjust3()
-  })
+  }
   if(locale1 == 'he' && opera && mobile){$('#download-link').css('padding-top', ($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-2))}
   $('#check1').live('click', function(){
 	if(!remember_me){
