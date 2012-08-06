@@ -4,7 +4,7 @@ class ThingsController < ApplicationController
   respond_to :json
 
   def show
-    @things = Thing.find_closest params[:lat], params[:lng], params[:limit] || 10
+    @things = Thing.find_closest(params[:lat], params[:lng], params[:limit] || 10)
     unless @things.blank?
       respond_with @things
     else
@@ -18,6 +18,6 @@ class ThingsController < ApplicationController
     session[:thing].update_attributes(params[:thing]) ? respond_with(session[:thing]) : render(:json => {'errors' => session[:thing].errors}, :status => 500)
     rescue ActiveRecord::StaleObjectError
       session[:conflict] = true
-      redirect_to :controller => 'info_window', :action => 'index'
+      redirect_to(:controller => 'info_window', :action => 'index')
   end
 end
