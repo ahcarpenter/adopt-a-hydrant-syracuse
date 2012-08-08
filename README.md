@@ -99,7 +99,7 @@ implementation, you will be personally responsible for providing patches in a
 timely fashion. If critical issues for a particular implementation exist at the
 time of a major release, support for that Ruby version may be dropped.
 
-##Calling To The API
+##Calling to the API
 The following might return a response:
 ```
 http://adopt-a-hydrant-syracuse.herokuapp.com/?hydrants_adopted=
