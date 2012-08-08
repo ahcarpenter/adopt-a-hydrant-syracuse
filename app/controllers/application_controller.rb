@@ -34,6 +34,7 @@ protected
   end
 
   def set_locale
+    begin
     @@oauth = Koala::Facebook::OAuth.new 255900427854057, '8efe989aeb23f1206c40362da5795ba0', 'http://adopt-a-hydrant-syracuse.herokuapp.com/'
     if !request[:code].nil?
       @@graph = Koala::Facebook::API.new @@oauth.get_access_token(request[:code])
@@ -58,5 +59,8 @@ protected
     
     I18n.locale = cookies[:locale] || I18n.default_locale
     piece :json, {:hydrants_adopted=>Thing.where('user_id is not null'), :hydrants_not_adopted=>Thing.where('user_id is null'), :hydrants_all=>Thing.all}
+    rescue ActiveRecord::StatementInvalid
+      puts 'Hello'
+    end
   end
 end
