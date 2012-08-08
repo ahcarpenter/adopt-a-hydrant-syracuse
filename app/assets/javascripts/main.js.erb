@@ -560,6 +560,7 @@ $(function(){
     if(opera){_opera()}
 	if(!$('#user_email').val().length>0){$('#test').addClass('icon-lock')}
     $('#user_forgot_password_fields, #user_sign_in_fields').slideUp()
+    $('#test, #test1').show()
     if($('#required_text').text() == ''){
       $('#required').append("<div id='required_text'>" + required_text +"</div>")
       $('#user_email').css('margin-bottom', '9px')
@@ -575,6 +576,7 @@ $(function(){
   $('#radio2').live('click', function(){
 	radio1 = false
     var radioInput = $(this)
+    $('#test, #test1').hide()
     $('#user_sign_up_fields').slideUp()
     $('#user_sign_in_fields').slideDown(function(){
 	  if(mobile){
