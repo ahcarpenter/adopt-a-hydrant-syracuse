@@ -89,7 +89,7 @@ $(function(){
   var red2MarkerImage = markerImage('<%= image_path 'markers/red2.png' %>')
   var markerShadowImage = markerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0))
   var activeThingId, activeMarker, activeInfoWindow, locale1
-  var isWindowOpen, sms_notifications, email_notifications, sms_referral, email_referral, opera, webkit, mozilla, preview_hidden, preview_shown, sieve_adopted, sidebar_visible, adjusted, adjusted1 = false
+  var isWindowOpen, sms_notifications, email_notifications, sms_referral, email_referral, opera, webkit, mozilla, preview_hidden, preview_shown, sieve_adopted, sidebar_visible, adjusted, adjusted1, sieve_adopted = false
   var thingIds = []
   var remember_me, radio1 = true
   var mobile = navigator.userAgent.indexOf('Mobi') != -1
@@ -311,7 +311,7 @@ $(function(){
             }
             setTimeout(function(){
 			  thing_snow_cover = thing.snow_cover
-              sieve_adopted && !thing.user_id ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red') : thing.user_id ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green') : thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')
+              sieve_adopted && !thing.user_id ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red') : thing.user_id && !sieve_adopted ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green') : thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')
 			}, i * 100)
           })
         }
