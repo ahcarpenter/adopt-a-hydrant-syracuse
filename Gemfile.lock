@@ -193,7 +193,7 @@ DEPENDENCIES
   libxml-ruby
   pg
   puma (= 1.5)
-  rails (~> 3.2)
+  rails
   rails_admin
   rake
   referthis

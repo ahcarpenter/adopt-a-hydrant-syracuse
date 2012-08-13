@@ -418,7 +418,7 @@ $(function(){
     $('#sms-referral').attr('title', $('#enable_sms_transmission').text())
     $('#email-referral').attr('title', $('#enable_email_transmission').text())
     $('#sms-referral, #email-referral').tooltip('fixTitle')
-	if(mozilla || opera){$('#user-email-label').css('margin-top', '0px')}
+	$('#user-email-label').css('margin-top', '0px')
 	if(opera && !mobile){
 	  $('#referral i').css('margin-top', '2px')
 	  adjustHeight('#referral .btn', '18px')
