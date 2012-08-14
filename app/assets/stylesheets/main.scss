@@ -17,6 +17,7 @@
 //http://www.w3schools.com/cssref/css3_pr_border-radius.asp
 //http://www.cleancss.com/
 //http://www.w3schools.com/cssref/pr_text_text-decoration.asp
+//http://www.w3schools.com/css3/css3_transitions.asp
 @font-face {
   font-family: MyriadPro-Semibold;
   src: url('MyriadPro-Semibold.otf');
@@ -651,6 +652,14 @@ i {  margin-right: -20px }
 #test-sidebar {
   z-index: 4;
   margin-left: -250px
+}
+
+#test-sidebar,
+.icon-list-ul {
+  transition: transform .5s;
+  -moz-transition: -moz-transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+  -o-transition: -o-transform .5s
 }
 
 #test-refer {
