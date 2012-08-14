@@ -16,4 +16,3 @@
 //= require jquery.spin
 //= require bootstrap
 //= require jquery.ui.touch-punch.min
-//= require jquery.transit.min
