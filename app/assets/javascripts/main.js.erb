@@ -166,8 +166,8 @@ $(function(){
   search()
   $('.icon-list-ul').click(function(){
 	if(!sidebar_visible){
-	  $('#test-sidebar').show().animate({marginLeft:'0px'}, function(){sidebar_visible = true})
-	  $('.icon-list-ul').animate({marginLeft:'250px'})
+	  $('#test-sidebar').show().animate({marginLeft:'0px'}, 200, 'linear', function(){sidebar_visible = true})
+	  $('.icon-list-ul').animate({marginLeft:'250px'}, 200, 'linear')
 	  adjust3()
 	  if(iPad){
 		adjustHeight('#test-sidebar', $('#map').height()+2)
@@ -177,11 +177,11 @@ $(function(){
 	  if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
 	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
 	} else{
-	  $('#test-sidebar').animate({marginLeft:'-250px'}, function(){
+	  $('#test-sidebar').animate({marginLeft:'-250px'}, 200, 'linear', function(){
 	    $(this).hide()
 	    sidebar_visible = false
 	  })
-	  $('.icon-list-ul').animate({marginLeft:'-1px'})
+	  $('.icon-list-ul').animate({marginLeft:'-1px'}, 200, 'linear')
 	  opera ? value = $(window).height() : value = '100%'
 	  adjustMapHeight(value)
 	}
