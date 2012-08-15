@@ -166,9 +166,9 @@ $(function(){
   search()
   $('.icon-list-ul').click(function(){
 	if(!sidebar_visible){
-	  $('#test-sidebar').css('transform', 'translateX(250px)')
+	  $('#test-sidebar').css('-webkit-transform', 'translateX(250px)').css('transform', 'translateX(250px)').css('-moz-transform', 'translateX(250px)').css('-o-transform', 'translateX(250px)')
 	  sidebar_visible = true
-	  $('.icon-list-ul').css('transform', 'translateX(250px)')
+	  $('.icon-list-ul').css('-webkit-transform', 'translateX(250px)').css('transform', 'translateX(250px)').css('-moz-transform', 'translateX(250px)').css('-o-transform', 'translateX(250px)')
 	  adjust3()
 	  if(iPad){
 		adjustHeight('#test-sidebar', $('#map').height()+2)
@@ -178,9 +178,9 @@ $(function(){
 	  if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
 	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
 	} else{
-	  $('#test-sidebar').css('transform', 'translateX(0)')
+	  $('#test-sidebar').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)')
 	  sidebar_visible = false
-	  $('.icon-list-ul').css('transform', 'translateX(0)')
+	  $('.icon-list-ul').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)')
 	  opera ? value = $(window).height() : value = '100%'
 	  adjustMapHeight(value)
 	}

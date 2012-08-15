@@ -656,10 +656,10 @@ i {  margin-right: -20px }
 
 #test-sidebar,
 .icon-list-ul {
-  transition-duration: transform .5s;
-  -moz-transition-duration: -moz-transform .5s;
-  -webkit-transition-duration: -webkit-transform .5s;
-  -o-transition-duration: -o-transform .5s
+  transition: transform .25s;
+  -moz-transition-duration: -moz-transform .25s;
+  -webkit-transition: -webkit-transform .25s;
+  -o-transition: -o-transform .25s
 }
 
 #test-refer {
