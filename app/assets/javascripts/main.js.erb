@@ -62,12 +62,15 @@ $(function(){
   var origin = new google.maps.Point(0, 0)
   var anchor = new google.maps.Point(13.0, 18.0)
   function markerImage(image, size){return new google.maps.MarkerImage(image, typeof size !== undefined ? size : new google.maps.Size(27.0, 37.0), origin, anchor)}
+  var opera = false
+  var webkit = false
+  var mozilla = false
   jQuery.each(jQuery.browser, function(i, val){
 	if(i == 'opera'){
 	  opera = true
 	  _opera()
 	} 
-	if(i == 'webkit'){
+	if(i == 'webkit' || i == 'chrome'){
 	  webkit = true
 	  _webkit()
 	}
@@ -89,9 +92,21 @@ $(function(){
   var red2MarkerImage = markerImage('<%= image_path 'markers/red2.png' %>')
   var markerShadowImage = markerImage('<%= image_path 'markers/shadow.png' %>', new google.maps.Size(46.0, 37.0))
   var activeThingId, activeMarker, activeInfoWindow, locale1
-  var isWindowOpen, sms_notifications, email_notifications, sms_referral, email_referral, opera, webkit, mozilla, preview_hidden, preview_shown, sieve_adopted, sidebar_visible, adjusted, adjusted1, sieve_adopted = false
+  var isWindowOpen = false
+  var sms_notifications = false
+  var email_notifications = false
+  var sms_referral = false
+  var email_referral = false
+  var preview_hidden = false
+  var preview_shown = false
+  var sieve_adopted = false
+  var sidebar_visible = false
+  var adjusted = false
+  var adjusted1 = false
+  var sieve_adopted = false
   var thingIds = []
-  var remember_me, radio1 = true
+  var remember_me = true
+  var radio1 = true
   var mobile = navigator.userAgent.indexOf('Mobi') != -1
   var iPhone = navigator.userAgent.indexOf('iPhone') != -1
   var iPad = navigator.userAgent.indexOf('iPad') != -1
@@ -638,9 +653,11 @@ $(function(){
 	if(locale1 == 'ar' || locale1 == 'cn' || locale1 == 'he' || locale1 == 'kr' || locale1 == 'yi' && !adjusted1){
 	  mobile ? locale1 == 'ar' ? value = 0 : locale1 == 'yi' || locale1 == 'he' ? value = 2 : value = 1 : locale1 == 'kr' ? value = 0 : value = 2
 	  if(webkit || mozilla){value = 0}
-	  if(radio1 && !adjusted1){$('#radio2').css('margin-top',($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length-2)-value))}
+      var value1 = 0
+	  if(radio1 && !adjusted1){$('#radio2').css('margin-top',parseInt($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length))-value)}
 	  if(locale1 == 'he' && opera && mobile){value = 0}
-	  $('#download-link').css('padding-top',($('#download-link').css('padding-top').substring(0, $('#download-link').css('padding-top').length-2)-value))
+	  opera && !mobile && locale1 != 'yi' ? value1 = 1 : null
+	  if(!mozilla){$('#download-link').css('padding-top',parseInt($('#download-link').css('padding-top').substring(0, parseInt($('#download-link').css('padding-top').length)))-value+value1)}
 	  adjusted1 = true
 	  locale1 == 'ar' || locale1 == 'he' || locale1 == 'yi' ? adjust4() : null
 	}
@@ -834,7 +851,7 @@ $(function(){
 	  }
 	  if($('#map').css('height') != $('.sidebar').css('height') && opera){adjustMapHeight($('.sidebar').css('height'))}
 	  $('#radio1').hasClass('btn active') ? radio1 = true : radio1 = false
-	  adjust5()
+	  adjust3()
   })
   $('#fb').live('click', function(){window.location.replace($('#url_for_oauth_code').text())})
   function updateStats(){
