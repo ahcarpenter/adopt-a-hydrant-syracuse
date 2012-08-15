@@ -2,7 +2,6 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-
 gem 'arel'
 gem 'devise'
 gem 'geokit'
@@ -27,7 +26,7 @@ group :assets do
 end
 
 group :production do
-  gem 'puma', '1.5'
+  gem 'puma'
 end
 
 group :test do
