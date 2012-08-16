@@ -1,67 +1,9 @@
 / http://stackoverflow.com/questions/6392003/how-to-download-a-file-from-rails-application
 / http://twitter.github.com/bootstrap/javascript.html#tooltips
 - if request.env['HTTP_USER_AGENT'].include? 'Mobi'
-  #test-sidebar.hide
-    .table-cell.sidebar
-      %h1
-        %a{:href => 'http://adopt-a-hydrant-syracuse.herokuapp.com/'}
-          = image_tag 'logos/adopt-a-hydrant-syracuse-snow-capped.png', :alt => t('titles.main', :thing => t('defaults.thing').titleize), :title => t('titles.main', :thing => t('defaults.thing').titleize), :id => 'adopt-a-hydrant-syracuse-snow-capped'
-      %p.alert-message.block-message#tagline
-        = t('defaults.tagline')
-      #content
-        = render :partial => 'layouts/flash', :locals => {:flash => flash}
-        - if signed_in?
-          = render :partial => 'sidebar/search'
-        - else
-          = render :partial => 'sidebar/combo_form'
-  .table
-    .table-row
-      .table-cell.map-container
-        #download
-          #text
-            %i.icon-download-alt
-            = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
-        .stats-container
-          = render :partial => 'sidebar/stat'
-        #sieve1
-          %btn{:id => 'adopted-sieve', :class => 'btn btn-danger',:type => 'submit', :name => 'commit', 'data-toggle'=>'buttons-checkbox', 'data-title'=>t('labels.enable_adopted_sieve'), 'data-placement'=>'right'}
-            %i.icon-filter
-        %i.icon-list-ul
-          #extrusion
-            t
-        #map
-          &nbsp;
-    .sidebar
-      = render :partial => 'sidebar/referral'
-      = render :partial => 'sidebar/tos'
+  = render :partial => 'mobile'
 - else
-  .table
-    .table-row
-      .table-cell.sidebar
-        %h1
-          %a{:href => 'http://adopt-a-hydrant-syracuse.herokuapp.com/'}
-            = image_tag 'logos/adopt-a-hydrant-syracuse-snow-capped.png', :alt => t('titles.main', :thing => t('defaults.thing').titleize), :title => t('titles.main', :thing => t('defaults.thing').titleize), :id => 'adopt-a-hydrant-syracuse-snow-capped'
-        %p.alert-message.block-message#tagline
-          = t('defaults.tagline')
-        #content
-          = render :partial => 'layouts/flash', :locals => {:flash => flash}
-          - if signed_in?
-            = render :partial => 'sidebar/search'
-          - else
-            = render :partial => 'sidebar/combo_form'
-      .table-cell.map-container
-        %span
-          #download
-            #text
-              %i.icon-download-alt
-              = link_to t('links.data'), 'xml/hydrants.kml', :id=>'download-link'
-          .stats-container
-            = render :partial => 'sidebar/stat'
-        #sieve
-          %btn{:id => 'adopted-sieve', :class => 'btn btn-danger', :type => 'submit', :name => 'commit', 'data-toggle'=>'buttons-checkbox', 'data-title'=>t('labels.enable_adopted_sieve'), 'data-placement'=>'right'}
-            %i.icon-filter
-        #map
-          &nbsp;
+  = render :partial => 'desktop'
 #disable_adopted_sieve.hide
   = t('labels.disable_adopted_sieve')
 #enable_adopted_sieve.hide
