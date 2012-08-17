@@ -363,8 +363,7 @@ i,
 }
 
 .icon-list-ul,
-#stat1-span,
-#download-link {  border-radius: 0 4px 4px 0 }
+#stat1-span {  border-radius: 0 4px 4px 0 }
 
 #test-refer,
 #locale {  position: relative }
@@ -667,10 +666,10 @@ i {  margin-right: -20px }
   border-left: 0
 }
 
-#stat-span,
-.icon-download-alt {  border-radius: 4px 0 0 4px }
-
-#stat-span {  border-right: 0 }
+#stat-span {
+  border-radius: 4px 0 0 4px;
+  border-right: 0
+}
 
 .stats-container {  margin-left: -74px }
 
