@@ -569,6 +569,7 @@ $(function(){
   }
   $('#radio1').live('click', function(){
 	radio1 = true
+	adjust3()
     var radioInput = $(this)
     $('#combo-form').data('state', 'user_sign_up')
     if(opera){_opera()}
@@ -632,7 +633,7 @@ $(function(){
 	$('#remember_me1').css('margin-left', '197px')
 	locale1 == 'ar' ? $('#remember_me').css('margin-left', '-40px') : locale1 == 'he' ? $('#remember_me').css('margin-left', '-58px') : locale1 == 'yi' ? $('#remember_me').css('margin-left', '-72px') : null
 	$('#test, #test1').css('position', 'absolute').css('text-align', 'right')
-	mozilla ? $('#test, #test1').css('margin-top', '8px').css('margin-left', '72px') : $('#test, #test1').css('margin-top', '12px').css('margin-left', '189px')
+	mozilla ? $('#test, #test1').css('margin-top', '8px').css('margin-left', '187px') : $('#test, #test1').css('margin-top', '12px').css('margin-left', '189px')
     $('label').css('text-align', 'right').css('margin-right', '20px')
     $('input').css('direction', 'rtl')
 	$('#info-window label').css('text-align', 'right').css('margin-right', '0px')
