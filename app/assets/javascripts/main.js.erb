@@ -42,6 +42,7 @@
 // http://stackoverflow.com/questions/8916679/js-ternary-operator-confusion
 // http://www.w3schools.com/js/js_cookies.asp
 // http://stackoverflow.com/questions/807878/javascript-that-executes-after-page-load
+// http://www.w3schools.com/jsref/jsref_replace.asp
 $(function(){
   var center = new google.maps.LatLng(43.048122, -76.147424)
   var mapOptions = {
@@ -897,6 +898,7 @@ $(function(){
           data: {'thing_id': activeThingId},
           success: function(data){
 			stateChange('green')
+			if(mozilla){data=data.replace('abandon_button', 'abandon_button1')}
 			activeInfoWindow.setContent(data)
 			updateStats()
 		  }
@@ -1023,11 +1025,11 @@ $(function(){
       }
     })
   }
-  $('#abandon_button').live('click', function(){
+  $('#abandon_button, #abandon_button1').live('click', function(){
 	abandon()
     return false
   })
-  $('#abandon_button').live('submit', function(){
+  $('#abandon_button, #abandon_button1').live('submit', function(){
 	abandon()
     return false
   })
