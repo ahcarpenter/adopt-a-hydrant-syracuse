@@ -254,7 +254,7 @@ $(function(){
 	  optimized:false,
 	  position: point,
 	  shadow: markerShadowImage
-	})
+	})	
 	google.maps.event.addListener(marker, 'click', function(){
 	  if(activeInfoWindow){activeInfoWindow.close()}
 	  var infoWindow = new google.maps.InfoWindow({maxWidth: 210})
@@ -268,7 +268,7 @@ $(function(){
 		$("div[class*='btn-group test1']").removeClass('btn-group test1').addClass('btn-group')
 		$('div[style*="width: 247px"]').append("<i id='info-window1' class='icon-remove'></i>")
 		if(opera){
-		  $('#info-window i').css('margin-top', '2px')
+		  if(!mobile){$('#info-window i').css('margin-top', '2px')}
 		  adjustHeight('#info-window .btn', '18px')
 		  $('#info-window1').css('margin-top', '10px').css('margin-left', '224px')
 		}
