@@ -66,11 +66,13 @@ $(function(){
   var opera = false
   var webkit = false
   var mozilla = false
+  var chrome = false
   jQuery.each(jQuery.browser, function(i, val){
 	if(i == 'opera'){
 	  opera = true
 	  _opera()
-	} 
+	}
+	if(i == 'chrome'){chrome = true}
 	if(i == 'webkit' || i == 'chrome'){
 	  webkit = true
 	  _webkit()
@@ -169,7 +171,6 @@ $(function(){
 	$('.required-password').css('margin-bottom','21px')
 	$('.modal-header').css('margin-bottom','-15px')
 	$("#tos [class='modal-body']").css('margin-top', '15px')
-	$('.icon-lock').css('margin-top', '7px')
   }
   function _mozilla(){
 	$('.icon-plus').css('margin-top', '-30px')
@@ -639,6 +640,7 @@ $(function(){
 	locale1 == 'ar' ? $('#remember_me').css('margin-left', '-40px') : locale1 == 'he' ? $('#remember_me').css('margin-left', '-58px') : locale1 == 'yi' ? $('#remember_me').css('margin-left', '-72px') : null
 	$('#test, #test1').css('position', 'absolute').css('text-align', 'right')
 	mozilla && !radio2_clicked ? $('#test, #test1').css('margin-top', '8px').css('margin-left', '72px') : mozilla && radio2_clicked ? $('#test, #test1').css('margin-top', '8px').css('margin-left', '187px') : $('#test, #test1').css('margin-top', '12px').css('margin-left', '189px')
+	if(chrome && !mobile){$('#test, #test1').css('margin-top', '8px')}
     $('label').css('text-align', 'right').css('margin-right', '20px')
     $('input').css('direction', 'rtl')
 	$('#info-window label').css('text-align', 'right').css('margin-right', '0px')

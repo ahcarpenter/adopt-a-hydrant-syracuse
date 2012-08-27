@@ -632,7 +632,6 @@ i {  margin-right: -20px }
   height: 31px;
   padding-top: 16px;
   margin-top: 45%;
-  cursor: pointer;
   color: #969696;
   box-shadow: 0px 2px 3px -2px #000000
 }
@@ -682,3 +681,6 @@ a:hover,
 .icon-download-alt:hover {  text-decoration: none }
 
 #locale {  bottom: 0 }
+
+#check1:hover,
+.icon-list-ul:hover {  cursor: pointer }
