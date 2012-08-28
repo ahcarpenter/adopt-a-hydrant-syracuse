@@ -66,6 +66,7 @@ $(function(){
   var opera = false
   var webkit = false
   var mozilla = false
+  var chrome = false
   jQuery.each(jQuery.browser, function(i, val){
 	if(i == 'opera'){
 	  opera = true
@@ -629,7 +630,7 @@ $(function(){
   })
   function getLocale(){
 	document.cookie.indexOf('locale') != -1 ? locale1 = document.cookie.split('locale=')[1].substring(0,2) : typeof window.location.pathname.substring(1,3) == 'undefined' ? locale1 = window.location.pathname.substring(1,3) : locale1 = 'en'
-	
+
 	return locale1
   }
   locale1 = getLocale()
@@ -851,6 +852,10 @@ $(function(){
 			if(iPad){adjustHeight('#test-sidebar', $('#map').height()+2)}
 			radio1 = false
 			adjust5()
+	  	    if(opera){
+		      $('#user_zip').css('margin-bottom','0px')
+		      $('.control-group').css('margin-bottom','0px')
+		    }
 		  }
 		})
 	  }
@@ -1171,7 +1176,10 @@ $(function(){
 			$('.alert').effect('pulsate', {times: 2}, 300)
 			remember_me = true
 			setIcons1()
- 			if(opera){_opera()}
+ 			if(opera){
+	  		  _opera()
+			  adjusted1 = false
+			}
 			if(webkit){_webkit()}
 			if(mozilla){_mozilla()}
 			if(mobile){
