@@ -125,6 +125,8 @@ $(function(){
   function setIcons1(){
 	$('#signup').icon('plus')
 	$('#login').icon('signin')
+	$('.icon-signin, .icon-plus').css('margin-top', '-31px')
+	$('.icon-facebook').css('margin-top', '3px')
   }
   setIcons1()
   function adjustHeight(identifier, value){$(identifier).css('height', value)}
@@ -133,13 +135,13 @@ $(function(){
 	google.maps.event.trigger(map, 'resize')
   }
   function _opera(){
-	$('.icon-plus').css('margin-top', '-28px')
-	$('.icon-signin').css('margin-top', '-28px')
-	$('.icon-facebook').css('margin-top', '2px')
+	$('.icon-plus, .icon-signin').css('margin-top', '-31px')
+	$('.icon-facebook').css('margin-top', '3px')
 	$('#extrusion').css('margin-top', '-32px')
 	adjustMapHeight($('.sidebar').height()-2)
 	$('.control-group').css('margin-bottom','0px')
 	if(!mobile){$('.icon-filter').css('margin-top', '5px')}
+	$('#log-in, #signup1').css('height', '30px')
   }
   if(mozilla){$('#stat1').css('margin-left', '55px')}
   if(iPad || iPhone){
@@ -163,17 +165,14 @@ $(function(){
 	if(opera || iPad){adjustMapHeight($(window).height())}
   }
   function _webkit(){
-	$('#user-email-label').css('margin-top','15px')
-	$('#city-state-label').css('margin-top','15px')
-	$('#user_email_edit_label').css('margin-top','15px')
+	$('#user-email-label, #city-state-label, #user_email_edit_label').css('margin-top','15px')
 	$('#user-remember-me').css('margin-top','2px')
 	$('.required-password').css('margin-bottom','21px')
 	$('.modal-header').css('margin-bottom','-15px')
 	$("#tos [class='modal-body']").css('margin-top', '15px')
   }
   function _mozilla(){
-	$('.icon-plus').css('margin-top', '-30px')
-	$('.icon-signin').css('margin-top', '-30px')
+	$('.icon-plus, .icon-signin').css('margin-top', '-30px')
 	$('#extrusion').css('margin-top', '-32px')
   }
   function toggle_lock_icon(element){$(element).live('focusout', function(event){if($(element).val().length == 0 && radio1){$('#test').addClass('icon-lock')}}).live('keydown', function(event){$('#test').removeClass('icon-lock')})}
@@ -225,16 +224,7 @@ $(function(){
 	}
   )
   $('.icon-download-alt').live('click', function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/xml/hydrants.kml')})
-  function adjust2(){
-	if(mobile){
-	  $('.icon-search').css('margin-top','4px')
-	  $('.icon-pencil').css('margin-top','4px')
-	  $('.icon-signout').css('margin-top','4px')	
-	} else{
-	  $('.icon-search').css('margin-top','3px')
-	  $('.icon-pencil').css('margin-top','3px')
-	  $('.icon-signout').css('margin-top','3px')	}
-  }
+  function adjust2(){mobile ? $('.icon-search, .icon-pencil, .icon-signout').css('margin-top','4px') : $('.icon-search, .icon-pencil, .icon-signout').css('margin-top','-3px')}
   if(opera){adjust2()}
   $('.alert').live('close', function(){
 	$(this).hide()
