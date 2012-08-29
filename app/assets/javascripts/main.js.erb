@@ -231,10 +231,9 @@ $(function(){
 	  $('.icon-pencil').css('margin-top','4px')
 	  $('.icon-signout').css('margin-top','4px')	
 	} else{
-	  $('.icon-search').css('margin-top','2px')
-	  $('.icon-pencil').css('margin-top','2px')
-	  $('.icon-signout').css('margin-top','2px')
-	}
+	  $('.icon-search').css('margin-top','3px')
+	  $('.icon-pencil').css('margin-top','3px')
+	  $('.icon-signout').css('margin-top','3px')	}
   }
   if(opera){adjust2()}
   $('.alert').live('close', function(){
@@ -460,9 +459,7 @@ $(function(){
     $('.preview-title').prepend("<i class='icon-caret-down'></i>")
 	if(opera){$('.icon-caret-down').css('margin-top', '0px')}
   })
-  $('#preview').live('hide', function(){
-    $('#send_referral').css('margin-top', '4px')
-  })
+  $('#preview').live('hide', function(){$('#send_referral').css('margin-top', '4px')})
   $('#preview').live('hidden', function(){
   // do something…
     preview_shown = false
@@ -573,7 +570,6 @@ $(function(){
   }
   $('#radio1').live('click', function(){
 	radio1 = true
-	adjust3()
     var radioInput = $(this)
     $('#combo-form').data('state', 'user_sign_up')
     if(opera){_opera()}
@@ -1052,7 +1048,7 @@ $(function(){
 		if(opera){
 		  $('.icon-hdd').css('margin-top', '-30px')
 		  $('#user_zip, .control-group').css('margin-bottom','0px')
-		  mobile ? adjustMapHeight($('#test-sidebar').height()-84) : $('.icon-arrow-left').css('margin-top','2px')
+		  mobile ? adjustMapHeight($('#test-sidebar').height()-84) : $('.icon-arrow-left').css('margin-top','3px')
 		}
 		if(webkit){_webkit()}
 		if(mozilla){$('.icon-hdd').css('margin-top', '-31px')}
