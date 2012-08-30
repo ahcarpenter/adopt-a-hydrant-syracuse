@@ -197,9 +197,9 @@ $(function(){
 	  }
 	  if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
 	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
-	} else if (!sign_in){
+	} else{
 	  $('#test-sidebar').transition({x: '0px'}, function(){
-		$(this).hide()
+      $(this).hide()
 		sidebar_visible = false
 	  })
 	  $('.icon-list-ul').transition({x: '0px'})
@@ -286,7 +286,8 @@ $(function(){
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
 	      if(infoWindow === activeInfoWindow){	
 			if(data.indexOf('sign-in') != -1){sign_in=true}
-		    sms_notifications, email_notifications = false
+		    sms_notifications = false
+		    email_notifications = false
 			infoWindow.setContent("<div id='info-window'>" + data + "</div>")
 			openInfoWindow(infoWindow, map, marker)
 	        isWindowOpen = true
@@ -299,11 +300,9 @@ $(function(){
   }
   $('#info-window').live('click', function(){
 	if(mobile && sign_in){
-	  sign_in=true
 	  $('.icon-list-ul').trigger('click')
 	  $('#radio2').trigger('click')
 	  $('#user_email').focus()
-	  sign_in=false
 	}
   })
   function addMarkersAround(lat, lng, sieve_adopted){
