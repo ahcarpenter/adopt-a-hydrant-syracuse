@@ -66,7 +66,6 @@ $(function(){
   var opera = false
   var webkit = false
   var mozilla = false
-  var chrome = false
   jQuery.each(jQuery.browser, function(i, val){
 	if(i == 'opera'){
 	  opera = true
@@ -125,8 +124,10 @@ $(function(){
   function setIcons1(){
 	$('#signup').icon('plus')
 	$('#login').icon('signin')
-	$('.icon-signin, .icon-plus').css('margin-top', '-31px')
-	$('.icon-facebook').css('margin-top', '3px')
+	if(opera){
+	  $('.icon-signin, .icon-plus').css('margin-top', '-31px')
+	  $('.icon-facebook').css('margin-top', '3px')
+	}
   }
   setIcons1()
   function adjustHeight(identifier, value){$(identifier).css('height', value)}
@@ -624,7 +625,8 @@ $(function(){
 	$('#remember_me1').css('margin-left', '197px')
 	locale1 == 'ar' ? $('#remember_me').css('margin-left', '-40px') : locale1 == 'he' ? $('#remember_me').css('margin-left', '-58px') : locale1 == 'yi' ? $('#remember_me').css('margin-left', '-72px') : null
 	$('#test, #test1').css('position', 'absolute').css('text-align', 'right')
-	mozilla && !radio2_clicked ? $('#test, #test1').css('margin-top', '8px').css('margin-left', '72px') : mozilla && radio2_clicked ? $('#test, #test1').css('margin-top', '8px').css('margin-left', '187px') : $('#test, #test1').css('margin-top', '12px').css('margin-left', '189px')
+	mozilla && !radio2_clicked ? $('#test, #test1').css('margin-left', '72px') : mozilla && radio2_clicked ? $('#test, #test1').css('margin-left', '187px') : $('#test, #test1').css('margin-left', '189px')
+	opera ? $('#test, #test1').css('margin-top', '12px') : $('#test, #test1').css('margin-top', '8px')
     $('label').css('text-align', 'right').css('margin-right', '20px')
     $('input').css('direction', 'rtl')
 	$('#info-window label').css('text-align', 'right').css('margin-right', '0px')
