@@ -299,9 +299,11 @@ $(function(){
   }
   $('#info-window').live('click', function(){
 	if(mobile && sign_in){
+	  sign_in=true
 	  $('.icon-list-ul').trigger('click')
 	  $('#radio2').trigger('click')
 	  $('#user_email').focus()
+	  sign_in=false
 	}
   })
   function addMarkersAround(lat, lng, sieve_adopted){
