@@ -184,22 +184,27 @@ $(function(){
   toggle_lock_icon('#user_email')
   toggle_lock_icon1('#user_password_confirmation')
   search()
+  function slide(){
+	$('#test-sidebar').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').show().transition({x: '250px'})
+	sidebar_visible = true
+	$('.icon-list-ul').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').transition({x: '250px'})
+	adjust3()
+	if(iPad){
+      adjustHeight('#test-sidebar', $('#map').height()+2)
+	  $('#radio1').hasClass('btn active') ? identifier = '.sidebar' : identifier = '#test-sidebar'
+	  adjustMapHeight($(identifier).height()-2)
+	}
+	if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
+	if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
+  }
+  alert('Hello2')
   $('.icon-list-ul').click(function(){
+	alert(sidebar_visible)
 	if(!sidebar_visible){
-	  $('#test-sidebar').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').show().transition({x: '250px'})
-	  sidebar_visible = true
-	  $('.icon-list-ul').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').transition({x: '250px'})
-	  adjust3()
-	  if(iPad){
-		adjustHeight('#test-sidebar', $('#map').height()+2)
-		$('#radio1').hasClass('btn active') ? identifier = '.sidebar' : identifier = '#test-sidebar'
-		adjustMapHeight($(identifier).height()-2)
-	  }
-	  if(!iPad){adjustMapHeight($('.sidebar').height()-2)}
-	  if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
+	  slide()
 	} else{
 	  $('#test-sidebar').transition({x: '0px'}, function(){
-      $(this).hide()
+        $(this).hide()
 		sidebar_visible = false
 	  })
 	  $('.icon-list-ul').transition({x: '0px'})
@@ -300,7 +305,7 @@ $(function(){
   }
   $('#info-window').live('click', function(){
 	if(mobile && sign_in){
-	  $('.icon-list-ul').trigger('click')
+	  if(!sidebar_visible){slide()}
 	  $('#radio2').trigger('click')
 	  $('#user_email').focus()
 	}
@@ -417,8 +422,8 @@ $(function(){
             $('#address').parent().removeClass('error')
 			addMarkersAround(data[0], data[1])
 			if(!map.getStreetView().getVisible()){
-	            map.setCenter(new google.maps.LatLng(data[0], data[1]))
-	            map.setZoom(19)	
+	          map.setCenter(new google.maps.LatLng(data[0], data[1]))
+	          map.setZoom(19)	
 			} else{map.getStreetView().setPosition(new google.maps.LatLng(data[0], data[1]))}
           }
         }
