@@ -660,12 +660,10 @@ $(function(){
 	  $('#radio2').css('margin-top') > $('#radio1').css('margin-top') ? $('#radio2').css('margin-top', -($('#radio1').outerHeight()+2)) : $('#radio1').css('margin-top', -($('#radio2').outerHeight()+2))
 	}
 	if(locale1 == 'ar' || locale1 == 'cn' || locale1 == 'he' || locale1 == 'kr' || locale1 == 'yi' && !adjusted1){
-	  mobile ? locale1 == 'ar' ? value = 0 : locale1 == 'yi' || locale1 == 'he' ? value = 2 : value = 1 : locale1 == 'kr' ? value = 0 : value = 2
-	  if(webkit || mozilla){value = 0}
-      var value1 = 0
+	  webkit || mozilla || (!mobile && locale1 == 'kr') ? value = 0 : value = 2
 	  if(radio1 && !adjusted1){$('#radio2').css('margin-top',parseInt($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length))-value)}
-	  if(locale1 == 'he' && opera && mobile){value = 0}
-	  opera ? locale1 == 'yi' || locale1 == 'kr' ? value1 = 0 : !mobile ? value1 = 1 : value1 = -1 : null
+	  opera ? locale1 == 'ar' || locale1 == 'kr' || locale1 == 'cn' ? value1 = 1 : locale1 == 'he' ? value1 = 2 : value1 = 0 : null
+	  opera && !mobile ? locale1 == 'kr' || locale1 == 'yi' ? value1=0 : value1=1 : null
 	  if(!mozilla){$('#download-link').css('padding-top',parseInt($('#download-link').css('padding-top').substring(0, parseInt($('#download-link').css('padding-top').length)))-value+value1)}
 	  adjusted1 = true
 	  locale1 == 'ar' || locale1 == 'he' || locale1 == 'yi' ? adjust4() : null
