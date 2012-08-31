@@ -67,7 +67,7 @@ $(function(){
   var webkit = false
   var mozilla = false
   var chrome = false
-  var sign_in = false
+  // var sign_in = false
   jQuery.each(jQuery.browser, function(i, val){
 	if(i == 'opera'){
 	  opera = true
@@ -255,10 +255,7 @@ $(function(){
 	google.maps.event.addListener(marker, 'click', function(){
 	  if(activeInfoWindow){activeInfoWindow.close()}
 	  var infoWindow = new google.maps.InfoWindow({maxWidth: 210})
-	  google.maps.event.addListener(infoWindow, 'closeclick', function(){
-		isWindowOpen = false
-		if(sign_in){sign_in=false}
-	  })
+	  google.maps.event.addListener(infoWindow, 'closeclick', function(){isWindowOpen = false})
 	  google.maps.event.addListener(infoWindow, 'domready', function(){
 		$("div[style*='width: 247px;'] div:first-child").each(function(){if(!$(this).hasClass('test')){$(this).addClass('test1')}})
     	$("img[src*='http://maps.gstatic.com/mapfiles/mv/imgs8.png']").each(function(){if($(this).parent().hasClass('test1')){$(this).remove()}})
@@ -277,6 +274,10 @@ $(function(){
 		  function(){$("#info-window1[class='icon-remove']").css('color', '#cccccc')}
 		)
 		adjust3()
+		if(mobile){
+		  $('.sign-in').css('color', '#08C')
+		  $('.sign-in').live('click', function(){$(this).css('color', '#005580')})
+		}
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
@@ -287,8 +288,7 @@ $(function(){
 	    data: {'thing_id': thingId},
 	    success: function(data){
 	      // Prevent race condition, which could lead to multiple windows being open at the same time.
-	      if(infoWindow === activeInfoWindow){	
-			if(data.indexOf('sign-in') != -1){sign_in=true}
+	      if(infoWindow === activeInfoWindow){
 		    sms_notifications = false
 		    email_notifications = false
 			infoWindow.setContent("<div id='info-window'>" + data + "</div>")
@@ -301,8 +301,8 @@ $(function(){
 	thingIds.push(thingId)
 	return marker
   }
-  $('#info-window').live('click', function(){
-	if(mobile && sign_in){
+  $('.sign-in').live('click', function(){
+	if(mobile){
 	  if(!sidebar_visible){slide()}
 	  $('#radio2').trigger('click')
 	  $('#user_email').focus()
