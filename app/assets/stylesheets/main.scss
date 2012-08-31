@@ -599,9 +599,13 @@ i {  margin-right: -20px }
 
 .icon-download-alt {
   margin-left: 198px;
-  color: #08C;
   width: 14px
 }
+
+.icon-download-alt,
+.sign-in {  color: #08C }
+
+.sign-in:hover {  color: #005580 }
 
 #download-link {
   margin-left: 218px;

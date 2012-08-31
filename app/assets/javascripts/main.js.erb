@@ -274,10 +274,10 @@ $(function(){
 		  function(){$("#info-window1[class='icon-remove']").css('color', '#cccccc')}
 		)
 		adjust3()
-		if(mobile){
-		  $('.sign-in').css('color', '#08C')
-		  $('.sign-in').live('click', function(){$(this).css('color', '#005580')})
-		}
+		// if(mobile){
+		  // $('.sign-in').css('color', '#08C')
+		  // $('.sign-in').live('click', function(){$(this).css('color', '#005580')})
+		// }
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
@@ -302,11 +302,9 @@ $(function(){
 	return marker
   }
   $('.sign-in').live('click', function(){
-	if(mobile){
-	  if(!sidebar_visible){slide()}
-	  $('#radio2').trigger('click')
-	  $('#user_email').focus()
-	}
+	if(mobile){if(!sidebar_visible){slide()}}
+	$('#radio2').trigger('click')
+	$('#user_email').focus()
   })
   function addMarkersAround(lat, lng, sieve_adopted){
 	var submitButton = $("#address_form input[type='submit']")
