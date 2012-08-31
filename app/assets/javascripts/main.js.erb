@@ -188,7 +188,6 @@ $(function(){
 	$('#test-sidebar').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').show().transition({x: '250px'})
 	sidebar_visible = true
 	$('.icon-list-ul').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').transition({x: '250px'})
-	adjust3()
 	if(iPad){
       adjustHeight('#test-sidebar', $('#map').height()+2)
 	  $('#radio1').hasClass('btn active') ? identifier = '.sidebar' : identifier = '#test-sidebar'
@@ -666,7 +665,7 @@ $(function(){
       var value1 = 0
 	  if(radio1 && !adjusted1){$('#radio2').css('margin-top',parseInt($('#radio2').css('margin-top').substring(0, $('#radio2').css('margin-top').length))-value)}
 	  if(locale1 == 'he' && opera && mobile){value = 0}
-	  opera && !mobile && locale1 != 'yi' ? value1 = 1 : null
+	  opera ? locale1 == 'yi' || locale1 == 'kr' ? value1 = 0 : !mobile ? value1 = 1 : value1 = -1 : null
 	  if(!mozilla){$('#download-link').css('padding-top',parseInt($('#download-link').css('padding-top').substring(0, parseInt($('#download-link').css('padding-top').length)))-value+value1)}
 	  adjusted1 = true
 	  locale1 == 'ar' || locale1 == 'he' || locale1 == 'yi' ? adjust4() : null
