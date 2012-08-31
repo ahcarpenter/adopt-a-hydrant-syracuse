@@ -605,7 +605,10 @@ i {  margin-right: -20px }
 .icon-download-alt,
 .sign-in {  color: #08C }
 
-.sign-in:hover {  color: #005580 }
+.sign-in:hover {
+  color: #005580;
+  cursor: pointer
+}
 
 #download-link {
   margin-left: 218px;
