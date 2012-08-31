@@ -54,6 +54,7 @@ gr:
     enable_sms_notifications: 'Ενεργοποίηση ειδοποίηση μέσω SMS όταν χιονόπτωσης έχει προβλεφθεί'
     enable_email_transmission: 'Είναι δυνατή η μετάδοση μέσω email'
     enable_sms_transmission: 'Ενεργοποίηση μετάδοση μέσω SMS'
+    log_in: 'Σύνδεση'
     name: 'όνομα'
     name_thing: "Δώστε σε αυτό %{thing} ένα όνομα"
     organization: 'Oργάνωση'
@@ -102,6 +103,6 @@ gr:
     main: "Adopt-a-%{thing}"
     ofline: "του %{organization}"
     referral: 'Ανατρέξτε'
-    sign_in: "Συνδεθείτε, για να υιοθετήσουν αυτό %{thing}"
+    sign_in: "να εγκρίνει την παρούσα κρουνό"
     thank_you: "Σας ευχαριστούμε για την έγκριση αυτής %{thing}!"
     tos: 'Όροι Χρήσης'

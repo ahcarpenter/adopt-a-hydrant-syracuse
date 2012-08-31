@@ -54,6 +54,7 @@ ar:
     enable_sms_notifications: 'تفعيل التبليغ عن طريق الرسائل القصيرة إذا كان قد تم توقع تساقط الثلوج'
     enable_email_transmission: 'تمكين نقل عبر البريد الإلكتروني'
     enable_sms_transmission: 'تمكين نقل عبر الرسائل القصيرة'
+    log_in: 'تسجيل الدخول'
     name: 'اسم'
     name_thing: "تعطي هذه %{thing} اسم"
     organization: 'منظمة'
@@ -102,6 +103,6 @@ ar:
     main: "Adopt-a-%{thing}"
     ofline: "من %{organization}"
     referral: 'الرجوع'
-    sign_in: "تسجيل الدخول إلى تبني هذا %{thing}"
+    sign_in: "على اعتماد هذا صنبور %{thing}"
     thank_you: "أشكركم على اعتماد هذه %{thing}!"
     tos: 'شروط الخدمة'

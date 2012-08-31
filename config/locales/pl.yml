@@ -54,6 +54,7 @@ pl:
     enable_sms_notifications: 'Włącz powiadomienie poprzez SMS czy opadów śniegu prognozowane'
     enable_email_transmission: 'Włącz transmisję za pośrednictwem poczty elektronicznej'
     enable_sms_transmission: 'Włącz transmisję za pomocą SMS'
+    log_in: 'Zaloguj się'
     name: 'Nazwa'
     name_thing: "Daj ten %{thing} nazwę"
     organization: 'Organizacja'
@@ -102,6 +103,6 @@ pl:
     main: "Adopt-a-%{thing}"
     ofline: "z %{organization}"
     referral: 'Odnosić się'
-    sign_in: "Zaloguj się, by przyjąć ten %{thing}"
+    sign_in: "przyjąć ten hydrant"
     thank_you: "Dziękujemy za przyjęcie tego %{thing}!"
     tos: 'Warunki korzystania z usług'

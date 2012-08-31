@@ -54,6 +54,7 @@ kr:
     enable_sms_notifications: '적설이 예상되었을 경우 SMS를 통해 알림을 활성화'
     enable_email_transmission: '이메일을 통해 전송을 활성화'
     enable_sms_transmission: 'SMS로 전송 활성화'
+    log_in: ''
     name: '이름'
     name_thing: '이 급수전에게 이름을 지정'
     organization: '조직'
@@ -102,6 +103,6 @@ kr:
     main: "Adopt-a-%{thing}"
     ofline: "중 %{organization}"
     referral: '참조'
-    sign_in: '이 급수전을 채택 로그인'
+    sign_in: '이 급수전을 채택하는'
     thank_you: '이 급수전을 채택 주셔서 감사합니다!'
     tos: '서비스 약관'

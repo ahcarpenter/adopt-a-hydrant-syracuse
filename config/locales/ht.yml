@@ -54,6 +54,7 @@ ht:
     enable_sms_notifications: 'Pèmèt notifikasyon via SMS si Lanèj ki Tonbe an te prévue'
     enable_email_transmission: 'Pèmèt transmisyon atravè imel'
     enable_sms_transmission: 'Pèmèt transmisyon via SMS'
+    log_in: 'Log in'
     name: 'Non'
     name_thing: "Bay sa a %{thing} yon non"
     organization: 'Òganizasyon'
@@ -102,6 +103,6 @@ ht:
     main: "Adopt-a-%{thing}"
     ofline: "nan %{organization}"
     referral: 'Refere'
-    sign_in: "Log in adopte sa a %{thing}"
+    sign_in: "yo adopte sa a fontèn dlo"
     thank_you: "Mèsi pou adopte sa a %{thing}!"
     tos: 'Tèm de Sèvis'

@@ -55,6 +55,7 @@ he:
     enable_sms_notifications: 'אפשר הודעה באמצעות SMS אם כבר שלג תחזית'
     enable_email_transmission: 'אפשר שידור באמצעות דוא"ל'
     enable_sms_transmission: 'אפשר שידור ב-SMS'
+    log_in: 'התחברתי'
     name: 'שם'
     name_thing: "תן %{thing} שם"
     organization: 'ארגון'
@@ -103,6 +104,6 @@ he:
     main: "Adopt-a-%{thing}"
     ofline: "של %{organization}"
     referral: 'להפנות'
-    sign_in: "היכנסו, על מנת לאמץ את %{thing}"
+    sign_in: "לאמץ רז זה"
     thank_you: "תודה על אימוץ %{thing}!"
     tos: 'תנאי שימוש'

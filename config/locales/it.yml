@@ -55,6 +55,7 @@ it:
     enable_sms_notifications: 'Abilitare la notifica via SMS se nevicata è stata prevista'
     enable_email_transmission: 'Consentire la trasmissione via e-mail'
     enable_sms_transmission: 'Consentire la trasmissione via SMS'
+    log_in: 'Log in'
     name_thing: "Dare a questo %{thing} un nome"
     organization: 'Organizzazione'
     password: 'Password'
@@ -102,6 +103,6 @@ it:
     main: "Adopt-a-%{thing}"
     ofline: "di %{organization}"
     referral: 'Fare riferimento'
-    sign_in: "Accedere a adottare questo %{thing}"
+    sign_in: "di adottare questa idrante"
     thank_you: "Grazie di aver adottato questo %{thing}!"
     tos: 'Termini di Servizio'

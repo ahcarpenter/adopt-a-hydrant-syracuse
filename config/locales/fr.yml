@@ -55,6 +55,7 @@ fr:
     enable_sms_notifications: 'Activer la notification par SMS, si les chutes de neige a été prévu'
     enable_email_transmission: 'Activer la transmission par e-mail'
     enable_sms_transmission: 'Activer la transmission par SMS'
+    log_in: 'Identifiez-vous'
     name: 'Nom'
     name_thing: "Donnez cette %{thing} d'un nom"
     organization: 'Organisation'
@@ -103,6 +104,6 @@ fr:
     main: "Adopt-a-%{thing}"
     ofline: "de %{organization}"
     referral: 'Référer'
-    sign_in: "Connectez-vous à adopter cette %{thing}"
+    sign_in: "d'adopter cette borne"
     thank_you: "Merci pour l'adoption de cette %{thing}!"
     tos: "Conditions D'utilisation"

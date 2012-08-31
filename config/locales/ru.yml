@@ -54,6 +54,7 @@ ru:
     enable_sms_notifications: 'Включить уведомление по SMS, если снегопад был прогнозируемым'
     enable_email_transmission: 'Включить передачу по электронной почте'
     enable_sms_transmission: 'Включение передачи через SMS'
+    log_in: 'войдите'
     name: 'имя'
     name_thing: "Дайте этому название %{thing}"
     organization: 'организация'
@@ -102,6 +103,6 @@ ru:
     main: "Adopt-a-%{thing}"
     ofline: "из %{organization}"
     referral: 'обращаться'
-    sign_in: "Войти принять это %{thing}"
+    sign_in: "принять этот гидрант"
     thank_you: "Благодарим Вас за принятие этого %{thing}!"
     tos: 'Условия предоставления услуг'

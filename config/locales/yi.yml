@@ -54,6 +54,7 @@ yi:
     enable_sms_notifications: 'געבן אָנזאָג דורך SMS אויב שנייפאַל האט געווארן פאָרקאַסטיד'
     enable_email_transmission: 'געבן טראַנסמיסיע דורך email'
     enable_sms_transmission: 'געבן טראַנסמיסיע דורך SMS'
+    log_in: 'קלאָץ אין'
     name: 'נאָמען'
     name_thing: "געבן דעם %{thing} אַ נאָמען"
     organization: 'אָרגאַניזירונג'
@@ -102,6 +103,6 @@ yi:
     main: "Adopt-a-%{thing}"
     ofline: "פון %{organization}"
     referral: 'אָפּשיקן'
-    sign_in: "קלאָץ אין צו אַדאַפּט דעם %{thing}"
+    sign_in: "צו אַדאַפּט דעם כיידראַנט"
     thank_you: "דאנק פֿאַר אננעמען דעם %{thing}!"
     tos: 'תּנאָים פון סערוויס'

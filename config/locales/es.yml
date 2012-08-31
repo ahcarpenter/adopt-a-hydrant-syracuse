@@ -54,6 +54,7 @@ es:
     enable_sms_notifications: 'Activar la notificación a través de SMS si se ha previsto nevadas'
     enable_email_transmission: 'Activar la transmisión por correo electrónico'
     enable_sms_transmission: 'Permitir la transmisión a través de SMS'
+    log_in: 'Iniciar la sesión'
     name: 'Nombre'
     name_thing: 'Dar a esta toma de agua un nombre'
     organization: 'Organización'
@@ -102,6 +103,6 @@ es:
     main: "Adopt-a-%{thing}"
     ofline: "de %{organization}"
     referral: 'Remitir'
-    sign_in: "Acceda a esta adopción %{thing}"
+    sign_in: "adoptar esta hidrante"
     thank_you: "Gracias por la adopción de esta %{thing}!"
     tos: 'Términos de Servicio'

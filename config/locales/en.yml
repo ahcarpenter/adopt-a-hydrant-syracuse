@@ -57,6 +57,7 @@ en:
     enable_sms_notifications: 'Enable notification via SMS if snowfall has been forecasted'
     enable_email_transmission: 'Enable transmission via email'
     enable_sms_transmission: 'Enable transmission via SMS'
+    log_in: 'Log in'
     name: 'Name'
     name_thing: "Name this %{thing}"
     organization: 'Organization'
@@ -105,6 +106,6 @@ en:
     main: "Adopt-a-%{thing}"
     ofline: "of %{organization}"
     referral: 'Refer'
-    sign_in: "Log in to adopt this %{thing}"
+    sign_in: "to adopt this %{thing}"
     thank_you: "Thank you for adopting this %{thing}!"
     tos: 'Terms of Service'
