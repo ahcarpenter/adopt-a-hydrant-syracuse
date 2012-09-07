@@ -22,7 +22,7 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'uglifier'
-  gem 'font-awesome-sass-rails'
+  gem 'font-awesome-sass-rails', '2.0.0.0'
 end
 
 group :production do
