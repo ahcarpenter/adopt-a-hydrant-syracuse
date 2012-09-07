@@ -67,7 +67,6 @@ $(function(){
   var webkit = false
   var mozilla = false
   var chrome = false
-  // var sign_in = false
   jQuery.each(jQuery.browser, function(i, val){
 	if(i == 'opera'){
 	  opera = true
@@ -197,7 +196,7 @@ $(function(){
 	if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
   }
   $('.icon-list-ul').click(function(){
-  	if(!sidebar_visible){slide()}
+    if(!sidebar_visible){slide()}
     else{
   	  $('#test-sidebar').transition({x: '0px'}, function(){
         $(this).hide()
@@ -272,10 +271,6 @@ $(function(){
 		  function(){$("#info-window1[class='icon-remove']").css('color', '#cccccc')}
 		)
 		adjust3()
-		// if(mobile){
-		  // $('.sign-in').css('color', '#08C')
-		  // $('.sign-in').live('click', function(){$(this).css('color', '#005580')})
-		// }
 	  })
 	  activeInfoWindow = infoWindow
 	  activeThingId = thingId
