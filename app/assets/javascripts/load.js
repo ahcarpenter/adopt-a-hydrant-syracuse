@@ -1,1 +1,0 @@
-$(function(){$('.icon-list-ul').click(function(){!$('.icon-list-ul').hasClass('slid') ? $('.icon-list-ul').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').transition({x: '250px'}).addClass('slid') : $('.icon-list-ul').removeClass('slid').transition({x: '0px'})})})
