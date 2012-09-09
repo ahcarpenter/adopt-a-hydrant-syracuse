@@ -187,8 +187,7 @@ $(function(){
   function slide(){
 	$('#test-sidebar').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').show().transition({x: '250px'})
 	sidebar_visible = true
-	var worker = new Worker('load.js')
-	worker.postMessage()
+	$('.icon-list-ul').css('-webkit-transform', 'translateX(0)').css('transform', 'translateX(0)').css('-moz-transform', 'translateX(0)').css('-o-transform', 'translateX(0)').transition({x: '250px'})
 	if(iPad){
       adjustHeight('#test-sidebar', $('#map').height()+2)
 	  $('#radio1').hasClass('btn active') ? identifier = '.sidebar' : identifier = '#test-sidebar'
@@ -204,6 +203,7 @@ $(function(){
         $(this).hide()
   		sidebar_visible = false
   	  })
+  	  $('.icon-list-ul').transition({x: '0px'})
   	  opera ? value = $(window).height() : value = '100%'
   	  adjustMapHeight(value)
   	}
