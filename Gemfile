@@ -14,6 +14,7 @@ gem 'immigrant'
 gem 'libxml-ruby'
 gem 'referthis'
 gem 'koala'
+gem 'newrelic_rpm'
 
 platforms :ruby_18 do
   gem 'fastercsv'
