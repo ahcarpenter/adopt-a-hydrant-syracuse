@@ -65,6 +65,7 @@ kr:
     preview: '미리보기'
     remember_me: '내 계정 정보 기억'
     required: '필수'
+    sidebar: '사이드 밀어하려면 누르세요'
     sms_number: '휴대폰 번호'
     state: '상태'
     user_existing: '이미 가입한'

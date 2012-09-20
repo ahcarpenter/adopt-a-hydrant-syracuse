@@ -65,6 +65,7 @@ ht:
     preview: 'Preview'
     remember_me: "Toujou chonje m '"
     required: 'Obligatwa'
+    sidebar: 'Tiyo glise ankadre'
     sms_number: 'Telefòn mobil nimewo'
     state: 'Eta'
     user_existing: 'Mwen te deja siyen moute'

@@ -65,6 +65,7 @@ es:
     preview: 'Vista previa'
     remember_me: 'Recuérdame'
     required: 'Necesario'
+    sidebar: 'Pulse para deslizar la barra lateral'
     sms_number: 'Número de teléfono móvil'
     state: 'Estado'
     user_existing: 'Ya he firmado'

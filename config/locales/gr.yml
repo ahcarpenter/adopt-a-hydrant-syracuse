@@ -65,6 +65,7 @@ gr:
     preview: 'Προεπισκόπηση'
     remember_me: 'Να με θυμάσαι'
     required: 'Απαιτείται'
+    sidebar: 'Πατήστε για να σύρετε sidebar'
     sms_number: 'Αριθμός κινητού τηλεφώνου'
     state: 'πολιτεία'
     user_existing: 'Έχω ήδη εγγραφεί'

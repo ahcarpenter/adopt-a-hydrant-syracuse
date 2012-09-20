@@ -65,6 +65,7 @@ cn:
     preview: '預覽'
     remember_me: '記住我'
     required: '需要'
+    sidebar: '點擊滑動側邊欄'
     sms_number: '手機號碼'
     state: '州'
     user_existing: '我已經簽署了'

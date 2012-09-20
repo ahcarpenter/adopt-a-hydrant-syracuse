@@ -112,6 +112,7 @@ $(function(){
   var remember_me = true
   var radio1 = true
   var radio2_clicked = false
+  var tip_shown=false
   var mobile = navigator.userAgent.indexOf('Mobi') != -1
   var iPhone = navigator.userAgent.indexOf('iPhone') != -1
   var iPad = navigator.userAgent.indexOf('iPad') != -1
@@ -203,7 +204,7 @@ $(function(){
         $(this).hide()
   		sidebar_visible = false
   	  })
-  	  $('.icon-list-ul').transition({x: '0px'})
+  	  $(this).transition({x: '0px'})
   	  opera ? value = $(window).height() : value = '100%'
   	  adjustMapHeight(value)
   	}
@@ -211,21 +212,21 @@ $(function(){
   $('#download-link').hover(
 	function(){
 	  $('.icon-download-alt').css('color', '#005580').css('cursor', 'pointer')
-	  $('#download-link').css('color', '#005580')
+	  $(this).css('color', '#005580')
 	},
 	function(){
 	  $('.icon-download-alt').css('color', '#08C')
-	  $('#download-link').css('color', '#08C')
+	  $(this).css('color', '#08C')
 	}
   )
   $('.icon-download-alt').hover(
 	function(){
 	  $('#download-link').css('color', '#005580')
-	  $('.icon-download-alt').css('color', '#005580').css('cursor', 'pointer')
+	  $(this).css('color', '#005580').css('cursor', 'pointer')
 	},
 	function(){
 	  $('#download-link').css('color', '#08C')
-	  $('.icon-download-alt').css('color', '#08C')
+	  $(this).css('color', '#08C')
 	}
   )
   $('.icon-download-alt').live('click', function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/xml/hydrants.kml')})
@@ -1286,5 +1287,14 @@ $(function(){
     })
     return false
   })
-  $('#tos_link').click(function(){if(mobile && $(window).width() < 800){$('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)')}})
+  $('#tos_link').click(function(){if(mobile && $(window).width() < 800){$('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)')}})	
+  $('.icon-list-ul').tooltip({show: 1000, hide: 100, placement: 'right', trigger: 'manual'})
+  if(mobile){
+    $('#map').click(function(){
+	  if(!tip_shown && !sidebar_visible){
+        $('.icon-list-ul').tooltip('show')
+	    tip_shown=true
+	  } else{$('.icon-list-ul').tooltip('hide')}
+    })
+  }
 })

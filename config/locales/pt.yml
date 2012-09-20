@@ -65,6 +65,7 @@ pt:
     preview: 'Visualização'
     remember_me: 'Lembre-me'
     required: 'Necessário'
+    sidebar: 'Toque para deslizar a barra lateral'
     sms_number: 'Número do celular'
     state: 'Estado'
     user_existing: 'Eu já se inscreveram'

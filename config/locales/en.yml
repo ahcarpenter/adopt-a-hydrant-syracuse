@@ -68,6 +68,7 @@ en:
     preview: 'Preview'
     remember_me: 'Remember me'
     required: 'Required'
+    sidebar: 'Tap to slide sidebar'
     sms_number: 'Mobile phone number'
     state: 'State'
     user_existing: "I've already signed up"

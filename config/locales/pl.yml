@@ -65,6 +65,7 @@ pl:
     preview: 'Podgląd'
     remember_me: 'Zapamiętaj mnie'
     required: 'Wymagany'
+    sidebar: 'Stuknij, aby przesunąć pasek boczny'
     sms_number: 'Numer telefonu komórkowego'
     state: 'Stan'
     user_existing: 'Ja już podpisały'

@@ -66,6 +66,7 @@ fr:
     preview: 'Avant-première'
     remember_me: 'Se souvenir de moi'
     required: 'Requis'
+    sidebar: 'Appuyez sur pour faire glisser la barre latérale'
     sms_number: 'Le numéro de téléphone mobile'
     state: 'Etat'
     user_existing: "J'ai déjà signé"
