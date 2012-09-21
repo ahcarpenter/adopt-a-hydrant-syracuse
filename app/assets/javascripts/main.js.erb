@@ -198,7 +198,10 @@ $(function(){
 	if(mobile && opera){$('.icon-facebook').css('margin-top', '4px')}
   }
   $('.icon-list-ul').click(function(){
-    if(!sidebar_visible){slide()}
+    if(!sidebar_visible){
+        $(this).tooltip('hide')
+		slide()
+	}
     else{
   	  $('#test-sidebar').transition({x: '0px'}, function(){
         $(this).hide()
@@ -1287,14 +1290,5 @@ $(function(){
     })
     return false
   })
-  $('#tos_link').click(function(){if(mobile && $(window).width() < 800){$('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)')}})	
-  $('.icon-list-ul').tooltip({show: 1000, hide: 100, placement: 'right', trigger: 'manual'})
-  if(mobile){
-    $('#map').click(function(){
-	  if(!tip_shown && !sidebar_visible){
-        $('.icon-list-ul').tooltip('show')
-	    tip_shown=true
-	  } else{$('.icon-list-ul').tooltip('hide')}
-    })
-  }
+  $('#tos_link').click(function(){if(mobile && $(window).width() < 800){$('#tos').css('-webkit-transform', 'scale(.5)').css('-moz-transform', 'scale(.5)').css('-ms-transform', 'scale(.5)')}})
 })
