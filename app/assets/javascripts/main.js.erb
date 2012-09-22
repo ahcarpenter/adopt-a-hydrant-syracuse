@@ -320,8 +320,7 @@ $(function(){
       success: function(data){
         $(submitButton).attr('disabled', false)
         if(data.errors){
-          $('#address').parent().addClass('error')
-          $('#address').focus()
+          $('#address').parent().addClass('error').focus()
         } else {
           $('#address').parent().removeClass('error')
           var i = -1
@@ -346,13 +345,11 @@ $(function(){
   })
   google.maps.event.addListener(map.getStreetView(), 'visible_changed', function(){
 	if(map.getStreetView().getVisible()){
-	  $('#sieve').css('margin-top', '188px')
-	  $('#sieve').css('margin-left', '35px')
+	  $('#sieve').css('margin-top', '188px').css('margin-left', '35px')
 	  $('#sieve1').css('margin-top', '67px')
 	  $('#download, .stats-container').hide()
 	} else{
-	  $('#sieve').css('margin-top', '140px')
-	  $('#sieve').css('margin-left', '11px')
+	  $('#sieve').css('margin-top', '140px').css('margin-left', '11px')
 	  $('#sieve1').css('margin-top', '50px')
 	  $('#download, .stats-container').show()
 	}
@@ -390,8 +387,7 @@ $(function(){
     $(submitButton).attr('disabled', true)
     if($('#address').val() === ''){
       $(submitButton).attr('disabled', false)
-      $('#address').parent().addClass('error')
-      $('#address').focus()
+      $('#address').parent().addClass('error').focus()
     } else {
       $.ajax({
         type: 'GET',
@@ -404,14 +400,12 @@ $(function(){
         },
         error: function(jqXHR){
           $(submitButton).attr('disabled', false)
-          $('#address').parent().addClass('error')
-          $('#address').focus()
+          $('#address').parent().addClass('error').focus()
         },
         success: function(data){
           $(submitButton).attr('disabled', false)
           if(data.errors){
-            $('#address').parent().addClass('error')
-            $('#address').focus()
+            $('#address').parent().addClass('error').focus()
           } else {
             $('#address').parent().removeClass('error')
 			addMarkersAround(data[0], data[1])
@@ -674,11 +668,11 @@ $(function(){
   $('#check1').live('click', function(){
 	if(!remember_me){
 	  remember_me = true
-	  $('#check1').removeClass('icon-check-empty').addClass('icon-check')
+	  $(this).removeClass('icon-check-empty').addClass('icon-check')
 	}  
 	else {
 	  remember_me = false
-	  $('#check1').removeClass('icon-check').addClass('icon-check-empty')
+	  $(this).removeClass('icon-check').addClass('icon-check-empty')
 	}
   })
   $('#check1').hover(function(){$(this).css('cursor', 'pointer')})
@@ -949,8 +943,7 @@ $(function(){
   })
   function adjust(){
 	if(preview_shown){
-	  $('.preview-body').collapse('hide')
-	  $('.preview-body').addClass('hide')
+	  $('.preview-body').collapse('hide').addClass('hide')
 	  preview_shown = false
 	}
 	$('.icon-caret-down').remove()
