@@ -333,8 +333,8 @@ $(function(){
               return true
             }
             setTimeout(function(){
-			  thing_snow_cover = thing.snow_cover
-              sieveAdopted && !thing.user_id ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red') : thing.user_id && !sieveAdopted ? thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green') : thing_snow_cover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thing_snow_cover <= 6 && thing_snow_cover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')
+			  thingSnowCover = thing.snow_cover
+              sieveAdopted && !thing.user_id ? thingSnowCover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thingSnowCover <= 6 && thingSnowCover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red') : thing.user_id && !sieveAdopted ? thingSnowCover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green1') : thingSnowCover <= 6 && thingSnowCover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'green') : thingSnowCover > 6 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red1') : thingSnowCover <= 6 && thingSnowCover > 0 ? addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red2') : addMarker(thing.id, new google.maps.LatLng(thing.lat, thing.lng), 'red')
 			}, i * 100)
           })
         }
