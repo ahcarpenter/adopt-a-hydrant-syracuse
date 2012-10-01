@@ -16,3 +16,4 @@
 //= require bootstrap
 //= require jquery.ui.touch-punch.min
 //= require jquery.transit.min
+//= require modernizr.custom

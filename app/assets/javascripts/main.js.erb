@@ -83,7 +83,7 @@ $(function(){
 	  _mozilla()
 	}
   })
-  if(!document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Shape', '1.0') || mozilla){
+  if($('html').hasClass('svg')){
 	var greenMarkerImage = markerImage('<%= image_path 'markers/green.svg' %>')
 	var redMarkerImage = markerImage('<%= image_path 'markers/red.svg' %>')
   } else{
