@@ -234,7 +234,7 @@ $(function(){
 	  $(this).css('color', '#08C')
 	}
   )
-  $('.icon-download-alt').live('click', function(){window.location.assign('http://adopt-a-hydrant-providence.herokuapp.com/xml/hydrants.kml')})
+  $('.icon-download-alt').live('click', function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/xml/hydrants.kml')})
   function adjust2(){mobile ? $('.icon-search, .icon-pencil, .icon-signout').css('margin-top','4px') : $('.icon-search, .icon-pencil, .icon-signout').css('margin-top','3px')}
   if(opera){adjust2()}
   $('.alert').live('close', function(){
@@ -244,7 +244,7 @@ $(function(){
 	  adjustMapHeight($(identifier).height()-2)
 	}
   })
-  $('#locale').live('change', function(){window.location.assign('http://adopt-a-hydrant-providence.herokuapp.com/' + $(this).val())})
+  $('#locale').live('change', function(){window.location.assign('http://adopt-a-hydrant-syracuse.herokuapp.com/' + $(this).val())})
   function addMarker(thingId, point, color){
 	var image
 	color === 'green' ? image = greenMarkerImage : color === 'red' ? image = redMarkerImage : color === 'green1' ? image = green1MarkerImage : color === 'red1' ? image = red1MarkerImage : color === 'green2' ? image = green2MarkerImage : color === 'red2' ? image = red2MarkerImage : null
