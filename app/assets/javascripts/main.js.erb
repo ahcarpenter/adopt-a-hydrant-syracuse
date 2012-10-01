@@ -682,6 +682,15 @@ $(function(){
 	adjusted1, radio1 = false
 	adjust3()
   }
+  function adjust6(){
+	if(mobile){
+      if(opera){adjustMapHeight($('.sidebar').height()-12)}
+	  else{
+		iPad ? identifier = '#test-sidebar' : identifier = '.sidebar'
+		adjustMapHeight($(identifier).height()-2)
+	  }
+	}	
+  }
   $('#combo-form').live('submit', function(){
     var submitButton = $("#combo-form input[type='submit']")
     $(submitButton).attr('disabled', true)
@@ -753,6 +762,7 @@ $(function(){
 				$('.alert').effect('pulsate', {times: 2}, 300)
 				prepareSearchElements()
 				radio1 = false
+				adjust6()
 			  }
             })
           }
@@ -794,13 +804,7 @@ $(function(){
 				  $('.alert').effect('pulsate', {times: 2}, 300)
 				  prepareSearchElements()
 				  search_shown = true
-				  if(mobile){
-					if(opera){adjustMapHeight($('.sidebar').height()-12)}
-					else{
-					  iPad ? identifier = '#test-sidebar' : identifier = '.sidebar'
-					  adjustMapHeight($(identifier).height()-2)
-					}
-				  }
+				  adjust6()
 				  if(opera){$('#user_zip, .control-group').css('margin-bottom','0px')}
 				  adjust5()
 				}
