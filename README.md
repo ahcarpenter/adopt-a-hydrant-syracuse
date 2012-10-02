@@ -8,7 +8,7 @@ Claim responsibility for shoveling out a fire hydrant after it snows. Available 
 [travis]: http://travis-ci.org/ahcarpenter/adopt-a-hydrant-syracuse
 [gemnasium]: https://gemnasium.com/ahcarpenter/adopt-a-hydrant-syracuse
 
-##Features
+##Featuring
 *Weather alerts: Be notified via e-mail and/or SMS in the event that snowfall has been forecasted in your hydrant's area.
 *Facebook Connect: Connect with Facebook.
 *Referrals: Refer this application via e-mail and/or SMS.
