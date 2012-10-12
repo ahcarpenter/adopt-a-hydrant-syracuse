@@ -13,5 +13,8 @@ class MainController < ApplicationController
     
     @required = Sidebar.translate_required if @required.nil?
     @sms_notifications = Sidebar.translate_sms_notifications if @sms_notifications.nil?
+    puts Thing.all.inspect
+    Thing.delete_all
+    puts 'Hello' + Thing.all.inspect
   end
 end
